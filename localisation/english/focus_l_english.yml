@@ -951,6 +951,7 @@
  USA_embargo_the_empire_desc:0 "Despite having enjoyed good relations for a long time, the British have betrayed the ideals we hoped they learned to live up to. It's time to let them know the consequences."
  USA_war_plan_orange:0 "War Plan Orange"
  USA_war_plan_orange_desc:0 "There is no greater threat to us than Japan's imperialistic ambitions. Their efforts to expand into Asia and the Pacific will put them at odds with our interests quickly."
+ USA_unlock_contain_japan_tt: "Currently inactive rewards that will be granted if §Y[JAP.GetNameDef]§! expands a dangerous amount:"
  USA_embargo_japan:0 "Embargo Japan"
  USA_embargo_japan_desc:0 "We must show Japan that their aggression will not be accepted or aided by the USA. An embargo will be the first step to thwarting their designs on the Pacific."
  USA_prepare_intervention:0 "Prepare Intervention"
@@ -2560,10 +2561,13 @@
  GER_historical_path_shortcut: "Politics: Historical"
  GER_economic_path_shortcut: "Economy"
  GER_oppose_hitler_shortcut: "Politics: Opposition"
- GER_military_doctrine_shortcut: "The Army"
- GER_air_doctrine_shortcut: "The Air Force"
- GER_naval_doctrine_shortcut: "The Navy"
- 
+ GER_military_doctrine_shortcut: "Army"
+ GER_air_doctrine_shortcut: "Air Force"
+ GER_naval_doctrine_shortcut: "Navy"
+
+ JAP_military_doctrine_shortcut: "Military"
+ JAP_revere_the_emperor_shortcut: "Politics: Imperial Way"
+ JAP_okadas_military_purge_speech_shortcut: "Politics:\nMilitary Purge"
  FOCUS_SHORTCUT_TOOLTIP: "§GLeft-click§! to pan to the $PATH|H$ path."
 
  upgrades_design_company: "§GUpgrades§! §YDesign Company§!"
