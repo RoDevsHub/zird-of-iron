@@ -32,7 +32,7 @@ focus_tree = {
 	focus = {
 		id = SOV_annex_mongolia
 		icon = GFX_SOV_great_commander_ccp_2d_sov_compatibility
-		x = -5
+		x = 2
 		y = 0
 		cost = 0
 
@@ -90,7 +90,7 @@ focus_tree = {
 		id = SOV_infrastructure_effort_nsb
 
 		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
-		x = 1
+		x = 5
 		y = 0
 		cost = 5
 
@@ -432,7 +432,7 @@ focus_tree = {
 
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = SOV_finish_the_five_year_plan }
-		x = -2
+		x = 1
 		y = 1
 		relative_position_id = SOV_finish_the_five_year_plan
 		cost = 10
@@ -499,7 +499,7 @@ focus_tree = {
 
 		icon = GFX_SOV_third_five_year_plan_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_finish_the_five_year_plan }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = SOV_finish_the_five_year_plan
 		cost = 10
@@ -2093,7 +2093,7 @@ focus_tree = {
 		id = SOV_transpolar_flights
 
 		icon = GFX_SOV_transpolar_flights_ccp_2d_sov_compatibility
-		x = 10
+		x = 11
 		y = 0
 		relative_position_id = SOV_infrastructure_effort_nsb
 		cost = 5
@@ -2665,7 +2665,7 @@ focus_tree = {
 		id = SOV_expand_the_red_fleet
 
 		icon = GFX_SOV_expand_the_red_fleet_ccp_2d_sov_compatibility
-		x = 6
+		x = 7
 		y = 0
 		relative_position_id = SOV_transpolar_flights
 		cost = 5
@@ -4192,7 +4192,7 @@ focus_tree = {
 		id = SOV_found_the_pcdi
 
 		icon = GFX_SOV_found_the_pcdi_ccp_2d_sov_compatibility
-		x = 15
+		x = 17
 		y = 0
 		relative_position_id = SOV_expand_the_red_fleet
 		cost = 5
@@ -4897,7 +4897,7 @@ focus_tree = {
 	focus = {
 		id = SOV_strengthen_the_mobilization_plan
 		icon = GFX_SOV_strengthen_the_mobilization_plan_ccp_2d_sov_compatibility
-		x = 7
+		x = 8
 		y = 0
 		relative_position_id = SOV_found_the_pcdi
 		cost = 5
@@ -6967,7 +6967,7 @@ focus_tree = {
 	focus = {
 		id = SOV_the_path_of_marxism_leninism
 		icon = GFX_focus_SOV_the_path_of_marxism_leninism
-		x = 16
+		x = 15
 		y = 0
 		relative_position_id = SOV_strengthen_the_mobilization_plan
 		cost = 5
@@ -7011,7 +7011,7 @@ focus_tree = {
 		id = SOV_the_centre
 		icon = GFX_focus_fra_loyalty_stalin
 		prerequisite = { focus = SOV_the_path_of_marxism_leninism }
-		x = -8
+		x = -6
 		y = 1
 		relative_position_id = SOV_the_path_of_marxism_leninism
 		cost = 5
@@ -7073,38 +7073,12 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = SOV_socialism_in_one_country
-		icon = GFX_focus_SOV_socialism_in_one_country
-		prerequisite = { focus = SOV_the_centre }
-		x = -1
-		y = 1
-		relative_position_id = SOV_the_centre
-		cost = 5
-
-		available = {
-
-		}
-		
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOV_POLITICAL_PARANOIA}
-
-		completion_reward = {
-			add_to_variable = { SOV_the_politburo_communism_drift = 0.05 }
-			add_to_variable = { SOV_the_politburo_drift_defence_factor = 0.05 } 
-			add_to_variable = { SOV_the_politburo_defensive_war_stability_factor = 0.25 } 
-			custom_effect_tooltip = SOV_socialism_in_one_country_ns_tt
-
-			add_political_power = 25
-
-			SOV_paranoia_low_decrease_effect = yes
-		}
-	}
 
 	focus = {
 		id = SOV_the_stalin_constitution
 		icon = GFX_SOV_the_stalin_constitutiony_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_the_centre }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = SOV_the_centre
 		cost = 10
@@ -7228,175 +7202,13 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = SOV_secure_the_administration
-		icon = GFX_focus_generic_join_comintern
-		prerequisite = { focus = SOV_the_zinovyevite_terrorist_center }
-		x = -1
-		y = 1
-		relative_position_id = SOV_the_zinovyevite_terrorist_center
-		cost = 10
-
-		available = {
-
-		}
-		
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOV_POLITICAL_PARANOIA}
-
-		completion_reward = {
-			add_to_variable = { SOV_the_politburo_economy_cost_factor = -0.2 }
-			add_to_variable = { SOV_the_politburo_trade_laws_cost_factor = -0.2 }
-			add_to_variable = { SOV_the_politburo_mobilization_laws_cost_factor = -0.2 }
-			custom_effect_tooltip = SOV_secure_the_administration_ns_tt
-
-			add_political_power = 50
-
-			SOV_paranoia_medium_decrease_effect = yes
-		}
-	}
-
-	focus = {
-		id = SOV_the_collectivization_process
-		icon = GFX_focus_prc_agrarian_socialism
-		prerequisite = { focus = SOV_socialism_in_one_country }
-		prerequisite = { focus = SOV_secure_the_administration }
-		x = 0
-		y = 3
-		relative_position_id = SOV_socialism_in_one_country
-		cost = 10
-
-		available = {
-
-		}
-		
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_SOV_POLITICAL_PARANOIA}
-
-		completion_reward = {
-			add_to_variable = { SOV_the_politburo_good_consumer_goods_factor = -0.02 }
-			add_to_variable = { SOV_the_politburo_production_speed_buildings_factor = 0.05 } 
-			add_to_variable = { SOV_the_politburo_global_building_slots_factor = 0.1 } 
-			custom_effect_tooltip = SOV_the_collectivization_process_ns_tt
-
-			add_stability = -0.05
-			add_war_support = -0.05
-
-			if = { #Target a rural state with no civs
-				limit = {
-					any_owned_state = {
-						OR = {
-							has_state_category = town #Developed Rural Region
-							has_state_category = rural #Rural Region
-						}
-						is_fully_controlled_by = ROOT
-						industrial_complex < 1
-						arms_factory < 1
-						dockyard < 1
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = yes
-						}
-					}
-				}
-				random_owned_state = {
-					limit = {
-						OR = {
-							has_state_category = town #Developed Rural Region
-							has_state_category = rural #Rural Region
-						}
-						is_fully_controlled_by = ROOT
-						industrial_complex < 1
-						arms_factory < 1
-						dockyard < 1
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-			else_if = { #Failsafe 1: Target a random rural state
-				limit = {
-					any_owned_state = {
-						OR = {
-							has_state_category = town #Developed Rural Region
-							has_state_category = rural #Rural Region
-						}
-						is_fully_controlled_by = ROOT
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = yes
-						}
-					}
-				}
-				random_owned_state = {
-					limit = {
-						OR = {
-							has_state_category = town #Developed Rural Region
-							has_state_category = rural #Rural Region
-						}
-						is_fully_controlled_by = ROOT
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-			else_if = { #Failsafe 2: Target a random state
-				limit = {
-					any_owned_state = {
-						is_fully_controlled_by = ROOT
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = yes
-						}
-					}
-				}
-				random_owned_state = {
-					limit = {
-						is_fully_controlled_by = ROOT
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-
-			SOV_paranoia_medium_decrease_effect = yes
-		}
-	}
 
 	focus = {
 		id = SOV_the_anti_soviet_trotskyist_center
 		icon = GFX_focus_SOV_purge_trotskyists
 		prerequisite = { focus = SOV_the_zinovyevite_terrorist_center }
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = SOV_the_zinovyevite_terrorist_center
 		cost = 5
 
@@ -7542,107 +7354,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = SOV_organization_centralization_discipline
-		icon = GFX_focus_SOV_organization_centralization_discipline
-		prerequisite = { focus = SOV_the_collectivization_process }
-		prerequisite = { focus = SOV_the_workers_dictatorship }
-		x = -2
-		y = 1
-		relative_position_id = SOV_the_workers_dictatorship
-		cost = 5
 
-		available = {
-
-		}
-		
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOV_POLITICAL_PARANOIA}
-
-		completion_reward = {
-			add_to_variable = { SOV_the_politburo_max_command_power = 20 }
-			add_to_variable = { SOV_the_politburo_mobilization_speed = 0.05 }
-			custom_effect_tooltip = SOV_organization_centralization_discipline_ns_tt
-
-			add_political_power = 50
-
-			SOV_paranoia_medium_decrease_effect = yes
-		}
-	}
-
-	focus = {
-		id = SOV_war_economy
-		icon = GFX_SOV_war_economy_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_organization_centralization_discipline }
-		x = 0
-		y = 1
-		relative_position_id = SOV_organization_centralization_discipline
-		cost = 10
-
-		available = {
-
-		}
-		
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			custom_effect_tooltip = SOV_war_economy_stability_tt
-			if = {
-				limit = {
-					has_war = no
-				}
-				add_stability = -0.1
-			}
-			else = {
-				custom_effect_tooltip = SOV_war_economy_stability_war_tt
-			}
-			if = {
-				limit = {
-					NOT = { has_idea = war_economy }
-					NOT = { has_idea = tot_economic_mobilisation }
-				}
-				add_ideas = war_economy
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			if = {
-				limit = {
-					217 = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = arms_factory
-							size > 1
-							include_locked = yes
-						}
-					}
-				}
-				217 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-			else = {
-				random_controlled_state = {
-					limit = {
-						arms_factory > 1
-						free_building_slots = {
-							building = arms_factory
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-		}
-	}
 
 	focus = {
 		id = SOV_the_military_conspiracy
@@ -8429,7 +8141,7 @@ focus_tree = {
 		id = SOV_addressing_internal_affairs
 		icon = GFX_focus_generic_self_management
 		prerequisite = { focus = SOV_the_path_of_marxism_leninism }
-		x = -3
+		x = -1
 		y = 1
 		relative_position_id = SOV_the_path_of_marxism_leninism
 		cost = 5
@@ -8537,7 +8249,7 @@ focus_tree = {
 		id = SOV_positive_heroism
 		icon = GFX_SOV_positive_heroism_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_agitprop }
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = SOV_expand_the_agitprop
 		cost = 10
@@ -8677,7 +8389,7 @@ focus_tree = {
 		id = SOV_collectivist_propaganda
 		icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_agitprop }
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = SOV_expand_the_agitprop
 		cost = 10
@@ -8748,7 +8460,7 @@ focus_tree = {
 		id = SOV_the_komsomol
 		icon = GFX_SOV_the_komsomol_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_agitprop }
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = SOV_expand_the_agitprop
 		cost = 5
@@ -8814,7 +8526,7 @@ focus_tree = {
 		id = SOV_the_comintern
 		icon = GFX_goal_support_communism
 		prerequisite = { focus = SOV_the_path_of_marxism_leninism }
-		x = 9
+		x = 11
 		y = 0
 		relative_position_id = SOV_addressing_internal_affairs
 		cost = 5
@@ -8850,7 +8562,7 @@ focus_tree = {
 		id = SOV_development_aid_for_eastern_allies
 		icon = GFX_SOV_development_aid_for_eastern_allies_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_the_comintern }
-		x = -5
+		x = -4
 		y = 1
 		relative_position_id = SOV_the_comintern
 		cost = 5
@@ -8943,50 +8655,13 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = SOV_annex_tannu_tuva
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_war_measures_in_the_east }
-		x = -1
-		y = 1
-		relative_position_id = SOV_war_measures_in_the_east
-		cost = 5
 
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_civil_war = yes
-			}	
-		}
-		
-		available = { 
-			is_subject = no 
-			TAN = {
-				OR = {
-					is_in_faction_with = ROOT
-					is_subject_of = ROOT
-				}
-			}
-		}
-		
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-
-		completion_reward = {
-			TAN = {	
-				country_event = { 
-					id = soviet.14 
-					hours = 6
-				} 
-			}
-		}
-	}
 
 	focus = {
 		id = SOV_fortify_mongolian_border
 		icon = GFX_SOV_fortify_mongolian_border_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_war_measures_in_the_east }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = SOV_war_measures_in_the_east
 		cost = 5
@@ -9024,7 +8699,7 @@ focus_tree = {
 		id = SOV_send_military_advisors_to_spain
 		icon = GFX_focus_intervention_spain_republic
 		prerequisite = { focus = SOV_the_comintern }
-		x = -3
+		x = -6
 		y = 1
 		relative_position_id = SOV_the_comintern
 		cost = 5
@@ -9526,7 +9201,7 @@ focus_tree = {
 		id = SOV_demand_eastern_poland
 		icon = GFX_SOV_demand_eastern_poland_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_claims_on_poland }
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = SOV_claims_on_poland
 		cost = 10
@@ -9627,7 +9302,7 @@ focus_tree = {
 		id = SOV_claim_on_bessarabia
 		icon = GFX_focus_generic_attack_romania
 		prerequisite = { focus = SOV_claims_on_poland }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = SOV_claims_on_poland
 		cost = 10
@@ -9752,471 +9427,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SOV_demand_balkan_submission
-		icon = GFX_SOV_demand_balkan_submission_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_claim_on_bessarabia }
-		x = -1
-		y = 1
-		relative_position_id = SOV_claim_on_bessarabia
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_civil_war = yes
-			}	
-		}
-		
-		mutually_exclusive = { focus = SOV_seek_balkan_cooperation }
-		
-		available = {
-			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
-			any_other_country = {
-				BUL_is_balkan_nation = yes
-			}
-			is_subject = no
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			every_other_country = {
-				limit = {
-					BUL_is_balkan_nation = yes
-				}
-				add_timed_idea = {
-					idea = communist_pressure
-					days = 365
-				}
-				hidden_effect = {
-					country_event = { id = generic.1 }
-				}
-			}
-			custom_effect_tooltip = SOV_demand_balkan_submission_decisions_tt
-			hidden_effect = {
-				activate_targeted_decision = { target = ROM decision = SOV_send_ultimatum_to_country_balkan }
-				activate_targeted_decision = { target = BUL decision = SOV_send_ultimatum_to_country_balkan }
-				activate_targeted_decision = { target = GRE decision = SOV_send_ultimatum_to_country_balkan }
-				activate_targeted_decision = { target = YUG decision = SOV_send_ultimatum_to_country_balkan }
-				activate_targeted_decision = { target = TUR decision = SOV_send_ultimatum_to_country_balkan }
-			}
-		}
-	}
-
-	focus = {
-		id = SOV_seek_balkan_cooperation
-		icon = GFX_focus_BUL_free_balkan_states
-		prerequisite = { focus = SOV_claim_on_bessarabia }
-		x = 1
-		y = 1
-		relative_position_id = SOV_claim_on_bessarabia
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_civil_war = yes
-			}	
-		}
-		
-		mutually_exclusive = { focus = SOV_demand_balkan_submission }
-		
-		available = {
-			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
-			any_other_country = {
-				BUL_is_balkan_nation = yes
-			}
-			is_subject = no
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			every_other_country = {
-				limit = {
-					BUL_is_balkan_nation = yes
-				}
-				add_timed_idea = {
-					idea = communist_pressure
-					days = 365
-				}
-				hidden_effect = {
-					country_event = { id = generic.1 }
-				}
-			}
-			custom_effect_tooltip = SOV_seek_balkan_cooperation_decisions_tt
-			hidden_effect = {
-				activate_targeted_decision = { target = ROM decision = SOV_pressure_country_government_balkan }
-				activate_targeted_decision = { target = BUL decision = SOV_pressure_country_government_balkan }
-				activate_targeted_decision = { target = GRE decision = SOV_pressure_country_government_balkan }
-				activate_targeted_decision = { target = YUG decision = SOV_pressure_country_government_balkan }
-				activate_targeted_decision = { target = TUR decision = SOV_pressure_country_government_balkan }
-				activate_targeted_decision = { target = ROM decision = SOV_promote_ideology_rallies_balkan }
-				activate_targeted_decision = { target = BUL decision = SOV_promote_ideology_rallies_balkan }
-				activate_targeted_decision = { target = GRE decision = SOV_promote_ideology_rallies_balkan }
-				activate_targeted_decision = { target = YUG decision = SOV_promote_ideology_rallies_balkan }
-				activate_targeted_decision = { target = TUR decision = SOV_promote_ideology_rallies_balkan }
-			}
-		}
-	}
-
-	focus = {
-		id = SOV_middle_east_diplomacy
-		icon = GFX_focus_TUR_treaty_of_saadabad
-		prerequisite = { focus = SOV_the_comintern }
-		x = 3
-		y = 0
-		relative_position_id = SOV_baltic_security
-		cost = 5
-		
-ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_civil_war = yes
-			}	
-		}
-				
-		bypass = {
-			NOT = {
-				country_exists = IRQ
-				country_exists = PER
-				country_exists = AFG
-				country_exists = SAU
-			}
-		}
-
-		available = {
-			is_subject = no
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			if = {
-				limit = {
-					country_exists = IRQ
-				}
-				IRQ = {
-					if = {
-						limit = { ROOT = { has_government = fascism } }
-						add_timed_idea = { idea = fascist_influence_weak days = 1095 }
-					}
-					if = {
-						limit = { ROOT = { has_government = democratic } }
-						add_timed_idea = { idea = democratic_influence_weak days = 1095 }
-					}
-					if = {
-						limit = { ROOT = { has_government = communism } }
-						add_timed_idea = { idea = communist_influence_weak days = 1095 }
-					}
-					hidden_effect = {
-						country_event = { id = generic.1 }
-					}
-				}
-			}
-			if = {
-				limit = {
-					country_exists = PER
-				}
-				PER = {
-					if = {
-						limit = { ROOT = { has_government = fascism } }
-						add_timed_idea = { idea = fascist_influence_weak days = 1095 }
-					}
-					if = {
-						limit = { ROOT = { has_government = democratic } }
-						add_timed_idea = { idea = democratic_influence_weak days = 1095 }
-					}
-					if = {
-						limit = { ROOT = { has_government = communism } }
-						add_timed_idea = { idea = communist_influence_weak days = 1095 }
-					}
-					hidden_effect = {
-						country_event = { id = generic.1 }
-					}
-				}
-			}
-			if = {
-				limit = {
-					country_exists = AFG
-				}
-				AFG = {
-					if = {
-						limit = { ROOT = { has_government = fascism } }
-						add_timed_idea = { idea = fascist_influence_weak days = 1095 }
-					}
-					if = {
-						limit = { ROOT = { has_government = democratic } }
-						add_timed_idea = { idea = democratic_influence_weak days = 1095 }
-					}
-					if = {
-						limit = { ROOT = { has_government = communism } }
-						add_timed_idea = { idea = communist_influence_weak days = 1095 }
-					}
-					hidden_effect = {
-						country_event = { id = generic.1 }
-					}
-				}
-			}
-			if = {
-				limit = {
-					country_exists = SAU
-				}
-				SAU = {
-					if = {
-						limit = { ROOT = { has_government = fascism } }
-						add_timed_idea = { idea = fascist_influence_weak days = 1095 }
-					}
-					if = {
-						limit = { ROOT = { has_government = democratic } }
-						add_timed_idea = { idea = democratic_influence_weak days = 1095 }
-					}
-					if = {
-						limit = { ROOT = { has_government = communism } }
-						add_timed_idea = { idea = communist_influence_weak days = 1095 }
-					}
-					hidden_effect = {
-						country_event = { id = generic.1 }
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SOV_the_southern_thrust
-		icon = GFX_SOV_the_southern_thrust_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_middle_east_diplomacy }
-		x = -1
-		y = 1
-		relative_position_id = SOV_middle_east_diplomacy
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_civil_war = yes
-			}	
-		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_war_with = GER
-				factor = 0
-			}
-			modifier = {
-				AND = {
-					has_war_with = ENG
-					surrender_progress > 0.3
-				}
-				factor = 0
-			}
-			modifier = {
-				has_war_with = RAJ
-				factor = 5
-			}
-		}
-
-		bypass = {
-			PER = {
-				NOT = { owns_state = 419 }
-				NOT = { owns_state = 420 }
-				NOT = { owns_state = 266 }
-				NOT = { owns_state = 416 }
-			}
-			IRQ = {
-				NOT = { owns_state = 676 }
-				NOT = { owns_state = 291 }
-			}
-			AFG = {
-				NOT = { owns_state = 267 }
-				NOT = { owns_state = 415 }
-			}
-		}
-
-		available = {
-			OR = {
-				country_exists = IRQ
-				country_exists = PER
-				country_exists = AFG
-				country_exists = SAU
-			}
-			is_subject = no
-		}
-
-		mutually_exclusive = { focus = SOV_support_afghan_ideology }
-		
-		will_lead_to_war_with = PER
-		will_lead_to_war_with = IRQ
-		will_lead_to_war_with = AFG
-		
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {
-			if = {
-				limit = { 
-					PER = {
-						OR = {
-							owns_state = 419
-							owns_state = 420
-							owns_state = 266
-							owns_state = 416
-						}
-					} 
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = PER
-					expire = 0
-					generator = { 419 420 266 416}
-				}
-			}
-			if = {
-				limit = { 
-					IRQ = {
-						OR = {
-							owns_state = 676
-							owns_state = 291
-						}
-					} 
-				}			
-				create_wargoal = {
-					type = take_state_focus
-					target = IRQ
-					expire = 0
-					generator = { 676 291 }
-				}
-			}
-			if = {
-				limit = {
-					AFG = {
-						OR = {
-							owns_state = 267
-							owns_state = 415
-						}
-					} 
-				}			
-				create_wargoal = {
-					type = take_state_focus
-					target = AFG
-					expire = 0
-					generator = { 267 415 }
-				}
-			}
-			ENG = {
-				add_opinion_modifier = { target = SOV modifier = middle_east_expansionism }
-			}
-			FRA = {
-				add_opinion_modifier = { target = SOV modifier = middle_east_expansionism }
-			}
-			USA = {
-				add_opinion_modifier = { target = SOV modifier = middle_east_expansionism }
-			}
-		}
-	}
-
-	focus = {
-		id = SOV_support_afghan_ideology
-		icon = GFX_focus_generic_befriend_afghanistan
-		prerequisite = { focus = SOV_middle_east_diplomacy }
-		x = 1
-		y = 1
-		relative_position_id = SOV_middle_east_diplomacy
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_civil_war = yes
-			}	
-		}
-		
-		mutually_exclusive = { focus = SOV_the_southern_thrust }
-		
-		bypass = {
-			NOT = { country_exists = AFG }
-		}
-
-		available = {
-			NOT = { has_war_with = AFG }
-			is_subject = no
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			activate_targeted_decision = { target = AFG decision = SOV_pressure_country_government_middle_east }
-			activate_targeted_decision = { target = AFG decision = SOV_promote_ideology_rallies_middle_east }
-		}
-	}
-
-	focus = {
-		id = SOV_preemptive_invasion_of_iran
-		icon = GFX_focus_generic_attack_iran
-		prerequisite = { focus = SOV_support_afghan_ideology }
-		x = 0
-		y = 1
-		relative_position_id = SOV_support_afghan_ideology
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_civil_war = yes
-			}
-			modifier = {
-				factor = 0
-				PER = {
-					has_government = ROOT
-				}
-			}	
-		}
-		will_lead_to_war_with = PER
-		available = {
-			country_exists = PER
-			NOT = { has_war_with = PER }
-			NOT = { is_in_faction_with = PER}
-			is_subject = no
-			any_enemy_country = { is_major = yes }
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			PER = {
-				set_country_flag = SOV_ultimatum_sent_flag
-				country_event = { id = NSB_soviet_foreign_politics_events.210 hours = 16 random_hours = 8 }
-			}
-
-			effect_tooltip = {
-				custom_effect_tooltip = if_they_accept_tt
-				ROOT = {
-					puppet = PER
-				}
-
-				custom_effect_tooltip = if_they_refuse_tt
-				effect_tooltip = {
-					activate_mission = SOV_preparations_for_operation_countenance
-					custom_effect_tooltip = SOV_preparations_for_operation_countenance_tt
-				}
-				custom_effect_tooltip = SOV_preemptive_invasion_of_iran_tt
-			}
-		}
-	}
-
-	focus = {
 		id = SOV_the_threat_from_the_land_of_the_rising_sun
 		icon = GFX_focus_attack_japan
 		prerequisite = { focus = SOV_the_comintern }
-		x = 4
-		y = 0
-		relative_position_id = SOV_middle_east_diplomacy
+		x = 3
+		y = 1
+		relative_position_id = SOV_the_comintern
 		cost = 5
 
 		ai_will_do = {
@@ -10329,86 +9545,10 @@ ai_will_do = {
 	}
 
 	focus = {
-		id = SOV_intervention_in_china
-		icon = GFX_SOV_intervention_in_china_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_support_the_kuomintang  }
-		x = 1
-		y = 1
-		relative_position_id = SOV_support_the_kuomintang
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_civil_war = yes
-			}	
-		}
-		
-		available = {
-			is_subject = no
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			custom_effect_tooltip = SOV_intervention_in_china_wargoal_tt
-			hidden_effect = {
-				every_country = {
-					limit = {
-						SOV_is_chinese_tag = yes
-						exists = yes
-						NOT = { is_subject_of = ROOT }
-						NOT = { is_in_faction_with = ROOT }
-					}
-					if = {
-						limit = {
-							tag = SIK
-							ROOT = { has_completed_focus = SOV_the_gobi_gambit }
-						}
-					}
-					else_if = {
-						limit = {
-							tag = PRC
-							ROOT = { has_completed_focus = SOV_two_red_flags }
-						}
-					}
-					else_if = {
-						limit = {
-							tag = CHI
-							ROOT = { has_completed_focus = SOV_support_the_kuomintang }
-						}
-					}
-					else = {
-						ROOT = {
-							create_wargoal = {
-								type = puppet_wargoal_focus
-								target = PREV
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = SOV_the_gobi_gambit
-					country_exists = SIK
-				}
-				every_state = { #Set cores for SIK
-					limit = {
-						is_core_of = CHI
-					}
-					add_core_of = SIK
-				}
-			}
-		}
-	}
-
-	focus = {
 		id = SOV_prepare_a_war_with_japan
 		icon = GFX_focus_AST_war_japan
 		prerequisite = { focus = SOV_support_the_kuomintang }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = SOV_support_the_kuomintang
 		cost = 5
