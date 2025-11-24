@@ -71,8 +71,8 @@ focus_tree = {
     focus = {
         id = RAJ_indianize_the_army
         icon = GFX_focus_RAJ_indianisation_of_army
-        x = 25
-        y = 0
+        x = 26
+        y = 7
         mutually_exclusive = { focus = RAJ_keep_british_generals }
         cost = 5
 
@@ -5286,9 +5286,8 @@ focus = {
         id = RAJ_ammunition_factory_khadki
         icon = GFX_goal_generic_construct_mil_factory
         #prerequisite = { focus =  }
-        x = 6
-        y = 0
-        relative_position_id = RAJ_bombay_baroda_and_central_india_railway
+        x = 22
+        y = 1
         
         cost = 5
 
@@ -8137,9 +8136,9 @@ focus = {
         icon = GFX_goal_generic_navy_doctrines_tactics
         #prerequisite = { focus = RAJ_expand_mazagon_dock_dlc
         #focus = RAJ_found_scindia_shipyard_dlc }
-        x = 8
+        x = 5
         y = 0
-        relative_position_id = RAJ_indian_air_force
+        relative_position_id = RAJ_bombay_baroda_and_central_india_railway
 
         cost = 5
 
