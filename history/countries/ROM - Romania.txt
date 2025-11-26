@@ -298,7 +298,6 @@ set_convoys = 10
 			ideology = despotism
 			traits = {
 				hedonist
-				camarilla_leader
 			}
 			id = 550
 		}

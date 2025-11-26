@@ -32,6 +32,19 @@ ideas = {
 				war_support_factor = 0.10
 			}
 		}
+		ROM_Flawed_Democracy_idea_2 = {
+			picture = gre_political_instability
+			allowed = {
+				original_tag = ROM
+			}
+
+			modifier = {
+				party_popularity_stability_factor = -0.05
+				political_power_cost = 0.05
+				war_stability_factor = 0.05
+				war_support_factor = 0.15
+			}
+		}
 		ROM_Tax_Reform_idea = {
 			picture = RAJ_taxes
 			allowed = {
@@ -91,6 +104,132 @@ ideas = {
 				consumer_goods_factor = 0.25
 				production_speed_industrial_complex_factor = 0.5 
 				production_speed_infrastructure_factor = 0.5
+			}
+		}
+			ROM_Anti_Extremism_idea = {
+			picture = SPR_anti_fascist_crusade
+			removal_cost = -1
+			allowed = {
+				original_tag = ROM
+			}
+
+			modifier = {
+				stability_factor = 0.05
+				communism_acceptance = -45
+				fascism_acceptance = -45
+			}
+		}
+			ROM_Restrict_Freedom_of_Press_idea = {
+			picture = EST_democratic_opposition
+
+			removal_cost = -1
+			allowed = {
+				original_tag = ROM
+			}
+
+			modifier = {
+				stability_factor = -0.05
+				communism_drift = -0.01
+				fascism_drift = -0.01
+				democratic_drift = -0.01
+				neutrality_drift = 0.01
+			}
+		}
+		ROM_Dissolved_Parliament_idea = {
+			picture = AFG_parliament_building
+
+			removal_cost = -1
+			allowed = {
+				original_tag = ROM
+			}
+
+			modifier = {
+				stability_factor = -0.5
+				weekly_stability_factor = -0.05
+			}
+		}
+		ROM_Sentinels_of_Romania_idea = {
+			picture = ROM_the_sentinel_of_the_motherland
+
+			removal_cost = -1
+
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				conscription_factor = 0.01
+			}
+		}
+		ROM_Sentinels_of_Romania_idea_1 = {
+			picture = ROM_the_sentinel_of_the_motherland
+
+			removal_cost = -1
+
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				conscription_factor = 0.02
+				mobilization_speed = 0.1
+			}
+		}
+		ROM_German_Trade_Agreement_idea = {
+			picture = can_wartime_prices_and_trade_board
+
+			removal_cost = -1
+
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				faction_trade_opinion_factor = 0.1
+				trade_cost_for_target_factor = -0.25
+			}
+		}
+		ROM_German_Military_Reforms_idea = {
+			picture = german_advisors
+
+			removal_cost = -1
+
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				armor_attack_factor = 0.05
+				armor_defense_factor = 0.05
+				max_planning_factor = 0.05
+				experience_gain_army_factor = 0.05
+				training_time_army_factor = -0.10
+			}
+		}
+		ROM_Carol_line_idea = {
+			picture = FRA_fortification_focus
+
+			removal_cost = -1
+
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				production_speed_bunker_factor = 0.2
+				production_speed_coastal_bunker_factor = 0.1
+			}
+		}
+		ROM_Subvert_Communism_idea = {
+			picture = generic_communism_banned
+
+			removal_cost = -1
+
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+			communism_drift = -0.08
+			communism_acceptance = -60
 			}
 		}
 		ROM_romanian_volunteer_brigades = {

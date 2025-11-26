@@ -188,6 +188,7 @@ focus_tree = {
 		}
 			
 		completion_reward = {
+			46 = {add_extra_state_shared_building_slots = 2}
 					if = {
 				limit = {
 					has_idea = ROM_Public_Works_idea_1
@@ -268,7 +269,15 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			add_timed_idea = {idea = ROM_Anti_Extremism_idea days = 365}
+			add_popularity = {
+    			ideology = fascism
+    			popularity = -0.5
+			}
+			add_popularity = {
+    			ideology = communism
+    			popularity = -0.5
+			}
 		}
 	}
 		focus = {
@@ -290,35 +299,14 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
-		}
-	}
-		focus = {
-		id = ROM_General_Election
-		prerequisite = {focus = ROM_Clamp_Down_On_Extremism focus = ROM_Restrict_Freedom_Of_Press}
-		relative_position_id = ROM_Clamp_Down_On_Extremism
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_election
-		x = 1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-			
-		completion_reward = {
-
+			add_timed_idea = {idea = ROM_Restrict_Freedom_of_Press_idea days = 365}
+			add_political_power = 75
 		}
 	}
 			focus = {
 		id = ROM_Dissolve_Parliament
-		prerequisite = {focus = ROM_General_Election}
-		relative_position_id = ROM_General_Election
+		prerequisite = {focus = ROM_Restrict_Freedom_Of_Press focus = ROM_Clamp_Down_On_Extremism}
+		relative_position_id = ROM_Restrict_Freedom_Of_Press
 		available = {
 		
 		}
@@ -326,7 +314,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_AFG_parliamentary_democracy
-		x = 0
+		x = -1
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -334,7 +322,23 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			set_party_name = {
+			ideology = neutrality
+			long_name = ROM_dissolved_parliament_party_long
+			name = ROM_dissolved_parliament_party
+			}
+			set_political_party = {
+				ideology = neutrality
+				popularity = 40
+			}
+			add_popularity = {
+    		ideology = democratic
+    		popularity = -0.1
+			}
+			add_ideas = ROM_Dissolved_Parliament_idea
+			set_politics = {
+				ruling_party = neutrality
+			}
 		}
 	}
 		focus = {
@@ -356,7 +360,44 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			if = {
+				limit = {
+					has_idea = ROM_Anti_Extremism_idea
+				}
+				remove_ideas = ROM_Anti_Extremism_idea
+			}
+			create_country_leader = {
+				name = "Carol II"
+				desc = "POLITICS_CAROL_II_DESC"
+				picture = GFX_Portrait_romania_Carol_II				
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					hedonist
+				}
+				id = 550
+			}
+			set_party_name = {
+			ideology = neutrality
+			long_name = ROM_royal_dictatorship_long
+			name = ROM_royal_dictatorship_party
+			}
+			set_political_party = {
+				ideology = neutrality
+				popularity = 65
+			}
+			add_popularity = {
+    		ideology = democratic
+    		popularity = -0.15
+			}
+			add_popularity = {
+    		ideology = fascism
+    		popularity = 0.15
+			}
+			add_popularity = {
+    		ideology = neutrality
+    		popularity = 0.15
+			}
 		}
 	}
 		focus = {
@@ -378,7 +419,22 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			if = {
+				limit = {
+					has_idea = ROM_Flawed_Democracy_idea_2
+				}
+				remove_ideas = ROM_Flawed_Democracy_idea_2	
+			}
+			if = {
+				limit = {
+					has_idea = ROM_Flawed_Democracy_idea_1
+				}
+				swap_ideas = {
+					remove_idea = ROM_Flawed_Democracy_idea_1
+					add_idea = ROM_Flawed_Democracy_idea_2
+				}
+			}
+			add_country_leader_trait = camarilla_leader
 		}
 	}
 		focus = {
@@ -400,7 +456,22 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			if = {
+				limit = {
+					has_idea = ROM_Flawed_Democracy_idea_2
+				}
+				remove_ideas = ROM_Flawed_Democracy_idea_2	
+			}
+			if = {
+				limit = {
+					has_idea = ROM_Flawed_Democracy_idea_1
+				}
+				swap_ideas = {
+					remove_idea = ROM_Flawed_Democracy_idea_1
+					add_idea = ROM_Flawed_Democracy_idea_2
+				}
+			}
+			add_ideas = ROM_Sentinels_of_Romania_idea
 		}
 	}
 		focus = {
@@ -422,7 +493,11 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			add_ideas = ROM_Carol_line_idea
+			reduce_focus_completion_cost = {
+			  focus = { ROM_Fortify_Danube ROM_Constanta_Naval_Line }
+			  cost = 35
+			}
 		}
 	}
 		focus = {
@@ -445,7 +520,8 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			add_ideas = ROM_German_Trade_Agreement_idea
+			GER = {add_ideas = ROM_German_Trade_Agreement_idea}
 		}
 	}
 		focus = {
@@ -467,7 +543,56 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			46 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			81 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+    		bonus = 0.5
+   			 uses = 1
+    		category = industry
+			}
+			add_tech_bonus = {
+    		bonus = 0.5
+   			 uses = 1
+    		category = synth_resources
+			}
+			60 = {
+				add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			54 = {
+				add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			60 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = fuel_silo
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 		focus = {
@@ -483,13 +608,18 @@ focus_tree = {
 		icon = GFX_focus_generic_military_mission
 		x = -2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 			
 		completion_reward = {
+			add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+			}
 
+			add_ideas = ROM_German_Military_Reforms_idea
 		}
 	}
 		focus = {
@@ -505,7 +635,7 @@ focus_tree = {
 		icon = GFX_focus_generic_full_social_mobilization
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -533,7 +663,7 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			add_timed_idea = {idea = ROM_Subvert_Communism_idea days = 140}
 		}
 	}
 		focus = {
@@ -555,7 +685,10 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			swap_ideas = {
+				remove_idea = ROM_Sentinels_of_Romania_idea
+				add_idea = ROM_Sentinels_of_Romania_idea_1
+			}
 		}
 	}
 	
@@ -573,13 +706,13 @@ focus_tree = {
 		icon = GFX_focus_generic_fascist_propaganda
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 			
 		completion_reward = {
-
+			
 		}
 	}
 		focus = {
@@ -595,7 +728,7 @@ focus_tree = {
 		icon = GFX_goal_generic_fortify_city
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -617,7 +750,7 @@ focus_tree = {
 		icon = GFX_focus_generic_black_sea_focus
 		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -639,7 +772,7 @@ focus_tree = {
 		icon = GFX_focus_generic_attack_yugoslavia
 		x = 3
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
