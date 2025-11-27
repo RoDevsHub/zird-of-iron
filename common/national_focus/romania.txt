@@ -487,7 +487,7 @@ focus_tree = {
 		icon = GFX_focus_BEL_koningshooikt_wavre_line
 		x = -1
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -495,8 +495,8 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = ROM_Carol_line_idea
 			reduce_focus_completion_cost = {
-			  focus = { ROM_Fortify_Danube ROM_Constanta_Naval_Line }
-			  cost = 35
+			  focus = { ROM_Fortify_Danube ROM_Constanta_Naval_Line ROM_D_Day_Line }
+			  cost = 21
 			}
 		}
 	}
@@ -620,6 +620,12 @@ focus_tree = {
 			}
 
 			add_ideas = ROM_German_Military_Reforms_idea
+			add_doctrine_cost_reduction = {
+				name = ROM_invite_german_advisors
+			    cost_reduction = 0.35
+			    uses = 2
+			    category = land_doctrine
+			}
 		}
 	}
 		focus = {
@@ -712,7 +718,26 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-			
+			create_country_leader = {
+				name = "Ion Antonescu"
+				desc = "POLITICS_CAROL_II_DESC"
+				picture = GFX_Portrait_romania_ion_antonescu			
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					ROM_conductor
+					anti_communist
+				}
+				id = 550
+			}
+			set_political_party = {
+				ideology = fascism
+				popularity = 65
+			}
+			set_politics = {
+				ruling_party = fascism
+			}
+			GER = {add_to_faction = ROM}
 		}
 	}
 		focus = {
@@ -756,7 +781,20 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			971 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = GER_u_boat_efforts
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
 		}
 	}
 		focus = {
@@ -786,7 +824,18 @@ focus_tree = {
 		prerequisite = {focus = ROM_Axis_Membership}
 		relative_position_id = ROM_Axis_Membership
 		available = {
-		
+			15 = {
+				is_fully_controlled_by = GER
+			}
+			14 = {
+				is_fully_controlled_by = GER
+			}
+			785 = {
+				is_fully_controlled_by = GER
+			}
+			29 = {
+				is_fully_controlled_by = GER
+			}
 		}
 
 		continue_if_invalid = yes
@@ -794,15 +843,130 @@ focus_tree = {
 		icon = GFX_focus_generic_coastal_fort
 		x = -3
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 			
 		completion_reward = {
-
+		15 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 9550
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 6649
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 3579
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 11535
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 6599
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 9434
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 485
+					instant_build = yes
+				}
 		}
+		14 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 9510
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 6536
+					instant_build = yes
+				}				
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 542
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 3552
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 6572
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 9525
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 11508
+					instant_build = yes
+				}
+			}
+			785 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 11420
+					instant_build = yes
+				}
+			}
+			29 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 9500
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 11548
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 575
+					instant_build = yes
+				}
+			}
 	}
+}
 		focus = {
 		id = ROM_Ukraine_Claim
 		prerequisite = {focus = ROM_Fortify_Danube}
