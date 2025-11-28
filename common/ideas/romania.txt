@@ -232,6 +232,43 @@ ideas = {
 			communism_acceptance = -60
 			}
 		}
+		ROM_Operation_Barbarbarossa_idea = {
+			picture = generic_attack_soviet_union
+
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = 0.10
+			defense_bonus_against = 0.10
+	    }
+		}
+		ROM_Raw_Resource_Exploitation_idea = {
+			picture = generic_exploit_mines
+
+			removal_cost = -1
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				local_supplies = 0.1
+				production_lack_of_resource_penalty_factor = -0.05
+			}
+		}
+		ROM_Timber_Industry_idea = {
+			picture = SWE_saltsjobaden_agreement
+
+			removal_cost = -1
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
 		ROM_romanian_volunteer_brigades = {
 
 			picture = generic_volunteer_expedition_bonus
