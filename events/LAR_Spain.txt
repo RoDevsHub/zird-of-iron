@@ -2388,14 +2388,12 @@ country_event = {
 								factor = 0
 								has_global_flag = SOV_covert_support_for_poum_flag #POUM UPRISING (SUPPORTED BY SOVIET RIGHT OPPOSITION)
 							}
-							complete_national_focus = SPR_regional_defense_council_of_aragon
 						}
 						10 = {
 							modifier = {
 								factor = 0
 								has_global_flag = SOV_covert_support_for_poum_flag #POUM UPRISING (SUPPORTED BY SOVIET RIGHT OPPOSITION)
 							}
-							complete_national_focus = SPR_maintain_the_second_republic
 						}
 						10 = {
 							modifier = {
@@ -2406,7 +2404,6 @@ country_event = {
 								add = 10
 								has_global_flag = SOV_covert_support_for_poum_flag #POUM UPRISING (SUPPORTED BY SOVIET RIGHT OPPOSITION)
 							}
-							complete_national_focus = SPR_the_anti_fascist_workers_revolution
 						}
 					}
 				}
@@ -4419,27 +4416,8 @@ country_event = {
 						10 = {
 							modifier = {
 								factor = 0
-								is_historical_focus_on = yes
-							}
-							modifier = {
-								factor = 0
-								ROOT = { has_country_flag = SPA_con_paquito_flag }
-							}
-							complete_national_focus = SPA_the_phalanx_ascendant
-						}
-						10 = {
-							modifier = {
-								factor = 0
-								ROOT = { has_country_flag = SPA_sin_paquito_flag }
 							}
 							complete_national_focus = SPA_unify_the_nationalist_front
-						}
-						10 = {
-							modifier = {
-								factor = 0
-								is_historical_focus_on = yes
-							}
-							complete_national_focus = SPA_supremacy_of_the_communion
 						}
 					}
 					add_ideas = SPA_carlism_1
@@ -4605,7 +4583,7 @@ country_event = {
 			SPA = { add_timed_idea = { idea = SPA_death_before_surrender days = 900 } }
 			set_party_name = { ideology = neutrality long_name = SPR_neutrality_anarchism_party_long name = SPR_neutrality_anarchism_party }
 		}
-		complete_national_focus = SPR_maintain_the_second_republic
+	
 	}
 	option = { # Option for Republicans - Communism
 		name = lar_spain.2.e
@@ -7470,7 +7448,6 @@ country_event = {
 		hidden_effect = {
 			if = { #If POUM split + Right Oppo is in charge + tehy are supporting the POUM -> Then their volunteers stay in SPC
 				limit = {
-					has_completed_focus = SPR_the_anti_fascist_workers_revolution
 					SOV = {
 						has_completed_focus = SOV_covert_support_for_spanish_poum
 						has_completed_focus = SOV_coup_detat
@@ -8193,15 +8170,6 @@ country_event = {
 					}
 					unlock_national_focus = SPR_secure_the_guardia_de_asalto
 				}
-				unlock_national_focus = SPR_train_the_union_youth
-				unlock_national_focus = SPR_enlarge_the_weapon_caches
-				unlock_national_focus = SPR_distribute_arms_to_the_people
-				unlock_national_focus = SPR_disband_the_army
-				complete_national_focus = SPR_maintain_the_second_republic
-				complete_national_focus = SPR_new_leadership
-				complete_national_focus = SPR_the_future_of_the_republic
-				complete_national_focus = SPR_reaffirm_the_popular_front_strategy
-				unlock_national_focus = SPR_crush_the_revolution
 				add_timed_idea = { idea = SPR_death_before_surrender days = 900 }
 			}
 
