@@ -14,16 +14,16 @@ add_ideas = {
 	ZIRD_the_void
 }
 
-set_war_support = 0.1
+set_war_support = 0.0
+set_stability = 0.0
 set_convoys = 0
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1932.6.5"
-	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
-	democratic = 100
+	neutrality = 100
 }
 

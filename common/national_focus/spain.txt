@@ -23,7 +23,7 @@ focus_tree = {
 
 	default = no
 
-	continuous_focus_position = { x = 1500 y = 50 }
+	continuous_focus_position = { x = 50 y = 50 }
 
 	initial_show_position = {
 		x = 33
@@ -73,7 +73,7 @@ focus_tree = {
 		
 		
 		icon = GFX_goal_generic_demand_territory
-		x = 0
+		x = 30
 		y = 0
 		cost = 5
 
@@ -329,9 +329,9 @@ focus_tree = {
 		}
 		
 		icon = GFX_goal_generic_national_unity
-		x = 5
+		x = 20
 		y = 0
-		cost = 5
+		cost = 10
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
@@ -565,7 +565,7 @@ focus_tree = {
 		
 		icon = GFX_focus_spa_unify_the_nationalist_front
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = SPA_con_paquito
 		cost = 5
 
@@ -573,10 +573,31 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_STABILITY}
 		completion_reward = {
 			add_stability = 0.1
-			activate_mission = SPA_carlist_uprising_mission
 		}
 	}
 
+	focus = {
+		id = SPA_a_methodical_approach
+		available = {
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_unify_the_nationalist_front }
+		
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 0
+		y = 2
+		relative_position_id = SPA_unify_the_nationalist_front
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = SPA_a_methodical_approach
+			custom_effect_tooltip = SPR_seize_public_transport_tt
+		}
+	}
 	focus = {
 		id = SPA_save_the_alcazar
 		available = {
@@ -587,13 +608,13 @@ focus_tree = {
 				has_global_flag = scw_over
 			}
 		}
-		prerequisite = { focus = SPA_unify_the_nationalist_front }
+		prerequisite = { focus = SPA_a_methodical_approach }
 		
 		icon = GFX_focus_spa_save_the_alcazar
-		x = -2
+		x = -5
 		y = 1
-		relative_position_id = SPA_unify_the_nationalist_front
-		cost = 5
+		relative_position_id = SPA_a_methodical_approach
+		cost = 4
 
 		available_if_capitulated = yes
 
@@ -601,9 +622,8 @@ focus_tree = {
 			activate_mission = SPA_save_the_alcazar_mission
 		}
 	}
-
 	focus = {
-		id = SPA_martyrdom_for_primo_de_rivera
+		id = SPA_caudillo_of_spain
 		available = {
 		}
 		bypass = {
@@ -611,36 +631,11 @@ focus_tree = {
 		}
 		prerequisite = { focus = SPA_save_the_alcazar }
 		
-		icon = GFX_goal_generic_secret_weapon
-		x = -1
-		y = 1
-		relative_position_id = SPA_save_the_alcazar
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL}
-		completion_reward = {
-			add_war_support = 0.1
-			add_popularity = {
-			    ideology = fascism
-			    popularity = 0.05
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_caudillo_of_spain
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_save_the_alcazar }
-		
 		icon = GFX_focus_spa_caudillo_of_spain
 		x = 1
 		y = 1
 		relative_position_id = SPA_save_the_alcazar
-		cost = 10
+		cost = 4
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_STABILITY}
@@ -668,149 +663,75 @@ focus_tree = {
 	}
 
 	focus = {
+		id = SPA_banish_the_party_leaders
+		available = {
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_caudillo_of_spain }
+		
+		icon = GFX_focus_ARG_keep_it_in_the_party
+		x = 1
+		y = 1
+		relative_position_id = SPA_caudillo_of_spain
+		cost = 4
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_SPA_CARLIST_UPRISING}
+		completion_reward = {
+			add_political_power = 200
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SPA_raimundo_fernandez_cuesta
+		}
+	}
+
+	focus = {
+		id = SPA_martyrdom_for_primo_de_rivera
+		available = {
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_save_the_alcazar }
+		
+		icon = GFX_focus_generic_whispers
+		x = -2
+		y = 1
+		relative_position_id = SPA_save_the_alcazar
+		cost = 4
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_war_support = 0.1
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.05
+			}
+		}
+	}
+
+
+	focus = {
 		id = SPA_extol_the_martyrs_of_the_war
 		available = {
 		}
 		bypass = {
+			has_global_flag = scw_over
 		}
 		prerequisite = { focus = SPA_martyrdom_for_primo_de_rivera }
-		prerequisite = { focus = SPA_caudillo_of_spain }
 		
 		icon = GFX_goal_generic_propaganda
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = SPA_martyrdom_for_primo_de_rivera
-		cost = 10
+		cost = 4
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_SPA_CARLIST_UPRISING}
 		completion_reward = {
 			add_war_support = 0.1
-		}
-	}
-
-	focus = {
-		id = SPA_consolidate_the_north
-		available = {
-			controls_state = 166
-			controls_state = 172
-			controls_state = 176
-			controls_state = 792
-			controls_state = 790
-		}
-		bypass = {
-			has_global_flag = scw_over
-		}
-		prerequisite = { focus = SPA_unify_the_nationalist_front }
-		
-		icon = GFX_goal_generic_position_armies
-		x = 0
-		y = 1
-		relative_position_id = SPA_unify_the_nationalist_front
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
-			166 = {
-				if = {
-					limit = {
-						166 = {
-							free_building_slots = {
-								building = arms_factory
-								size > 0
-								include_locked = yes
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			172 = {
-				if = {
-					limit = {
-						172 = {
-							free_building_slots = {
-								building = arms_factory
-								size > 0
-								include_locked = yes
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			176 = {
-				if = {
-					limit = {
-						176 = {
-							free_building_slots = {
-								building = arms_factory
-								size > 0
-								include_locked = yes
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			792 = {
-				if = {
-					limit = {
-						792 = {
-							free_building_slots = {
-								building = arms_factory
-								size > 0
-								include_locked = yes
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			790 = {
-				if = {
-					limit = {
-						790 = {
-							free_building_slots = {
-								building = arms_factory
-								size > 0
-								include_locked = yes
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			add_days_mission_timeout = {
-				mission = SPA_carlist_uprising_mission
-				days = 70
-			}
 		}
 	}
 
@@ -821,13 +742,13 @@ focus_tree = {
 		bypass = {
 			has_global_flag = SPR_carlist_uprising_flag
 		}
-		prerequisite = { focus = SPA_consolidate_the_north }
+		prerequisite = { focus = SPA_caudillo_of_spain }
 		
 		icon = GFX_goal_generic_military_deal
-		x = 0
-		y = 2
-		relative_position_id = SPA_consolidate_the_north
-		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = SPA_caudillo_of_spain
+		cost = 4
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_SPA_CARLIST_UPRISING}
@@ -836,73 +757,75 @@ focus_tree = {
 				remove_idea = SPA_carlism_1
 				add_idea = SPA_carlism_2
 			}
-			add_days_mission_timeout = {
-				mission = SPA_carlist_uprising_mission
-				days = 140
+		}
+	}
+
+	focus = {
+		id = SPA_safeguard_the_freedom_of_worship
+		available = {
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_foment_a_carlist_split focus = SPA_extol_the_martyrs_of_the_war }
+		
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = -2
+		y = 1
+		relative_position_id = SPA_foment_a_carlist_split
+		cost = 4
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = 0.05
 			}
+			add_stability = 0.1
+			add_political_power = 60
 		}
 	}
 
 	focus = {
-		id = SPA_a_methodical_approach
+		id = SPA_utilize_the_intellectuals
 		available = {
 		}
 		bypass = {
-			has_global_flag = scw_over
 		}
-		prerequisite = { focus = SPA_unify_the_nationalist_front }
+		prerequisite = { focus = SPA_safeguard_the_freedom_of_worship }
+		prerequisite = { focus = SPA_extol_the_martyrs_of_the_war }
 		
-		icon = GFX_goal_generic_more_territorial_claims
-		x = 2
+		icon = GFX_focus_generic_university_2
+		x = -2
 		y = 1
-		relative_position_id = SPA_unify_the_nationalist_front
+		relative_position_id = SPA_safeguard_the_freedom_of_worship
 		cost = 5
 
 		available_if_capitulated = yes
-
+		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_ideas = SPA_a_methodical_approach
-			custom_effect_tooltip = SPR_seize_public_transport_tt
+			add_research_slot = 1
 		}
 	}
 
-	focus = {
-		id = SPA_tackle_the_vulnerable_fronts
-		available = {
-		}
-		bypass = {
-			has_global_flag = scw_over
-		}
-		prerequisite = { focus = SPA_a_methodical_approach }
-		
-		icon = GFX_goal_generic_major_war
-		x = -1
-		y = 1
-		relative_position_id = SPA_a_methodical_approach
-		cost = 5
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			custom_effect_tooltip = SPA_tackle_the_vulnerable_fronts_tt
-		}
-	}
 
 	focus = {
 		id = SPA_integrate_the_requetes
 		available = {
 		}
 		bypass = {
-			has_global_flag = SPR_carlist_uprising_flag
+			has_global_flag = scw_over
 		}
-		prerequisite = { focus = SPA_tackle_the_vulnerable_fronts }
 		prerequisite = { focus = SPA_foment_a_carlist_split }
+		prerequisite = { focus = SPA_safeguard_the_freedom_of_worship }
+		prerequisite = { focus = SPA_banish_the_party_leaders }
 		
-		icon = GFX_goal_generic_military_sphere
-		x = 0
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 1
 		y = 2
-		relative_position_id = SPA_tackle_the_vulnerable_fronts
-		cost = 10
+		relative_position_id = SPA_foment_a_carlist_split
+		cost = 4
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_MANPOWER}
@@ -946,80 +869,410 @@ focus_tree = {
 		}
 	}
 
-
 	focus = {
-		id = SPA_utilize_the_intellectuals
+		id = SPA_expand_conscription
 		available = {
 		}
 		bypass = {
 		}
 		prerequisite = { focus = SPA_integrate_the_requetes }
 		
-		icon = GFX_focus_research
-		x = 0
+		icon = GFX_goal_generic_axis_build_infantry
+		x = -2
 		y = 1
 		relative_position_id = SPA_integrate_the_requetes
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = {FOCUS_FILTER_MANPOWER}
 		completion_reward = {
-			add_research_slot = 1
+			add_ideas = SPA_expand_conscription
+		}
+	}
+
+
+
+	focus = {
+		id = SPA_tackle_the_vulnerable_fronts
+		available = {
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_a_methodical_approach }
+		
+		icon = GFX_goal_generic_major_war
+		x = 5
+		y = 1
+		relative_position_id = SPA_a_methodical_approach
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = SPA_tackle_the_vulnerable_fronts_tt
 		}
 	}
 
 	focus = {
-		id = SPA_banish_the_party_leaders
+		id = SPA_tackle_the_northern_front
 		available = {
 		}
 		bypass = {
-			has_global_flag = SPR_carlist_uprising_flag
+			OR = {
+				AND = {
+					controls_state = 792
+					controls_state = 790
+					controls_state = 791
+					controls_state = 176
+					controls_state = 174
+				}
+				has_global_flag = scw_over
+			}
 		}
-		prerequisite = { focus = SPA_extol_the_martyrs_of_the_war }
-		prerequisite = { focus = SPA_foment_a_carlist_split }
+		prerequisite = { focus = SPA_tackle_the_vulnerable_fronts }
 		
-		icon = GFX_focus_generic_support_the_left_right
-		x = 1
+		icon = GFX_focus_PLACEHOLDER
+		x = -1
 		y = 1
-		relative_position_id = SPA_extol_the_martyrs_of_the_war
-		cost = 10
+		relative_position_id = SPA_tackle_the_vulnerable_fronts
+		cost = 5
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_SPA_CARLIST_UPRISING}
+
 		completion_reward = {
-			add_political_power = 200
-			custom_effect_tooltip = remove_political_advisor
-			show_ideas_tooltip = SPA_manuel_hedilla
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = SPA_raimundo_fernandez_cuesta
-			add_days_mission_timeout = {
-				mission = SPA_carlist_uprising_mission
-				days = 140
+			790 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+			792 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
 			}
 		}
 	}
 
 	focus = {
+		id = SPA_consolidate_the_north
+		available = {
+			controls_state = 792
+			controls_state = 790
+			controls_state = 791
+			controls_state = 176
+			controls_state = 174
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_tackle_the_northern_front }
+		
+		icon = GFX_focus_PLACEHOLDER
+		x = -1
+		y = 2
+		relative_position_id = SPA_tackle_the_northern_front
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			792 = {
+				if = {
+					limit = {
+						792 = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			790 = {
+				if = {
+					limit = {
+						790 = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = SPA_tackle_the_centre
+		available = {
+		}
+		bypass = {
+			OR = {
+				AND = {
+					controls_state = 41
+					controls_state = 793
+					controls_state = 788
+				}
+				has_global_flag = scw_over
+			}
+		}
+		prerequisite = { focus = SPA_tackle_the_vulnerable_fronts }
+		
+		icon = GFX_focus_PLACEHOLDER
+		x = 4
+		y = 1
+		relative_position_id = SPA_tackle_the_vulnerable_fronts
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			41 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+			793 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_consolidate_madrid
+		available = {
+			controls_state = 41
+			controls_state = 793
+			controls_state = 788
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_tackle_the_centre}
+		
+		icon = GFX_focus_PLACEHOLDER
+		x = 1
+		y = 2
+		relative_position_id = SPA_tackle_the_centre
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			41 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+
+
+
+	focus = {
+		id = SPA_tackle_the_remnants
+		available = {
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_tackle_the_centre focus = SPA_tackle_the_northern_front }
+		
+		icon = GFX_focus_PLACEHOLDER
+		x = -3
+		y = 1
+		relative_position_id = SPA_tackle_the_centre
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+
+
+
+
+
+
+	focus = {
+		id = SPA_deal_with_the_anarchists
+		available = {
+		}
+		bypass = {
+			OR = {
+				AND = {
+					controls_state = 165
+					controls_state = 794
+					controls_state = 167
+				}
+				has_global_flag = scw_over
+			}
+		}
+		prerequisite = { focus = SPA_tackle_the_remnants }
+		
+		icon = GFX_focus_PLACEHOLDER
+		x = -1
+		y = 1
+		relative_position_id = SPA_tackle_the_remnants
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			165 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+			167 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+		}
+	}
+
+
+
+
+	focus = {
+		id = SPA_the_southern_thrust
+		available = {
+		}
+		bypass = {
+			OR = {
+				AND = {
+					controls_state = 173
+					controls_state = 169
+					controls_state = 789
+					controls_state = 175
+					controls_state = 168
+				}
+				has_global_flag = scw_over
+			}
+		}
+		prerequisite = { focus = SPA_tackle_the_remnants }
+		
+		icon = GFX_focus_PLACEHOLDER
+		x = 2
+		y = 1
+		relative_position_id = SPA_tackle_the_remnants
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			169 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+			173 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = SPA_absorb_the_remnants
+		available = {
+			controls_state = 165
+			controls_state = 794
+			controls_state = 167
+			controls_state = 170
+			controls_state = 175
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_the_southern_thrust  }
+		prerequisite = { focus = SPA_deal_with_the_anarchists  }
+		prerequisite = { focus = SPA_consolidate_madrid focus = SPA_consolidate_the_north  }
+		
+		icon = GFX_focus_PLACEHOLDER
+		x = 2
+		y = 1
+		relative_position_id = SPA_deal_with_the_anarchists
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			165 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			167 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
 		id = SPA_fuse_the_parties
 		available = {
 		}
 		bypass = {
-			has_global_flag = SPR_carlist_uprising_flag
 		}
-		prerequisite = { focus = SPA_banish_the_party_leaders }
-		prerequisite = { focus = SPA_safeguard_the_freedom_of_worship }
-		
+		prerequisite = { focus =  SPA_integrate_the_requetes }
+		prerequisite = { focus =  SPA_absorb_the_remnants focus = SPA_integrate_the_requetes }
+		relative_position_id = SPA_integrate_the_requetes
 		icon = GFX_focus_spa_fuse_the_parties
-		x = -1
-		y = 1
-		relative_position_id = SPA_banish_the_party_leaders
-		cost = 10
+		x = 4
+		y = 2
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_MANPOWER}
 		completion_reward = {
 			set_party_name = { ideology = fascism long_name = SPR_fascism_francoist_party_long name = SPR_fascism_francoist_party }
 			set_party_name = { ideology = neutrality long_name = SPR_fascism_francoist_party_long name = SPR_fascism_francoist_party }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					NOT = {
@@ -1052,7 +1305,6 @@ focus_tree = {
 					add_idea = SPA_carlism_4
 				}
 			}
-			custom_effect_tooltip = SPA_fuse_the_parties_tt
 			if = {
 				limit = {
 					has_global_flag = scw_early_end
@@ -1063,255 +1315,10 @@ focus_tree = {
 			}
 		}
 	}
+
+
 	
-	focus = {
-		id = SPA_the_corpo_truppe_volontarie
-		available = {
-			NOT = { has_global_flag = scw_over }
-			has_volunteers_amount_from = {
-				tag = ITA
-				count > 0
-			}
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_unify_the_nationalist_front }
-		
-		icon = GFX_focus_befriend_italy
-		x = 4
-		y = 1
-		relative_position_id = SPA_unify_the_nationalist_front
-		cost = 5
 
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			ITA = {
-				add_timed_idea = { idea = SPA_spanish_civil_war_commitments days = 730 }
-				add_opinion_modifier = { target = ROOT modifier = SPA_spanish_civil_war_commitments }
-			}
-			add_tech_bonus = {
-				name = SPA_the_corpo_truppe_volontarie
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-			}
-			add_tech_bonus = {
-				name = SPA_the_corpo_truppe_volontarie
-				bonus = 1.0
-				uses = 1
-				category = artillery
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_the_condor_legion
-		available = {
-			NOT = { has_global_flag = scw_over }
-			has_volunteers_amount_from = {
-				tag = GER
-				count > 0
-			}
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_unify_the_nationalist_front }
-		
-		icon = GFX_focus_chi_mission_to_germany
-		x = 6
-		y = 1
-		relative_position_id = SPA_unify_the_nationalist_front
-		cost = 5
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			GER = {
-				add_timed_idea = { idea = SPA_spanish_civil_war_commitments days = 730 }
-				add_opinion_modifier = { target = ROOT modifier = SPA_spanish_civil_war_commitments }
-			}
-			add_tech_bonus = {
-				name = SPA_the_condor_legion
-				bonus = 1.0
-				uses = 1
-				category = light_fighter
-			}
-			add_tech_bonus = {
-				name = SPA_the_condor_legion
-				bonus = 1.0
-				uses = 1
-				category = cas_bomber
-			}
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = SPA_wilhelm_ritter_von_thoma
-		}
-	}
-
-	focus = {
-		id = SPA_equipment_shipments
-		available = {
-			NOT = { has_global_flag = scw_over }
-			OR = {
-				has_volunteers_amount_from = {
-					tag = ITA
-					count > 0
-				}
-				has_volunteers_amount_from = {
-					tag = GER
-					count > 0
-				}
-			}
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_the_corpo_truppe_volontarie }
-		prerequisite = { focus = SPA_the_condor_legion }
-		
-		icon = GFX_goal_generic_build_tank
-		x = 1
-		y = 1
-		relative_position_id = SPA_the_corpo_truppe_volontarie
-		cost = 5
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			GER = {
-				add_timed_idea = { idea = SPR_equipment_shipments days = 730 }
-				add_ai_strategy = { type = send_lend_lease_desire id = SPA value = 200 }
-			}
-			ITA = {
-				add_timed_idea = { idea = SPR_equipment_shipments days = 730 }
-				add_ai_strategy = { type = send_lend_lease_desire id = SPA value = 200 }
-			}
-			add_timed_idea = { idea = SPR_equipment_shipments_spain days = 730 }
-		}
-	}
-
-	focus = {
-		id = SPA_obtain_training_staff
-		available = {
-			NOT = { has_global_flag = scw_over }
-			OR = {
-				has_volunteers_amount_from = {
-					tag = ITA
-					count > 0
-				}
-				has_volunteers_amount_from = {
-					tag = GER
-					count > 0
-				}
-			}
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_equipment_shipments }
-		
-		icon = GFX_focus_generic_military_academy
-		x = -1
-		y = 1
-		relative_position_id = SPA_equipment_shipments
-		cost = 5
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 50
-			add_timed_idea = { idea = SPA_foreign_training_staff days = 730 }
-		}
-	}
-
-	focus = {
-		id = SPA_doctrinal_advancements
-		available = {
-			NOT = { has_global_flag = scw_over }
-			OR = {
-				has_volunteers_amount_from = {
-					tag = ITA
-					count > 0
-				}
-				has_volunteers_amount_from = {
-					tag = GER
-					count > 0
-				}
-			}
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_equipment_shipments }
-		
-		icon = GFX_goal_generic_army_doctrines
-		x = 1
-		y = 1
-		relative_position_id = SPA_equipment_shipments
-		cost = 5
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = SPA_doctrinal_advancements
-				cost_reduction = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-			add_doctrine_cost_reduction = {
-				name = SPA_doctrinal_advancements
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-	}
-
-
-	focus = {
-		id = SPA_expand_conscription
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_extol_the_martyrs_of_the_war }
-		
-		icon = GFX_goal_generic_axis_build_infantry
-		x = -1
-		y = 1
-		relative_position_id = SPA_obtain_training_staff
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_MANPOWER}
-		completion_reward = {
-			add_ideas = SPA_expand_conscription
-		}
-	}
-
-	focus = {
-		id = SPA_safeguard_the_freedom_of_worship
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_extol_the_martyrs_of_the_war }
-		
-		icon = GFX_focus_generic_strike_at_democracy1
-		x = -7
-		y = 1
-		relative_position_id = SPA_obtain_training_staff
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL}
-		completion_reward = {
-			add_popularity = {
-			    ideology = neutrality
-			    popularity = 0.05
-			}
-			add_stability = 0.1
-			add_political_power = 60
-		}
-	}
 
 	focus = {
 		id = SPA_prepare_the_pyrenees_defenses
@@ -1324,13 +1331,13 @@ focus_tree = {
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_extol_the_martyrs_of_the_war }
+		prerequisite = { focus = SPA_absorb_the_remnants }
 		
 		icon = GFX_goal_generic_fortify_city
 		x = 2
 		y = 1
-		relative_position_id = SPA_obtain_training_staff
-		cost = 10
+		relative_position_id = SPA_absorb_the_remnants
+		cost = 4
 
 		available_if_capitulated = yes
 
@@ -1396,10 +1403,273 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = SPA_portuguese_aid
+		available = {
+			NOT = {has_global_flag = scw_over }
+			NOT = { has_war_with = POR }
+			any_enemy_country = {
+				NOT = {
+					has_volunteers_amount_from = {
+						tag = POR
+						count > 0
+					}
+				}
+			}
+		}
+		bypass = {
+			has_global_flag = scw_over
+		}
+		prerequisite = { focus = SPA_a_methodical_approach }
+		
+		icon = GFX_focus_generic_befriend_portugal
+		x = 0
+		y = 1
+		relative_position_id = SPA_a_methodical_approach
+		cost = 2
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		completion_reward = {
+			effect_tooltip = {
+				add_manpower = 20000
+				POR = {
+					add_timed_idea = { idea = SPA_spanish_civil_war_commitments days = 730 }
+					add_opinion_modifier = { target = ROOT modifier = SPA_spanish_civil_war_commitments }
+				}
+			}
+			custom_effect_tooltip = SPA_the_iberian_pact_tt_2
+			POR = { country_event = { id = lar_spain.22 hours = 12 random_hours = 36 } }
+		}
+	}
+
+	
+	focus = {
+		id = SPA_the_corpo_truppe_volontarie
+		available = {
+			OR = {
+				NOT = { has_global_flag = scw_over } 
+				has_volunteers_amount_from = {
+					tag = ITA
+					count > 0
+				}
+			}
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_portuguese_aid }
+		
+		icon = GFX_focus_befriend_italy
+		x = -1
+		y = 1
+		relative_position_id = SPA_portuguese_aid
+		cost = 3
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			ITA = {
+				add_timed_idea = { idea = SPA_spanish_civil_war_commitments days = 730 }
+				add_opinion_modifier = { target = ROOT modifier = SPA_spanish_civil_war_commitments }
+			}
+			add_tech_bonus = {
+				name = SPA_the_corpo_truppe_volontarie
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = SPA_the_corpo_truppe_volontarie
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_the_condor_legion
+		available = {
+			OR = {
+				NOT = {has_global_flag = scw_over }
+				has_volunteers_amount_from = {
+					tag = GER
+					count > 0
+				}
+			}
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_portuguese_aid }
+		
+		icon = GFX_focus_chi_mission_to_germany
+		x = 2
+		y = 0
+		relative_position_id = SPA_the_corpo_truppe_volontarie
+		cost = 3
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			GER = {
+				add_timed_idea = { idea = SPA_spanish_civil_war_commitments days = 730 }
+				add_opinion_modifier = { target = ROOT modifier = SPA_spanish_civil_war_commitments }
+			}
+			add_tech_bonus = {
+				name = SPA_the_condor_legion
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+			add_tech_bonus = {
+				name = SPA_the_condor_legion
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SPA_wilhelm_ritter_von_thoma
+		}
+	}
+
+	focus = {
+		id = SPA_equipment_shipments
+		available = {
+			OR = {
+				NOT = { has_global_flag = scw_over }
+				OR = {
+					has_volunteers_amount_from = {
+						tag = ITA
+						count > 0
+					}
+					has_volunteers_amount_from = {
+						tag = GER
+						count > 0
+					}
+				}
+			}
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_the_corpo_truppe_volontarie }
+		prerequisite = { focus = SPA_the_condor_legion }
+		
+		icon = GFX_goal_generic_build_tank
+		x = 1
+		y = 1
+		relative_position_id = SPA_the_corpo_truppe_volontarie
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			GER = {
+				add_timed_idea = { idea = SPR_equipment_shipments days = 730 }
+				add_ai_strategy = { type = send_lend_lease_desire id = SPA value = 200 }
+			}
+			ITA = {
+				add_timed_idea = { idea = SPR_equipment_shipments days = 730 }
+				add_ai_strategy = { type = send_lend_lease_desire id = SPA value = 200 }
+			}
+			add_timed_idea = { idea = SPR_equipment_shipments_spain days = 730 }
+		}
+	}
+
+	focus = {
+		id = SPA_obtain_training_staff
+		available = {
+			OR = {
+				NOT = { has_global_flag = scw_over }
+				OR = {
+					has_volunteers_amount_from = {
+						tag = ITA
+						count > 0
+					}
+					has_volunteers_amount_from = {
+						tag = GER
+						count > 0
+					}
+				}
+			}
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_equipment_shipments }
+		
+		icon = GFX_focus_generic_military_academy
+		x = -1
+		y = 1
+		relative_position_id = SPA_equipment_shipments
+		cost = 4
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 50
+			add_timed_idea = { idea = SPA_foreign_training_staff days = 730 }
+		}
+	}
+
+	focus = {
+		id = SPA_doctrinal_advancements
+		available = {
+			OR = {
+				NOT = { has_global_flag = scw_over }
+				OR = {
+					has_volunteers_amount_from = {
+						tag = ITA
+						count > 0
+					}
+					has_volunteers_amount_from = {
+						tag = GER
+						count > 0
+					}
+				}
+			}
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_equipment_shipments }
+		
+		icon = GFX_goal_generic_army_doctrines
+		x = 1
+		y = 1
+		relative_position_id = SPA_equipment_shipments
+		cost = 4
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = SPA_doctrinal_advancements
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = SPA_doctrinal_advancements
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+
+	
+
+
+
+
+
+####################################################
+ ### After Civil war ###
+
+
 
 
 	focus = {
-		id = SPA_the_national_and_popular_army_of_spain
+		id = SPA_adopt_the_26_points
 		available = {
 			has_global_flag = scw_over
 		}
@@ -1407,249 +1677,98 @@ focus_tree = {
 		}
 		prerequisite = { focus = SPA_fuse_the_parties }
 		
-		icon = GFX_goal_generic_army_doctrines
-		x = -4
-		y = 1
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 2
 		relative_position_id = SPA_fuse_the_parties
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
-		complete_tooltip = {
-			every_state = {
-				limit	= {	has_state_flag = SPA_the_national_and_popular_army_of_spain_2mil }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 165
+						state = 171
+						state = 792
+					}
 				}
+				remove_dynamic_modifier = { modifier = autonomous_state }
 			}
 		}
+	}
+
+	
+	focus = {
+		id = SPA_stamp_out_the_maquis
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_adopt_the_26_points }
+		
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 5
+		y = 1
+		relative_position_id = SPA_adopt_the_26_points
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = SPR_recovering_from_civil_war_focus_tt
+		}
+	}
+
+	focus = {
+		id = SPA_the_hendaye_meeting
+		available = {
+		}
+		bypass = {
+		
+		}
+		mutually_exclusive = { focus = SPA_non_belligerence }
+		prerequisite = { focus = SPA_adopt_the_26_points}
+		
+		icon = GFX_focus_PLACEHOLDER
+		x = -2
+		y = 1
+		relative_position_id = SPA_adopt_the_26_points
+		cost = 5
+
+		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			army_experience = 10
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-					}
-					is_core_of = ROOT
-				}
-				set_state_flag = SPA_the_national_and_popular_army_of_spain_2mil
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
+
+			# TO DO add claims to spanish colonial empire
 
 
-	focus = {
-		id = SPA_the_army_of_africa_model
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_the_national_and_popular_army_of_spain }
-		
-		icon = GFX_goal_generic_army_artillery
-		x = 1
-		y = 1
-		relative_position_id = SPA_the_national_and_popular_army_of_spain
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			army_experience = 25
-			add_doctrine_cost_reduction = {
-				name = SPA_the_army_of_africa_model
-				cost_reduction = 0.5
-				uses = 2
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_equipment_modernization
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_the_army_of_africa_model }
-		
-		icon = GFX_goal_generic_small_arms
-		x = -1
-		y = 2
-		relative_position_id = SPA_the_army_of_africa_model
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_tech_bonus = {
-				name = SPA_equipment_modernization
-				bonus = 1.0
-				uses = 2
-				category = infantry_weapons
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_artillery_modernization
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_equipment_modernization }
-		
-		icon = GFX_goal_generic_army_artillery2
-		x = -1
-		y = 1
-		relative_position_id = SPA_equipment_modernization
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_tech_bonus = {
-				name = SPA_artillery_modernization
-				bonus = 1.0
-				uses = 2
-				category = artillery
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_expand_the_air_branch
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_equipment_modernization }
-		
-		icon = GFX_goal_generic_air_doctrine
-		x = 0
-		y = 2
-		relative_position_id = SPA_equipment_modernization
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			air_experience = 50
-			add_doctrine_cost_reduction = {
-				name = SPA_expand_the_air_branch
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-			add_tech_bonus = {
-				name = SPA_expand_the_air_branch
-				bonus = 1.0
-				uses = 1
-				category = light_fighter
-				category = cas_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_expand_the_special_forces
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_equipment_modernization }
-		
-		icon = GFX_goal_generic_special_forces
-		x = 1
-		y = 1
-		relative_position_id = SPA_equipment_modernization
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_tech_bonus = {
-				name = SPA_expand_the_special_forces
-				bonus = 1.0
-				uses = 1
-				category = marine_tech
-			}
-			add_tech_bonus = {
-				name = SPA_expand_the_special_forces
-				bonus = 1.0
-				uses = 1
-				category = mountaineers_tech
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_motorization
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_the_army_of_africa_model }
-		
-		icon = GFX_goal_generic_army_motorized
-		x = 0
-		y = 1
-		relative_position_id = SPA_the_army_of_africa_model
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_tech_bonus = {
-				name = SPA_equipment_modernization
-				bonus = 2.0
-				uses = 1
-				category = motorized_equipment
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_an_armored_corps
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_motorization }
-		prerequisite = { focus = SPA_join_the_axis }
-		
-		icon = GFX_goal_generic_army_tanks
-		x = 1
-		y = 1
-		relative_position_id = SPA_motorization
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_tech_bonus = {
-				name = SPA_an_armored_corps
-				bonus = 1.0
-				uses = 1
-				category = armor
-			}
+			add_state_claim = 557
+			add_state_claim = 272
+			add_state_claim = 780
+			add_state_claim = 556
+			add_state_claim = 779
+			add_state_claim = 778
+			add_state_claim = 781
+			add_state_claim = 777
+			add_state_claim = 776
+			add_state_claim = 773
+			add_state_claim = 774
+			add_state_claim = 660
+			add_state_claim = 539
+			add_state_claim = 772
 		}
 	}
 
 	focus = {
 		id = SPA_join_the_axis
 		available = {
-			has_global_flag = scw_over
 			is_in_faction = no
 			OR = {
 				AND = {
@@ -1678,7 +1797,7 @@ focus_tree = {
 				is_in_faction_with = ITA
 			}
 		}
-		prerequisite = { focus = SPA_fuse_the_parties }
+		prerequisite = { focus = SPA_the_hendaye_meeting }
 
 		ai_will_do = {
 			factor = 1
@@ -1689,9 +1808,9 @@ focus_tree = {
 		}
 		
 		icon = GFX_goal_support_fascism
-		x = -2
+		x = -5
 		y = 1
-		relative_position_id = SPA_fuse_the_parties
+		relative_position_id = SPA_the_hendaye_meeting
 		cost = 5
 
 		available_if_capitulated = yes
@@ -1719,197 +1838,739 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SPA_fascist_economic_aid
+		id = SPA_the_tangiers_enclave
 		available = {
-			any_country = {
-				is_in_faction_with = ROOT
-				has_government = fascism
-				is_major = yes
-			}
+			has_full_control_of_state = 290
 		}
 		bypass = {
 		}
 		prerequisite = { focus = SPA_join_the_axis }
-		prerequisite = { focus = SPA_national_recovery }
-		mutually_exclusive = { focus = SPA_autarky }
 		
-		icon = GFX_goal_generic_construction
-		x = 1
+		icon = GFX_goal_generic_position_armies
+		x = 0
 		y = 1
 		relative_position_id = SPA_join_the_axis
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			if = {
+				limit = {
+					ENG = { has_government = democratic }
+				}
+				effect_tooltip = {
+					290 = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				custom_effect_tooltip = SPA_the_tangiers_enclave_tt
+				ENG = { country_event = { id = lar_spain.36 hours = 6 random_hours = 18 } }
+			}
+			else = {
+				290 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_demand_french_north_africa
+		available = {
+			any_country = {
+				original_tag = FRA
+				has_focus_tree = vichy_french_focus
+				owns_state = 461
+				owns_state = 462
+				owns_state = 459
+				owns_state = 460
+				owns_state = 513
+				owns_state = 514
+				owns_state = 458
+				owns_state = 665
+			}
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_the_tangiers_enclave }
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		icon = GFX_goal_generic_territory_or_war
+		x = -1
+		y = 1
+		relative_position_id = SPA_the_tangiers_enclave
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_other_country = {
+				limit = {
+					original_tag = FRA
+					has_focus_tree = vichy_french_focus
+					owns_state = 461
+					owns_state = 462
+					owns_state = 459
+					owns_state = 460
+					owns_state = 513
+					owns_state = 514
+					owns_state = 458
+					owns_state = 665
+				}
+				country_event = { id = lar_spain.39 hours = 6 random_hours = 18 }
+			}
+		}
+	}
+
+
+
+	
+
+	focus = {
+		id = SPA_defenses_against_invasion
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_the_tangiers_enclave }
+		
+		icon = GFX_focus_generic_coastal_fort
+		x = 1
+		y = 1
+		relative_position_id = SPA_the_tangiers_enclave
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = SPA_defenses_against_invasion_tt
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_retake_gibraltar
+		available = {
+			NOT = {
+				is_in_faction_with = ENG
+				has_war_with = ENG
+				controls_state = 118
+			}
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_demand_french_north_africa }
+		prerequisite = { focus = SPA_defenses_against_invasion }
+		
+		icon = GFX_focus_attack_britain
+		x = 1
+		y = 1
+		relative_position_id = SPA_demand_french_north_africa
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ENG
+				generator = { 118 }
+				expire = 0
+			}
+		}
+	}
+	focus = {
+		id = SPA_take_portugal
+		available = {
+			NOT = {
+				is_in_faction_with = POR
+				has_war_with = POR
+			}
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_retake_gibraltar }
+		
+		icon = GFX_focus_generic_attack_portugal
+		x = 0
+		y = 1
+		relative_position_id = SPA_retake_gibraltar
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			declare_war_on = {
+				target = POR
+				type = annex_everything
+			}
+		}
+	}
+
+
+
+	focus = {
+		id = SPA_non_belligerence
+		available = {
+		}
+		bypass = {
+		
+		}
+		mutually_exclusive = { focus = SPA_the_hendaye_meeting }
+		prerequisite = { focus = SPA_adopt_the_26_points}
+		
+		icon = GFX_focus_PLACEHOLDER
+		x = 2
+		y = 1
+		relative_position_id = SPA_adopt_the_26_points
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+		}
+	}
+
+
+
+	focus = {
+		id = SPA_dictator_for_life
+
+		available = {
+			has_country_leader = {
+				character = SPA_francisco_franco
+				ruling_only = yes
+			}
+		}
+
+		bypass = {
+		}
+		
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 1
+		prerequisite = { focus = SPA_non_belligerence}
+		relative_position_id = SPA_non_belligerence
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_STABILITY}
+		completion_reward = {
+			add_stability = 0.05
+			swap_ruler_traits = { remove = caudillo_1 add = caudillo_2 }
+			hidden_effect = {
+				if = {
+					limit = {
+						has_government = neutrality
+					}
+					remove_trait = {
+						character = SPA_francisco_franco
+						ideology = fascism_ideology
+						trait = caudillo_1
+					}
+					add_trait = {
+						character = SPA_francisco_franco
+						ideology = fascism_ideology
+						trait = caudillo_2
+					}
+				}
+				if = {
+					limit = {
+						has_government = fascism
+					}
+					remove_trait = {
+						character = SPA_francisco_franco
+						ideology = despotism
+						trait = caudillo_1
+					}
+					add_trait = {
+						character = SPA_francisco_franco
+						ideology = despotism
+						trait = caudillo_2
+					}
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = SPA_la_division_azul
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_dictator_for_life  }
+		
+		icon = GFX_goal_rhineland
+		x = 0
+		y = 1
+		relative_position_id = SPA_dictator_for_life
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = SPA_la_division_azul
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				set_rule = {
+					can_send_volunteers = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_defenses_against_strategic_bombing
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_la_division_azul }
+		
+		icon = GFX_focus_generic_air_defense
+		x = 0
+		y = 1
+		relative_position_id = SPA_la_division_azul
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			171 = { #Galicia
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}						
+			}
+			792 = { #Basque
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}						
+			}
+			41 = { #Madrid
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}						
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_the_iberian_pact
+		available = {
+			has_war = no
+			is_in_faction = no
+			POR = {
+				has_war = no
+				is_in_faction = no
+			}
+			NOT = { has_global_flag = POR_iberian_summit_in_progress_flag }
+		}
+		bypass = {
+			POR = { is_in_faction = yes }
+		}
+		prerequisite = { focus = SPA_defenses_against_strategic_bombing }
+		
+		icon = GFX_goal_generic_major_alliance
+		x = 0
+		y = 1
+		relative_position_id = SPA_defenses_against_strategic_bombing
 		cost = 10
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
+
 		completion_reward = {
-			add_ideas = SPA_fascist_economic_aid
+			custom_effect_tooltip = SPA_the_iberian_pact_tt
+			custom_effect_tooltip = SPA_the_iberian_pact_tt_2
+			POR = { country_event = { id = lar_spain.25 hours = 12 random_hours = 36 } }
+		}
+	}
+
+	focus = {
+		id = SPA_the_latin_bloc
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_the_iberian_pact }
+		
+		icon = GFX_goal_generic_alliance
+		x = 0
+		y = 1
+		relative_position_id = SPA_the_iberian_pact
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+
+		completion_reward = {
+
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction_from_template = {
+				template = faction_template_european_dominance
+				name = SPA_latin_bloc
+				icon = GFX_faction_logo_generic_15
+			}
+
+			every_other_country = {
+				limit = {
+					original_tag = POR
+					is_in_faction = no
+				}
+				country_event = { id = lar_spain.30 hours = 12 random_hours = 36 }
+			}
+			hidden_effect = { news_event = { id = lar_news.19 hours = 6 } }
+		}
+	}
+
+	focus = {
+		id = SPA_take_control_of_portuguese_tungsten
+		available = {
+			is_in_faction_with = POR
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_the_latin_bloc  }
+		
+		icon = GFX_focus_generic_resource_extraction
+		x = 0
+		y = 1
+		relative_position_id = SPA_the_latin_bloc
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_resource_rights = { receiver = ROOT state = 181 }
+			give_resource_rights = { receiver = ROOT state = 112 }
+		}
+	}
+
+
+###################################
+##### Shared Civil war branch - ECONOMY
+
+
+ 	focus = {
+		id = SPA_national_recovery
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_the_hendaye_meeting focus = SPA_non_belligerence }
+		
+		icon = GFX_focus_AFG_a_modern_economy
+		x = 0
+		y = 2
+		relative_position_id = SPA_adopt_the_26_points
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		complete_tooltip = {
+			every_state = {
+				limit	= {	has_state_flag = SPA_national_recovery_2civ }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		completion_reward = {
+			add_timed_idea = { idea = SPA_national_recovery_1 days = 1825 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+					}
+					is_core_of = ROOT
+				}
+				set_state_flag = SPA_national_recovery_2civ
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_spanish_austerity
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_national_recovery }
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		icon = GFX_focus_GER_autarky_ambitions
+		x = 0
+		y = 1
+		relative_position_id = SPA_national_recovery
+		cost = 6
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SPA_national_recovery_1
+				add_idea = SPA_national_recovery_2
+			}
 			swap_ideas = {
 				remove_idea = SPA_recovering_from_civil_war
 				add_idea = SPA_recovering_from_civil_war_2
 			}
-			add_tech_bonus = {
-				name = SPA_fascist_economic_aid
-				bonus = 1.0
-				uses = 1
-				category = industry
-			}
 		}
 	}
 
 	focus = {
-		id = SPA_facilitate_pyrenees_freight_transports
+		id = SPA_expand_the_axis_gold_trade
 		available = {
-			has_full_control_of_state = 793
-			has_full_control_of_state = 794
-			has_full_control_of_state = 165
-			has_full_control_of_state = 176
-			has_full_control_of_state = 792
-			has_full_control_of_state = 41
-			any_allied_country = {
-				is_major = yes
-				has_government = fascism
-			}
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_fascist_economic_aid }
+		prerequisite = { focus = SPA_spanish_austerity }
 		
-		icon = GFX_goal_generic_construct_infrastructure
+		icon = GFX_focus_CONGO_gold_and_diamonds
 		x = 0
 		y = 1
-		relative_position_id = SPA_fascist_economic_aid
-		cost = 10
+		relative_position_id = SPA_spanish_austerity
+		cost = 5
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+
 		completion_reward = {
-			custom_effect_tooltip = SPA_facilitate_pyrenees_freight_transports_tt
-			hidden_effect = {
-				793 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 5
-						instant_build = yes
-					}
+			add_ideas = SPA_expand_the_axis_gold_trade
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					NOT = { has_idea = free_trade }
 				}
-				794 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 5
-						instant_build = yes
-					}
-				}
-				165 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 5
-						instant_build = yes
-					}
-				}
-				176 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 5
-						instant_build = yes
-					}
-				}
-				792 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 5
-						instant_build = yes
-					}
-				}
-				41 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 5
-						instant_build = yes
-					}
-				}
-			}
-			build_railway = { #Madrid - Zaragoza - Pyrinnes
-				path = {
-					3938 9767 6993 9785 11766 813 3816 9813 11821 915
-				}
-			}
-			build_railway = { #Zaragoza - Barcelona - French Border
-				path = {
-					3816 3954 13223 6966 6812 9764 854 9824 
-				}
-			}
-			build_railway = { #Madrid - Valladolid - Burgos - Bilbao - French Border
-				path = {
-					3938 3794 9800 9846 11825 6936 903 885 11852 13233 740 6756
-				}
+				add_ideas = free_trade
 			}
 		}
 	}
 
 	focus = {
-		id = SPA_improve_cross_country_railways
+		id = SPA_direct_the_universities
 		available = {
-			any_allied_country = {
-				is_major = yes
-				has_government = fascism
-			}
-			has_full_control_of_state = 169
-			has_full_control_of_state = 789
-			has_full_control_of_state = 175
-			has_full_control_of_state = 170
-			has_full_control_of_state = 173
-			has_full_control_of_state = 168
+			num_of_factories > 50
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_fascist_economic_aid focus = SPA_spanish_austerity }
-		
-		icon = GFX_goal_generic_construct_infrastructure
-		x = 1
-		y = 2
-		relative_position_id = SPA_fascist_economic_aid
-		cost = 10
+		prerequisite = { focus = SPA_expand_the_axis_gold_trade }
+		icon = GFX_focus_generic_university_1
+		x = 0
+		y = 1
+		relative_position_id = SPA_expand_the_axis_gold_trade
+		cost = 5
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			build_railway = { #Madrid - Crodoba - Sevilla
-				path = {
-					3938 13224 13229 6800 6832 6948 3810 3871 875 1178 7183
-				}
+			add_research_slot = 1
+		}
+	}
+
+
+	focus = {
+		id = SPA_the_galicia_mines
+		available = {
+
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_expand_the_axis_gold_trade }
+		
+		icon = GFX_focus_generic_tungsten
+		x = 2
+		y = 1
+		relative_position_id = SPA_expand_the_axis_gold_trade
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+
+
+			add_resource = {
+				type = steel
+				amount = 8
+				state = 171
 			}
-			build_railway = { #Madrid - Granada
-				path = {
-					13229 9778 9828 12083 4095 1176
-				}
+
+			add_resource = {
+				type = coal
+				amount = 12
+				state = 171
 			}
-			build_railway = { #Madrid - Murcia - Valencia
-				path = {
-					3938 6914 9757 942 832 9903 1093 10024 4098 9889 6959 6906
-				}
+
+			add_resource = {
+				type = tungsten
+				amount = 48
+				state = 171
+			}
+
+
+
+			add_tech_bonus = {
+				name = SPA_reduce_reliance_on_foreign_resources
+				bonus = 1.5
+				uses = 1
+				category = excavation_tech
 			}
 		}
 	}
+
+
+	focus = {
+		id = SPA_exploit_the_colonies
+		available = {
+
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_expand_the_axis_gold_trade }
+		
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		x = -2
+		y = 1
+		relative_position_id = SPA_expand_the_axis_gold_trade
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+
+			add_resource = {
+				type = steel
+				amount = 22
+				state = 290
+			}
+
+			add_resource = {
+				type = coal
+				amount = 8
+				state = 290
+			}
+
+			add_resource = {
+				type = rubber
+				amount = 4
+				state = 297
+			}
+
+			# ADD MORE RESOURCES IN MORROCO AND MANPOWER BONUS
+
+			add_tech_bonus = {
+				name = SPA_reduce_reliance_on_foreign_resources
+				bonus = 1.5
+				uses = 1
+				category = excavation_tech
+			}
+		}
+	}
+
+
 
 	focus = {
 		id = SPA_support_the_war_industry
 		available = {
-			any_country = {
-				is_in_faction_with = ROOT
-				has_government = fascism
-				is_major = yes
-			}
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_facilitate_pyrenees_freight_transports }
-		prerequisite = { focus = SPA_improve_cross_country_railways }
-		
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 0
-		y = 2
-		relative_position_id = SPA_facilitate_pyrenees_freight_transports
-		cost = 10
+		prerequisite = { focus = SPA_exploit_the_colonies }
+		prerequisite = { focus = SPA_the_galicia_mines }
+		icon = GFX_focus_generic_modernize_industry
+		x = 2
+		y = 1
+		relative_position_id = SPA_exploit_the_colonies
+		cost = 8
 
 		available_if_capitulated = yes
 
@@ -1980,82 +2641,26 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			custom_effect_tooltip = SPA_reduce_reliance_on_foreign_resources_tt
 		}
 	}
 
-	focus = {
-		id = SPA_italian_shipbuilding_expertise
-		available = {
-			is_in_faction_with = ITA
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_support_the_war_industry }
-		
-		icon = GFX_focus_generic_navy_battleship2
-		x = -1
-		y = 1
-		relative_position_id = SPA_support_the_war_industry
-		cost = 10
+	
 
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_ideas = SPA_italian_shipbuilding_expertise
-			add_tech_bonus = {
-				name = SPA_italian_shipbuilding_expertise
-				bonus = 1
-				uses = 1
-				category = bb_tech
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_the_duty_to_work
-		available = {
-			any_country = {
-				is_in_faction_with = ROOT
-				has_government = fascism
-				is_major = yes
-			}
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_support_the_war_industry }
-		
-		icon = GFX_goal_generic_construct_military
-		x = 0
-		y = 2
-		relative_position_id = SPA_support_the_war_industry
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
-			add_ideas = SPA_the_duty_to_work
-		}
-	}
+	
 
 	focus = {
 		id = SPA_expand_the_war_industry
 		available = {
-			any_country = {
-				is_in_faction_with = ROOT
-				has_government = fascism
-				is_major = yes
-			}
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_support_the_war_industry focus = SPA_expand_the_axis_gold_trade }
+		prerequisite = { focus = SPA_support_the_war_industry }
 		
-		icon = GFX_goal_generic_construct_mil_factory
-		x = 1
+		icon = GFX_focus_generic_military_industry
+		x = 0
 		y = 1
 		relative_position_id = SPA_support_the_war_industry
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2068,6 +2673,7 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+				
 			}
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -2105,213 +2711,17 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-		}
-	}
-
-	focus = {
-		id = SPA_national_recovery
-		available = {
-			has_global_flag = scw_over
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_the_national_syndicalist_state focus = SPA_fuse_the_parties }
-		
-		icon = GFX_goal_generic_consumer_goods
-		x = 0
-		y = 1
-		relative_position_id = SPA_fuse_the_parties
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		complete_tooltip = {
-			every_state = {
-				limit	= {	has_state_flag = SPA_national_recovery_2civ }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-		completion_reward = {
-			add_timed_idea = { idea = SPA_national_recovery_1 days = 1825 }
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-					}
-					is_core_of = ROOT
-				}
-				set_state_flag = SPA_national_recovery_2civ
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_autarky
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_national_recovery }
-		mutually_exclusive = { focus = SPA_fascist_economic_aid }
-		
-		icon = GFX_goal_generic_oil_refinery
-		x = 1
-		y = 1
-		relative_position_id = SPA_national_recovery
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			if = {
-				limit = {
-					NOT = { has_idea = closed_economy }
-				}
-				add_ideas = closed_economy
-			}
-			swap_ideas = {
-				remove_idea = SPA_national_recovery_1
-				add_idea = SPA_national_recovery_2
-			}
-			add_tech_bonus = {
-				name = HOL_make_use_of_our_riches
-				bonus = 1.0
-				uses = 2
-				category = excavation_tech
-			}
-			add_tech_bonus = {
-				name = HOL_expand_curacao_oil_refineries
-				bonus = 1.0
-				uses = 1
-				category = synth_resources
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_spanish_austerity
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_autarky }
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		
-		icon = GFX_goal_generic_construct_civilian
-		x = 0
-		y = 1
-		relative_position_id = SPA_autarky
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
 			swap_ideas = {
 				remove_idea = SPA_national_recovery_2
 				add_idea = SPA_national_recovery_3
 			}
-			if = {
-				limit = {
-					NOT = {
-						has_idea = SPA_recovering_from_civil_war
-						has_idea = SPA_recovering_from_civil_war_2
-					}
-				}
-				effect_tooltip = {
-					swap_ideas = {
-						remove_idea = SPA_recovering_from_civil_war
-						add_idea = SPA_recovering_from_civil_war_2
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_idea = SPA_recovering_from_civil_war
-				}
-				swap_ideas = {
-					remove_idea = SPA_recovering_from_civil_war
-					add_idea = SPA_recovering_from_civil_war_2
-				}
-			}
-			if = {
-				limit = {
-					has_idea = SPA_recovering_from_civil_war_2
-				}
-				swap_ideas = {
-					remove_idea = SPA_recovering_from_civil_war_2
-					add_idea = SPA_recovering_from_civil_war_3
-				}
-			}
 		}
 	}
 
-	focus = {
-		id = SPA_reduce_reliance_on_foreign_resources
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_spanish_austerity }
-		
-		icon = GFX_goal_generic_construction2
-		x = 1
-		y = 1
-		relative_position_id = SPA_spanish_austerity
-		cost = 10
 
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_tech_bonus = {
-				name = SPA_reduce_reliance_on_foreign_resources
-				bonus = 1.5
-				uses = 2
-				category = excavation_tech
-			}
-			custom_effect_tooltip = SPA_reduce_reliance_on_foreign_resources_tt
-		}
-	}
 
-	focus = {
-		id = SPA_expand_the_axis_gold_trade
-		available = {
-			NOT = { has_completed_focus = SPA_the_stabilization_plan }
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_spanish_austerity }
-		
-		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = 0
-		y = 2
-		relative_position_id = SPA_spanish_austerity
-		cost = 10
 
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = SPA_expand_the_axis_gold_trade
-		}
-	}
 
 	focus = {
 		id = SPA_ensure_agricultural_self_sufficiency
@@ -2319,12 +2729,13 @@ focus_tree = {
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_expand_the_axis_gold_trade }
+		prerequisite = { focus = SPA_expand_the_war_industry }
+		prerequisite = { focus = SPA_italian_shipbuilding_expertise focus = SPA_the_duty_to_work }
 		
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_generic_agricultural_subsidies
 		x = 0
-		y = 2
-		relative_position_id = SPA_expand_the_axis_gold_trade
+		y = 1
+		relative_position_id = SPA_expand_the_war_industry
 		cost = 10
 
 		available_if_capitulated = yes
@@ -2343,6 +2754,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
 			remove_ideas = SPA_recovering_from_civil_war_3
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -2397,159 +2809,594 @@ focus_tree = {
 		}
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+##################################
+### AXIS aligned Branch 
+
 	focus = {
-		id = SPA_adopt_the_26_points
+		id = SPA_fascist_economic_aid
 		available = {
-			has_global_flag = scw_over
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_fuse_the_parties }
+		prerequisite = { focus = SPA_the_hendaye_meeting }
+		prerequisite = { focus = SPA_national_recovery }
 		
-		icon = GFX_focus_generic_treaty
-		x = 6
+		icon = GFX_focus_RAJ_special_economic_zones
+		x = -4
 		y = 1
-		relative_position_id = SPA_fuse_the_parties
-		cost = 10
+		relative_position_id = SPA_national_recovery
+		cost = 5
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_POLITICAL}
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_popularity = {
-			    ideology = fascism
-			    popularity = 0.1
+			add_ideas = SPA_fascist_economic_aid
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = SPA_fascist_economic_aid
+				bonus = 1.0
+				uses = 1
+				category = industry
 			}
-			if = {
-				limit = {
-					NOT = {
-						has_idea = war_economy
-						has_idea = tot_economic_mobilisation
+		}
+	}
+
+
+	focus = {
+		id = SPA_facilitate_pyrenees_freight_transports
+		available = {
+			has_full_control_of_state = 793
+			has_full_control_of_state = 794
+			has_full_control_of_state = 165
+			has_full_control_of_state = 176
+			has_full_control_of_state = 792
+			has_full_control_of_state = 41
+		}
+		bypass = {
+		}
+		
+		icon = GFX_focus_generic_supply_line
+		x = -1
+		y = 2
+		prerequisite = { focus = SPA_fascist_economic_aid }
+		relative_position_id = SPA_fascist_economic_aid
+		cost = 8
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			custom_effect_tooltip = SPA_facilitate_pyrenees_freight_transports_tt
+			hidden_effect = {
+				793 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
 					}
 				}
-				add_ideas = war_economy
-			}
-			if = {
-				limit = {
-					has_idea = limited_conscription
-				}
-				add_ideas = extensive_conscription
-			}
-			if = {
-				limit = {
-					has_idea = volunteer_only
-				}
-				add_ideas = limited_conscription
-			}
-			every_owned_state = {
-				limit = {
-					OR = {
-						state = 165
-						state = 171
-						state = 792
+				794 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
 					}
 				}
-				remove_dynamic_modifier = { modifier = autonomous_state }
+				165 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				176 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				792 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+				41 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			build_railway = { #Madrid - Zaragoza - Pyrinnes
+				path = {
+					3938 9767 6993 9785 11766 813 3816 9813 11821 915
+				}
+			}
+			build_railway = { #Zaragoza - Barcelona - French Border
+				path = {
+					3816 3954 13223 6966 6812 9764 854 9824 
+				}
+			}
+			build_railway = { #Madrid - Valladolid - Burgos - Bilbao - French Border
+				path = {
+					3938 3794 9800 9846 11825 6936 903 885 11852 13233 740 6756
+				}
 			}
 		}
 	}
 
 	focus = {
-		id = SPA_direct_the_universities
+		id = SPA_italian_shipbuilding_expertise
 		available = {
-			num_of_factories > 50
+			is_in_faction_with = ITA
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_adopt_the_26_points }
+		prerequisite = { focus = SPA_facilitate_pyrenees_freight_transports }
 		
-		icon = GFX_focus_research2
-		x = -1
-		y = 1
-		relative_position_id = SPA_adopt_the_26_points
-		cost = 10
+		icon = GFX_focus_generic_refit_civilian_ships
+		x = 2
+		y = 2
+		relative_position_id = SPA_facilitate_pyrenees_freight_transports
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_research_slot = 1
+			add_ideas = SPA_italian_shipbuilding_expertise
+			add_tech_bonus = {
+				name = SPA_italian_shipbuilding_expertise
+				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+		}
+	}
+
+
+####################################
+### Spain First aligned Branch
+
+	focus = {
+		id = SPA_focus_on_repairs
+		available = {
+
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_non_belligerence }
+		prerequisite = { focus = SPA_national_recovery }
+		
+		icon = GFX_goal_generic_construct_civilian
+		x = 4
+		y = 1
+		relative_position_id = SPA_national_recovery
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+
+			#add_ideas = SPA_fascist_economic_aid
+
+			add_tech_bonus = {
+				name = SPA_fascist_economic_aid
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
 		}
 	}
 
 	focus = {
-		id = SPA_dictator_for_life
-
+		id = SPA_improve_cross_country_railways
 		available = {
-			has_country_leader = {
-				character = SPA_francisco_franco
-				ruling_only = yes
-			}
+			has_full_control_of_state = 169
+			has_full_control_of_state = 789
+			has_full_control_of_state = 175
+			has_full_control_of_state = 170
+			has_full_control_of_state = 173
+			has_full_control_of_state = 168
 		}
-
 		bypass = {
 		}
-
-		prerequisite = { focus = SPA_adopt_the_26_points }
+		prerequisite = {  focus = SPA_focus_on_repairs }
 		
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_generic_railroad
 		x = 1
-		y = 1
-		relative_position_id = SPA_adopt_the_26_points
-		cost = 10
+		y = 2
+		relative_position_id = SPA_focus_on_repairs
+		cost = 5
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_STABILITY}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			add_stability = 0.05
-			swap_ruler_traits = { remove = caudillo_1 add = caudillo_2 }
-			hidden_effect = {
-				if = {
-					limit = {
-						has_government = neutrality
-					}
-					remove_trait = {
-						character = SPA_francisco_franco
-						ideology = fascism_ideology
-						trait = caudillo_1
-					}
-					add_trait = {
-						character = SPA_francisco_franco
-						ideology = fascism_ideology
-						trait = caudillo_2
-					}
+			build_railway = { #Madrid - Crodoba - Sevilla
+				path = {
+					3938 13224 13229 6800 6832 6948 3810 3871 875 1178 7183
 				}
-				if = {
-					limit = {
-						has_government = fascism
-					}
-					remove_trait = {
-						character = SPA_francisco_franco
-						ideology = despotism
-						trait = caudillo_1
-					}
-					add_trait = {
-						character = SPA_francisco_franco
-						ideology = despotism
-						trait = caudillo_2
-					}
+			}
+			build_railway = { #Madrid - Granada
+				path = {
+					13229 9778 9828 12083 4095 1176
+				}
+			}
+			build_railway = { #Madrid - Murcia - Valencia
+				path = {
+					3938 6914 9757 942 832 9903 1093 10024 4098 9889 6959 6906
 				}
 			}
 		}
 	}
+
+	focus = {
+		id = SPA_the_duty_to_work
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_improve_cross_country_railways }
+		
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		x = -2
+		y = 2
+		relative_position_id = SPA_improve_cross_country_railways
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_ideas = SPA_the_duty_to_work
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+	focus = {
+		id = SPA_the_national_and_popular_army_of_spain
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_adopt_the_26_points }
+		
+		icon = GFX_goal_generic_army_doctrines
+		x = 10
+		y = 0
+		relative_position_id = SPA_non_belligerence
+		cost = 5
+
+		available_if_capitulated = yes
+		complete_tooltip = {
+			every_state = {
+				limit	= {	has_state_flag = SPA_the_national_and_popular_army_of_spain_2mil }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			army_experience = 10
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+					}
+					is_core_of = ROOT
+				}
+				set_state_flag = SPA_the_national_and_popular_army_of_spain_2mil
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = SPA_the_army_of_africa_model
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_the_national_and_popular_army_of_spain }
+		
+		icon = GFX_goal_generic_army_artillery
+		x = 3
+		y = 1
+		relative_position_id = SPA_the_national_and_popular_army_of_spain
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = SPA_the_army_of_africa_model
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_equipment_modernization
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_the_army_of_africa_model }
+		
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 2
+		relative_position_id = SPA_the_army_of_africa_model
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SPA_equipment_modernization
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_artillery_modernization
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_equipment_modernization }
+		
+		icon = GFX_goal_generic_army_artillery2
+		x = -1
+		y = 1
+		relative_position_id = SPA_equipment_modernization
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SPA_artillery_modernization
+				bonus = 1.0
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_expand_the_air_branch
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_equipment_modernization }
+		
+		icon = GFX_goal_generic_air_doctrine
+		x = 0
+		y = 2
+		relative_position_id = SPA_equipment_modernization
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			air_experience = 50
+			add_doctrine_cost_reduction = {
+				name = SPA_expand_the_air_branch
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				name = SPA_expand_the_air_branch
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_expand_the_special_forces
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_equipment_modernization }
+		
+		icon = GFX_goal_generic_special_forces
+		x = 1
+		y = 1
+		relative_position_id = SPA_equipment_modernization
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SPA_expand_the_special_forces
+				bonus = 1.0
+				uses = 1
+				category = marine_tech
+			}
+			add_tech_bonus = {
+				name = SPA_expand_the_special_forces
+				bonus = 1.0
+				uses = 1
+				category = mountaineers_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_motorization
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_the_army_of_africa_model }
+		
+		icon = GFX_goal_generic_army_motorized
+		x = 1
+		y = 1
+		relative_position_id = SPA_the_army_of_africa_model
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SPA_equipment_modernization
+				bonus = 2.0
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = SPA_an_armored_corps
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = SPA_motorization }
+		
+		icon = GFX_goal_generic_army_tanks
+		x = 1
+		y = 1
+		relative_position_id = SPA_motorization
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SPA_an_armored_corps
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+
+
 
 	focus = {
 		id = SPA_invest_in_naval_infrastructure
-		available = {
-			has_completed_focus = SPA_unify_the_nationalist_front
-		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_dictator_for_life }
+		prerequisite = { focus = SPA_the_national_and_popular_army_of_spain }
 		
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		x = -3
-		y = 2
-		relative_position_id = SPA_dictator_for_life
-		cost = 10
+		x = -2
+		y = 1
+		relative_position_id = SPA_the_national_and_popular_army_of_spain
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2599,7 +3446,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SPA_invest_in_naval_infrastructure
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2666,7 +3513,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SPA_expand_the_slipways
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -2700,7 +3547,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = SPA_invest_in_naval_infrastructure
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -2728,378 +3575,9 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = SPA_la_division_azul
-		available = {
-			has_completed_focus = SPA_adopt_the_26_points
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_dictator_for_life  }
-		
-		icon = GFX_goal_rhineland
-		x = 0
-		y = 1
-		relative_position_id = SPA_dictator_for_life
-		cost = 10
+	
+	
 
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = SPA_la_division_azul
-			if = {
-				limit = {
-					has_government = neutrality
-				}
-				set_rule = {
-					can_send_volunteers = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_the_tangiers_enclave
-		available = {
-			has_full_control_of_state = 290
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_la_division_azul }
-		prerequisite = { focus = SPA_stamp_out_the_maquis }
-		
-		icon = GFX_goal_generic_position_armies
-		x = 0
-		y = 1
-		relative_position_id = SPA_la_division_azul
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
-			if = {
-				limit = {
-					ENG = { has_government = democratic }
-				}
-				effect_tooltip = {
-					290 = {
-						add_extra_state_shared_building_slots = 3
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}
-					}
-				}
-				custom_effect_tooltip = SPA_the_tangiers_enclave_tt
-				ENG = { country_event = { id = lar_spain.36 hours = 6 random_hours = 18 } }
-			}
-			else = {
-				290 = {
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_demand_french_north_africa
-		available = {
-			any_country = {
-				original_tag = FRA
-				has_focus_tree = vichy_french_focus
-				owns_state = 461
-				owns_state = 462
-				owns_state = 459
-				owns_state = 460
-				owns_state = 513
-				owns_state = 514
-				owns_state = 458
-				owns_state = 665
-			}
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_the_tangiers_enclave }
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		
-		icon = GFX_goal_generic_territory_or_war
-		x = 0
-		y = 1
-		relative_position_id = SPA_the_tangiers_enclave
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			random_other_country = {
-				limit = {
-					original_tag = FRA
-					has_focus_tree = vichy_french_focus
-					owns_state = 461
-					owns_state = 462
-					owns_state = 459
-					owns_state = 460
-					owns_state = 513
-					owns_state = 514
-					owns_state = 458
-					owns_state = 665
-				}
-				country_event = { id = lar_spain.39 hours = 6 random_hours = 18 }
-			}
-		}
-	}
-
-
-	focus = {
-		id = SPA_stamp_out_the_maquis
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_dictator_for_life }
-		
-		icon = GFX_goal_generic_more_territorial_claims
-		x = 2
-		y = 1
-		relative_position_id = SPA_dictator_for_life
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			custom_effect_tooltip = SPR_recovering_from_civil_war_focus_tt
-		}
-	}
-
-	focus = {
-		id = SPA_defenses_against_strategic_bombing
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_stamp_out_the_maquis }
-		
-		icon = GFX_focus_generic_air_defense
-		x = 0
-		y = 1
-		relative_position_id = SPA_stamp_out_the_maquis
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			every_owned_state = {
-				limit = {
-					is_controlled_by = ROOT
-					is_core_of = ROOT
-					is_in_home_area = yes
-				}
-				add_building_construction = {
-					type = anti_air_building
-					level = 1
-					instant_build = yes
-				}
-			}
-			171 = { #Galicia
-				add_building_construction = {
-					type = air_base
-					level = 1
-					instant_build = yes
-				}						
-			}
-			792 = { #Basque
-				add_building_construction = {
-					type = air_base
-					level = 1
-					instant_build = yes
-				}						
-			}
-			41 = { #Madrid
-				add_building_construction = {
-					type = air_base
-					level = 1
-					instant_build = yes
-				}						
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_defenses_against_invasion
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_defenses_against_strategic_bombing }
-		
-		icon = GFX_focus_generic_coastal_fort
-		x = 0
-		y = 1
-		relative_position_id = SPA_defenses_against_strategic_bombing
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			custom_effect_tooltip = SPA_defenses_against_invasion_tt
-			every_owned_state = {
-				limit = {
-					is_controlled_by = ROOT
-					is_core_of = ROOT
-					is_in_home_area = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_retake_gibraltar
-		available = {
-			NOT = {
-				is_in_faction_with = ENG
-				has_war_with = ENG
-				controls_state = 118
-			}
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_demand_french_north_africa }
-		prerequisite = { focus = SPA_defenses_against_invasion }
-		
-		icon = GFX_focus_attack_britain
-		x = 1
-		y = 1
-		relative_position_id = SPA_demand_french_north_africa
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			create_wargoal = {
-				type = take_state_focus
-				target = ENG
-				generator = { 118 }
-				expire = 0
-			}
-		}
-	}
-
-	focus = {
-		id = SPA_claim_west_africa
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_retake_gibraltar }
-		
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 0
-		y = 1
-		relative_position_id = SPA_retake_gibraltar
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_state_claim = 557
-			add_state_claim = 272
-			add_state_claim = 780
-			add_state_claim = 556
-			add_state_claim = 779
-			add_state_claim = 778
-			add_state_claim = 781
-			add_state_claim = 777
-			add_state_claim = 776
-			add_state_claim = 773
-			add_state_claim = 774
-			add_state_claim = 660
-			add_state_claim = 539
-			add_state_claim = 772
-			IF = {
-				limit = {
-					any_country = {
-						original_tag = FRA
-						OR = {
-							owns_state = 557
-							owns_state = 272
-							owns_state = 780
-							owns_state = 556
-							owns_state = 779
-							owns_state = 778
-							owns_state = 781
-							owns_state = 777
-							owns_state = 776
-							owns_state = 773
-							owns_state = 774
-							owns_state = 660
-							owns_state = 539
-							owns_state = 772
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						original_tag = FRA
-						OR = {
-							owns_state = 557
-							owns_state = 272
-							owns_state = 780
-							owns_state = 556
-							owns_state = 779
-							owns_state = 778
-							owns_state = 781
-							owns_state = 777
-							owns_state = 776
-							owns_state = 773
-							owns_state = 774
-							owns_state = 660
-							owns_state = 539
-							owns_state = 772
-						}
-					}
-					ROOT = {
-						create_wargoal = {
-							type = take_state_focus
-							target = PREV
-							generator = { 557 272 780 556 779 778 781 777 776 773 774 660 539 772 }
-							expire = 0
-						}
-					}
-				}
-				
-			}
-		}
-	}
+	
 
 }
