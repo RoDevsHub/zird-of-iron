@@ -272,11 +272,11 @@ focus_tree = {
 			add_timed_idea = {idea = ROM_Anti_Extremism_idea days = 365}
 			add_popularity = {
     			ideology = fascism
-    			popularity = -0.5
+    			popularity = -0.05
 			}
 			add_popularity = {
     			ideology = communism
-    			popularity = -0.5
+    			popularity = -0.05
 			}
 		}
 	}
@@ -316,7 +316,7 @@ focus_tree = {
 		icon = GFX_focus_AFG_parliamentary_democracy
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -398,6 +398,7 @@ focus_tree = {
     		ideology = neutrality
     		popularity = 0.15
 			}
+			remove_ideas = ROM_Dissolved_Parliament_idea
 		}
 	}
 		focus = {
@@ -413,7 +414,7 @@ focus_tree = {
 		icon = GFX_focus_PER_constitutional_monarchy
 		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -450,7 +451,7 @@ focus_tree = {
 		icon = GFX_focus_rom_preserve_romania
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -745,7 +746,12 @@ focus_tree = {
 		prerequisite = {focus = ROM_Axis_Membership}
 		relative_position_id = ROM_Axis_Membership
 		available = {
-		
+			971 = {
+				is_fully_controlled_by = ROM
+			}
+			79 = {
+				is_fully_controlled_by = ROM
+			}
 		}
 
 		continue_if_invalid = yes
@@ -759,7 +765,58 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			971 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					province = 687
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 3076
+					instant_build = yes
+				}
+			}
+			79 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					province = 6706
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 6729
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 723
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 9716
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 11534
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 6584
+					instant_build = yes
+				}
+			}
 		}
 	}
 		focus = {
@@ -802,7 +859,9 @@ focus_tree = {
 		prerequisite = {focus = ROM_Axis_Membership}
 		relative_position_id = ROM_Axis_Membership
 		available = {
-		
+			82 = {
+				is_owned_by = ROM
+			}
 		}
 
 		continue_if_invalid = yes
@@ -816,7 +875,13 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			764 = {
+				add_core_of = ROM
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = YUG
+			}
 		}
 	}
 		focus = {
@@ -987,7 +1052,57 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			834 = {
+				add_core_of = ROM
+			}
+			192 = {
+				add_core_of = ROM
+			}
+			198 = {
+				add_claim_by = ROM
+			}
+			199 = {
+				add_claim_by = ROM
+			}
+			201 = {
+				add_claim_by = ROM
+			}
+			202 = {
+				add_claim_by = ROM
+			}
+			193 = {
+				add_claim_by = ROM
+			}
+			225 = {
+				add_claim_by = ROM
+			}
+			203 = {
+				add_claim_by = ROM
+			}
+			197 = {
+				add_claim_by = ROM
+			}
+			196 = {
+				add_claim_by = ROM
+			}
+			200 = {
+				add_claim_by = ROM
+			}
+			226 = {
+				add_claim_by = ROM
+			}
+			259 = {
+				add_claim_by = ROM
+			}
+			221 = {
+				add_claim_by = ROM
+			}
+			227 = {
+				add_claim_by = ROM
+			}
+			228 = {
+				add_claim_by = ROM
+			}
 		}
 	}
 		focus = {
@@ -1009,7 +1124,7 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			add_timed_idea = {idea = ROM_Operation_Barbarbarossa_idea days = 365}
 		}
 	}
 		focus = {
@@ -1056,6 +1171,19 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+		add_tech_bonus = {
+    		bonus = 0.5
+   			 uses = 1
+    		category = industry
+			}
+			971 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 		focus = {
@@ -1071,12 +1199,30 @@ focus_tree = {
 		icon = GFX_focus_generic_resource_extraction
 		x = -2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			84 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = steel_mill
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			add_ideas = ROM_Raw_Resource_Exploitation_idea
+
+			add_tech_bonus = {
+    		bonus = 1.0
+   			 uses = 1
+    		category = zird_factory
+			}
+
+
 		}
 	}
 		focus = {
@@ -1098,6 +1244,7 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			add_ideas = ROM_Timber_Industry_idea
 		}
 	}
 		focus = {
@@ -1113,12 +1260,33 @@ focus_tree = {
 		icon = GFX_focus_BEL_dam_the_consequences
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			84 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+					add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 676
+					}
+				}
+				
+			}
+						custom_effect_tooltip = {
+				localization_key = building_state_modifier|dam
+				INDENT = "    "
+			}
 		}
 	}
 		focus = {
@@ -1140,6 +1308,30 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			83 = {
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+				add_resource = {
+					type = Coal
+					amount = 6
+				}
+			}
+			84 = {
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+				add_resource = {
+					type = tungsten
+					amount = 4
+				}
+			}
 		}
 	}
 		focus = {
@@ -1155,7 +1347,7 @@ focus_tree = {
 		icon = GFX_focus_CONGO_gold_and_diamonds
 		x = -1
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -1176,7 +1368,7 @@ focus_tree = {
 		icon = GFX_focus_generic_coal_mining
 		x = 1
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -1198,7 +1390,7 @@ focus_tree = {
 		icon = GFX_focus_PER_increase_oil_sales
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1225,6 +1417,14 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			81 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 		focus = {
@@ -1246,6 +1446,7 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			
 		}
 	}
 		focus = {
@@ -1261,12 +1462,28 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			76 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			971 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 		focus = {
@@ -1282,7 +1499,7 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		x = -2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1303,12 +1520,25 @@ focus_tree = {
 		icon = GFX_focus_SWE_lynx_armored_car
 		x = -2
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+						add_tech_bonus = {
+    		bonus = 0.5
+   			 uses = 1
+    		category = industry
+			}
+			46 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 		focus = {
@@ -1324,12 +1554,25 @@ focus_tree = {
 		icon = GFX_focus_generic_tank_production
 		x = 0
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+		add_tech_bonus = {
+    		bonus = 0.5
+   			 uses = 1
+    		category = armor
+			}
+				46 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 		focus = {
@@ -1351,6 +1594,19 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+		add_tech_bonus = {
+    		bonus = 0.5
+   			 uses = 1
+    		category = industry
+			}
+			46 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 		focus = {
@@ -1374,6 +1630,7 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			add_research_slot = 1
 		}
 	}
 
