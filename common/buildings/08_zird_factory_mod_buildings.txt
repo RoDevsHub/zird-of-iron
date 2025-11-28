@@ -44,7 +44,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 	}
 
-		chromium_factory = {
+	chromium_factory = {
 		show_on_map = 0
 		base_cost = 5175
 		local_resources_chromium = 3
@@ -57,7 +57,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 	}
 
-		steel_mill = {
+	steel_mill = {
 		show_on_map = 0
 		base_cost = 5175
 		local_resources_steel = 3
@@ -70,7 +70,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 	}
 
-		tungsten_factory = {
+	tungsten_factory = {
 		show_on_map = 0
 		base_cost = 5175
 		local_resources_tungsten = 3
