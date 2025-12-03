@@ -119,7 +119,7 @@ technologies = {
 
 		folder = {
 			name = support_folder
-			position = { x = 7 y = 9 }
+			position = { x = 6 y = 10 }
 		}
 
 		sub_technologies = {
