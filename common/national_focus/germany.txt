@@ -10792,11 +10792,9 @@ focus_tree = {
 					NOT = { BEL = { is_in_faction_with = GER } }
 					NOT = { has_war_with = BEL }
 				}
-				create_wargoal = {
-					type = take_state_focus
+				declare_war_on = {
 					target = BEL
-					expire = 0
-					generator = { 6 }
+					type = annex_everything
 				}
 			}
 			if =  {
@@ -10806,11 +10804,9 @@ focus_tree = {
 					NOT = { has_war_with = HOL }
 					NOT = { HOL = { has_completed_focus = HOL_cave_to_the_germans } }
 				}
-				create_wargoal = {
-					type = take_state_focus
+				declare_war_on = {
 					target = HOL
-					expire = 0
-					generator = { 7 }
+					type = annex_everything
 				}
 			}
 			if =  {
@@ -10831,12 +10827,10 @@ focus_tree = {
 					NOT = { LUX = { is_in_faction_with = GER } }
 					NOT = { has_war_with = LUX }
 				}
-				create_wargoal = {
-					type = take_state_focus
+				declare_war_on = {
 					target = LUX
-					expire = 0
-					generator = { 8 }
-				}		
+					type = annex_everything
+				}
 				add_ai_strategy = { 
 					type = conquer
 					id = LUX
@@ -12062,7 +12056,8 @@ focus_tree = {
 		icon = GFX_focus_attack_soviet
 		alternate_icon = GFX_focus_GER_war_with_the_ussr
 
-		prerequisite = { focus = GER_anti_comintern_pact  focus = GER_secure_finland}
+		prerequisite = { focus = GER_anti_comintern_pact}
+		prerequisite = { focus = GER_secure_finland}
 		x = -1
 		y = 8
 		relative_position_id = GER_anti_comintern_pact
