@@ -12056,8 +12056,7 @@ focus_tree = {
 		icon = GFX_focus_attack_soviet
 		alternate_icon = GFX_focus_GER_war_with_the_ussr
 
-		prerequisite = { focus = GER_anti_comintern_pact}
-		prerequisite = { focus = GER_secure_finland}
+		prerequisite = { focus = GER_anti_comintern_pact focus = GER_secure_finland}
 		x = -1
 		y = 8
 		relative_position_id = GER_anti_comintern_pact
