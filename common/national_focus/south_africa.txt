@@ -64,10 +64,8 @@
 		}
 
 		available = {
-			NOT = {
-				CAN = {
-					is_ai = true
-				}
+			CAN = {
+				is_ai = yes
 			}
 		}
 		

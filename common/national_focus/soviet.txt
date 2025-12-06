@@ -41,10 +41,8 @@ focus_tree = {
 		}
 
 		available = {
-			NOT = {
-				MON = {
-					is_ai = true
-				}
+			MON = {
+				is_ai = yes
 			}
 		}
 		

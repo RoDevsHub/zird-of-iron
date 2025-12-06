@@ -184,7 +184,6 @@ CHI_show_state_uprising_effect_after_infiltration_level_down = {
 	if = {
 		limit = {
 			any_country = {
-				is_potentially_communist_china = yes
 			}
 		}
 		custom_effect_tooltip = CHI_infiltration_not_detected
@@ -192,7 +191,6 @@ CHI_show_state_uprising_effect_after_infiltration_level_down = {
 	else_if = {
 		limit = {
 			any_country = {
-				is_potentially_communist_china = yes
 			}
 		}
 	}
@@ -202,7 +200,6 @@ CHI_show_state_uprising_effect_after_infiltration_level_down = {
 CHI_infiltration_flag_down_2 = {
 	hidden_effect = {	
 		every_country = {
-			limit = { is_potentially_communist_china = yes }
 		}	
 	}
 }

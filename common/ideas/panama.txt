@@ -1,7 +1,6 @@
 ideas = {
-
-    country {
-        ZIRD_the_void {
+    country = {
+        ZIRD_the_void = {
 			name = ZIRD_the_void_idea
 			allowed = {
 				original_tag = PAN
@@ -24,8 +23,8 @@ ideas = {
 			}
 
 			modifier = {
-				min_export -100.00
-				local_resources_factor = -100.00
+				min_export = -1.0
+				local_resources_factor = -100.0
 				join_faction_tension = 100.0
 				send_volunteers_tension = 100.0
                 agency_upgrade_time = 100.0
@@ -44,32 +43,9 @@ ideas = {
 				political_power_cost = 1000.0
                 operative_slot = -67
                 enemy_justify_war_goal_time = 1000.0
-                send_volunteers_tension = 1000.0
                 industrial_capacity_factory = -100.0
                 industrial_capacity_dockyard = -100.0
 			}
         }
     }
-	industrial_concern = {
-					
-		standard_oil_california_Panamainiemans = {
-			
-			
-			allowed = {
-				original_tag = PAN
-			}
-			
-
-			
-			research_bonus = {
-				industry = 0.05
-				synth_resources = 0.15
-			}
-			
-			traits = { refinery_concern }
-			
-			modifier = {
-			}
-		}
-	}
 }

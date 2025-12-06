@@ -145,7 +145,7 @@ ideas = {
 
 			modifier = {
 				stability_factor = -0.5
-				weekly_stability_factor = -0.05
+				#weekly_stability_factor = -0.05 # COMMENTED OUT BECAUSE IT IS INVALID AND GAVE AN ERROR - zirdgal
 			}
 		}
 		ROM_Sentinels_of_Romania_idea = {
@@ -199,8 +199,8 @@ ideas = {
 				original_tag = ROM
 			}
 			modifier = {
-				armor_attack_factor = 0.05
-				armor_defense_factor = 0.05
+				#armor_attack_factor = 0.05 # COMMENTED OUT BECAUSE IT IS INVALID AND GAVE AN ERROR - zirdgal
+				#armor_defense_factor = 0.05 # COMMENTED OUT BECAUSE IT IS INVALID AND GAVE AN ERROR - zirdgal
 				max_planning_factor = 0.05
 				experience_gain_army_factor = 0.05
 				training_time_army_factor = -0.10

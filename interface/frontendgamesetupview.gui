@@ -149,6 +149,13 @@ guiTypes = {
 			position = { x=0 y =0 }
 			clicksound = click_checkbox
 		}
+		
+		buttonType = {
+			name = "country_shine"
+			quadTextureSprite = "GFX_country_selection_entry_shine"
+			position = { x=0 y =0 }
+			clicksound = click_checkbox
+		}
 
 		instantTextBoxType = {
 			name = "country_name"
@@ -182,6 +189,13 @@ guiTypes = {
 			position = { x=0 y =0 }
 			clicksound = click_checkbox
 		}
+
+		buttonType = {
+			name = "country_shine"
+			quadTextureSprite = "GFX_minor_country_selector_shine"
+			position = { x=0 y =0 }
+			clicksound = click_checkbox
+		}
 	}
 
 	### country entry
@@ -199,6 +213,13 @@ guiTypes = {
 		buttonType = {
 			name = "country"
 			quadTextureSprite = "GFX_mini_country_selector"
+			position = { x=0 y =0 }
+			clicksound = click_checkbox
+		}
+		
+		buttonType = {
+			name = "country_shine"
+			quadTextureSprite = "GFX_mini_country_selector_shine"
 			position = { x=0 y =0 }
 			clicksound = click_checkbox
 		}
@@ -291,7 +312,8 @@ guiTypes = {
 			position = { x = -1 y = 126 }
 			size = { width = 350 height = 415}
 			verticalScrollbar = "right_vertical_slider"
-			vertical_scroll_step = 5
+			scroll_wheel_factor = 55
+			smooth_scrolling = yes
 
 			background = {
 				name = "Background"
@@ -697,21 +719,6 @@ guiTypes = {
 			}
 		}
 
-		iconType = {
-			name = "minor_country_leader"
-			quadTextureSprite ="GFX_leader_unknown"
-			position = { x = 289 y = 441 }
-			scale=0.696
-			rotation=-0.04
-		}
-
-		iconType = {
-				name ="minor_portrait_overlay"
-				spriteType = "GFX_minor_portrait_overlay"
-				position = { x= 280 y = 430 }
-		}
-
-
 		instantTextBoxType = {
 			name = "info_title"
 			position = { x = 10 y = 450 }
@@ -825,6 +832,20 @@ guiTypes = {
 				maxWidth = 340
 				format = left
 			}
+		}
+		
+		iconType = {
+			name = "minor_country_leader"
+			quadTextureSprite ="GFX_leader_unknown"
+			position = { x = 289 y = 441 }
+			scale=0.696
+			rotation=-0.04
+		}
+
+		iconType = {
+				name ="minor_portrait_overlay"
+				spriteType = "GFX_minor_portrait_overlay"
+				position = { x= 280 y = 430 }
 		}
 
 		instantTextBoxType = {

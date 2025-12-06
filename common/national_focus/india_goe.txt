@@ -42,11 +42,11 @@ focus_tree = {
 		}
 
 		available = {
-			NOT = {
-				AST = {
-					is_ai = true
-				}
-			}
+			
+            AST = {
+                is_ai = yes
+            }
+			
 		}
 		
 		bypass = {
@@ -139,7 +139,6 @@ focus = {
 	
 	x = 0
 	y = 0
-	relative_position_id = RAJ_great_depression_price_controls 
 	cost = 5
 
 	allow_branch = {
@@ -152,7 +151,6 @@ focus = {
 			}
 			NOT = {
 				has_completed_focus = RAJ_provincial_autonomy
-				has_completed_focus = RAJ_great_depression_price_controls
 			}
 		}
 	}

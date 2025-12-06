@@ -3431,7 +3431,6 @@ focus_tree = {
 					occupier = POL
 					occupied = DNZ
 				}
-				POL_remove_danzig_effect = yes
 				set_state_name = "Gdańsk"
 			}
 			set_province_name = {

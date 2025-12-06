@@ -20,44 +20,6 @@ focus_tree = {
 
 
 
-#	focus = {
-#		id = CAN_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
-
-
-
 
 	############################
 	##### INDUSTRY SECTION #####
@@ -74,11 +36,11 @@ focus_tree = {
 		}
 
 		available = {
-			NOT = {
-				SAF = {
-					is_ai = true
-				}
+			
+			SAF = {
+				is_ai = yes
 			}
+			
 		}
 		
 		bypass = {
@@ -158,6 +120,8 @@ focus_tree = {
 				}
 			}
 		}
+	}
+	
 	focus = {
 		id = CAN_rowell_sirois_commission
 		icon = GFX_goal_generic_consumer_goods
@@ -191,7 +155,7 @@ focus_tree = {
 			add_political_power = 120
 		}
 	}
-}
+
 	focus = {
 		id = CAN_crown_corporations
 		icon = GFX_goal_generic_construct_civ_factory
@@ -3974,4 +3938,4 @@ focus_tree = {
 		}
 	}
 
-}		
+}

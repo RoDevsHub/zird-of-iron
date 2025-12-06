@@ -54,11 +54,11 @@ focus_tree = {
 		}
 
 		available = {
-			NOT = {
-				BUL = {
-					is_ai = true
-				}
+			
+			BUL = {
+				is_ai = yes
 			}
+			
 		}
 		
 		bypass = {
@@ -8620,9 +8620,7 @@ focus_tree = {
 		cost = 5
 		available = {
 
-			NOT = {
-				is_ai = true
-			}
+			is_ai = yes
 			
 			is_at_peace_exiled_countries_excluded = yes
 			power_balance_value = {

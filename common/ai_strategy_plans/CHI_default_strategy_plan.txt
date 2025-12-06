@@ -44,7 +44,7 @@ CHI_industrial_buildup = {
 		OR = {
 			original_tag = CHI
 			AND = {
-				is_chinese_warlord = yes
+				
 				has_focus_tree = china_nationalist_focus
 			}
 		}
@@ -94,7 +94,7 @@ CHI_inflation_handling = {
 		OR = {
 			original_tag = CHI
 			AND = {
-				is_chinese_warlord = yes
+				
 				has_focus_tree = china_nationalist_focus
 			}
 		}
@@ -198,7 +198,7 @@ CHI_war_measures = {
 		OR = {
 			original_tag = CHI
 			AND = {
-				is_chinese_warlord = yes
+				
 				has_focus_tree = china_nationalist_focus
 			}
 		}
