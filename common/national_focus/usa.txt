@@ -73,6 +73,8 @@ focus_tree = {
 					is_ai = true
 				}
 			}
+			NOT = { has_global_flag = AAT_trotsky_sent_to_stalin }
+			as_global_flag = AAT_trotsky_in_mexico
 		}
 		
 		bypass = {
@@ -874,8 +876,9 @@ focus_tree = {
 		prerequisite = { focus = USA_federal_housing_act }
 		available = {
 			OR = {
+				date > 1941.12.07
 				has_war = yes
-				has_war_support > 0.5
+				has_war_support > 0.6
 			}
 			democratic > 0.95
 		}
