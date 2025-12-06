@@ -2418,7 +2418,7 @@
 		}
 		mutually_exclusive = { focus = FRA_confirm_eastern_commitments }
 		relative_position_id = FRA_review_foreign_policy
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2539,7 +2539,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_buy_time
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 

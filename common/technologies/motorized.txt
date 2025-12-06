@@ -1,16 +1,17 @@
 technologies = {
-    @1918 = -6
-	@1924 = -4
-	@1936 = -3
-	@1938 = -1
-	@1939 = 0
-	@1940 = 1
-	@1941 = 2
-	@1942 = 3
-	@1943 = 4
-	@1944 = 5
-	@1945 = 6
-	@1946 = 7
+    @1918 = 1
+	@1924 = 3
+	@1936 = 4
+	@1937 = 5
+	@1938 = 6
+	@1939 = 7
+	@1940 = 8
+	@1941 = 9
+	@1942 = 10
+	@1943 = 11
+	@1944 = 12
+	@1945 = 13
+	@1946 = 14
 
 
     tech_trucks = {
@@ -44,7 +45,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = motorized_folder
-			position = { x = -6 y = 3 }
+			position = { x = @1918 y = 3 }
 		}
 
 		categories = {
@@ -109,20 +110,16 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		path = {
-
-		}
-
 		research_cost = 2
 		start_year = 1936
 		folder = {
 			name = motorized_folder
-			position = { x = @1936 y = 4 }
+			position = { x = @1936 y = 5 }
 		}
 
 		folder = {
 			name = support_folder
-			position = { x = 7 y = 9 }
+			position = { x = 6 y = 10 }
 		}
 
 		sub_technologies = {
@@ -485,7 +482,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = motorized_folder
-			position = { x = @1940 y = 4 }
+			position = { x = @1940 y = 5 }
 		}
 
 		categories = {
@@ -615,7 +612,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = motorized_folder
-			position = { x = @1942 y = 4 }
+			position = { x = @1942 y = 5 }
 		}
 
 		categories = {
@@ -646,7 +643,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = motorized_folder
-			position = { x = @1944 y = 4 }
+			position = { x = @1944 y = 5 }
 		}
 
 		categories = {
@@ -661,4 +658,195 @@ technologies = {
 			factor = 1
 		}
 	}
+
+	basic_train = {
+		enable_equipments = {
+			train_equipment_1
+		}
+
+		research_cost = 1.5
+		start_year = 1910
+		folder = {
+			name = motorized_folder
+			position = { x = @1918 y = 7 }
+		}
+
+		path = {
+			leads_to_tech = wartime_train
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = armored_train
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			train_tech
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				num_of_factories > 25
+				factor = 100 #might wanna get on that
+			}
+			modifier = {
+				factor = 1.2
+				date > "1936.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "1937.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "1938.1.1"
+			}
+		}
+	}
+
+	armored_train = {
+		enable_equipments = {
+			train_equipment_3
+		}
+
+		allow_branch = {
+			has_dlc = "No Step Back"
+		}
+
+		path = {
+			leads_to_tech = railway_gun
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 1937
+		folder = {
+			name = motorized_folder
+			position = { x = @1937 y = 5 }
+		}
+
+		categories = {
+			train_tech
+		}
+
+		ai_will_do = {
+			base = 1
+
+			modifier = {
+				has_war = yes
+				factor = 20
+			}
+			modifier = {
+				tag = GER
+				factor = 5
+			}
+			modifier = {
+				factor = 1.2
+				date > "1938.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "1939.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "1940.1.1"
+			}
+		}
+	}
+
+	railway_gun = {
+		enable_equipments = {
+			railway_gun_equipment_1
+		}
+
+		enable_equipment_modules = {
+			lc_hull_mounted_railway_gun #Module for Land Cruiser
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_land_super_heavy_railway_gun
+			}
+		}
+
+		research_cost = 1.5
+		start_year = 1939
+		folder = {
+			name = motorized_folder
+			position = { x = @1939 y = 5 }
+		}
+
+		categories = {
+			train_tech
+			artillery
+		}
+
+		ai_will_do = {
+			base = 0.5
+
+			modifier = {
+				is_major = yes
+				factor = 1
+			}
+
+			modifier = {
+				OR = {
+					TAG = GER
+					tag = SOV
+				}
+				factor = 1.5
+			}
+		}
+	}
+
+	wartime_train = {
+		enable_equipments = {
+			train_equipment_2
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		folder = {
+			name = motorized_folder
+			position = { x = @1936 y = 9 }
+		}
+
+		categories = {
+			train_tech
+		}
+
+		ai_will_do = {
+			base = 2
+
+			modifier = {
+				has_war = yes
+				factor = 20
+			}
+			modifier = {
+				factor = 1.2
+				date > "1940.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "1941.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "1942.1.1"
+			}
+		}
+	}
+
+	
+
 }

@@ -1,0 +1,68 @@
+### germany timeout till war time yippee
+
+
+
+ZIRD_timeout_category = {
+
+    ZIRD_timeout_till_danzig_mission = {
+
+        allowed = {
+            original_tag = GER
+        }
+
+        activation = {
+            date > 1939.01.01
+        }
+        available = {
+            has_war_with = POL
+        }
+        cancel_trigger = {
+            OR = {
+                has_war_with = POL
+                NOT = { country_exists = POL }
+            }
+        }
+        icon = mission_icon     # For GFX_decision_mission_icon
+        is_good = yes
+        war_with_on_timeout = POL
+        days_mission_timeout = 366
+        selectable_mission = no
+        timeout_effect = {
+            declare_war_on = {
+                target = POL
+                type = annex_everything
+            }
+        }
+	}
+
+    ZIRD_timeout_till_barb_mission = {
+
+        allowed = {
+            original_tag = GER
+        }
+
+        activation = {
+            date > 1941.01.01
+        }
+        available = {
+            has_war_with = SOV
+        }
+        cancel_trigger = {
+            OR = {
+                has_war_with = SOV
+                NOT = { country_exists = SOV }
+            }
+        }
+        icon = mission_icon     # For GFX_decision_mission_icon
+        is_good = yes
+        war_with_on_timeout = SOV
+        days_mission_timeout = 366
+        selectable_mission = no
+        timeout_effect = {
+            declare_war_on = {
+                target = SOV
+                type = annex_everything
+            }
+        }
+	}
+}

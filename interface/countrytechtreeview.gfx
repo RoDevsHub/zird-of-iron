@@ -197,6 +197,12 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_motorized_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_motorized_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
 		name = "GFX_techtree_tabs"
 		textureFile = "gfx//interface//techtree//techtree_tabs.dds"
 		noOfFrames = 2		
