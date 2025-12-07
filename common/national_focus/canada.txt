@@ -2520,7 +2520,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
-			add_war_support = .05
+			add_war_support = .025
    			modify_tech_sharing_bonus = {
          		id = commonwealth_research
          		bonus = 0.03
@@ -2549,7 +2549,7 @@ focus_tree = {
 		}
 
 		available = {
-			threat > 0.05
+			threat > 0.1
 		}
 		
 		bypass = {
@@ -2607,7 +2607,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_war_support = .1
+			add_war_support = .05
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
