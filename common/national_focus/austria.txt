@@ -2403,6 +2403,22 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = AUS_secret_rearmament_idea
+			976 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			152 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 
 		}
 	}
