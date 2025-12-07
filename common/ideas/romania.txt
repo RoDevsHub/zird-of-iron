@@ -90,8 +90,8 @@ ideas = {
 
 			modifier = {
 				consumer_goods_factor = 0.25
-				production_speed_industrial_complex_factor = 0.5 
-				production_speed_infrastructure_factor = 0.5
+				production_speed_industrial_complex_factor = 1.0 
+				production_speed_infrastructure_factor = 1.0
 			}
 		}
 			ROM_Public_Works_idea_2 = {
@@ -102,8 +102,8 @@ ideas = {
 
 			modifier = {
 				consumer_goods_factor = 0.25
-				production_speed_industrial_complex_factor = 0.5 
-				production_speed_infrastructure_factor = 0.5
+				production_speed_industrial_complex_factor = 1.0 
+				production_speed_infrastructure_factor = 1.0
 			}
 		}
 			ROM_Anti_Extremism_idea = {
@@ -245,6 +245,34 @@ ideas = {
 			defense_bonus_against = 0.10
 	    }
 		}
+			ROM_Royal_Guard_idea = {
+			picture = ROM_iron_guard
+
+			removal_cost = -1
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+			}
+		}
+		
+		ROM_Capital_of_Balkans_idea = {
+			picture = ROM_balkans_dominance
+
+			removal_cost = -1
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				stability_factor = 0.15
+				consumer_goods_factor = -0.1
+				political_power_gain = 0.10
+				production_speed_buildings_factor = 0.15
+			}
+		}
+		
 		ROM_Raw_Resource_Exploitation_idea = {
 			picture = generic_exploit_mines
 
@@ -267,6 +295,30 @@ ideas = {
 			modifier = {
 				production_speed_industrial_complex_factor = 0.2
 				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		ROM_Gold_Extraction_idea = {
+			picture = SPR_seize_the_gold_reserves
+
+			removal_cost = -1
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				consumer_goods_factor = -0.15
+				cic_to_target_factor = -0.05
+				trade_cost_for_target_factor = -0.25
+			}
+		}
+		ROM_Extensive_Coal_Mining_idea = {
+			picture = SPR_seize_the_gold_reserves
+
+			removal_cost = -1
+			allowed = {
+				original_tag = ROM
+			}
+			modifier = {
+				industrial_capacity_factory = 0.10
 			}
 		}
 		ROM_romanian_volunteer_brigades = {

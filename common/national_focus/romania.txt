@@ -642,13 +642,22 @@ focus_tree = {
 		icon = GFX_focus_generic_full_social_mobilization
 		x = 2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 			
 		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 5000
+			}
 
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 800
+			}
+			add_ideas = ROM_Royal_Guard_idea
 		}
 	}
 		focus = {
@@ -719,6 +728,7 @@ focus_tree = {
 		}
 			
 		completion_reward = {
+			remove_ideas = ROM_king_carol_ii_hedonist
 			create_country_leader = {
 				name = "Ion Antonescu"
 				desc = "POLITICS_CAROL_II_DESC"
@@ -1034,9 +1044,8 @@ focus_tree = {
 }
 		focus = {
 		id = ROM_Ukraine_Claim
-		prerequisite = {focus = ROM_Fortify_Danube}
-		prerequisite = {focus = ROM_Constanta_Naval_Line}
-		relative_position_id = ROM_Fortify_Danube
+		prerequisite = {focus = ROM_Operation_Barbarossa}
+		relative_position_id = ROM_Operation_Barbarossa
 		available = {
 		
 		}
@@ -1044,7 +1053,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_HUN_the_kingdom_of_ukraine
-		x = 1
+		x = 0
 		y = 1
 		cost = 10
 		ai_will_do = {
@@ -1107,8 +1116,9 @@ focus_tree = {
 	}
 		focus = {
 		id = ROM_Operation_Barbarossa
-		prerequisite = {focus = ROM_Ukraine_Claim}
-		relative_position_id = ROM_Ukraine_Claim
+		prerequisite = {focus = ROM_Fortify_Danube}
+		prerequisite = {focus = ROM_Constanta_Naval_Line}
+		relative_position_id = ROM_Fortify_Danube
 		available = {
 		
 		}
@@ -1116,9 +1126,9 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_attack_soviet
-		x = 0
+		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1129,8 +1139,8 @@ focus_tree = {
 	}
 		focus = {
 		id = ROM_Form_Greater_Romania
-		prerequisite = {focus = ROM_Operation_Barbarossa}
-		relative_position_id = ROM_Operation_Barbarossa
+		prerequisite = {focus = ROM_Ukraine_Claim}
+		relative_position_id = ROM_Ukraine_Claim
 		available = {
 		
 		}
@@ -1146,7 +1156,9 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-
+			set_cosmetic_tag = ROM_greater
+			add_political_power = 100
+			add_ideas = ROM_Capital_of_Balkans_idea
 		}
 	}
 
@@ -1238,7 +1250,7 @@ focus_tree = {
 		icon = GFX_focus_CHL_expand_the_forestry
 		x = -2
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -1353,6 +1365,7 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			add_ideas = ROM_Gold_Extraction_idea
 		}
 	}
 		focus = {
@@ -1374,6 +1387,13 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			add_ideas = ROM_Extensive_Coal_Mining_idea
+			79 = {
+				add_resource = {
+					type = coal
+					amount = 8
+				}
+			}
 		}
 	}
 		focus = {
@@ -1396,6 +1416,29 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			46 = {
+					add_resource = {
+					type = oil
+					amount = 25
+				}
+			}
+			971 = {
+					add_resource = {
+					type = oil
+					amount = 10
+				}
+			}
+			79 = {
+					add_resource = {
+					type = oil
+					amount = 10
+				}
+			}
+			add_tech_bonus = {
+    		bonus = 0.5
+   			 uses = 1
+    		category = synth_resources
+			}
 		}
 	}
 		focus = {
@@ -1446,7 +1489,67 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 84 }
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 82 }
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 78 }
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 766 }
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
 			
+			}
 		}
 	}
 		focus = {
@@ -1499,12 +1602,20 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			46 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 		focus = {
@@ -1588,7 +1699,7 @@ focus_tree = {
 		icon = GFX_focus_generic_railroad
 		x = 2
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -1646,7 +1757,7 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_focus_generic_advanced_military_studies
+		icon = GFX_goal_generic_army_doctrines
 		x = 55
 		y = 0
 		cost = 5
@@ -1667,7 +1778,7 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_focus_generic_army_doctrines_2
+		icon = GFX_focus_chi_army_reform
 		x = -5
 		y = 1
 		cost = 5
@@ -1688,7 +1799,7 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_goal_generic_build_airforce
+		icon = GFX_goal_generic_air_fighter
 		x = 0
 		y = 1
 		cost = 5
@@ -1709,7 +1820,7 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_goal_generic_build_navy
+		icon = GFX_goal_generic_navy_battleship
 		x = 5
 		y = 1
 		cost = 5
