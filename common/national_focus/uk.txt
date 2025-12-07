@@ -2256,7 +2256,7 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			add_timed_idea = {idea = operation_husky days = 90}
+			add_timed_idea = {idea = operation_husky days = 270}
 		}
 	}	
 
@@ -3299,7 +3299,7 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			add_timed_idea = {idea = battle_of_singapore days = 90}
+			add_timed_idea = {idea = battle_of_singapore days = 270}
 		}
 	}
 	
