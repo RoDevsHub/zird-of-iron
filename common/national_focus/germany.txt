@@ -1795,7 +1795,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = 0.1
+				GER_industrial_consumer_goods_factor = 0.05
 				tooltip = consumer_goods_factor_tt
 			}
 			if = {
@@ -2001,7 +2001,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = 0.1
+				GER_industrial_consumer_goods_factor = 0.05
 				tooltip = consumer_goods_factor_tt
 			}
 			if = {
@@ -2078,7 +2078,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = 0.1
+				GER_industrial_consumer_goods_factor = 0.05
 				tooltip = consumer_goods_factor_tt
 			}
 			if = {
@@ -2185,7 +2185,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = 0.1
+				GER_industrial_consumer_goods_factor = 0.05
 				tooltip = consumer_goods_factor_tt
 			}
 			if = {
@@ -2296,7 +2296,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = 0.1
+				GER_industrial_consumer_goods_factor = 0.05
 				tooltip = consumer_goods_factor_tt
 			}
 			if = {
