@@ -103,4 +103,6 @@
  # tooltips 
  MON_cavalry_research_tt: "§YInstantly research§! technologies: §GEarly Trucks§! and §GTruck§!."
 
- # 
+ # MIO
+ MON_miat_airlines:0 "MIAT airlines"
+ MON_miat_airlines_desc:0 "MIAT airlines"
