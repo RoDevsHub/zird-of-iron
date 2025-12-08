@@ -1,0 +1,16 @@
+﻿l_english:
+ steel_mill:0 "Steel Mill"
+ steel_mill_desc:0 "This building provides the state with steel, which effectiveness can be improved via research."
+ steel_mill_plural:0 "Steel Mills"
+ aluminium_factory:0 "Aluminium Factory"
+ aluminium_factory_desc:0 "This building provides the state with aluminium, which effectiveness can be improved via research."
+ aluminium_factory_plural:0 "Aluminium Factories"
+ chromium_factory:0 "Chromium Factory"
+ chromium_factory_desc:0 "This building provides the state with chromium, which effectiveness can be improved via research."
+ chromium_factory_plural:0 "Chromium Factories"
+ tungsten_factory:0 "Tungsten Factory"
+ tungsten_factory_desc:0 "This building provides the state with tungsten, which effectiveness can be improved via research."
+ tungsten_factory_plural:0 "Tungesten Factories"
+
+ zird_factory:0 "Resource Factories"
+
