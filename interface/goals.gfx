@@ -7,7 +7,7 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MON_air"
-		texturefile = "gfx/interface/goals/focus-mongolian-airforce"			
+		texturefile = "gfx/interface/goals/focus-mongolian-airforce.dds"			
 	}
 
 	SpriteType = {
