@@ -1,47 +1,179 @@
+
+# https://en.wikipedia.org/wiki/Mongolian_People%27s_Army#1930s_conflicts_and_WWII
+# https://en.wikipedia.org/wiki/Mongolian_People%27s_Republic#World_War_II_(1939%E2%80%931945)
+
 focus_tree = {
 	id = mongolia_focus
 	
 	country = {
 		factor = 0
 		
-		#modifier = {
-		#	add = 10
-		#	tag = MON
-		#}
+		modifier = {
+			add = 10
+			tag = MON
+		}
 		
 	}
 	
 	default = no
 	
-	continuous_focus_position = { x = 1375 y = 5000 }
+	continuous_focus_position = { x = 1700 y = 1000 }
 
+
+######################################################################
+##########   THE ARMY ################################################
+######################################################################
 
 
 	focus = {
 		id = MON_the_mongolian_peoples_army
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_focus_MON_army
 		x = 10
 		y = 0
-		cost = 5
-		search_filters = {  FOCUS_FILTER_RESEARCH }
+		cost = 10
+		search_filters = {   }
 		
 		available_if_capitulated = yes
 
 		completion_reward = {
+			army_experience = 15
+			custom_effect_tooltip = generic_skip_one_line_tt
 		}
 	}
 
 	focus = {
-		id = MON_
-		icon = GFX_goal_generic_allies_build_infantry
-		x = 0
+		id = MON_the_mongolian_volunteer_army
+		icon = GFX_focus_generic_spur_communist_revolutions
+		x = 5
 		y = 1
-		cost = 5
+		cost = 10
+
+		mutually_exclusive = { focus = MON_a_standing_army }
 
 		prerequisite = { focus = MON_the_mongolian_peoples_army }
 		relative_position_id = MON_the_mongolian_peoples_army
 
-		search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = {   }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+
+	focus = {
+		id = MON_only_the_best
+		icon = GFX_focus_AFG_defender_of_central_asia
+		x = 0
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_the_mongolian_volunteer_army }
+		relative_position_id = MON_the_mongolian_volunteer_army
+
+		search_filters = {   }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_prepare_for_a_western_war
+		icon = GFX_focus_SOV_reinforce_western_naval_bases
+		x = -1
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_only_the_best }
+		relative_position_id = MON_only_the_best
+
+		search_filters = {   }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MON_anti_blitz_strategies
+		icon = GFX_focus_generic_anti_tank_guns
+		x = 0
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_prepare_for_a_western_war }
+		relative_position_id = MON_prepare_for_a_western_war
+
+		search_filters = {   }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_soviet_ingenuity
+		icon = GFX_focus_SOV_the_road_of_life
+		x = 1
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_only_the_best }
+		relative_position_id = MON_only_the_best
+
+		search_filters = {   }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_maximize_damage
+		icon = GFX_focus_SWE_let_fly_all_guns
+		x = 0
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_soviet_ingenuity }
+		relative_position_id = MON_soviet_ingenuity
+
+		search_filters = {   }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_a_modern_hero
+		icon = GFX_focus_generic_full_social_mobilization
+		x = -1
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_maximize_damage focus = MON_anti_blitz_strategies}
+		relative_position_id = MON_maximize_damage
+
+		search_filters = {   }
 		
 		available_if_capitulated = yes
 
@@ -62,1367 +194,1028 @@ focus_tree = {
 
 
 
-
-	
 	focus = {
-		id = MON_army_effort
-		icon = GFX_goal_generic_allies_build_infantry
-		x = 7
-		y = 0
+		id = MON_a_standing_army
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		x = -5
+		y = 1
 		cost = 10
+
+		mutually_exclusive = { focus = MON_the_mongolian_volunteer_army }
+
+		prerequisite = { focus = MON_the_mongolian_peoples_army }
 		relative_position_id = MON_the_mongolian_peoples_army
 
-		search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = {  }
 		
 		available_if_capitulated = yes
 
 		completion_reward = {
-			army_experience = 25
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = land_doctrine
-			}
+		}
+	}
+
+
+	focus = {
+		id = MON_universal_conscription
+		icon = GFX_focus_generic_women_in_military
+		x = 0
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_a_standing_army }
+		relative_position_id = MON_a_standing_army
+
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
 		}
 	}
 
 	focus = {
-		id = MON_equipment_effort
-		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = MON_army_effort }
+		id = MON_border_fortifications
+		icon = GFX_focus_generic_provoke_border_clashes
 		x = -1
 		y = 1
-		relative_position_id = MON_army_effort
 		cost = 10
 
-		search_filters = {  FOCUS_FILTER_RESEARCH }
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_universal_conscription }
+		relative_position_id = MON_universal_conscription
+
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_defense_in_depth
+		icon = GFX_focus_SWE_hedgehog_defense
+		x = 0
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_border_fortifications }
+		relative_position_id = MON_border_fortifications
+
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_mongolian_tradition
+		icon = GFX_focus_generic_horse_studs
+		x = 1
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_universal_conscription }
+		relative_position_id = MON_universal_conscription
+
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_living_off_the_land
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		x = 0
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_mongolian_tradition }
+		relative_position_id = MON_mongolian_tradition
+
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_ghengis_khan_reborn
+		icon = GFX_goal_generic_cavalry
+		x = -1
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_living_off_the_land focus = MON_defense_in_depth }
+		relative_position_id = MON_living_off_the_land
+
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_construct_war_schools
+		icon = GFX_focus_generic_university_1
+		x = 5
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_a_standing_army focus = MON_the_mongolian_volunteer_army}
+		relative_position_id = MON_a_standing_army
+
+		search_filters = {  }
 		
 		available_if_capitulated = yes
 
 		completion_reward = {
 
-			add_breakthrough_progress = {
-				specialization = specialization_land
-				value = 0.1
-			}
+			army_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_research_slot = 1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
+				bonus = 0.25
 				uses = 1
-				category = infantry_weapons
 				category = artillery
 			}
 
-		}
-	}
+			custom_effect_tooltip = generic_skip_one_line_tt
 
-	focus = {
-		id = MON_motorization_effort
-		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = MON_army_effort }
-		bypass = { has_tech = motorised_infantry }
-		x = 1
-		y = 1
-		relative_position_id = MON_army_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				bonus = 1.0
-				technology = motorised_infantry
-			}
-		}
-	}
-
-	focus = {
-		id = MON_doctrine_effort
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = MON_army_effort }
-		x = 0
-		y = 2
-		relative_position_id = MON_army_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 25
 			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
+				name = MON_construct_war_schools
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
+
+			# add research slot 
+			# cavalry school
+			# artillery school 
+			# modify army research idea
+			
 		}
 	}
-
 	focus = {
-		id = MON_equipment_effort_2
-		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = MON_equipment_effort }
+		id = MON_construct_research_facilities
+		icon = GFX_focus_generic_improve_the_administration
 		x = 0
-		y = 2
-		relative_position_id = MON_equipment_effort
+		y = 1
 		cost = 10
 
-		search_filters = {  FOCUS_FILTER_RESEARCH }
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_construct_war_schools}
+		relative_position_id = MON_construct_war_schools
+
+		search_filters = {  }
 		
 		available_if_capitulated = yes
 
 		completion_reward = {
 
-			add_breakthrough_progress = {
-				specialization = specialization_land
-				value = 0.1
+			army_experience = 15
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = { 
+					330 = {
+						is_fully_controlled_by = ROOT
+						air_facility < 1
+						land_facility < 1
+						naval_facility < 1
+						nuclear_facility < 1
+					}
+				}
+
+				330 = {
+					add_building_construction = {
+						type = land_facility
+						level = 1
+						instant_build = yes
+						province = 4801 # capital province
+					}
+				}
+			}
+			ELSE = {
+				random_core_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+						air_facility < 1
+						land_facility < 1
+						naval_facility < 1
+						nuclear_facility < 1
+					}
+					prioritize = { 817 819 329 } 
+					add_building_construction = {
+						type = land_facility
+						level = 1
+						instant_build = yes
+						province = 4801 # capital province
+					}
+				}
 			}
 
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-				category = artillery
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_mastery = {
+				amount = 100
+				# FILTERS:
+				#folder = land
+				#grand_doctrine = mobile_warfare
+				#sub_doctrine = mobile_infantry
+				track = operations
+				index = 1
 			}
 
+
+			# modify research idea
+			# add land warfare facility
 		}
 	}
-
 	focus = {
-		id = MON_mechanization_effort
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = MON_motorization_effort }
-		x = 0
-		y = 2
-		relative_position_id = MON_motorization_effort
+		id = MON_modern_cavalry
+		icon = GFX_focus_generic_mechanized
+		x = 1
+		y = 1
 		cost = 10
-		
-		search_filters = {  FOCUS_FILTER_RESEARCH }
 
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_construct_research_facilities}
+		relative_position_id = MON_construct_research_facilities
+
+		search_filters = {  }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+
+			army_experience = 10
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			hidden_effect = {
+				IF = {
+					limit = { NOT = { has_tech = tech_trucks } }
+					set_technology = { tech_trucks = 1 }
+				}
+				IF = {
+					limit = { NOT = { has_tech = motorised_infantry } }
+					set_technology = { motorised_infantry = 1 }
+				}
 			}
 			IF = {
-				limit = {
-					has_tech = motorised_infantry
+				limit = { 
+					AND = {
+						NOT = { has_tech = tech_trucks } 
+						NOT = { has_tech = motorised_infantry }
+					}
 				}
-				add_equipment_to_stockpile = { 
-					type = motorized_equipment
-					amount = 1
-				}
+				custom_effect_tooltip = MON_cavalry_research_tt
 			}
-		}
-	}
 
-	focus = {
-		id = MON_doctrine_effort_2
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = MON_doctrine_effort }
-		x = 0
-		y = 2
-		relative_position_id = MON_doctrine_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 25
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = MON_equipment_effort_3
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = MON_equipment_effort_2 }
-		x = 0
-		y = 2
-		relative_position_id = MON_equipment_effort_2
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-
-			add_breakthrough_progress = {
-				specialization = specialization_land
-				value = 0.1
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				ahead_reduction = 2
+				bonus = 1.5
+				ahead_reduction = 1
 				uses = 1
+				category = cat_mechanized_equipment
+			}
+
+			# add truck bonus
+		}
+	}
+
+	focus = {
+		id = MON_mongolian_armour
+		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
+		x = 0
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_modern_cavalry}
+		relative_position_id = MON_modern_cavalry
+
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			army_experience = 15
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_mastery = {
+				amount = 100
+				# FILTERS:
+				#folder = land
+				#grand_doctrine = mobile_warfare
+				#sub_doctrine = mobile_infantry
+				track = armor
+				index = 1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 3
+				category = armor
+			}
+
+			# add tank bonus
+		}
+	}
+
+	focus = {
+		id = MON_modernize_the_common_soldier
+		icon = GFX_focus_generic_manpower
+		x = -1
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_construct_research_facilities}
+		relative_position_id = MON_construct_research_facilities
+
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			army_experience = 10
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_mastery = {
+				amount = 100
+				# FILTERS:
+				#folder = land
+				#grand_doctrine = mobile_warfare
+				#sub_doctrine = mobile_infantry
+				track = infantry
+				index = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 3
 				category = infantry_weapons
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_tech
+			}
+
+			# add infantry
+		}
+	}
+	focus = {
+		id = MON_improved_cannons
+		icon = GFX_SOV_soviet_artillery_ccp_2d_sov_compatibility
+		x = 0
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_modernize_the_common_soldier}
+		relative_position_id = MON_modernize_the_common_soldier
+
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			army_experience = 5
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_mastery = {
+				amount = 100
+				# FILTERS:
+				#folder = land
+				#grand_doctrine = mobile_warfare
+				#sub_doctrine = mobile_infantry
+				track = combat_support
+				index = 1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_anti_tank
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_anti_air
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = railway_gun
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
 				category = artillery
 			}
 
+			
+
+			# add artillery
 		}
 	}
 
 	focus = {
-		id = MON_armor_effort
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = MON_mechanization_effort }
-		x = 0
-		y = 2
-		relative_position_id = MON_mechanization_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 1.0
-				uses = 2
-				category = armor
-			}
-		}
-	}
-
-	focus = {
-		id = MON_special_forces
+		id = MON_specialized_forces
 		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = MON_equipment_effort_3 }
-		prerequisite = { focus = MON_doctrine_effort_2 }
-		prerequisite = { focus = MON_armor_effort }
 		x = 1
 		y = 1
-		relative_position_id = MON_equipment_effort_3
 		cost = 10
 
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		#mutually_exclusive = { focus =  }
+
+		prerequisite = { focus = MON_improved_cannons focus = MON_mongolian_armour }
+		relative_position_id = MON_improved_cannons
+
+		search_filters = {  }
 		
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_ideas = special_forces
-			add_tech_bonus = {
-				name = special_forces_bonus
-				bonus = 1.0
-				uses = 1
-				technology = paratroopers
-				technology = paratroopers2
-				technology = marines
-				technology = marines2
-				technology = tech_mountaineers
-				technology = tech_mountaineers2
-			}
-		}
-	}
 
-	focus = {
-		id = MON_aviation_effort
-		icon = GFX_goal_generic_build_airforce
-		x = 5
-		y = 0
-		cost = 10
-		
-		relative_position_id = MON_army_effort
+			army_experience = 10
 
-		search_filters = {   FOCUS_FILTER_RESEARCH }
+			custom_effect_tooltip = generic_skip_one_line_tt
 
-		available_if_capitulated = yes
-
-
-		complete_tooltip = {
-			air_experience = 25
-			if = { limit = { has_country_flag = aviation_effort_AB }
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}			
 			add_doctrine_cost_reduction = {
-				name = air_doc_bonus
+				name = MON_specialized_forces
 				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
-			}			
-		}
-
-		completion_reward = {
-			air_experience = 25
-
-			if = {
-				limit = {
-					capital_scope = {
-						NOT = {
-							free_building_slots = {
-								building = air_base
-								size > 1
-							}
-						}
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = aviation_effort_AB }
-				}
-			}
-			if = {
-				limit = {
-					capital_scope = {
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-				}
-				capital_scope = {
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = aviation_effort_AB }
-				}
-			}
-			add_doctrine_cost_reduction = {
-				name = air_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = MON_fighter_focus
-		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = MON_aviation_effort }
-		mutually_exclusive = { focus = MON_bomber_focus }
-		x = -1
-		y = 1
-		relative_position_id = MON_aviation_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = fighter_bonus
-				bonus = 1.0
 				uses = 2
-				category = light_fighter
-				category = cat_heavy_fighter
+				category = special_forces_doctrine
 			}
-		}
-	}
 
-	focus = {
-		id = MON_bomber_focus
-		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = MON_aviation_effort }
-		mutually_exclusive = { focus = MON_fighter_focus }
-		x = 1
-		y = 1
-		relative_position_id = MON_aviation_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = bomber_bonus
-				bonus = 1.0
-				uses = 2
-				category = cat_strategic_bomber
-				category = tactical_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = MON_aviation_effort_2
-		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = MON_bomber_focus focus = MON_fighter_focus }
-		x = -1
-		y = 1
-		relative_position_id = MON_bomber_focus
-		cost = 10
-
-		search_filters = {   FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-
-		complete_tooltip = {
-			air_experience = 25
-			if = { limit = { has_country_flag = aviation_effort_2_AB }
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_doctrine_cost_reduction = {
-				name =  air_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-		completion_reward = {
-			air_experience = 25
-			if = {
-				limit = {
-					capital_scope = {
-						OR = {
-							NOT = { is_controlled_by = ROOT }
-							NOT = {
-								free_building_slots = {
-									building = air_base
-									size > 1
-								}
-							}
-						}
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = aviation_effort_2_AB }
-				}
-			}
-			if = {
-				limit = {
-					capital_scope = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-				}
-				capital_scope = {
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}				
-					ROOT = { set_country_flag = aviation_effort_2_AB }
-				}
-			}
-			add_doctrine_cost_reduction = {
-				name =  air_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = MON_CAS_effort
-		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = MON_aviation_effort_2 }
-		prerequisite = { focus = MON_motorization_effort }
-		x = -1
-		y = 1
-		relative_position_id = MON_aviation_effort_2
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = CAS_bonus
-				bonus = 1.0
-				ahead_reduction = 2
-				uses = 1
-				category = cas_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = MON_rocket_effort
-		icon = GFX_focus_rocketry
-		prerequisite = { focus = MON_aviation_effort_2 }
-		prerequisite = { focus = MON_infrastructure_effort }
-		x = 0
-		y = 2
-		relative_position_id = MON_aviation_effort_2
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.5
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_tech_bonus = {
-				name = jet_rocket_bonus
-				ahead_reduction = 2
-				uses = 1 # was 2
-				category = rocketry
-				category = jet_technology
+				bonus = 0.75
+				uses = 3
+				category = cat_special_forces_generic
 			}
 
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
+			# add mountainers and rangers
 		}
 	}
 
-	focus = {
-		id = MON_NAV_effort
-		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = MON_aviation_effort_2 }
-		x = 1
-		y = 1
-		relative_position_id = MON_aviation_effort_2
-		cost = 10
+######################################################################
+##########   THE AIRFORCE ############################################
+######################################################################
 
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = nav_bomber_bonus
-				bonus = 1.0
-				ahead_reduction = 2
-				uses = 1
-				category = naval_bomber
-			}
-		}
-	}
 
 	focus = {
-		id = MON_industrial_effort
-		icon = GFX_goal_generic_production
-		x = 5
+		id = MON_the_mongolian_peoples_republic_air_force
+		icon = GFX_focus_MON_air
+		x = 12
 		y = 0
 		cost = 10
 
-		relative_position_id = MON_aviation_effort
-
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		relative_position_id = MON_the_mongolian_peoples_army
+		search_filters = {  }
 		
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1.0
-				uses = 1
-				category = industry
-			}
-		}
 
-		ai_will_do = {
-			factor = 3
-			modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-			modifier = {
-				factor = 6
-				is_in_array = {
-					array = RAJ.raj_releasables
-					value = THIS
-				}
-				is_subject_of = RAJ
-			}
-			modifier = {
-				factor = 0
-				date < 1939.1.1
-				OR = { 
-					# we dont want chinese minors to go crazy on slots early since they get eaten
-					tag = GXC 
-					tag = YUN
-					tag = SHX
-					tag = XSM
-					tag = BEL
-					tag = LUX
-					tag = HOL
-					tag = DEN
+			air_experience = 10
 
-					# we also dont want tiny nations to go crazy with slots right away
-					num_of_controlled_states < 2
-				}	
-				NOT = {
-					is_in_array = {
-						array = RAJ.raj_releasables
-						value = THIS
-					}
-				}			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = MON_construct_war_schools
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
 			}
+
 		}
 	}
 
 	focus = {
-		id = MON_construction_effort
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = MON_industrial_effort }
-		x = -1
+		id = MON_domestic_production
+		icon = GFX_SOV_increase_aircraft_production_ccp_2d_sov_compatibility
+		x = -2
 		y = 1
-		relative_position_id = MON_industrial_effort
 		cost = 10
 
-		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		mutually_exclusive = {focus = MON_foreign_designs}
+		prerequisite = {focus = MON_the_mongolian_peoples_republic_air_force}
+		relative_position_id = MON_the_mongolian_peoples_republic_air_force
+		search_filters = {  }
 		
 		available_if_capitulated = yes
 
-
-		
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 6
-				is_in_array = {
-					array = RAJ.raj_releasables
-					value = THIS
-				}
-				is_subject_of = RAJ
-			}
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
+
+			air_experience = 15
+
 		}
 	}
 
 	focus = {
-		id = MON_production_effort
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = MON_industrial_effort }
-		x = 1
-		y = 1
-		relative_position_id = MON_industrial_effort
-		cost = 10
-
-		search_filters = { FOCUS_FILTER_INDUSTRY  }
-		
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2
-				modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-			modifier = {
-				factor = 5
-				is_in_array = {
-					array = RAJ.raj_releasables
-					value = THIS
-				}
-				is_subject_of = RAJ
-			}	
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = MON_construction_effort_2
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = MON_construction_effort }
-		x = 0
-		y = 1
-		relative_position_id = MON_construction_effort
-		cost = 10
-
-		search_filters = { FOCUS_FILTER_INDUSTRY  }
-		
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-			modifier = {
-				factor = 5
-				is_in_array = {
-					array = RAJ.raj_releasables
-					value = THIS
-				}
-				is_subject_of = RAJ
-			}
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-		}		
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = MON_production_effort_2
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = MON_production_effort }
-		x = 0
-		y = 1
-		relative_position_id = MON_production_effort
-		cost = 10
-		
-		search_filters = { FOCUS_FILTER_INDUSTRY  }
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-			modifier = {
-				factor = 5
-				is_in_array = {
-					array = RAJ.raj_releasables
-					value = THIS
-				}
-				is_subject_of = RAJ
-			}
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}		
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = MON_infrastructure_effort
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = MON_construction_effort_2 }
-		x = 0
-		y = 1
-		relative_position_id = MON_construction_effort_2
-		cost = 10
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		
-		available_if_capitulated = yes
-
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = infrastructure_effort_tt
-				all_owned_state = {			
-					free_building_slots = {
-						building = infrastructure
-						size < 1
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 1
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 1
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = MON_production_effort_3
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = MON_production_effort_2 }
-		x = 0
-		y = 1
-		relative_position_id = MON_production_effort_2
-		cost = 10
-
-		search_filters = { FOCUS_FILTER_INDUSTRY  }
-		
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-			modifier = {
-				factor = 5
-				is_in_array = {
-					array = RAJ.raj_releasables
-					value = THIS
-				}
-				is_subject_of = RAJ
-			}
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}		
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = MON_infrastructure_effort_2
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = MON_infrastructure_effort }
-		x = 0
-		y = 1
-		relative_position_id = MON_infrastructure_effort
-		cost = 10
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		
-		available_if_capitulated = yes
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-		}
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = infrastructure_effort_tt
-				all_owned_state = {			
-					free_building_slots = {
-						building = infrastructure
-						size < 1
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 1
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 1
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = MON_construction_effort_3
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = MON_infrastructure_effort }
+		id = MON_foreign_designs
+		icon = GFX_focus_generic_copy_plane_designs
 		x = 2
 		y = 1
-		relative_position_id = MON_infrastructure_effort
 		cost = 10
 
-		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		mutually_exclusive = {focus = MON_domestic_production}
+		prerequisite = {focus = MON_the_mongolian_peoples_republic_air_force}
+		relative_position_id = MON_the_mongolian_peoples_republic_air_force
+		search_filters = {  }
 		
 		available_if_capitulated = yes
 
+		completion_reward = {
 
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-			modifier = {
-				add = 5
-				is_in_array = {
-					array = RAJ.raj_releasables
-					value = THIS
-				}
-			}
+			air_experience = 15
 		}
+	}
 
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 2
-						include_locked = yes
-					}
-				}
-			}
-		}
+	focus = {
+		id = MON_new_aerodromes
+		icon = GFX_focus_generic_air_bases
+		x = -2
+		y = 1
+		cost = 10
 
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}
-		}
+		#mutually_exclusive = {focus = }
+		prerequisite = {focus = MON_foreign_designs focus = MON_domestic_production }
+		relative_position_id = MON_foreign_designs
+		search_filters = {  }
+		
+		available_if_capitulated = yes
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 1
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
+
+			air_experience = 15
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			330 = {
+				add_building_construction = {
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			617 = {
+				add_building_construction = {
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+
+
+
+
+
+
+		}
+	}
+	focus = {
+		id = MON_fighter_planes
+		icon = GFX_goal_generic_air_fighter
+		x = -2
+		y = 1
+		cost = 10
+
+		mutually_exclusive = {focus = MON_bomber_planes focus = MON_multi_role_planes }
+		prerequisite = {focus = MON_new_aerodromes }
+		relative_position_id = MON_new_aerodromes
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 5
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 1.25
+				uses = 3
+				category = light_air
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_air_engine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = cat_air_guns
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_mastery = {
+				amount = 175
+				# FILTERS:
+				#folder = land
+				#grand_doctrine = mobile_warfare
+				#sub_doctrine = mobile_infantry
+				track = fighter_aircraft
+				index = 1
+			}
+		}
+	}
+	focus = {
+		id = MON_multi_role_planes
+		icon = GFX_goal_generic_air_bomber
+		x = 0
+		y = 1
+		cost = 10
+
+		mutually_exclusive = {focus = MON_bomber_planes focus = MON_fighter_planes }
+		prerequisite = {focus = MON_new_aerodromes }
+		relative_position_id = MON_new_aerodromes
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 5
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 1.25
+				uses = 3
+				category = medium_air
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_air_engine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_air_guns
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_air_bombs
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_mastery = {
+				amount = 175
+				# FILTERS:
+				#folder = land
+				#grand_doctrine = mobile_warfare
+				#sub_doctrine = mobile_infantry
+				track = medium_aircraft
+				index = 1
+			}
+		}
+	}
+	focus = {
+		id = MON_bomber_planes
+		icon = GFX_focus_generic_long_range_aircraft
+		x = 2
+		y = 1
+		cost = 10
+
+		mutually_exclusive = {focus = MON_multi_role_planes focus = MON_fighter_planes }
+		prerequisite = {focus = MON_new_aerodromes }
+		relative_position_id = MON_new_aerodromes
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 5
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 1.25
+				uses = 3
+				category = heavy_air
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_air_engine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = cat_air_bombs
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_mastery = {
+				amount = 175
+				# FILTERS:
+				#folder = land
+				#grand_doctrine = mobile_warfare
+				#sub_doctrine = mobile_infantry
+				track = heavy_aircraft
+				index = 1
+			}
+
+		}
+	}
+
+	focus = {
+		id = MON_the_arat_squadron
+		icon = GFX_focus_SOV_flying_clubs
+		x = -2
+		y = 1
+		cost = 10
+
+		#mutually_exclusive = {focus = }
+		prerequisite = {focus = MON_bomber_planes focus = MON_multi_role_planes focus = MON_fighter_planes }
+		relative_position_id = MON_bomber_planes
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+		}
+	}
+
+
+######################################################################
+##########   THE ECONOMY  ############################################
+######################################################################
+
+
+# Mongolia has big deposits of:
+# coal, iron, lead, tungsten
+# first modern coal mine in Ulaanbaatar
+# open pit mining in Sharyngol (near Darkhan and Baganuur)
+# Ulaanbaatar industrial combine - first manufacturing plant
+# mongolia only traded with the ussr and noone else
+# mongo (o - with umlaut) currency
+# State Bank of the Mongolian People's Republic
+# maytag oil fields
+
+	focus = {
+		id = MON_state_bank_of_the_mongolian_peoples_republic
+		icon = GFX_focus_CHI_registry_of_property
+		x = 12
+		y = 0
+		cost = 10
+
+		relative_position_id = MON_the_mongolian_peoples_republic_air_force
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			330 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = { 
+					330 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
 					}
 				}
+
+				330 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			
+
+		}
+	}
+
+
+	focus = {
+		id = MON_industrialization_plans
+		icon = GFX_SOV_heavy_industry_ccp_2d_sov_compatibility
+		x = -3
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_state_bank_of_the_mongolian_peoples_republic}
+
+		relative_position_id = MON_state_bank_of_the_mongolian_peoples_republic
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			330 = {
+				add_extra_state_shared_building_slots = 5
+			}
+		
+			IF = {
+				limit = { 
+					330 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+
+				330 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			817 = {
+				add_extra_state_shared_building_slots = 5
+			}
+		
+			IF = {
+				limit = { 
+					817 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+
+				817 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			329 = {
+				add_extra_state_shared_building_slots = 5
+			}
+		
+			IF = {
+				limit = { 
+					329 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+
+				329 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			617 = {
+				add_extra_state_shared_building_slots = 5
+			}
+		
+			IF = {
+				limit = { 
+					617 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+
+				617 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+		}
+	}
+
+	focus = {
+		id = MON_xinjiang_region
+		icon = GFX_SOV_paced_industrialization_ccp_2d_sov_compatibility
+		x = -2
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_industrialization_plans}
+
+		relative_position_id = MON_industrialization_plans
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			617 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -1430,135 +1223,565 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = { 
+					617 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+
+				617 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			619 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = { 
+					619 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+
+				619 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = construction_tech
+			}
 		}
 	}
-
 	focus = {
-		id = MON_nuclear_effort
-		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = MON_infrastructure_effort_2 }
-		x = -2
+		id = MON_maytag_oil_fields
+		icon = GFX_focus_generic_resource_extraction
+		x = -1
 		y = 1
-		relative_position_id = MON_infrastructure_effort_2
 		cost = 10
-		
-		search_filters = { FOCUS_FILTER_RESEARCH } 
 
+		prerequisite = {focus = MON_xinjiang_region}
+
+		relative_position_id = MON_xinjiang_region
+		search_filters = {  }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
 
-			add_breakthrough_progress = {
-				specialization = specialization_nuclear
-				value = 0.75
+			617 = {
+				add_resource = {
+					type = oil
+					amount = 36
+				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_tech_bonus = {
-				name = nuclear_bonus
-				ahead_reduction = 1 # was 2
-				category = nuclear
+				bonus = 0.5
+				uses = 1
+				category = excavation_tech
 			}
 
-		}
 
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
+		}
+	}
+	focus = {
+		id = MON_cross_country_railway
+		icon = GFX_focus_generic_railroad
+		x = 1
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_xinjiang_region}
+
+		relative_position_id = MON_xinjiang_region
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			build_railway = {
+				level = 2
+				build_only_on_allied = yes
+				controller_priority = {
+					base = 1
+				}
+				fallback = yes
+				path = { 4973 8112 1970 2015 7949 4682 7702 10545 4709 12656 10839 4704 12598 10560 7864 12541 7806 10704 12686 4801 }
+				start_province = 4973
+				target_province = 4801
+			}
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				controller_priority = {
+					base = 1
+				}
+				fallback = yes
+				path = { 12598 7808 7870 10563 4777 10669 7773 1877 10627 }
+				start_province = 12598
+				target_province = 10627
+			}
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				controller_priority = {
+					base = 1
+				}
+				fallback = yes
+				path = { 4801 10554 4766 }
+				start_province = 4801
+				target_province = 4766
+			}
+		}
+	}
+	focus = {
+		id = MON_urumqi_mineral_extraction
+		icon = GFX_SOV_increase_state_reserves_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_cross_country_railway focus = MON_maytag_oil_fields }
+
+		relative_position_id = MON_cross_country_railway
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			617 = {
+				add_resource = {
+					type = steel
+					amount = 22
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			617 = {
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			617 = {
+				add_resource = {
+					type = tungsten
+					amount = 16
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = excavation_tech
 			}
 		}
 	}
 
 	focus = {
-		id = MON_extra_tech_slot
-		icon = GFX_focus_research
-		prerequisite = { focus = MON_infrastructure_effort_2 }
-		x = 0
-		y = 1
-		relative_position_id = MON_infrastructure_effort_2
-		cost = 10
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH } 
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-	
-	focus = {
-		id = MON_extra_tech_slot_2
-		icon = GFX_focus_research
-		prerequisite = { focus = MON_extra_tech_slot }
-		available = {
-			num_of_factories > 50
-		}
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		x = 0
-		y = 1
-		relative_position_id = MON_extra_tech_slot
-		cost = 10
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 6
-				original_tag = SIA
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH } 
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}	
-
-	focus = {
-		id = MON_secret_weapons
-		icon = GFX_goal_generic_secret_weapon
-		prerequisite = { focus = MON_infrastructure_effort_2 }
+		id = MON_ulaanbaatar_region
+		icon = GFX_SOV_paced_industrialization_ccp_2d_sov_compatibility
 		x = 2
 		y = 1
-		relative_position_id = MON_infrastructure_effort_2
 		cost = 10
 
-		search_filters = { FOCUS_FILTER_RESEARCH } 
+		prerequisite = {focus = MON_industrialization_plans}
+
+		relative_position_id = MON_industrialization_plans
+		search_filters = {  }
 		
 		available_if_capitulated = yes
 
 		completion_reward = {
 
-			add_ideas = generic_secret_weapons_ns
+			330 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
 
-			#add_tech_bonus = {
-			#	name = secret_bonus
-			#	bonus = 0.5
-			#	uses = 4
-			#	category = electronics
-			#	category = nuclear
-			#	category = rocketry
-			#}
+			custom_effect_tooltip = generic_skip_one_line_tt
 
-		}
+			IF = {
+				limit = { 
+					330 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
 
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
+				330 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = construction_tech
 			}
 		}
 	}
 
+	focus = {
+		id = MON_the_first_modern_coal_mine
+		icon = GFX_focus_generic_coal_mining
+		x = 1
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_ulaanbaatar_region}
+
+		relative_position_id = MON_ulaanbaatar_region
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			330 = {
+				add_resource = {
+					type = coal
+					amount = 18
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				technology = improved_equipment_conversion
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				technology = advanced_equipment_conversion
+			}
+
+		}
+	}
+	focus = {
+		id = MON_ulaanbaatar_industrial_combine
+		icon = GFX_focus_generic_industry_3
+		x = -1
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_ulaanbaatar_region}
+
+		relative_position_id = MON_ulaanbaatar_region
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			330 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = { 
+					330 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+
+				330 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = concentrated_industry_category
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dispersed_industry_category
+			}
+		}
+	}
+	focus = {
+		id = MON_expand_tuvan_industry
+		icon = GFX_SOV_paced_industrialization_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_ulaanbaatar_industrial_combine focus = MON_the_first_modern_coal_mine}
+
+		relative_position_id = MON_ulaanbaatar_industrial_combine
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			329 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = { 
+					329 = {
+						is_fully_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+
+				329 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = MON_issue_the_mongo
+		icon = GFX_focus_CHI_promote_national_currency
+		x = 3
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_state_bank_of_the_mongolian_peoples_republic}
+
+		relative_position_id = MON_state_bank_of_the_mongolian_peoples_republic
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_joint_stock_companies
+		icon = GFX_focus_generic_monetary_union
+		x = -1
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_issue_the_mongo}
+
+		relative_position_id = MON_issue_the_mongo
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_collectevize_the_workers
+		icon = GFX_focus_GER_the_peoples_victory
+		x = 1
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_issue_the_mongo}
+
+		relative_position_id = MON_issue_the_mongo
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MON_increase_trade_with_the_ussr
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = -1
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_collectevize_the_workers }
+		prerequisite = {focus = MON_joint_stock_companies }
+
+		relative_position_id = MON_collectevize_the_workers
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = MON_the_five_year_plan
+		icon = GFX_focus_CHI_planned_economy
+		x = 0
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_increase_trade_with_the_ussr }
+
+		relative_position_id = MON_increase_trade_with_the_ussr
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+######################################################################
+##########  POLITICS  ################################################
+######################################################################
+
+	focus = {
+		id = MON_state_of_affairs
+		icon = GFX_focus_generic_self_management
+		x = 10
+		y = 0
+		cost = 10
+
+		relative_position_id = MON_state_bank_of_the_mongolian_peoples_republic
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 175
+		}
+	}
+
+	focus = {
+		id = MON_temp_tech_tree_slot_1
+		icon = GFX_focus_generic_self_management
+		x = 0
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_state_of_affairs }
+
+		relative_position_id = MON_state_of_affairs
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = MON_temp_tech_tree_slot_2
+		icon = GFX_focus_generic_self_management
+		x = 0
+		y = 1
+		cost = 10
+
+		prerequisite = {focus = MON_temp_tech_tree_slot_1 }
+
+		relative_position_id = MON_temp_tech_tree_slot_1
+		search_filters = {  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			 	
+
+			add_research_slot = 1
+		}
+	}
+
+
+
 	
- }
+}
+
+
+
+# made by zirdgal (z1rd) 

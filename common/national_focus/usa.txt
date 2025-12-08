@@ -874,7 +874,7 @@ focus_tree = {
 			OR = {
 				date > 1941.12.07
 				has_war = yes
-				has_war_support > 0.6
+				has_war_support > 0.5
 			}
 			democratic > 0.95
 		}
