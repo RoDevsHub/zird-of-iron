@@ -189,6 +189,17 @@ bookmarks = {
 
 			}
 		}
+		MON = {
+			minor = yes
+			history = MON_GATHERING_STORM_DESC
+			ideology = communism
+			ideas = {
+
+			}
+			focuses = {
+
+			}
+		}
 
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
