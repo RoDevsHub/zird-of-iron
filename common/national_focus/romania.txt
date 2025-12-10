@@ -1757,7 +1757,7 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_goal_generic_army_doctrines
+		icon = GFX_focus_SWE_revoke_militia_law
 		x = 55
 		y = 0
 		cost = 5
@@ -1766,6 +1766,11 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			add_command_power = 15
+			army_experience = 5
+			air_experience = 5
+			navy_experience = 5
+
 		}
 	}
 		focus = {
@@ -1778,10 +1783,81 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_focus_chi_army_reform
-		x = -5
+		icon = GFX_focus_ETH_ecole_militaire_haile_selassie_1er
+		x = 0
 		y = 1
-		cost = 5
+		cost = 8
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}	
+		completion_reward = {
+			army_experience = 25
+
+		}
+	}
+		focus = {
+		id = ROM_Marine_Corps
+		prerequisite = {focus = ROM_Land_Forces}
+		relative_position_id = ROM_Land_Forces
+		mutually_exclusive = {focus = ROM_Mass_Mobilization}
+		mutually_exclusive = {focus = ROM_Armor_Warfare}
+		available = {
+		
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_focus_PHI_war_plan_orange
+		x = 3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}	
+		completion_reward = {
+		}
+	}
+		focus = {
+		id = ROM_Mass_Mobilization
+		prerequisite = {focus = ROM_Land_Forces}
+		relative_position_id = ROM_Land_Forces
+		mutually_exclusive = {focus = ROM_Marine_Corps}
+		mutually_exclusive = {focus = ROM_Armor_Warfare}
+		available = {
+		
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_focus_RAJ_a_private_military
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}	
+		completion_reward = {
+		}
+	}
+		focus = {
+		id = ROM_Armor_Warfare
+		prerequisite = {focus = ROM_Land_Forces}
+		relative_position_id = ROM_Land_Forces
+		mutually_exclusive = {focus = ROM_Mass_Mobilization}
+		mutually_exclusive = {focus = ROM_Marine_Corps}
+		available = {
+		
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_focus_JAP_army_weapons_administration_hq
+		x = -3
+		y = 1
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1799,15 +1875,16 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_goal_generic_air_fighter
-		x = 0
+		icon = GFX_focus_CZE_military_aeronautical_institute
+		x = -8
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
+			air_experience = 25
 		}
 	}
 		focus = {
@@ -1820,14 +1897,58 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_goal_generic_navy_battleship
-		x = 5
+		icon = GFX_focus_generic_large_navy
+		x = 8
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
+		completion_reward = {
+			navy_experience = 25
+		}
+	}
+	
+		focus = {
+		id = ROM_Black_Sea_Fleet
+		prerequisite = {focus = ROM_Naval_Forces}
+		mutually_exclusive = {focus = ROM_Fleet_of_Raiders}
+		relative_position_id = ROM_Naval_Forces
+		available = {
+		
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_focus_SMB_blue_water_fleet
+		x = -2
+		y = 1
+		cost = 8
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+		focus = {
+		id = ROM_Fleet_of_Raiders
+		prerequisite = {focus = ROM_Naval_Forces}
+		mutually_exclusive = {focus = ROM_Black_Sea_Fleet}
+		relative_position_id = ROM_Naval_Forces
+		available = {
+		
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 2
+		y = 1
+		cost = 8
+		ai_will_do = {
+			factor = 1
+		}
 		completion_reward = {
 		}
 	}
