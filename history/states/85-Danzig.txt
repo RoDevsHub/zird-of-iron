@@ -9,7 +9,8 @@ state = {
 
 		owner = POL
 		add_core_of = POL
-		add_claim_by = GER
+		add_core_of = DNZ
+		add_core_of = GER
 
 		victory_points = {
 			362 10 # Danzig

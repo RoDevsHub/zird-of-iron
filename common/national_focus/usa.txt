@@ -71,9 +71,8 @@ focus_tree = {
 			MEX = {
 				is_ai = yes
 			}
-			SOV = {
-				has_completed_focus = SOV_behead_the_snake
-			}
+			has_global_flag = AAT_trotsky_sent_to_stalin
+			NOT = { has_global_flag = AAT_trotsky_in_mexico } 
 		}
 		
 		bypass = {
@@ -873,9 +872,9 @@ focus_tree = {
 		prerequisite = { focus = USA_federal_housing_act }
 		available = {
 			OR = {
-				has_completed_focus = USA_american_british_conference
+				date > 1941.12.07
 				has_war = yes
-				has_war_support > 0.4
+				has_war_support > 0.5
 			}
 			democratic > 0.95
 		}
@@ -1139,17 +1138,12 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
 			army_experience = 20
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_potential_special_forces_tree = yes
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			add_doctrine_cost_reduction = {
 				name = USA_louisiana_maneuvers
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
-			
 		}
 	}
 	focus = {
@@ -1917,6 +1911,11 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			custom_effect_tooltip = available_military_high_command
+			show_ideas_tooltip = courtney_hodges
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_tech_bonus = {
 				bonus = 0.75
 				uses = 1
@@ -1968,7 +1967,8 @@ focus_tree = {
 				limit = {
 					has_dlc = "Arms Against Tyranny"
 				}
-				
+				add_potential_special_forces_tree = yes
+				custom_effect_tooltip = generic_skip_one_line_tt
 				add_doctrine_cost_reduction = {
 					cost_reduction = 0.33
 					uses = 1
@@ -2502,11 +2502,11 @@ focus_tree = {
 	focus = {
 		id = USA_scientist_haven
 		icon = GFX_focus_research
-		prerequisite = { focus = USA_wealth_tax_act }
+		prerequisite = { focus = USA_the_giant_wakes }
 		prerequisite = { focus = USA_office_of_scientific_research_and_development }
-		x = 1
+		x = 3
 		y = 1
-		relative_position_id = USA_wealth_tax_act
+		relative_position_id = USA_the_giant_wakes
 
 
 		cost = 7
@@ -2528,10 +2528,9 @@ focus_tree = {
 		id = USA_manhattan_project
 		icon = GFX_focus_wonderweapons
 		prerequisite = { focus = USA_scientist_haven }
-		prerequisite = { focus = USA_the_giant_wakes }
 		
-		x = 2
-		y = 2
+		x = -1
+		y = 1
 		relative_position_id = USA_scientist_haven
 		cost = 5
 		#ai_will_do = {
