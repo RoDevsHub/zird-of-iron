@@ -1,0 +1,24 @@
+﻿l_english:
+ # focus 
+ GER_an_offer_from_disgruntled_cossacks:0 "An Offer from Disgruntled Cossacks"
+ GER_an_offer_from_disgruntled_cossacks_desc:0 "An Offer from Disgruntled Cossacks"
+ GER_the_na_campaign:0 "Afrikafeldzug"
+ GER_the_na_campaign_desc:0 "The North Africa Campaign"
+ GER_invite_iraq:0 "Invite Iraq"
+ GER_invite_iraq_desc:0 "Invite Iraq"
+ GER_conquer_iran:0 "Conquer Persia"
+ GER_conquer_iran_desc:0 "Conquer Persia"
+ GER_rangers:0 "Ranger Battalions"
+ GER_rangers_desc:0 "Ranger Battalions"
+ GER_increase_iraq_oil_production:0 "Increase Iraqi Oil"
+ GER_increase_iraq_oil_production_desc:0 "Increase Iraqi Oil"
+ GER_increase_iran_oil_production:0 "Increase Persian Oil"
+ GER_increase_iran_oil_production_desc:0 "Increase Persian Oil"
+ GER_the_desert_fox:0 "The Desert Fox"
+ GER_the_desert_fox_desc:0 "The Desert Fox"
+
+ # idea
+ GER_operation_barbarossa:0 "Operation Barbarossa"
+ GER_operation_barbarossa_desc:0 "Operation Barbarossa"
+ GER_operation_na:0 "The North Africa Campaign"
+ GER_operation_na_desc:0 "The North Africa Campaign"
