@@ -71,8 +71,9 @@ focus_tree = {
 			MEX = {
 				is_ai = yes
 			}
-			has_global_flag = AAT_trotsky_sent_to_stalin
-			NOT = { has_global_flag = AAT_trotsky_in_mexico } 
+			SOV = {
+				has_completed_focus = SOV_behead_the_snake
+			}
 		}
 		
 		bypass = {
@@ -872,6 +873,7 @@ focus_tree = {
 		prerequisite = { focus = USA_federal_housing_act }
 		available = {
 			OR = {
+				has_completed_focus = USA_american_british_conference
 				has_war = yes
 				has_war_support > 0.4
 			}
