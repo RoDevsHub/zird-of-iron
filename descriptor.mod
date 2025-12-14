@@ -1,4 +1,4 @@
-version="0.0.009"
+version="0.0.010"
 tags={
 	"Gameplay"
 	"Balance"
