@@ -8,16 +8,17 @@ state={
 		aluminium=15 # was: 24 
 	}
 	history={
-		owner = PAN
+		owner = ITA
 		victory_points = { 9600 1 }
 		buildings = {
 			infrastructure = 2 
 			industrial_complex = 1
 		}
-		add_core_of = PAN
+		add_core_of = ITA
 	}
 	provinces={
 		9600 3641 
 	}
 	local_supplies=0.0  
+
 }
