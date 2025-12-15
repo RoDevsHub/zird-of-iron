@@ -8828,7 +8828,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ITA_la_battaglia_per_le_nascite
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -8847,7 +8847,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_la_battaglia_per_le_nascite
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -8930,7 +8930,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = ITA_la_battaglia_per_le_nascite
-		cost = 10
+		cost = 5
 		available = {
 			has_country_leader = {
 				character = ITA_benito_mussolini
@@ -9155,7 +9155,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = ITA_strengthen_the_regime
-		cost = 5
+		cost = 10
 
 
 		bypass = {
@@ -9409,7 +9409,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ITA_towards_a_greater_italy
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -9805,7 +9805,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_bend_the_bars
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -9889,7 +9889,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ITA_towards_a_greater_italy
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -9919,7 +9919,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_masters_of_the_aegean
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -11410,7 +11410,24 @@ focus_tree = {
 		}
 	}
 
-	
+	focus = {
+    id = ITA_nation_in_arms
+    icon = GFX_focus_generic_little_entente
+
+    prerequisite = { focus = ITA_the_italian_legions }
+
+  
+    relative_position_id = ITA_caligulas_pride
+    x = -6
+    y = 0
+    cost = 5
+    completion_reward = {
+        add_ideas = ITA_nation_in_arms_idea
+        add_army_experience = 25
+        add_war_support = 0.05
+    }
+}
+
 
 	
 
@@ -11422,7 +11439,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ITA_the_italian_legions
-		cost = 10
+		cost = 5
 		available = {
 			has_full_control_of_state = 2
 			if = {
@@ -11506,16 +11523,35 @@ focus_tree = {
 			}
 		}
 	}
+	
+
+
+focus = {
+    id = ITA_imperial_institutions
+    icon = GFX_goal_generic_scientific_exchange
+
+    prerequisite = { focus = ITA_the_italian_legions }
+
+    x = 4
+    y = 1
+	relative_position_id = ITA_the_italian_legions
+    cost = 5
+
+    completion_reward = {
+        add_research_slot = 1
+    }
+}
 
 	focus = {
 		id = ITA_modern_musculus
-		icon = GFX_goal_generic_army_tanks
+		icon = GFX_goal_generic_small_arms
+
 		prerequisite = { focus = ITA_the_italian_legions }
 
 		x = 0
 		y = 1
 		relative_position_id = ITA_the_italian_legions
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = {
