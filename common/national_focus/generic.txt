@@ -1012,7 +1012,7 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			factor = 100
+			factor = 3
 			modifier = {
 				factor = 6
 				original_tag = SIA
@@ -1028,6 +1028,20 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				date < 1939.1.1
+				OR = { 
+					# we dont want chinese minors to go crazy on slots early since they get eaten
+					tag = GXC 
+					tag = YUN
+					tag = SHX
+					tag = XSM
+					tag = BEL
+					tag = LUX
+					tag = HOL
+					tag = DEN
+
+					# we also dont want tiny nations to go crazy with slots right away
+					num_of_controlled_states < 2
+				}	
 				NOT = {
 					is_in_array = {
 						array = RAJ.raj_releasables
@@ -1054,7 +1068,7 @@ focus_tree = {
 
 		
 		ai_will_do = {
-			factor = 100
+			factor = 2
 			modifier = {
 				factor = 6
 				is_in_array = {
@@ -1136,7 +1150,7 @@ focus_tree = {
 
 
 		ai_will_do = {
-			factor = 100
+			factor = 2
 				modifier = {
 				factor = 6
 				original_tag = SIA
@@ -1222,7 +1236,7 @@ focus_tree = {
 
 
 		ai_will_do = {
-			factor = 100
+			factor = 2
 			modifier = {
 				factor = 6
 				original_tag = SIA
@@ -1308,7 +1322,7 @@ focus_tree = {
 
 
 		ai_will_do = {
-			factor = 100
+			factor = 2
 			modifier = {
 				factor = 6
 				original_tag = SIA
@@ -1393,7 +1407,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		ai_will_do = {
-			base = 100
+			base = 2
 			modifier = {
 				factor = 6
 				original_tag = SIA
@@ -1498,7 +1512,7 @@ focus_tree = {
 
 
 		ai_will_do = {
-			factor = 100
+			factor = 2
 			modifier = {
 				factor = 6
 				original_tag = SIA
@@ -1582,7 +1596,7 @@ focus_tree = {
 		
 		available_if_capitulated = yes
 		ai_will_do = {
-			base = 100
+			base = 2
 			modifier = {
 				factor = 6
 				original_tag = SIA
@@ -1686,7 +1700,7 @@ focus_tree = {
 
 
 		ai_will_do = {
-			factor = 100
+			factor = 2
 			modifier = {
 				factor = 6
 				original_tag = SIA
