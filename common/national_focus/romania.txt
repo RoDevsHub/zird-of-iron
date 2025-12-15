@@ -10,7 +10,7 @@ focus_tree = {
 			#always = no
 		}
 	}
-	 
+	
 	default = no
 
 	continuous_focus_position = { x = 50 y = 1100 }
@@ -1760,10 +1760,11 @@ focus_tree = {
 		icon = GFX_focus_SWE_revoke_militia_law
 		x = 55
 		y = 0
-		cost = 2
+		cost = 5
 		ai_will_do = {
 			factor = 1
-		}	
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
 			add_command_power = 15
 			army_experience = 5
@@ -1785,18 +1786,14 @@ focus_tree = {
 		icon = GFX_focus_ETH_ecole_militaire_haile_selassie_1er
 		x = 0
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 
 		completion_reward = {
 			army_experience = 25
-				add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_grand_battle_plan
-			}
+
 		}
 	}
 		focus = {
@@ -1806,92 +1803,13 @@ focus_tree = {
 		mutually_exclusive = {focus = ROM_Mass_Mobilization}
 		mutually_exclusive = {focus = ROM_Armor_Warfare}
 		available = {
-		has_completed_focus = ROM_Naval_Forces
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_BEL_maritime_phoenix
-		x = 4
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-	
-		completion_reward = {
-			add_ideas = ROM_Marine_Corps_idea
-		}
-	}
-	
-		focus = {
-		id = ROM_Terrain_Studies
-		prerequisite = {focus = ROM_Marine_Corps}
-		relative_position_id = ROM_Marine_Corps
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_AFG_curtail_pashtunwali_primacy
-		x = -1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-	
-		completion_reward = {
-				add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_superior_firepower
-			}
-			swap_ideas = {
-				remove_idea = ROM_Marine_Corps_idea
-				add_idea = ROM_Marine_Corps_idea_1
-			}
-		}
-	}
-	
-		focus = {
-		id = ROM_Carpathian_Thunder
-		prerequisite = {focus = ROM_Terrain_Studies}
-		relative_position_id = ROM_Terrain_Studies
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_SMB_mountain_guns
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-	
-		completion_reward = {
-				swap_ideas = {
-				remove_idea = ROM_Marine_Corps_idea_1
-				add_idea = ROM_Marine_Corps_idea_2
-			}
-		}
-	}
-		focus = {
-		id = ROM_Marines_of_the_Delta
-		prerequisite = {focus = ROM_Marine_Corps}
-		relative_position_id = ROM_Marine_Corps
-		available = {
 		
 		}
 
 		continue_if_invalid = yes
 
 		icon = GFX_focus_PHI_war_plan_orange
-		x = 1
+		x = 3
 		y = 1
 		cost = 10
 		ai_will_do = {
@@ -1899,67 +1817,6 @@ focus_tree = {
 		}
 	
 		completion_reward = {
-				add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = marine_tech
-			}
-			add_tech_bonus = {
-				bonus = 1.0 
-				uses = 1
-				category = tp_tech
-			}
-			add_ideas = ROM_Marines_of_the_Delta_idea
-		}
-	}
-	
-		focus = {
-		id = ROM_Logistical_Heaven
-		prerequisite = {focus = ROM_Marines_of_the_Delta}
-		relative_position_id = ROM_Marines_of_the_Delta
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_reinforcing_the_supply_network
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-	
-		completion_reward = {
-			add_ideas = ROM_Logistical_Heaven_idea
-		}
-	}
-	
-		focus = {
-		id = ROM_Army_of_the_Elite
-		prerequisite = {focus = ROM_Logistical_Heaven}
-		prerequisite = {focus = ROM_Carpathian_Thunder}
-		relative_position_id = ROM_Logistical_Heaven
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_PHI_beach_defense_strategy
-		x = -1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-	
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ROM_Marine_Corps_idea_2
-				add_idea = ROM_Marine_Corps_idea_3 
-			}
 		}
 	}
 		focus = {
@@ -1983,140 +1840,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = ROM_Mass_Mobilization_idea
 		}
-	}
-		focus = {
-		id = ROM_Guns_of_Steel
-		prerequisite = {focus = ROM_Mass_Mobilization}
-		relative_position_id = ROM_Mass_Mobilization
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_ETH_freedom_at_gunpoint
-		x = 1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1.0
-				uses = 2
-				category = infantry_weapons
-			}
-			add_ideas = ROM_Guns_of_Steel_idea
-		}
-	}
-	
-		focus = {
-		id = ROM_Workshops_of_Greater_Romania
-		prerequisite = {focus = ROM_Guns_of_Steel}
-		relative_position_id = ROM_Guns_of_Steel
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_reorient_production
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			add_ideas = ROM_Workshops_of_Greater_Romania_idea
-		}
-	}
-		focus = {
-		id = ROM_Human_Wave_Tactics
-		prerequisite = {focus = ROM_Mass_Mobilization}
-		relative_position_id = ROM_Mass_Mobilization
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_chi_army_reform
-		x = -1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_mass_assault
-			}
-			swap_ideas = {
-				remove_idea = ROM_Mass_Mobilization_idea
-				add_idea = ROM_Mass_Mobilization_idea_1
-			}
-		}
-	}
-		focus = {
-		id = ROM_Will_of_Million
-		prerequisite = {focus = ROM_Human_Wave_Tactics}
-		relative_position_id = ROM_Human_Wave_Tactics
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_army_attack
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ROM_Mass_Mobilization_idea_1
-				add_idea = ROM_Mass_Mobilization_idea_2
-			}
-		}
-	}
-		focus = {
-		id = ROM_Army_of_the_People
-		prerequisite = {focus = ROM_Workshops_of_Greater_Romania}
-		prerequisite = {focus = ROM_Will_of_Million}
-		relative_position_id = ROM_Workshops_of_Greater_Romania
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_full_social_mobilization
-		x = -1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ROM_Mass_Mobilization_idea_2
-				add_idea = ROM_Mass_Mobilization_idea_3
-			}
-		}
-	
 	}
 		focus = {
 		id = ROM_Armor_Warfare
@@ -2125,13 +1849,13 @@ focus_tree = {
 		mutually_exclusive = {focus = ROM_Mass_Mobilization}
 		mutually_exclusive = {focus = ROM_Marine_Corps}
 		available = {
-		has_completed_focus = ROM_Air_Force
+		
 		}
 
 		continue_if_invalid = yes
 
 		icon = GFX_focus_JAP_army_weapons_administration_hq
-		x = -4
+		x = -3
 		y = 1
 		cost = 10
 		ai_will_do = {
@@ -2139,138 +1863,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = ROM_Armor_Warfare_idea
-		}
-	}
-	focus = {
-		id = ROM_German_Tank_Doctrine
-		prerequisite = {focus = ROM_Armor_Warfare}
-		relative_position_id = ROM_Armor_Warfare
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_BRA_acquire_german_tanks
-		x = -1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-				add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_mobile_warfare
-			}
-			swap_ideas = {
-				remove_idea = ROM_Armor_Warfare_idea
-				add_idea = ROM_Armor_Warfare_idea_1
-			}
-		}
-	}
-		focus = {
-		id = ROM_Armored_Fury
-		prerequisite = {focus = ROM_German_Tank_Doctrine}
-		relative_position_id = ROM_German_Tank_Doctrine
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_heavy_tank
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ROM_Armor_Warfare_idea_1
-				add_idea = ROM_Armor_Warfare_idea_2
-			}
-		}
-	}
-	
-		focus = {
-		id = ROM_Iron_Calvary
-		prerequisite = {focus = ROM_Armor_Warfare}
-		relative_position_id = ROM_Armor_Warfare
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_mechanized
-		x = 1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-				add_tech_bonus = {
-				ahead_reduction = 1
-				bonus = 1
-				uses = 1
-				category = cat_mechanized_equipment
-			}
-		}
-	}
-		focus = {
-		id = ROM_Iron_Beast_Assembly
-		prerequisite = {focus = ROM_Iron_Calvary}
-		relative_position_id = ROM_Iron_Calvary
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_mass_production
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			add_ideas = ROM_Iron_Beast_Assembly_idea
-		}
-	}
-		focus = {
-		id = ROM_Army_of_the_Machine
-		prerequisite = {focus = ROM_Armored_Fury}
-		prerequisite = {focus = ROM_Iron_Beast_Assembly}
-		relative_position_id = ROM_Iron_Beast_Assembly
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_tank_assault
-		x = -1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-				swap_ideas = {
-				remove_idea = ROM_Armor_Warfare_idea_2
-				add_idea = ROM_Armor_Warfare_idea_3
-			}
 		}
 	}
 		focus = {
@@ -2284,218 +1876,14 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_CZE_military_aeronautical_institute
-		x = -9
+		x = -8
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 			air_experience = 25
-				add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = strategic_destruction_tree
-			}
-		}
-	}
-		focus = {
-		id = ROM_Rain_Fire
-		prerequisite = {focus = ROM_Air_Force}
-		relative_position_id = ROM_Air_Force
-		mutually_exclusive = {focus = ROM_Rule_the_Skies}
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_cas_aircraft
-		x = 2
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_ideas = ROM_Rain_Fire_idea
-				add_tech_bonus = {
-				bonus = 0.25
-				uses = 1
-				category = light_air
-			}
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = battlefield_support_tree
-			}
-		}
-	}
-	
-		focus = {
-		id = ROM_Rule_the_Skies
-		prerequisite = {focus = ROM_Air_Force}
-		relative_position_id = ROM_Air_Force
-		mutually_exclusive = {focus = ROM_Rain_Fire}
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_goal_generic_air_fighter2
-		x = -2
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_ideas = ROM_Rule_the_Skies_idea
-				add_tech_bonus = {
-				bonus = 0.25
-				uses = 1
-				category = light_air
-			}
-				add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = operational_integrity_tree
-			}
-		}
-	}
-	
-		focus = {
-		id = ROM_Fangs_of_the_Air
-		prerequisite = {focus = ROM_Rule_the_Skies}
-		relative_position_id = ROM_Rule_the_Skies
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_multi_role_aircraft
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ROM_Rule_the_Skies_idea
-				add_idea = ROM_Rule_the_Skies_idea_1
-			}
-		}
-	}
-		focus = {
-		id = ROM_Coordinated_Ariel_Destruction
-		prerequisite = {focus = ROM_Rain_Fire}
-		relative_position_id = ROM_Rain_Fire
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_tank_air_support
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ROM_Rain_Fire_idea
-				add_idea = ROM_Rain_Fire_idea_1
-			}
-		}
-	}
-	
-		focus = {
-		id = ROM_Expand_the_Air_Bases
-		prerequisite = {focus = ROM_Air_Force}
-		relative_position_id = ROM_Air_Force
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_air_bases
-		x = 0
-		y = 2
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			79 = {
-					add_building_construction = {
-					type = air_base
-					level = 8
-					instant_build = yes
-				}
-			}
-			46 = {
-					add_building_construction = {
-					type = air_base
-					level = 7
-					instant_build = yes
-				}
-			}
-		}
-	}
-		
-		focus = {
-		id = ROM_Anything_to_Protect_Oil
-		prerequisite = {focus = ROM_Expand_the_Air_Bases}
-		prerequisite = {focus = ROM_Fangs_of_the_Air focus = ROM_Coordinated_Ariel_Destruction}
-		relative_position_id = ROM_Expand_the_Air_Bases
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_aircraft_production
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			46 = {
-					add_building_construction = {
-					type = anti_air_building
-					level = 5
-					instant_build = yes
-				}
-			}
-				971 = {
-					add_building_construction = {
-					type = anti_air_building
-					level = 5
-					instant_build = yes
-				}
-			}
-					81 = {
-					add_building_construction = {
-					type = anti_air_building
-					level = 5
-					instant_build = yes
-				}
-			}
-					79 = {
-					add_building_construction = {
-					type = anti_air_building
-					level = 5
-					instant_build = yes
-				}
-			}
 		}
 	}
 		focus = {
@@ -2509,74 +1897,18 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_generic_large_navy
-		x = 9
+		x = 8
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 
 		completion_reward = {
 			navy_experience = 25
-				add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_base_strike
-			}
 		}
 	}
-		focus = {
-		id = ROM_State_Shipyard_Expansion
-		prerequisite = {focus = ROM_Naval_Forces}
-		relative_position_id = ROM_Naval_Forces
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_refit_civilian_ships
-		x = 0
-		y = 2
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-			
-		completion_reward = {
-			971 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = dockyard
-					level = 4
-					instant_build = yes
-				}
-			}
-		}
-	}
-			focus = {
-		id = ROM_Help_Out_Our_Mediterranean_Allies
-		prerequisite = {focus = ROM_State_Shipyard_Expansion}
-		prerequisite = {focus = ROM_Towards_Blue_Water_Navy focus = ROM_The_Silent_Hunters}
-		relative_position_id = ROM_State_Shipyard_Expansion
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_mediterranean_sea_focus
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-			
-		completion_reward = {
-			PAN = {give_military_access = ROM}
-		}
-	}
+	
 		focus = {
 		id = ROM_Black_Sea_Fleet
 		prerequisite = {focus = ROM_Naval_Forces}
@@ -2588,75 +1920,14 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_focus_generic_navy_battleship2
+		icon = GFX_focus_SMB_blue_water_fleet
 		x = -2
 		y = 1
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-				add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_fleet_in_being
-			}
-				add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = bb_tech
-			}
-				add_ideas = ROM_Black_Sea_Fleet_idea
-
-		}
-	}
-		
-		focus = {
-		id = ROM_Towards_Blue_Water_Navy
-		prerequisite = {focus = ROM_Black_Sea_Fleet}
-		relative_position_id = ROM_Black_Sea_Fleet
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_SMB_blue_water_fleet
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ROM_Black_Sea_Fleet_idea
-				add_idea = ROM_Black_Sea_Fleet_idea_1
-			}
-		}
-	}
-		focus = {
-		id = ROM_The_Silent_Hunters
-		prerequisite = {focus = ROM_Fleet_of_Raiders}
-		relative_position_id = ROM_Fleet_of_Raiders
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_cruiser_submarines
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ROM_Fleet_of_Raiders_idea
-				add_idea = ROM_Fleet_of_Raiders_idea_1
-			}
 		}
 	}
 		focus = {
@@ -2673,22 +1944,11 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_anti_submarine
 		x = 2
 		y = 1
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-				add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = ss_tech
-			}
-				add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_trade_interdiction
-			}
-			add_ideas = ROM_Fleet_of_Raiders_idea
 		}
 	}
 }

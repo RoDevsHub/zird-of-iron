@@ -3742,50 +3742,6 @@ ideas = {
 				attack_bonus_against = 0.05
 			}
 		}
-		
-		GER_operation_barbarossa_ns = {
-			name = GER_operation_barbarossa
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
-			removal_cost = -1
-
-			picture = generic_attack_soviet_union
-
-			modifier = {
-				supply_consumption_factor = -0.1
-			}
-
-			targeted_modifier = {
-				tag = SOV
-				attack_bonus_against = 0.05
-			}
-		}
-
-		GER_operation_na_ns = {
-			name = GER_operation_na
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
-			removal_cost = -1
-
-			picture = generic_attack_soviet_union
-
-			modifier = {
-				supply_consumption_factor = -0.25
-			}
-
-		}
 
 		GER_crossing_the_atlantic_ns = {
 			name = GER_crossing_the_atlantic

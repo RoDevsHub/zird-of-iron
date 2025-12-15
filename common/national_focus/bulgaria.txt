@@ -1426,7 +1426,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_war_logistics
-			    bonus = 2
+			    bonus = 1
 				ahead_reduction = 2
 			    uses = 1
 				category = motorized_equipment
