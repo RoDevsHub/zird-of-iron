@@ -101,31 +101,91 @@ ROM_Armed_Forces_desc:0 "Romanian Armed Forces"
 # FOCUS/LAND FORCES
 ROM_Land_Forces:0 "Romanian Land Forces"
 ROM_Land_Forces_desc:0 "Romanian Land Forces"
+ROM_Mass_Mobilization:0 "Mass Mobilization"
+ROM_Mass_Mobilization_desc:0 "Mass Mobilization"
+ROM_Human_Wave_Tactics:0 "Human Wave Tactics"
+ROM_Human_Wave_Tactics_desc:0 "Human Wave Tactics"
+ROM_Will_of_Million:0 "Will of a Million"
+ROM_Will_of_Million_desc:0 "Will of a Million"
+ROM_Guns_of_Steel:0 "Guns of Steel"
+ROM_Guns_of_Steel_desc:0 "Guns of Steel"
+ROM_Workshops_of_Greater_Romania:0 "Workshops of Greater Romania"
+ROM_Workshops_of_Greater_Romania_desc:0"Workshops of Greater Romania"
+ROM_Army_of_the_People:0 "Army of the People"
+ROM_Army_of_the_People_desc:0 "Army of the People"
+ROM_Armor_Warfare:0 "Armor Warfare"
+ROM_Armor_Warfare_desc:0 "Armor Warfare"
+ROM_German_Tank_Doctrine:0 "German Tank Doctrine"
+ROM_German_Tank_Doctrine_desc:0 "German Tank Doctrine"
+ROM_Armored_Fury:0 "Armored Fury"
+ROM_Armored_Fury_desc:0 "Armored Fury"
+ROM_Iron_Calvary:0 "Iron Calvary"
+ROM_Iron_Calvary_desc:0 "Iron Calvary"
+ROM_Iron_Beast_Assembly:0 "Steel Beast Assembly"
+ROM_Iron_Beast_Assembly_desc:0 "Steel Beast Assembly"
+ROM_Army_of_the_Machine:0 "Army of the Machines"
+ROM_Army_of_the_Machine_desc:0 "Army of the Machines"
+ROM_Marine_Corps:0 "Marine Corps"
+ROM_Marine_Corps_desc:0 "Marine Corps"
+ROM_Terrain_Studies:0 "Terrain Studies"
+ROM_Terrain_Studies_desc:0 "Terrain Studies"
+ROM_Carpathian_Thunder:0 "Carpathian Thunder"
+ROM_Carpathian_Thunder_desc:0 "Carpathian Thunder"
+ROM_Marines_of_the_Delta:0 "Marines of the Delta"
+ROM_Marines_of_the_Delta_desc:0 "Marines of the Delta"
+ROM_Logistical_Heaven:0 "Logistical Heaven"
+ROM_Logistical_Heaven_desc:0 "Logistical Heaven"
+ROM_Army_of_the_Elite:0 "Army of the Elite"
+ROM_Army_of_the_Elite_desc:0 "Army of the Elite"
+
+
+
+
+
+
+
+
+
 
 
 # FOCUS/AIR FORCE
-ROM_Air_Force:0 "Romanian Air Force"
-ROM_Air_Force_desc:0 "Romanian Air Force"
+ROM_Air_Force:0 "Romanian Air Forces"
+ROM_Air_Force_desc:0 "Romanian Air Forces"
+ROM_Rule_the_Skies:0 "Rule the Skies"
+ROM_Rule_the_Skies_desc:0 "Rule the Skies"
+ROM_Fangs_of_the_Air:0 "Fangs of the Air"
+ROM_Fangs_of_the_Air_desc:0 "Fangs of the Air"
+ROM_Expand_the_Air_Bases:0 "Expand the Air Bases"
+ROM_Expand_the_Air_Bases_desc:0 "Expand the Air Bases"
+ROM_Rain_Fire:0 "Rain Fire"
+ROM_Rain_Fire_desc:0 "Rain Fire"
+ROM_Coordinated_Ariel_Destruction:0 "Coordinated Ariel Destruction"
+ROM_Coordinated_Ariel_Destruction_desc:0 "Coordinated Ariel Destruction"
+ROM_Anything_to_Protect_Oil:0 "Anything to Protect the Oil"
+ROM_Anything_to_Protect_Oil_desc:0 "Anything to Protect the Oil"
+
+
 
 # FOCUS/NAVAL FORCE
 ROM_Naval_Forces:0 "Romanian Naval Forces"
 ROM_Naval_Forces_desc:0 "Romanian Naval Forces"
+ROM_Black_Sea_Fleet:0 "Black Sea Fleet"
+ROM_Black_Sea_Fleet_desc:0 "Black Sea Fleet"
+ROM_Fleet_of_Raiders:0 "Raider Fleet"
+ROM_Fleet_of_Raiders_desc:0 "Raider Fleet"
+ROM_Towards_Blue_Water_Navy:0 "Towards a Blue Water Navy"
+ROM_Towards_Blue_Water_Navy_desc:0 "Towards a Blue Water Navy"
+ROM_The_Silent_Hunters:0 "The Silent Hunters"
+ROM_The_Silent_Hunters_desc:0 "The Silent Hunters"
+ROM_State_Shipyard_Expansion:0 "State Shipyard Expansion"
+ROM_State_Shipyard_Expansion_desc:0 "State Shipyard Expansion"
+ROM_Help_Out_Our_Mediterranean_Allies:0 "Help Out our Mediterranean Allies"
+ROM_Help_Out_Our_Mediterranean_Allies_desc:0 "Help Out our Mediterranean Allies"
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-# ideas
+# IDEAS / POLITICAL PATH
 ROM_Flawed_Democracy_idea:0 "Flawed Democracy"
 ROM_Flawed_Democracy_idea_desc:0 "The Romanian political system is a flawed democracy. The government is elected, but the king retains significant power and influence over the government. The political system is also plagued by corruption and inefficiency."
 ROM_Flawed_Democracy_idea_1:0 "Political Instability"
@@ -166,6 +226,8 @@ ROM_Operation_Barbarbarossa_idea:0 "Operation Barbarossa"
 ROM_Operation_Barbarbarossa_idea_desc:0 "Operation Barbarossa"
 ROM_Capital_of_Balkans_idea:0 "Capital of the Balkans"
 ROM_Capital_of_Balkans_idea_desc:0 "Capital of the Balkans"
+
+# IDEAS / ECONOMY TREE
 ROM_Raw_Resource_Exploitation_idea:0 "Raw Resource Exploitation"
 ROM_Raw_Resource_Exploitation_idea_desc:0 "Raw Resource Exploitation"
 ROM_Timber_Industry_idea:0 "Romanian Timber Industry"
@@ -175,16 +237,70 @@ ROM_Gold_Extraction_idea_desc:0 "Gold Extraction"
 ROM_Extensive_Coal_Mining_idea:0 "Extensive Coal Mining"
 ROM_Extensive_Coal_Mining_idea_desc:0 "Extensive Coal Mining"
 
+# IDEAS / LAND FORCES
+ROM_Mass_Mobilization_idea:0 "Mass Mobilization"
+ROM_Mass_Mobilization_idea_desc:0 "Mass Mobilization"
+ROM_Mass_Mobilization_idea_1:0 "Mass Mobilization"
+ROM_Mass_Mobilization_idea_1_desc:0 "Mass Mobilization"
+ROM_Mass_Mobilization_idea_2:0 "Mass Mobilization"
+ROM_Mass_Mobilization_idea_2_desc:0 "Mass Mobilization"
+ROM_Mass_Mobilization_idea_3:0 "Army of the People"
+ROM_Mass_Mobilization_idea_3_desc:0 "Army of the People"
+ROM_Guns_of_Steel_idea:0 "Guns of Steel"
+ROM_Guns_of_Steel_idea_desc:0 "Guns of Steel"
+ROM_Workshops_of_Greater_Romania_idea:0 "Workshops of Greater Romania"
+ROM_Workshops_of_Greater_Romania_idea_desc:0 "Workshops of Greater Romania"
+ROM_Armor_Warfare_idea:0 "Armor Warfare"
+ROM_Armor_Warfare_idea_desc:0 "Armor Warfare"
+ROM_Armor_Warfare_idea_1:0 "Armor Warfare"
+ROM_Armor_Warfare_idea_1_desc:0 "Armor Warfare"
+ROM_Armor_Warfare_idea_2:0 "Armor Warfare"
+ROM_Armor_Warfare_idea_2_desc:0 "Armor Warfare"
+ROM_Armor_Warfare_idea_3:0 "Army of the Machines"
+ROM_Armor_Warfare_idea_3_desc:0 "Army of the Machines"
+ROM_Iron_Beast_Assembly_idea:0 "Steel Beast Assembly"
+ROM_Iron_Beast_Assembly_idea_desc:0 "Steel Beast Assembly"
+ROM_Marine_Corps_idea:0 "Marine Corps"
+ROM_Marine_Corps_idea:0 "Marine Corps"
+ROM_Marine_Corps_idea_1:0 "Marine Corps"
+ROM_Marine_Corps_idea_1_desc:0 "Marine Corps"
+ROM_Marine_Corps_idea_2:0 "Marine Corps"
+ROM_Marine_Corps_idea_2_desc:0 "Marine Corps"
+ROM_Marine_Corps_idea_3:0 "Army of the Elite"
+ROM_Marine_Corps_idea_3_desc:0 "Army of the Elite"
+ROM_Marines_of_the_Delta_idea:0 "Marines of the Delta"
+ROM_Marines_of_the_Delta_idea_desc:0 "Marines of the Delta"
+ROM_Logistical_Heaven_idea:0 "Logistical Heaven"
+ROM_Logistical_Heaven_idea_desc:0 "Logistical Heaven"
+
+# IDEAS / AIR FORCES
+ROM_Rule_the_Skies_idea:0 "Rule the Skies"
+ROM_Rule_the_Skies_idea_desc:0 "Rule the Skies"
+ROM_Rule_the_Skies_idea_1:0 "Rule the Skies"
+ROM_Rule_the_Skies_idea_1_desc:0 "Rule the Skies"
+ROM_Rain_Fire_idea:0 "Rain Fire"
+ROM_Rain_Fire_idea_desc:0 "Rain Fire"
+ROM_Rain_Fire_idea_1:0 "Rain Fire"
+ROM_Rain_Fire_idea_1_desc:0 "Rain Fire"
+
+# IDEAS / NAVAL FORCES
+ROM_Black_Sea_Fleet_idea:0 "Black Sea Fleet"
+ROM_Black_Sea_Fleet_idea_desc:0 "Black Sea Fleet"
+ROM_Black_Sea_Fleet_idea_1:0 "Black Sea Fleet"
+ROM_Black_Sea_Fleet_idea_1_desc:0 "Black Sea Fleet"
+ROM_Fleet_of_Raiders_idea:0 "Fleet of Raiders"
+ROM_Fleet_of_Raiders_idea_desc:0 "Fleet of Raiders"
+ROM_Fleet_of_Raiders_idea_1:0 "Fleet of Raiders"
+ROM_Fleet_of_Raiders_idea_1_desc:0 "Fleet of Raiders"
 
 
-
-# political parties
+# POLITICAL PARTIES
 ROM_dissolved_parliament_party:0 "Dissolved Parliament"
 ROM_dissolved_parliament_party_long:0 "Dissolved Parliament"
 ROM_royal_dictatorship_long:0 "Royal Dictatorship"
 ROM_royal_dictatorship_party:0 "Royal Dictatorship"
 
-# cosmetic tags
+# COSMETIC TAGS
 ROM_greater: "Greater Romania"
 ROM_greater_DEF: "the Greater Romania"
 ROM_greater_ADJ: "Romanian"
