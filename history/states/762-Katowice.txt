@@ -15,7 +15,7 @@ state = {
 		
 		owner = POL
 		add_core_of = POL
-		add_core_of = GER
+		add_claim_by = GER
 
 		victory_points = {
 			6464 5 # Katovice

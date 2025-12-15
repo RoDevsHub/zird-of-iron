@@ -746,7 +746,7 @@ characters={
 				original_tag = USA
 			}
 			available = {
-				has_completed_focus = USA_first_special_service_force
+			
 			}
 			traits = {
 				army_commando_3
