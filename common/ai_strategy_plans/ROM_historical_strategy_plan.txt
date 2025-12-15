@@ -1,0 +1,121 @@
+ROM_historical = {
+	name = "Romanian historical plan"
+	desc = ""
+
+	allowed = {
+		original_tag = ROM
+		has_dlc = "Death or Dishonor"
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = ROM_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = ROM_AI_RANDOM_FASCIST_HISTORICAL
+			has_game_rule = {
+				rule = ROM_ai_behavior
+				option = FASCIST_HISTORICAL
+			}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		ROM_Flawed_Democracy
+		ROM_Tatarescu_Regime
+		ROM_Finalize_Tax_Reforms
+		ROM_Privatize_State_Owned_Enterprises
+		ROM_Restrict_Freedom_Of_Press
+		ROM_Dissolve_Parliament
+		ROM_Enforce_Royal_Dictatorship
+		ROM_Enforce_Tariffs
+		ROM_Public_Works_Program
+		ROM_Industrial_Investments
+		ROM_Industrial_Revitalization_Program
+		ROM_Preservation_Greater_Romania
+		ROM_Constitutional_Reform
+		ROM_German_Trade_Agreement
+		ROM_Royal_Guard
+		ROM_Build_The_Carol_Line
+		ROM_German_Four_Year_Plan
+		ROM_Anti_Communist_Measures
+		ROM_Strengthen_The_Sentinals
+		ROM_Axis_Membership
+		ROM_Raw_Resource_Exploitation
+		ROM_Romanian_Timber_Industry
+		ROM_Strei_River_Hydroelectric
+		ROM_Derrick_Upgrades
+		ROM_Increase_Mining_Efforts
+		ROM_Fortify_Danube
+		ROM_Constanta_Naval_Line
+		ROM_Armed_Forces
+		ROM_Land_Forces
+		ROM_Mass_Mobilization
+		ROM_Operation_Barbarossa
+		ROM_Industrial_Combine
+		ROM_Gold_Mining 
+		ROM_Human_Wave_Tactics
+		ROM_Guns_of_Steel
+		ROM_Will_of_Million
+		ROM_Workshops_of_Greater_Romania
+		ROM_Ukraine_Claim
+		ROM_Form_Greater_Romania
+		ROM_Invite_German_Military_Advisors
+		ROM_D_Day_Line
+		ROM_Take_West_Banat
+		ROM_Expand_Oil_Fields
+		ROM_Ford_Bucuresti
+		ROM_Improve_Rural_Roads
+		ROM_Atelierele_Leonida
+		ROM_Malaxa_Bucuresti
+		ROM_Expand_University_Of_Bucharest
+		ROM_Army_of_the_People
+		ROM_Naval_Forces
+		ROM_Fleet_of_Raiders
+		ROM_The_Silent_Hunters
+		ROM_State_Shipyard_Expansion
+		ROM_Help_Out_Our_Mediterranean_Allies
+		ROM_Air_Force
+		ROM_Rain_Fire
+		ROM_Coordinated_Ariel_Destruction
+		ROM_Expand_the_Air_Bases
+		ROM_Anything_to_Protect_Oil
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+
