@@ -9406,8 +9406,7 @@ focus_tree = {
 		id = ITA_heroes_of_the_nation
 		icon = GFX_focus_generic_military_dictatorship
 		prerequisite = { focus = ITA_towards_a_greater_italy }
-		mutually_exclusive = { focus = ITA_capo_supremo }
-		x = -4
+		x = -2
 		y = 1
 		relative_position_id = ITA_towards_a_greater_italy
 		cost = 10
@@ -9523,117 +9522,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = ITA_capo_supremo
-		icon = GFX_focus_ITA_capo_supremo
-		prerequisite = { focus = ITA_towards_a_greater_italy }
-		
-		mutually_exclusive = { focus = ITA_heroes_of_the_nation }
-		x = -2
-		y = 1
-		relative_position_id = ITA_towards_a_greater_italy
-		cost = 10
-		available = {
-			has_country_leader = {
-				character = ITA_benito_mussolini
-				ruling_only = yes
-			}
-			power_balance_value = {
-				id = ITA_power_balance
-				value > 0.949
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-
-			IF = {
-				limit = {
-					NOT = {
-						OR = {
-							has_cosmetic_tag = greater_italy
-							has_cosmetic_tag = SPQR_UNIFIED
-						}
-					}
-				}
-				set_cosmetic_tag = ITA_rsi
-			}
-
-			add_war_support = 0.05
-			add_stability = -0.05
-			add_political_power = 75
-			add_command_power = 50
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.1
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_country_leader_trait = capo_supremo
-
-			custom_effect_tooltip = ITA_mussolini_becomes_field_marshal_tt #Has to start as unit leader so that you cannot give him traits via unit_leader events (missiolinis)
-
-			hidden_effect = {
-				ITA_benito_mussolini = {
-					promote_leader = yes
-					add_unit_leader_trait = old_guard
-					add_unit_leader_trait = politically_connected
-					add_unit_leader_trait = media_personality
-					add_unit_leader_trait = harsh_leader
-				}
-			}
-
-			ITA_remove_king_vittorio_emanuele_as_idea = yes
-
-			if = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
-				if = {
-					limit = {
-						has_tech = super_heavy_tank_chassis
-					}
-					#SH template
-					ITA_add_il_duce_sh_tank_template_and_production = yes
-				}
-				else = {
-					add_tech_bonus = {
-						name = ITA_capo_supremo
-						ahead_reduction = 2
-						bonus = 1.0
-						uses = 1
-						technology = super_heavy_tank_chassis
-					}
-					custom_effect_tooltip = ITA_focus_sh_tank_template_tt
-					effect_tooltip = {
-						ITA_add_il_duce_sh_tank_template_and_production = yes
-					}
-				}
-			}
-			else = {
-				add_tech_bonus = {
-					name = ITA_capo_supremo
-					ahead_reduction = 2
-					bonus = 1.0
-					uses = 1
-					technology = super_heavy_tank
-					technology = super_heavy_td
-					technology = super_heavy_art
-					technology = super_heavy_spaa
-				}
-			}
-
-			ITA_bop_very_low_increase_effect = yes
-
-			#Names for NSs
-			hidden_effect = {
-				ITA_replace_stuff_based_on_ideology_effect = yes
-			}
-		}
-	}
-
+	
 	focus = {
 		id = ITA_bend_the_bars
 		icon = GFX_focus_ITA_bend_the_bars
@@ -9828,11 +9717,11 @@ focus_tree = {
 	focus = {
 		id = ITA_subdue_the_sentinels
 		icon = GFX_focus_ITA_subdue_the_sentinels
-		prerequisite = { focus = ITA_bend_the_bars }
+		prerequisite = { focus = ITA_heroes_of_the_nation }
 
 		x = 0
 		y = 1
-		relative_position_id = ITA_bend_the_bars
+		relative_position_id = ITA_heroes_of_the_nation
 		cost = 5
 		available = {
 		}
@@ -9911,11 +9800,11 @@ focus_tree = {
 	focus = {
 		id = ITA_a_colonial_empire
 		icon = GFX_focus_ITA_a_colonial_empire
-		prerequisite = { focus = ITA_subdue_the_sentinels }
+		prerequisite = { focus = ITA_bend_the_bars }
 
 		x = 0
 		y = 1
-		relative_position_id = ITA_subdue_the_sentinels
+		relative_position_id = ITA_bend_the_bars
 		cost = 10
 		available = {
 		}
@@ -9954,6 +9843,8 @@ focus_tree = {
 		id = ITA_by_blood_alone
 		icon = GFX_focus_ITA_by_blood_alone
 		prerequisite = { focus = ITA_a_colonial_empire }
+		prerequisite = { focus = ITA_subdue_the_sentinels }
+		prerequisite = { focus = ITA_masters_of_the_mediterranean }
 
 		x = 0
 		y = 1
