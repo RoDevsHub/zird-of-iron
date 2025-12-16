@@ -51,17 +51,17 @@
 #Kiev
 525;2;123;155;land;false;urban;1
 13410;45;236;171;land;false;urban;1
-13411;31;36;250;land;false;urban;1
+13411;31;36;250;land;false;plains;1
 13412;210;117;125;land;false;urban;1
 #Riga
 9340;127;126;89;land;true;urban;1
 13413;200;70;21;land;true;urban;1
-13414;211;22;92;land;false;urban;1
+13414;211;22;92;land;false;forest;1
 #Leningrad
 3151;42;159;138;land;true;urban;1
 13415;153;183;137;land;true;urban;1
 13416;224;215;165;land;false;urban;1
-13417;221;217;47;land;false;urban;1
+13417;221;217;47;land;false;forest;1
 #Moscow
 6380;85;168;96;land;false;urban;1
 13418;76;188;163;land;false;urban;1
@@ -78,5 +78,5 @@
 #Rostov
 9417;128;6;184;land;true;urban;1
 13427;40;155;177;land;true;urban;1
-13428;105;2;48;land;true;urban;1
+13428;105;2;48;land;true;plains;1
 13429;220;30;38;land;false;urban;1
