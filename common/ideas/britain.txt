@@ -1,6 +1,30 @@
 ideas = {
 
 	country = {
+		ENG_One_Sovereign_France_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			picture = joining_rule_democratic_non_aligned
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				industrial_capacity_factory = 0.15
+			}
+			targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.075
+			defense_bonus_against = 0.10
+	    }
+		}
 			british_tank_discount = {
 			
 			allowed = {
