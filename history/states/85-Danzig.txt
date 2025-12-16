@@ -33,7 +33,7 @@ state = {
 	}
 
 	provinces = {
-		362
+		362 13398
 	}
 
 	local_supplies = 0.0 
