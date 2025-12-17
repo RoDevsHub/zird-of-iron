@@ -998,7 +998,7 @@ ideas = {
 		ITA_grand_council_boosted = {
 			removal_cost = -1
 
-			picture = goal_generic_support_fascism
+			picture = GFX_generic_fascism
 				
 			allowed = {
 				original_tag = ITA
@@ -1023,7 +1023,7 @@ ideas = {
 		ITA_to_live_as_a_lion = {
 			removal_cost = -1
 
-			picture = idea_ITA_shadow_of_mussolini
+			picture = GFX_shadow_of_mussolini
 				
 			allowed = {
 				original_tag = ITA
