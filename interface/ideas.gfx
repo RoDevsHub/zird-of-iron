@@ -11621,6 +11621,18 @@ spriteTypes = {
 		name = "GFX_idea_generic_mild_economic_recovery"
 		texturefile = "gfx/interface/ideas/idea_generic_mild_economic_recovery.dds"
 	}
+	spriteTypes = {
+		spriteType = {
+			name = "GFX_shadow_of_mussolini"
+			texturefile = "gfx/interface/ideas/idea_ITA_shadow_of_mussolini.dds"
+		}
+	}
+	spriteTypes = {
+		spriteType = {
+			name = "GFX_generic_fascism"
+			texturefile = "gfx/interface/ideas/goal_generic_support_fascism.dds"
+		}
+	}
 
 
 
