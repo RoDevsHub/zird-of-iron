@@ -72,7 +72,7 @@ focus_tree = {
 				is_ai = yes
 			}
 			SOV = {
-				has_completed_focus = SOV_behead_the_snake
+				has_idea = trotskyite_plot_purged
 			}
 		}
 		
