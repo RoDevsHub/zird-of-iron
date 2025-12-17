@@ -8766,13 +8766,15 @@ focus_tree = {
 		available = {
 			power_balance_value = {
 				id = ITA_power_balance
-				value > 0.699
+				value > 0.449
 			}
 		}
 
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_BALANCE_OF_POWER FOCUS_FILTER_ITA_MISSIOLINI}
 
 		completion_reward = {
+			add_ideas = ITA_grand_council_boosted
+			
 			add_political_power = 50
 			add_stability = 0.05
 
@@ -8798,7 +8800,7 @@ focus_tree = {
 			}
 			power_balance_value = {
 				id = ITA_power_balance
-				value > 0.649
+				value > 0.499
 			}
 		}
 
@@ -8806,12 +8808,12 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 50
-
+			add_ideas = ITA_to_live_as_a_lion
 			swap_ruler_traits = {
 				remove = lion_tamer
 				add = lion_tamer_2
 			}
-
+			ITA_to_live_as_a_lion
 			ITA_bop_very_low_increase_effect = yes
 
 			#Reduce time for Missiolinis
@@ -8865,7 +8867,7 @@ focus_tree = {
 					}
 				}
 				2 = {
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 3
 				}
 			}
 			if = { #Campania
@@ -8879,7 +8881,7 @@ focus_tree = {
 					}
 				}
 				117 = {
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 3
 				}
 			}
 
@@ -8894,7 +8896,7 @@ focus_tree = {
 					}
 				}
 				162 = {
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 3
 				}
 			}
 
@@ -9849,7 +9851,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_a_colonial_empire
-		cost = 10
+		cost = 35
 		available = {
 		}
 
@@ -10182,57 +10184,13 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = ITA_consolidate_power
-		icon = GFX_goal_demand_sudetenland
-		prerequisite = { focus = ITA_italo_balbo_focus focus = ITA_dino_grandi_focus }
-		relative_position_id = ITA_stop_the_squandering
-		x = 2
-		y = 0
-
-		cost = 10
-		available = {}
-		
-
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism 
-				popularity = 0.05
-			}
-			add_war_support = 0.05
-			add_stability = 0.05
-			add_political_power = 50
-			if = {
-				limit = {
-					is_power_balance_side_active = {
-						id = ITA_power_balance
-						side = ITA_balbo_side
-					}
-				}
-				ITA_bop_very_low_increase_balbo_side_effect = yes
-			}
-			else_if = {
-				limit = {
-					is_power_balance_side_active = {
-						id = ITA_power_balance
-						side = ITA_grandi_side
-					}
-				}
-				ITA_bop_very_low_increase_grandi_side_effect = yes
-			}
-			else = {
-				ITA_bop_very_low_increase_effect = yes
-			}
-		}
-	}
+	
 
 	focus = {
 		id = ITA_purge_the_party
 		icon = GFX_focus_generic_conspiracy
-		prerequisite = { focus = ITA_consolidate_power }
-		prerequisite = { focus = ITA_stop_the_squandering}
+		prerequisite = { focus = ITA_stop_the_squandering }
+
 		relative_position_id = ITA_stop_the_squandering
 		x = 1
 		y = 1
@@ -11122,7 +11080,7 @@ focus_tree = {
 		id = ITA_reorganize_the_party
 		icon = GFX_goal_generic_neutrality_focus
 		prerequisite = { focus = ITA_dino_grandi_focus }
-		prerequisite = { focus = ITA_consolidate_power }
+		
 		relative_position_id = ITA_dino_grandi_focus
 		x = -1
 		y = 2
@@ -11396,7 +11354,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_by_blood_alone
-		cost = 10
+		cost = 35
 		available = {
 		}
 
