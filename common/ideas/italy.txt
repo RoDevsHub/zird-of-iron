@@ -1,3 +1,4 @@
+
 ideas = {
 	hidden_ideas = {
 		ITA_hidden_research_penalties_ns = { #Hidden idea to apply research penalties to certain military techs. Communicated in ITA_military_industry_dynamic_modifier (used as NS)
@@ -718,6 +719,10 @@ ideas = {
 			}
 		}
 
+
+
+
+
 		vittorio_emanuele_king_of_albania = {
 			name = vittorio_emanuele
 
@@ -990,6 +995,56 @@ ideas = {
 				consumer_goods_factor = -0.10
 			}
 		}
+		ITA_grand_council_boosted = {
+			removal_cost = -1
+
+			picture = goal_generic_support_fascism
+				
+			allowed = {
+				original_tag = ITA
+			}
+			available{}
+
+			cancel{}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				political_power_factor = -0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		ITA_to_live_as_a_lion = {
+			removal_cost = -1
+
+			picture = idea_ITA_shadow_of_mussolini
+				
+			allowed = {
+				original_tag = ITA
+			}
+			available{}
+
+			cancel{}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				
+				political_power_factor = 0.05
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = 0.15
+			}
+		}
 
 		ITA_battaglia_del_grano = {
 			removal_cost = -1
@@ -1007,10 +1062,10 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = -0.15
 				political_power_factor = -0.15
-				out_of_supply_factor = -0.1
+				production_speed_buildings_factor = 0.05
 			}
 		}
-
+		}
 		ITA_battaglia_per_la_terra = {
 			removal_cost = -1
 
@@ -1051,7 +1106,7 @@ ideas = {
 				communism_acceptance = -50
 			}
 		}
-
+	
 		ITA_camicie_nere = {
 			removal_cost = -1
 
@@ -4821,5 +4876,5 @@ ideas = {
 				coordination_bonus = 0.1
 			}
 		}
-	}
 }
+	
