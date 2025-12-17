@@ -2645,7 +2645,7 @@ characters = {
 			}
 			on_add = {
 				if = {
-					limit = {	has_global_flag = AAT_trotsky_in_mexico }
+					limit = { has_global_flag = AAT_trotsky_in_mexico }
 					set_global_flag = flag_trotsky_returning_to_ussr_from_mexico
 					MEX = { country_event = { id = mexico.22 } }		
 				}
@@ -2670,10 +2670,6 @@ characters = {
 				OR = {
 					has_global_flag = SOV_soviet_civil_war
 					has_global_flag = SOV_soviet_civil_war_over
-				}
-				OR = {
-					has_completed_focus = SOV_integrate_smirnovs_bloc
-					has_completed_focus = SOV_return_democracy_to_the_party
 				}
 				is_country_leader = no
 				if = {

@@ -4,7 +4,6 @@ tags={
 	"Balance"
 	"Historical"
 }
-name="Zird Of Iron"
+name="Zird Of Iron Github"
 picture="thumbnail.png"
 supported_version="1.17.*"
-remote_file_id="3588748591"

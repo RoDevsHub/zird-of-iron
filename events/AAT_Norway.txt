@@ -1,0 +1,612 @@
+
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     ********************////////**********************************************				
+##     ********************////////**********************************************				
+##     //////////////////////////////////////////////////////////////////////////				       
+##     //////////////////////////////////////////////////////////////////////////					
+##     //////////////////////////////////////////////////////////////////////////				
+##     ********************////////**********************************************				
+##     ********************////////**********************************************				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				
+##     -----------------***////////***-------------------------------------------				              
+
+
+add_namespace = AAT_norway
+add_namespace = AAT_norway_allied
+add_namespace = AAT_norway_news
+add_namespace = AAT_norway_rikstanken
+add_namespace = AAT_norway_fascist
+add_namespace = AAT_norway_communist
+add_namespace = AAT_norway_monarchist
+
+#country_event = {
+#	id = BBA_switzerland.1
+#	title = BBA_switzerland.1.t
+#	desc = BBA_switzerland.1.desc
+#	picture = 
+#
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		hidden_effect = {
+#		}
+#	}
+#
+#	option = {
+#		name = BBA_switzerland.1.a
+#		ai_chance = {
+#			base = 10
+#		}
+#		trigger = {
+#		}
+#	}
+#	option = {
+#		name = BBA_switzerland.1.b
+#		ai_chance = {
+#			base = 10
+#		}
+#		trigger = {
+#		}
+#     }
+#}
+
+country_event = { # Fascists Ransack Trotsky's residence 
+	id = AAT_norway.1
+	title = AAT_norway.1.t
+	desc = AAT_norway.1.desc
+	picture = GFX_report_event_NOR_quisling_rally 
+
+	is_triggered_only = no
+
+	fire_only_once = yes 
+
+	trigger = {
+		original_tag = NOR 
+		date > 1936.7.05
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = { # Historical Option - Send Trotsky to the Farm 
+		name = AAT_norway.1.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 10 
+			}
+		}
+		trigger = {
+		}
+		country_event = {
+			id = AAT_norway.2
+			days = 5
+		}
+
+	}
+
+}
+
+country_event = { # Trotsky Sent to farm 
+	id = AAT_norway.2
+	title = AAT_norway.2.t
+	desc = AAT_norway.2.desc
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		}
+	}
+
+	option = { # He better behave
+		name = AAT_norway.2.a
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+		}
+		set_country_flag = NOR_trotsky_sent_to_the_farm
+		country_event = {
+			id = AAT_norway.6
+			days = 108 #This is the actual number of days he spent at that farm 
+		}
+	}
+}
+
+country_event = { # The Fate of Trotsky 
+	id = AAT_norway.6
+	title = AAT_norway.6.t
+	desc = AAT_norway.6.desc
+	picture = GFX_report_event_NOR_trotsky_couple
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		}
+	}
+
+	option = { # Historical - Exile Trotsky to Mexico 
+		name = AAT_norway.6.a
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+		}
+		country_event = {
+			id = AAT_norway.7
+			days = 10
+		}
+		MEX = {
+			country_event = {
+				id = mexico.17
+				days = 10 
+			}
+		}
+	}
+}
+
+country_event = { # Trotsky Arrives in Mexico 
+	id = AAT_norway.7
+	title = AAT_norway.7.t
+	desc = AAT_norway.7.desc	
+
+	picture = GFX_report_event_NOR_trotsky_frida
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		}
+	} 
+
+	option = {
+		name = AAT_norway.7.a
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+		}
+		if = {
+			limit = { has_country_flag = NOR_trotsky_sent_to_the_farm }
+			clr_country_flag = NOR_trotsky_sent_to_the_farm
+		}
+		clr_global_flag = NOR_trotsky_in_norway
+		set_global_flag = AAT_trotsky_in_mexico
+	}
+}
+
+
+
+country_event = { # THEY REJECTED US 
+	id = AAT_norway.19
+	title = AAT_norway.19.t
+	desc = {
+		text = AAT_norway.19.desc_monarchist
+		trigger = {
+			has_government = neutrality
+		} 
+	} 	
+	desc = {
+		text = AAT_norway.19.desc_fascist
+		trigger = {
+			has_government = fascism 
+		} 
+	}
+
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = { # Inte Chicken 
+		name = AAT_norway.19.a
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+		}
+		if = {
+			limit = {
+				has_country_flag = NOR_claiming_iceland 
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = FROM
+				generator = { 100 } 
+			}			
+			clr_country_flag = NOR_claiming_iceland
+		}
+		else_if = {
+			limit = {
+				has_country_flag = NOR_claiming_greenland
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = FROM
+				generator = { 101 } 
+			}
+			clr_country_flag = NOR_claiming_greenland
+		}
+		else_if = {
+			limit = {
+				has_country_flag = NOR_claiming_faroes 
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = FROM
+				generator = { 337 } 
+			}
+			clr_country_flag = NOR_claiming_faroes
+		}
+		else_if = {
+			limit = {
+				has_country_flag = NOR_claiming_sweden 
+			}
+			915 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM } 
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 915 } 
+						} 
+					}
+				}			
+			}
+			916 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 916 } 
+						}
+					}
+				}
+			}
+			917 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 917 } 
+						}
+					}
+				}
+			}
+			clr_country_flag = NOR_claiming_sweden 
+		}
+		else_if = {
+			limit = {
+				has_country_flag = NOR_claiming_denmark 
+			}
+			912 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 912 } 
+						}
+					}
+				}
+			}
+			99 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 99 } 
+						}
+					}
+				}
+			}
+			911 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 911 } 
+						}
+					}
+				}
+			}
+			37 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 37 } 
+						}
+					}
+				}
+			}
+			910 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 910 } 
+						}
+					}
+				}
+			}
+			clr_country_flag = NOR_claiming_denmark
+		}
+		else_if = {
+			limit = {
+				has_country_flag = NOR_claiming_bjarmeland
+			}
+			213 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 213 } 
+						}
+					}
+				}
+			}	
+			214 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 214 } 
+						}
+					}
+				}
+			}
+			215 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 215 } 
+						}
+					}
+				}
+			}
+			clr_country_flag  = NOR_claiming_bjarmeland
+		}
+		else_if = {
+			limit = {
+				has_country_flag = NOR_claiming_ireland 
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = FROM
+				generator = { 113 } 
+			}
+			clr_country_flag = NOR_claiming_ireland
+		}
+		else_if = {
+			limit = {
+				has_country_flag = NOR_claiming_scotland 
+			}
+			120 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 120 } 
+						}
+					}
+				}
+			}
+			933 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 933 } 
+						}
+					}
+				}
+			}
+			clr_country_flag = NOR_claiming_scotland
+		}
+		else_if = {
+			limit = {
+				has_country_flag = NOR_claiming_vinland 
+			}
+			332 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 332 } 
+						}
+					}
+				}
+			}
+			331 = {
+				if = {
+					limit = { is_owned_and_controlled_by = FROM }
+					PREV = {
+						create_wargoal = {
+							type = take_state_focus
+							target = FROM
+							generator = { 331 } 
+						}
+					}
+				}
+			}
+			clr_country_flag = NOR_claiming_vinland
+		}
+	}
+}
+
+country_event = { #  The Queen dies. - Historical
+	id = AAT_norway.20
+	title = AAT_norway.20.t
+	desc = AAT_norway.20.desc	
+
+	picture = GFX_report_event_NOR_queen_maud_funeral
+
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = NOR_the_norwegian_queen_is_dead 
+		}
+	} 
+
+	option = { # Oh no
+		name = AAT_norway_monarchist.2.a # On Purpose
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+		}
+		add_stability = -0.05
+	}
+}
+
+country_event = { # Fake event to trigger Civil war when Germany Attacks
+	id = AAT_norway.199
+	hidden = yes 	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			NOR_start_fascist_civil_war = yes
+		}
+	}
+}
+
+
+news_event = { # Trotsky Lands in Mexico 
+	id = AAT_norway_news.1
+	title = AAT_norway.7.t  # On Purpose
+	desc = AAT_norway_news.1.desc
+	picture = GFX_news_event_NOR_trotsky_frida 
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = AAT_norway_news.1.sov
+		trigger = {
+			has_country_leader_ideology = stalinism
+		}
+	}
+
+	option = {
+		name = AAT_norway_news.1.a 
+		trigger = {
+			NOT = {
+				has_country_leader_ideology = stalinism
+			}
+		}
+	}
+}
+
+news_event = { # Queen Maud Dies 
+	id = AAT_norway_news.2
+	title = AAT_norway_news.2.t
+	desc = AAT_norway_news.2.desc
+	picture = GFX_news_event_NOR_queen_maud_funeral 
+
+	is_triggered_only = yes
+
+	option = { # Non Commie Option
+		name = AAT_norway_news.2.a 
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+
+	option = { # Commie option
+		name = AAT_norway_news.2.b
+		trigger = {
+			has_government = communism
+		}
+	}
+}
+
+
+news_event = { # King Haakon Dies 
+	id = AAT_norway_news.3
+	title = AAT_norway_news.3.t
+	desc = AAT_norway_news.3.desc
+	picture = GFX_news_event_NOR_queen_maud_funeral 
+
+	is_triggered_only = yes
+	option = { # Non Commie Option
+		name = AAT_norway_news.2.a # On Purpose 
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+
+	option = { # Commie option
+		name = AAT_norway_news.2.b # On Purpose 
+		trigger = {
+			has_government = communism
+		}
+	}
+}
+
+
+news_event = {
+	id = AAT_norway_news.99
+	title = AAT_norway_news.99.t
+	desc = AAT_norway_news.99.desc
+	picture =  GFX_news_event_ast_navy
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = AAT_norway_news.99.a
+		trigger = {
+		}
+	}
+}
+
+
