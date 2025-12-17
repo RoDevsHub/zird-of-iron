@@ -545,6 +545,35 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = SPR_relocate_the_gold_reserves
+		available = {
+		}
+		bypass = {
+			OR = {
+				has_global_flag = scw_over
+				has_global_flag = SPR_gold_reserves_flag
+			}
+		}
+		prerequisite = { focus = SPR_disband_the_army }
+		
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		relative_position_id = SPR_disband_the_army
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_stability = -0.05
+			add_ideas = SPR_relocate_the_gold_reserves
+			custom_effect_tooltip = SPR_relocate_the_gold_reserves_tt
+			country_event = lar_spain.51
+			set_global_flag = SPR_gold_reserves_flag
+		}
+	}
+
 
 #  #  ##  ### ###  ##  #  #  ##  #   ###  ## ###  ##            ### ###   ##  #  #  ##   ##  
 ## # #  #  #   #  #  # ## # #  # #    #  #    #  #              #   #  # #  # ## # #  # #  # 
