@@ -1065,7 +1065,7 @@ ideas = {
 				production_speed_buildings_factor = 0.05
 			}
 		}
-		}
+		
 		ITA_battaglia_per_la_terra = {
 			removal_cost = -1
 
@@ -4876,5 +4876,5 @@ ideas = {
 				coordination_bonus = 0.1
 			}
 		}
+	}
 }
-	
