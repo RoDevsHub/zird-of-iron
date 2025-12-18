@@ -87,7 +87,7 @@ focus_tree = {
 		icon = GFX_focus_generic_military_dictatorship
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -112,7 +112,7 @@ focus_tree = {
 		icon = GFX_focus_RAJ_war_taxes
 		x = 3
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -156,7 +156,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 		x = 1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -488,7 +488,7 @@ focus_tree = {
 		icon = GFX_focus_BEL_koningshooikt_wavre_line
 		x = -1
 		y = 1
-		cost = 8
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -515,7 +515,7 @@ focus_tree = {
 		icon = GFX_focus_chi_mission_to_germany
 		x = 1
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -619,7 +619,10 @@ focus_tree = {
     		ideology = fascism
     		popularity = 0.05
 			}
-
+			reduce_focus_completion_cost = {
+			  focus = { ROM_Iron_Calvary ROM_Iron_Beast_Assembly ROM_Army_of_the_Machine ROM_German_Tank_Doctrine ROM_Armored_Fury ROM_Armor_Warfare }
+			  cost = 14
+			}
 			add_ideas = ROM_German_Military_Reforms_idea
 			add_doctrine_cost_reduction = {
 				name = ROM_invite_german_advisors
@@ -650,12 +653,15 @@ focus_tree = {
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
-				amount = 5000
+				amount = 2000
 			}
-
+			reduce_focus_completion_cost = {
+			  focus = { ROM_Mass_Mobilization ROM_Human_Wave_Tactics ROM_Guns_of_Steel ROM_Will_of_Million ROM_Workshops_of_Greater_Romania ROM_Army_of_the_People }
+			  cost = 14
+			}
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
-				amount = 800
+				amount = 200
 			}
 			add_ideas = ROM_Royal_Guard_idea
 		}
@@ -695,7 +701,7 @@ focus_tree = {
 		icon = GFX_SOV_strengthen_the_mobilization_plan_ccp_2d_sov_compatibility
 		x = 1
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -728,6 +734,10 @@ focus_tree = {
 		}
 			
 		completion_reward = {
+			reduce_focus_completion_cost = {
+			  focus = { ROM_Armed_Forces}
+			  cost = 280
+			}
 			remove_ideas = ROM_king_carol_ii_hedonist
 			create_country_leader = {
 				name = "Ion Antonescu"
@@ -1120,7 +1130,7 @@ focus_tree = {
 		prerequisite = {focus = ROM_Constanta_Naval_Line}
 		relative_position_id = ROM_Fortify_Danube
 		available = {
-		
+		has_war_with = SOV
 		}
 
 		continue_if_invalid = yes
@@ -1135,6 +1145,10 @@ focus_tree = {
 			
 		completion_reward = {
 			add_timed_idea = {idea = ROM_Operation_Barbarbarossa_idea days = 365}
+			reduce_focus_completion_cost = {
+			  focus = { ROM_Armed_Forces}
+			  cost = 140
+			}
 		}
 	}
 		focus = {
@@ -1159,6 +1173,10 @@ focus_tree = {
 			set_cosmetic_tag = ROM_greater
 			add_political_power = 100
 			add_ideas = ROM_Capital_of_Balkans_idea
+			reduce_focus_completion_cost = {
+			  focus = { ROM_Armed_Forces}
+			  cost = 70
+			}
 		}
 	}
 
@@ -1483,7 +1501,7 @@ focus_tree = {
 		icon = GFX_focus_generic_improve_roads
 		x = 2
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -1602,7 +1620,7 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		x = -2
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -1760,7 +1778,7 @@ focus_tree = {
 		icon = GFX_focus_SWE_revoke_militia_law
 		x = 55
 		y = 0
-		cost = 2
+		cost = 80
 		ai_will_do = {
 			factor = 1
 		}	
@@ -1785,7 +1803,7 @@ focus_tree = {
 		icon = GFX_focus_ETH_ecole_militaire_haile_selassie_1er
 		x = 0
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -1843,6 +1861,7 @@ focus_tree = {
 		}
 	
 		completion_reward = {
+			add_potential_special_forces_tree = yes
 				add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
 				uses = 1
@@ -2286,7 +2305,7 @@ focus_tree = {
 		icon = GFX_focus_CZE_military_aeronautical_institute
 		x = -9
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -2511,7 +2530,7 @@ focus_tree = {
 		icon = GFX_focus_generic_large_navy
 		x = 9
 		y = 1
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -2538,7 +2557,7 @@ focus_tree = {
 		icon = GFX_focus_generic_refit_civilian_ships
 		x = 0
 		y = 2
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
