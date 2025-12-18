@@ -3385,6 +3385,50 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = USA_If_Japan_Doesnt_Declare
+		icon = GFX_focus_usa_build_the_pentagon
+		x = -38
+		y = -1
+		relative_position_id = USA_war_plans_division
+		cost = 10
+		will_lead_to_war_with = GER
+		will_lead_to_war_with = JAP
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			date > 1942.01.01
+		}
+		
+		bypass = {
+			OR = {
+			has_war_with = GER
+			has_war_with = JAP
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+				create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GER
+				expire = 0
+			}
+				create_wargoal = {
+				type = puppet_wargoal_focus
+				target = JAP
+				expire = 0
+			}
+			  
+		}
+	}
+
 
 	focus = {
 		id = USA_war_plan_gray
