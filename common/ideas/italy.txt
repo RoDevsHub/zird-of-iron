@@ -998,14 +998,14 @@ ideas = {
 		ITA_grand_council_boosted = {
 			removal_cost = -1
 
-			picture = GFX_generic_fascism
+			picture = generic_fascism
 				
 			allowed = {
 				original_tag = ITA
 			}
-			available{}
+			available = { }
 
-			cancel{}
+			cancel = { }
 
 			allowed_civil_war = {
 				always = yes
@@ -1023,14 +1023,14 @@ ideas = {
 		ITA_to_live_as_a_lion = {
 			removal_cost = -1
 
-			picture = GFX_shadow_of_mussolini
+			picture = shadow_of_mussolini
 				
 			allowed = {
 				original_tag = ITA
 			}
-			available{}
+			available = { }
 
-			cancel{}
+			cancel = { }
 
 			allowed_civil_war = {
 				always = yes
@@ -1043,6 +1043,63 @@ ideas = {
 				political_power_factor = 0.05
 				production_speed_buildings_factor = -0.1
 				industrial_capacity_factory = 0.15
+			}
+		}
+
+
+		ITA_heroes_of_the_nation_idea = {
+			removal_cost = -1
+
+			picture = upgrade
+				
+			allowed = {
+				original_tag = ITA
+			}
+			available = { }
+
+			cancel = { }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+
+				experience_gain_factor = 0.15
+				weekly_casualties_war_support = 0.1
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+
+			}
+		}
+
+		ITA_devotion_idea = {
+			removal_cost = -1
+
+			picture = shield 
+				
+			allowed = {
+				original_tag = ITA
+			}
+			available = { }
+
+			cancel = { }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				
+				training_time_factor = 0.1
+				land_reinforce_rate = 0.1
+				navy_capital_ship_defence_factor = 0.1
+				air_mission_efficiency = 0.1
+
 			}
 		}
 

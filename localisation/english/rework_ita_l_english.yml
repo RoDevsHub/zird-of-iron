@@ -9,6 +9,8 @@
  ITA_imperial_institutions_desc:0 "To sustain a renewed Italian Imperium, the state must cultivate institutions worthy of empire. Through disciplined scholarship and centralized direction, Italy shall command the knowledge required to rule."
  ITA_nation_in_arms_idea:0 "Nation in Arms"
  ITA_nation_in_arms_idea_desc:0 "The Italian state mobilizes its people in service of empire, transforming society itself into an instrument of war."
+ ITA_devotion:0 "Devotion"
+ ITA_devotion_desc:0 "Through discipline, sacrifice, and unwavering commitment, the Italian people dedicate themselves fully to the nation’s cause. In the barracks, the shipyards, and the airfields, devotion to duty forges endurance, coordination, and resolve that no enemy can easily break."
 
  # ideas
 
@@ -18,3 +20,10 @@
  ITA_to_live_as_a_lion_desc:0 "Italy embraces bold action, pouring resources into its industries to strengthen the nation’s might. The ambitious effort brings both growth and strain to its infrastructure."
  ITA_grand_council_boosted:0 "Grand Council Boosted"
  ITA_grand_council_boosted:0 "The Grand Council takes decisive control, streamlining Italy’s efforts and boosting efficiency across the nation’s projects."
+ ITA_devotion_idea:0 "Devotion"
+ ITA_devotion_idea_desc:0 "A spirit of unwavering commitment permeates the Italian armed forces. Through relentless preparation, steadfast resolve, and loyalty to the nation, soldiers, sailors, and airmen alike are driven to endure longer, respond faster, and carry out their duties with greater efficiency."
+ ITA_heroes_of_the_nation_idea:0 "Heroes of the Nation"
+ ITA_heroes_of_the_nation_idea_desc:0 "The bravery and sacrifices of our finest soldiers inspire the entire nation. Our troops gain experience faster, and the people remain steadfast even in the face of heavy losses."
+
+#custom tooltips 
+

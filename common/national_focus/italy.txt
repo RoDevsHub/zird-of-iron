@@ -8707,11 +8707,11 @@ focus_tree = {
 	focus = {
 		id = ITA_the_man_of_providence
 		icon = GFX_goal_demand_sudetenland
-		prerequisite = { focus = ITA_culto_del_duce }
+		prerequisite = { focus = ITA_boost_the_grand_council_of_fascism focus = ITA_to_live_as_a_lion }
 
-		x = -3
-		y = 1
-		relative_position_id = ITA_culto_del_duce
+		x = 0
+		y = 2
+		relative_position_id = ITA_strengthen_the_regime
 		cost = 5
 		available = {
 			has_country_leader = {
@@ -8732,21 +8732,11 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 25
-			if = {
-				limit = {
-					has_completed_focus = ITA_strengthen_the_regime
-				}
+
 				swap_ruler_traits = {
 					remove = il_duce_strengthen
 					add = il_duce_providence_strengthen
 				}
-			}
-			else = {
-				swap_ruler_traits = {
-					remove = il_duce
-					add = il_duce_providence
-				}
-			}
 
 			ITA_bop_very_low_increase_effect = yes
 		}
@@ -8757,11 +8747,11 @@ focus_tree = {
 	focus = {
 		id = ITA_boost_the_grand_council_of_fascism
 		icon = GFX_focus_generic_strike_at_democracy1
-		prerequisite = { focus = ITA_the_man_of_providence }
+		prerequisite = { focus = ITA_strengthen_the_regime }
 		mutually_exclusive = { focus = ITA_to_live_as_a_lion }
 		x = -1
 		y = 1
-		relative_position_id = ITA_the_man_of_providence
+		relative_position_id = ITA_strengthen_the_regime
 		cost = 5
 		available = {
 			power_balance_value = {
@@ -8787,11 +8777,11 @@ focus_tree = {
 	focus = {
 		id = ITA_to_live_as_a_lion
 		icon = GFX_focus_ITA_to_live_as_a_lion
-		prerequisite = { focus = ITA_the_man_of_providence }
+		prerequisite = { focus = ITA_strengthen_the_regime }
 		mutually_exclusive = { focus = ITA_boost_the_grand_council_of_fascism }
-		x = 2
-		y = 0
-		relative_position_id = ITA_boost_the_grand_council_of_fascism
+		x = 1
+		y = 1
+		relative_position_id = ITA_strengthen_the_regime
 		cost = 5
 		available = {
 			has_country_leader = {
@@ -8927,11 +8917,11 @@ focus_tree = {
 	focus = {
 		id = ITA_strengthen_the_regime
 		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = ITA_la_battaglia_del_grano focus = ITA_la_battaglia_per_la_terra }
+		prerequisite = { focus = ITA_culto_del_duce }
 
-		x = 0
-		y = 2
-		relative_position_id = ITA_la_battaglia_per_le_nascite
+		x = -3
+		y = 1
+		relative_position_id = ITA_culto_del_duce
 		cost = 5
 		available = {
 			has_country_leader = {
@@ -8952,7 +8942,7 @@ focus_tree = {
 					has_completed_focus = ITA_the_man_of_providence
 				}
 				swap_ruler_traits = {
-					remove = il_duce_providence
+					remove = lion_tamer
 					add = il_duce_providence_strengthen
 				}
 			}
@@ -8968,11 +8958,11 @@ focus_tree = {
 	focus = {
 		id = ITA_devotion
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = ITA_to_live_as_a_lion focus = ITA_boost_the_grand_council_of_fascism }
+		prerequisite = { focus = ITA_la_battaglia_per_la_terra focus = ITA_la_battaglia_del_grano }
 
-		x = -1
+		x = 1
 		y = 1
-		relative_position_id = ITA_to_live_as_a_lion
+		relative_position_id = ITA_la_battaglia_del_grano
 		cost = 5
 		available = {
 			has_country_leader = {
@@ -8981,20 +8971,14 @@ focus_tree = {
 			}
 			power_balance_value = {
 				id = ITA_power_balance
-				value > 0.799
+				value > 0.499
 			}
 		}
 
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY FOCUS_FILTER_BALANCE_OF_POWER}
 
 		completion_reward = {
-			add_political_power = 50
-
-			swap_ruler_traits = {
-				remove = il_duce_providence_strengthen
-				add = il_duce_devotion 
-			}
-
+			add_ideas = ITA_devotion_idea
 			ITA_bop_very_low_increase_effect = yes
 		}
 	}
@@ -9150,13 +9134,13 @@ focus_tree = {
 	focus = {
 		id = ITA_towards_a_greater_italy
 		icon = GFX_focus_ITA_greater_italy
-		prerequisite = { focus = ITA_strengthen_the_regime }
+		prerequisite = { focus = ITA_the_man_of_providence }
 		prerequisite = { focus = ITA_devotion }
 	
 
 		x = -3
 		y = 1
-		relative_position_id = ITA_strengthen_the_regime
+		relative_position_id = ITA_devotion
 		cost = 10
 
 
@@ -9422,23 +9406,12 @@ focus_tree = {
 			add_to_variable = { ITA_re_command_power_gain_mult = 0.15 }
 			custom_effect_tooltip = ITA_heroes_of_the_nation_re_tt
 
-			army_experience = 25
-			navy_experience = 25
-			air_experience = 25
-			add_war_support = 0.05
+		
 
-			if = {
-				limit = {
-					has_country_leader = {
-						character = ITA_benito_mussolini
-						ruling_only = yes
-					}
-				}
-				swap_ruler_traits = {
-					remove = il_duce_devotion
-					add =  il_duce_heroes
-				}
-			}
+			add_ideas = ITA_heroes_of_the_nation_idea
+
+		
+			
 
 			custom_effect_tooltip = ITA_heroes_of_the_nation_general_traits_tt
 			#Stupid tooltips oh my god I hate this game

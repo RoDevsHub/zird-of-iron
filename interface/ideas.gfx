@@ -11621,17 +11621,23 @@ spriteTypes = {
 		name = "GFX_idea_generic_mild_economic_recovery"
 		texturefile = "gfx/interface/ideas/idea_generic_mild_economic_recovery.dds"
 	}
-	spriteTypes = {
-		spriteType = {
-			name = "GFX_shadow_of_mussolini"
-			texturefile = "gfx/interface/ideas/idea_ITA_shadow_of_mussolini.dds"
-		}
+	spriteType = {
+		name = "GFX_idea_shadow_of_mussolini"
+		texturefile = "gfx/interface/ideas/idea_ITA_shadow_of_mussolini.dds"
+		
 	}
-	spriteTypes = {
-		spriteType = {
-			name = "GFX_generic_fascism"
-			texturefile = "gfx/interface/ideas/goal_generic_support_fascism.dds"
-		}
+	spriteType = {
+		name = "GFX_idea_generic_fascism"
+		exturefile = "gfx/interface/ideas/goal_generic_support_fascism.dds"
+		
+	}
+	spriteType = {
+		name = "GFX_idea_shield"
+		texturefile ="gfx/interface/ideas/Shield.dds" 
+	}
+	spriteType = {
+		name = "GFX_idea_upgrade"
+		texturefile ="gfx/interface/ideas/Upgrade.dds" 
 	}
 
 
