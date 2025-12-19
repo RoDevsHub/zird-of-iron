@@ -11628,7 +11628,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_idea_generic_fascism"
-		exturefile = "gfx/interface/ideas/goal_generic_support_fascism.dds"
+		texturefile = "gfx/interface/ideas/goal_generic_support_fascism.dds"
 		
 	}
 	spriteType = {
