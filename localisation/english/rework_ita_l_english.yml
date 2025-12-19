@@ -7,12 +7,22 @@
  ITA_convene_the_grand_council_desc:0 "Italy faces a critical turning point as the Grand Council debates the future of Il Duce. The nation must decide whether to continue under his rule or move toward his removal."
  ITA_imperial_institutions:0 "Imperial Institutions"
  ITA_imperial_institutions_desc:0 "To sustain a renewed Italian Imperium, the state must cultivate institutions worthy of empire. Through disciplined scholarship and centralized direction, Italy shall command the knowledge required to rule."
- ITA_nation_in_arms_idea:0 "Nation in Arms"
- ITA_nation_in_arms_idea_desc:0 "The Italian state mobilizes its people in service of empire, transforming society itself into an instrument of war."
  ITA_devotion:0 "Devotion"
  ITA_devotion_desc:0 "Through discipline, sacrifice, and unwavering commitment, the Italian people dedicate themselves fully to the nation’s cause. In the barracks, the shipyards, and the airfields, devotion to duty forges endurance, coordination, and resolve that no enemy can easily break."
  ITA_shatter_the_gate:0 "Shatter the Gate"
  ITA_shatter_the_gate_desc:0 "The Rock of Gibraltar stands as the gatekeeper to the Mediterranean. Through careful planning, bombardment, and swift amphibious operations, our forces aim to breach its defenses and open the passage for the Regia Marina. This operation will give us the advantage in naval invasions against the United Kingdom, if only temporarily."
+ ITA_exploit_domestic_reserves:0 "Exploit Domestic Reserves"
+ ITA_exploit_domestic_reserves_desc:0 "Italy may lack vast natural oil fields, but careful surveys and targeted extraction efforts can yield modest gains from reserves within the mainland. Expanding domestic production will reduce our dependence on foreign fuel and strengthen the nation’s strategic autonomy."
+ ITA_expand_the_mines:0 "Expand the Mines"
+ ITA_expand_the_mines_desc:0 "Though Italy’s coal deposits are limited, reopening old mines and expanding domestic extraction can provide a vital boost to industry and energy production. Increased coal output will help sustain our factories and reduce reliance on foreign imports."
+ ITA_politica_dei_sonsorzi:0 "Politica dei Consorzi"
+ ITA_politica_dei_sonsorzi_desc:0 "Through the organization of industrial consortia and state-backed coordination between private enterprises, the government can accelerate civilian construction while consolidating political control. Centralized economic planning will strengthen both Italy’s productive capacity and the authority of the state."
+ ITA_fortress_sicily:0 "Fortress Sicily"
+ ITA_fortress_sicily_desc:0 "Sicily is the gateway to the Italian mainland. By strengthening coastal fortifications and inland positions, we ensure that any enemy landing will face stiff resistance, making the island a bastion of our defense."
+ ITA_the_soft_underbelly_of_europe:0 "The Soft Underbelly of Europe"
+ ITA_the_soft_underbelly_of_europe_desc:0 "Italy’s position in Europe leaves the mainland exposed to attack from multiple directions. By fortifying key coastal provinces and inland strongpoints, we turn potential weakness into a prepared defense, ready to repel any invader."
+ ITA_nation_in_arms:0 
+ ITA_nation_in_arms_desc:0 "The Italian state mobilizes its people in service of empire, transforming society itself into an instrument of war."
  # ideas
 
  ITA_focus_on_mobilization_idea:0 "Focus on Mobilization"
@@ -30,3 +40,4 @@
 
 #custom tooltips 
 
+ ITA_new_industrialization_designers_overwrite:0 "If focus §Y'Strength Northern Industry'§! has been completed first, Northern National Designers will be improved.\n\nIf focus §Y'Modernize the Mezzogiorno'§! has been completed first, Southern National Designers will be improved."
