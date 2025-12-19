@@ -1,0 +1,23 @@
+state = {
+	id = 1048
+	name = "STATE_1048" #Gaza
+	manpower = 59987
+	
+	state_category = rural
+
+	history = {
+
+		owner = ENG
+
+		buildings = {
+			infrastructure = 3 #was: 5
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+4088
+	}
+
+	local_supplies = 0.0 
+}

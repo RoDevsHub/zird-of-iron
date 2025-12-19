@@ -142,3 +142,11 @@
 13457;72;224;216;land;true;urban;5
 #Channel Islands
 13458;243;73;82;land;true;plains;1
+#Gaza
+4088;47;84;83;land;true;urban;7
+#Southern Palestine
+13459;213;46;196;land;false;desert;7
+#West Bank
+13460;177;141;133;land;false;desert;7
+#Palestine
+1086;5;81;210;land;false;urban;7
