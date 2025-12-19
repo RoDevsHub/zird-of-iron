@@ -45,7 +45,7 @@ focus_tree = {
 	focus = {
 		id = ITA_annex_bulgaria
 		icon = GFX_SOV_great_commander_ccp_2d_sov_compatibility
-		x = 1
+		x = -3
 		y = 0
 		cost = 0
 
@@ -185,7 +185,7 @@ focus_tree = {
 	focus = {
 		id = ITA_italian_highways_bba
 		icon = GFX_focus_generic_truck
-		x = 6
+		x = 12
 		y = 0
 		relative_position_id = ITA_ethiopian_war_logistics_bba
 		cost = 5
@@ -262,9 +262,9 @@ focus_tree = {
 		prerequisite = { focus = ITA_italian_highways_bba }
 		prerequisite = { focus = ITA_ethiopian_war_logistics_bba }
 
-		x = -5
+		x = 5
 		y = 1
-		relative_position_id = ITA_italian_highways_bba
+		relative_position_id = ITA_ethiopian_war_logistics_bba
 		cost = 5
 		available = {
 			NOT = { has_global_flag = second_italo_ethiopian_war_flag }
@@ -2766,14 +2766,86 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ITA_expand_the_mines
+		icon = GFX_focus_generic_coal_mining
+		prerequisite = { focus = ITA_steel_industry_in_terni }
+		
+		x = -1
+		y = 1
+		relative_position_id = ITA_steel_industry_in_terni
+		cost = 5
+		available = {
+			has_full_control_of_state = 2
+		}
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		completion_reward = {
+			158 = {
+				
+				add_resource = {
+					type = coal
+					amount = 24
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+			}
+		
+			852 = {
+				
+				add_resource = {
+					type = coal
+					amount = 16
+				}
+				add_resource = {
+					type = tungsten
+					amount = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = ITA_exploit_domestic_reserves
+		icon = GFX_focus_PER_increase_oil_sales
+		prerequisite = { focus = ITA_expand_the_mines }
+		
+		x = 0
+		y = 1
+		relative_position_id = ITA_expand_the_mines
+		cost = 10
+		available = {
+			has_full_control_of_state = 2
+		}
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		completion_reward = {
+			158 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = ITA_steel_industry_in_terni
 		icon = GFX_focus_generic_steel
 		prerequisite = { focus = ITA_italian_highways_bba }
-		mutually_exclusive = { focus = ITA_power_plants_in_terni }
+		
 		x = -1
 		y = 1
 		relative_position_id = ITA_italian_highways_bba
-		cost = 10
+		cost = 5
 		available = {
 			has_full_control_of_state = 2
 		}
@@ -2792,7 +2864,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 24
 				}
 			}
 		}
@@ -2802,11 +2874,11 @@ focus_tree = {
 		id = ITA_power_plants_in_terni
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = ITA_italian_highways_bba }
-		mutually_exclusive = { focus = ITA_steel_industry_in_terni }
+		
 		x = 1
 		y = 1
 		relative_position_id = ITA_italian_highways_bba
-		cost = 10
+		cost = 5
 		available = {
 			has_full_control_of_state = 2
 		}
@@ -2827,7 +2899,45 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = ITA_politica_dei_sonsorzi
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ITA_industria_della_gomma_sintetica }
+		
+		mutually_exclusive = {  }
+		x = 0
+		y = 1
+		relative_position_id = ITA_industria_della_gomma_sintetica
+		cost = 10
+		available = {
+			has_full_control_of_state = 2
+		}
 
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		completion_reward = {
+			add_to_variable = { ITA_iri_production_speed_infrastructure_factor = 0.05 }
+			
+
+			819 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			2 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			}
+		}
+	}
 	focus = {
 		id = ITA_industria_della_gomma_sintetica
 		icon = GFX_focus_generic_rubber
@@ -2836,9 +2946,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_steel_industry_in_terni
-		cost = 5
+		cost = 10
 		available = {
-			has_tech = synth_oil_experiments
+			
 		}
 
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
@@ -2850,6 +2960,10 @@ focus_tree = {
 				uses = 2
 				category = cat_synth_oil
 			}
+			set_technology = {
+   				synth_oil_experiments = 1
+			}
+			
 
 			if = {
 				limit = {
@@ -2896,10 +3010,11 @@ focus_tree = {
 	focus = {
 		id = ITA_strengthen_northern_industry
 		icon = GFX_focus_ITA_northern_industry
-		prerequisite = { focus = ITA_industria_della_gomma_sintetica }
-		mutually_exclusive = { focus = ITA_modernize_the_mezzogiorno }
+		prerequisite = { focus = ITA_politica_dei_sonsorzi focus = ITA_exploit_domestic_reserves }
+		
+		
 		x = -1
-		y = 1
+		y = 2
 		relative_position_id = ITA_industria_della_gomma_sintetica
 		cost = 10
 		available = {
@@ -2908,175 +3023,45 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
-			if = {
-				limit = {
-					has_full_control_of_state = 158
-					158 = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-					}
-				}
+	
 				158 = { #PIEDMONT (Torino, Genoa)
-					add_extra_state_shared_building_slots = 3
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = industrial_complex
-						level = 1
+						level = 3
 						instant_build = yes
 					}
 				}
-			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-					}
-					prioritize = { 736 852 } #LITORALE as main fallback
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-
-			if = {
-				limit = {
-					has_full_control_of_state = 159
-					159 = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-					}
-				}
+	
 				159 = { #LOMBARDY (Milano, Brescia)
-					add_extra_state_shared_building_slots = 3
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = arms_factory
-						level = 1
+						level = 3
 						instant_build = yes
 					}
 				}
-			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-					}
-					prioritize = { 850 30 } #TRENTINO as main fallback
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-
-			if = {
-				limit = {
-					has_full_control_of_state = 161
-					161 = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-					}
-				}
-				161 = { #EMILIA ROMAGNA (Bologna)
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-					}
-					prioritize = { 30 850 } #ALTO ADIGE as main fallback
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-
-			if = {
-				limit = {
-					has_full_control_of_state = 160
-					160 = {
-						free_building_slots = {
-							building = dockyard
-							size > 0
-							include_locked = yes
-						}
-					}
-				}
+			
 				160 = { #VENETO (Venice )
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}
+				
+		
 				}
-			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = dockyard
-							size > 0
-							include_locked = yes
-						}
-					}
-					prioritize = { 852 736 } #ISTRIA as main fallback
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = dockyard
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
 		}
 	}
 
 	focus = {
 		id = ITA_modernize_the_mezzogiorno
 		icon = GFX_focus_ITA_southern_industry
-		prerequisite = { focus = ITA_industria_della_gomma_sintetica }
-		mutually_exclusive = { focus = ITA_strengthen_northern_industry }
+		prerequisite = { focus = ITA_politica_dei_sonsorzi focus = ITA_investments_in_edison }
+		
 		x = 1
-		y = 1
+		y = 2
 		relative_position_id = ITA_industria_della_gomma_sintetica
 		cost = 10
 		available = {
@@ -3085,17 +3070,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
-			if = {
-				limit = {
-					has_full_control_of_state = 117
-					117 = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = yes
-						}
-					}
-				}
+		
 				117 = { #CAMPAGNA (Napoli)
 					if = {
 						limit = {
@@ -3106,65 +3081,27 @@ focus_tree = {
 							level = 1
 							instant_build = yes						
 						}
-					}
 					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
 					}
 					add_building_construction = {
 						type = naval_base
-						level = 2
+						level = 6
 						instant_build = yes
 						province = 819					
 					}
 				}
-			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-					}
-					prioritize = { 156 2 162 } #CALABRIA as main fallback
-					if = {
-						limit = {
-							infrastructure < 5
-						}
+			
+			
+				2 = { #rome
 						add_building_construction = {
-							type = infrastructure
-							level = 1
+							type = naval_base
+							level = 6
 							instant_build = yes						
 						}
-					}
+					
 					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
 				}
-			}
-
-			if = {
-				limit = {
-					has_full_control_of_state = 849
-				}
+				
 				849 = { #PUGLIA (Taranto, Bari, Foggia)
 					if = {
 						limit = {
@@ -3173,29 +3110,41 @@ focus_tree = {
 						add_building_construction = {
 							type = infrastructure
 							level = 1
-							instant_build = yes						
+							instant_build = yes		
+							province = 13382				
 						}
 					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = dockyard
-						level = 1
-						instant_build = yes
-					}
+					add_extra_state_shared_building_slots = 2
+			
 					add_building_construction = {
 						type = naval_base
-						level = 2
+						level = 6
 						instant_build = yes
 						province = 9784					
 					}
 				}
-			}
-
-			if = {
-				limit = {
-					has_full_control_of_state = 115
+				156 = { 
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes						
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+			
+					add_building_construction = {
+						type = naval_base
+						level = 6
+						instant_build = yes
+						province = 9784					
+					}
 				}
 
+			
 				115 = { #SICILY (Palermo, Messina, Catania)
 					if = {
 						limit = {
@@ -3209,21 +3158,20 @@ focus_tree = {
 					}
 					add_building_construction = {
 						type = naval_base
-						level = 1
+						level = 6
 						instant_build = yes
 						province = 4159					
 					}
 					add_building_construction = {
 						type = naval_base
-						level = 1
+						level = 6
 						instant_build = yes
 						province = 7059					
 					}
 				}
-			}
+			
 
-			if = {
-				limit = {
+		
 					has_full_control_of_state = 114
 				}
 				114 = { #SARDINIA (Cagliari)
@@ -3238,13 +3186,13 @@ focus_tree = {
 						}
 						add_building_construction = {
 							type = naval_base
-							level = 2
+							level = 6
 							instant_build = yes
 							province = 11773					
 						}
 					}
-				}
-			}
+				
+			
 
 			if = {
 				limit = {
@@ -3255,6 +3203,11 @@ focus_tree = {
 						type = steel
 						amount = 12
 					}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes						
+						}
 				}
 			}
 		}
@@ -3263,11 +3216,12 @@ focus_tree = {
 	focus = {
 		id = ITA_new_industrialization_program
 		icon = GFX_focus_generic_industry_3
-		prerequisite = { focus = ITA_strengthen_northern_industry focus = ITA_modernize_the_mezzogiorno }
+		prerequisite = { focus = ITA_strengthen_northern_industry }
 		prerequisite = { focus = ITA_expand_national_universities }
+		prerequisite = { focus = ITA_modernize_the_mezzogiorno }
 
 		x = 1
-		y = 2
+		y = 1.5
 		relative_position_id = ITA_strengthen_northern_industry
 		cost = 10
 		available = {
@@ -3298,10 +3252,196 @@ focus_tree = {
 				ITA_replace_designers_by_improved_version_south = yes
 			}
 			else = {
-				custom_effect_tooltip = ITA_new_industrialization_program_generic_tt
+				custom_effect_tooltip = ITA_new_industrialization_designers_overwrite
 			}
 		}
 	}
+	focus = {
+		id = ITA_fortress_sicily
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = ITA_new_industrialization_program}
+	
+
+		x = 0
+		y = 1
+		relative_position_id = ITA_new_industrialization_program
+		cost = 10
+		available = {
+			has_full_control_of_state = 115
+		 }
+		completion_reward = {
+		115 = { #
+					
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 10074
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						instant_build = yes
+						province = 10074
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 7059
+					}
+						add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						instant_build = yes
+						province = 7059
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 13256
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						instant_build = yes
+						province = 13256
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 4014
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						instant_build = yes
+						province = 4014
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 4159
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						instant_build = yes
+						province = 4159
+					}
+					
+				}
+		}
+	}
+	focus = {
+		id = ITA_the_soft_underbelly_of_europe
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = ITA_fortress_sicily }
+	
+
+		x = 0
+		y = 1
+		relative_position_id = ITA_fortress_sicily
+		cost = 10
+		available = {
+			has_full_control_of_state = 162
+			has_full_control_of_state = 2
+			has_full_control_of_state = 117
+			has_full_control_of_state = 156
+		 }
+		completion_reward = {
+		162 = { #
+					
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11833
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 11833
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 6973
+					}
+						add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 6973
+					}
+				}
+			2 = { # Latium
+					
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11751
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 11751
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11846
+					}
+						add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 11846
+					}
+				}	
+			117 = { #Napoli
+					
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 819
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 819
+					}
+				}
+			156 = { #
+					
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 9990
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 9990
+					}
+				
+				}		
+			}
+		}
+
+				
 
 	focus = {
 		id = ITA_railway_innovations
@@ -3368,6 +3508,7 @@ focus_tree = {
 		id = ITA_expand_foggia_farm_fields
 		icon = GFX_goal_generic_consumer_goods
 		prerequisite = { focus = ITA_railway_innovations }
+		prerequisite = { focus = ITA_power_plants_in_terni }
 
 		x = -1
 		y = 1
@@ -3386,12 +3527,13 @@ focus_tree = {
 	focus = {
 		id = ITA_investments_in_edison
 		icon = GFX_focus_generic_hydroelectric_energy
-		prerequisite = { focus = ITA_railway_innovations }
+		prerequisite = { focus = ITA_railway_innovations  }
+		
 
 		x = 0
 		y = 2
 		relative_position_id = ITA_railway_innovations
-		cost = 10
+		cost = 5
 		available = {
 			has_full_control_of_state = 159
 		}
@@ -3446,7 +3588,8 @@ focus_tree = {
 	focus = {
 		id = ITA_expand_national_universities
 		icon = GFX_focus_research
-		prerequisite = { focus = ITA_investments_in_edison }
+		prerequisite = { focus = ITA_investments_in_edison focus = ITA_politica_dei_sonsorzi }
+	
 
 		x = 0
 		y = 1
@@ -4366,10 +4509,9 @@ focus_tree = {
 		relative_position_id = ITA_preserve_army_traditions
 		cost = 5
 		available = {
-			any_enemy_country = {
-				is_major_not_original_tag_root = yes
+			 date > 1938.6.1
 			}
-		}
+		
 
 		search_filters = {FOCUS_FILTER_ARMY_XP}
 
@@ -5005,7 +5147,7 @@ focus_tree = {
 		x = 5
 		y = -1
 		relative_position_id = ITA_a_bandits_war
-		cost = 5
+		cost = 10
 		available = {
 		}
 
@@ -5020,96 +5162,19 @@ focus_tree = {
 				uses = 1
 				category = light_fighter
 			}
-
-			add_doctrine_cost_reduction = {
-				name = air_doc_bonus
-				cost_reduction = 0.5
-				uses = 2
-				category = air_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_citta_dell_aria
-		icon = GFX_focus_generic_aircraft_production
-		prerequisite = { focus = ITA_air_innovations_bba }
-
-		x = 0
-		y = 1
-		relative_position_id = ITA_air_innovations_bba
-		cost = 10
-		available = {
-			has_full_control_of_state = 2
-		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {
-
 			add_tech_bonus = {
 				name = ITA_citta_dell_aria
 				bonus = 0.25
 				uses = 3 # was 4
 				category = air_equipment
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			if = {
-				limit = {
-					2 = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-					}
-				}
-				2 = { #LATIUM (Rome)
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
 			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-					}
-					prioritize = { 157 849 117 } #ABRUZZO as main fallback
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-
-			custom_effect_tooltip = ITA_citta_dell_aria_tt
-			hidden_effect = {
-				IF = {
-					limit = { 
-						2 = {
-							is_fully_controlled_by = ROOT
-							air_facility < 1
-							land_facility < 1
-							naval_facility < 1
-							nuclear_facility < 1
-						}
-					}
-
-					2 = {
+			2 = {
 						add_building_construction = {
 							type = air_facility
 							level = 1
@@ -5117,25 +5182,17 @@ focus_tree = {
 							province = 11751 # North of Rome
 						}
 					}
-				}
-			}
-
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				ITA_add_citta_dell_aria_templates = yes
-			}
 		}
 	}
+
+	
 
 	focus = {
 		id = ITA_expand_rome_flying_school
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = ITA_air_innovations_bba }
 
-		x = 4
+		x = 2
 		y = 1
 		relative_position_id = ITA_air_innovations_bba
 		cost = 10
@@ -5160,11 +5217,11 @@ focus_tree = {
 	focus = {
 		id = ITA_reggianes_exports
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = ITA_citta_dell_aria }
+		prerequisite = { focus = ITA_air_innovations_bba }
 
 		x = -2
 		y = 1
-		relative_position_id = ITA_citta_dell_aria
+		relative_position_id = ITA_air_innovations_bba
 		cost = 10
 		available = {
 			has_full_control_of_state = 161
@@ -5234,12 +5291,12 @@ focus_tree = {
 	focus = {
 		id = ITA_diving_bombers
 		icon = GFX_goal_poland_goal
-		prerequisite = { focus = ITA_citta_dell_aria }
-		prerequisite = { focus = ITA_expand_rome_flying_school }
+		prerequisite = { focus = ITA_air_innovations_bba }
+	
 
-		x = 2
+		x = 4
 		y = 1
-		relative_position_id = ITA_citta_dell_aria
+		relative_position_id = ITA_air_innovations_bba
 		cost = 5
 		available = {
 		}
@@ -5276,17 +5333,17 @@ focus_tree = {
 	focus = {
 		id = ITA_superaereo
 		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = ITA_citta_dell_aria }
+		prerequisite = { focus = ITA_air_innovations_bba }
 
 		x = 0
 		y = 1
-		relative_position_id = ITA_citta_dell_aria
-		cost = 5
+		relative_position_id = ITA_air_innovations_bba
+		cost = 10
 		available = {
-			any_enemy_country = {
-				is_major_not_original_tag_root = yes
+			
+				date > 1938.6.1
 			}
-		}
+		
 
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
@@ -5357,6 +5414,7 @@ focus_tree = {
 	focus = {
 		id = ITA_standardization
 		icon = GFX_goal_generic_production2
+		prerequisite = { focus = ITA_reggianes_exports }
 		prerequisite = { focus = ITA_superaereo }
 		mutually_exclusive = { focus = ITA_specialization }
 		x = -1
@@ -5415,6 +5473,7 @@ focus_tree = {
 		id = ITA_specialization
 		icon = GFX_goal_generic_air_production
 		prerequisite = { focus = ITA_superaereo }
+		prerequisite = { focus = ITA_expand_rome_flying_school }
 		mutually_exclusive = { focus = ITA_standardization }
 		x = 1
 		y = 1
@@ -5477,7 +5536,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ITA_standardization
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -5523,7 +5582,7 @@ focus_tree = {
 		x = 2
 		y = 0
 		relative_position_id = ITA_long_range_aircraft
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -5566,7 +5625,7 @@ focus_tree = {
 		x = 4
 		y = 0
 		relative_position_id = ITA_long_range_aircraft
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -5609,7 +5668,7 @@ focus_tree = {
 		x = 6
 		y = 0
 		relative_position_id = ITA_long_range_aircraft
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -6328,12 +6387,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_expand_naval_facilities
-		cost = 5
+		cost = 10
 		available = {
-			any_enemy_country = {
-				is_major_not_original_tag_root = yes
+			date > 1938.6.1
 			}
-		}
+		
 
 		search_filters = {FOCUS_FILTER_NAVY_XP}
 
@@ -6669,86 +6727,9 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = ITA_naval_air_coordination
-		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = ITA_supermarina }
-		prerequisite = { focus = ITA_expand_rome_flying_school }
 
-		x = -6
-		y = 1
-		relative_position_id = ITA_supermarina
-		cost = 10
-		available = {
-		}
 
-		search_filters = {FOCUS_FILTER_AIR_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			add_to_variable = { ITA_rm_naval_coordination = 0.05 }
-			add_to_variable = { ITA_rm_spotting_chance = 0.1 }
-			add_to_variable = { ITA_rm_naval_strike_agility_factor = 0.05 }
-			custom_effect_tooltip = ITA_naval_air_coordination_rm_tt
-
-			air_experience = 25
-			navy_experience = 25
-
-			add_tech_bonus = {
-				name = ITA_naval_air_coordination
-				bonus = 1.0
-				uses = 2
-				category = naval_bomber
-			}
-
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				ITA_naval_air_coordination_templates = yes
-			}
-
-			add_ace = {
-				type = "support_unique"
-				name = "Giulio" #MM: Real name Giulio Cesare Graziani but art won't hook-in with double name :D
-				surname = "Graziani"
-				callsign = "Torpedo Twin"
-			}
-			add_ace = {
-				type = "support_good"
-				name = "Carlo"
-				surname = "Faggioni"
-				callsign = "Torpedo Twin"
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_decima_flottiglia_mas
-		icon = GFX_focus_ITA_decima_flottiglia_mas
-		prerequisite = { focus = ITA_supermarina }
-
-		x = -4
-		y = 1
-		relative_position_id = ITA_supermarina
-		cost = 5
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_NAVY_XP}
-
-		completion_reward = {
-			add_to_variable = { ITA_rm_convoy_raiding_efficiency_factor = 0.02 }
-			add_to_variable = { ITA_rm_naval_critical_score_chance_factor = 0.02 }
-			add_to_variable = { ITA_rm_sub_retreat_speed = 0.05 }
-			custom_effect_tooltip = ITA_decima_flottiglia_mas_rm_tt
-
-			navy_experience = 25
-
-			show_unit_leaders_tooltip = ITA_junio_valerio_borghese
-
-			unlock_decision_tooltip = ITA_human_torpedo_raid
-		}
-	}
+	
 
 	focus = {
 		id = ITA_incrociatori_leggeri
@@ -6770,10 +6751,26 @@ focus_tree = {
 			hidden_effect = {
 				add_ideas = ITA_hidden_light_cruisers_production_ns
 			}
-
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
 			add_to_variable = { ITA_iri_consumer_goods_factor = 0.02 }
 			custom_effect_tooltip = ITA_ricostruzione_industriale_cg_penalty_tt
-
+			add_tech_bonus = {
+				name = ITA_incrociatori_pesanti
+				bonus = 1
+				uses = 1
+				category = ca_tech
+			}
 			navy_experience = 25
 
 			add_doctrine_cost_reduction = {
@@ -6783,12 +6780,7 @@ focus_tree = {
 				category = cat_trade_interdiction
 			}
 
-			add_tech_bonus = {
-				name = ITA_incrociatori_leggeri
-				bonus = 1
-				uses = 1
-				category = cl_tech
-			}
+			
 
 			#Update NS icon
 			ITA_improve_regia_marina_dm_effect = yes
@@ -6810,11 +6802,34 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP}
 
 		completion_reward = {
+
+			
+			add_tech_bonus = {
+				name = ITA_navi_da_battaglia
+				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+
 			add_to_variable = { ITA_rm_strike_force_movement_org_loss = -0.05 }
 			custom_effect_tooltip = ITA_incrociatori_pesanti_rm_tt
 			hidden_effect = {
 				add_ideas = ITA_hidden_heavy_cruisers_production_ns
 			}			
+
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+			
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
 
 			add_to_variable = { ITA_iri_consumer_goods_factor = 0.02 }
 			custom_effect_tooltip = ITA_ricostruzione_industriale_cg_penalty_tt
@@ -6828,199 +6843,17 @@ focus_tree = {
 				category = cat_fleet_in_being
 			}
 
-			add_tech_bonus = {
-				name = ITA_incrociatori_pesanti
-				bonus = 1
-				uses = 1
-				category = ca_tech
-			}
+			
 
 			#Update NS icon
 			ITA_improve_regia_marina_dm_effect = yes
 		}
 	}
 
-	focus = {
-		id = ITA_expand_naval_intelligence
-		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = ITA_supermarina }
+	
 
-		x = 4
-		y = 1
-		relative_position_id = ITA_supermarina
-		cost = 5
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_NAVY_XP}
-
-		completion_reward = {
-			add_to_variable = { ITA_rm_decryption_factor = 0.05 }
-			add_to_variable = { ITA_rm_navy_intel_factor = 0.1 }
-			custom_effect_tooltip = ITA_expand_naval_intelligence_rm_tt
-
-			navy_experience = 25
-		}
-	}
-
-	focus = {
-		id = ITA_cooperation_programs
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = ITA_supermarina }
-
-		x = 6
-		y = 1
-		relative_position_id = ITA_supermarina
-		cost = 10
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP}
-
-		completion_reward = {
-			navy_experience = 25
-			custom_effect_tooltip = ITA_cooperation_programs_decisions_tt
-			if = { #Historical agreement with Sweden
-				limit = {
-					NOT = {
-						has_war_with = SWE
-						any_enemy_country = { is_in_faction_with = SWE }
-					}
-				}
-				SWE = { country_event = { id = BBA_italy_naval_cooperation_programs.08 hours = 1 } }
-				custom_effect_tooltip = if_they_accept
-				effect_tooltip = {
-					custom_effect_tooltip = ITA_cooperation_programs_deal_sweden_tt
-					add_timed_idea = {
-						idea = ITA_sold_obsolete_escort_ships_ns
-						days = 365
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_cruiser_submarines
-		icon = GFX_goal_generic_navy_anti_submarine
-		prerequisite = { focus = ITA_incrociatori_leggeri }
-		mutually_exclusive = { focus = ITA_midget_submarines }
-		x = -4
-		y = 1
-		relative_position_id = ITA_incrociatori_leggeri
-		cost = 10
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			navy_experience = 15
-			add_doctrine_cost_reduction = {
-				name = ITA_cruiser_submarines
-				cost_reduction = 0.5
-				uses = 1
-				category = trade_interdiction_tree
-			}
-
-			add_tech_bonus = {
-				name = ITA_cruiser_submarines
-				bonus = 1.0
-				uses = 1
-				category = ss_tech
-			}
-			
-			if = {
-				limit = {
-					NOT = { is_special_project_completed = sp:sp_naval_cruiser_submarine }
-				}
-				complete_special_project = {
-					project = sp:sp_naval_cruiser_submarine
-					scientist = ITA_curio_bernardis
-				}
-			}
-
-			random_owned_controlled_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					is_coastal = yes
-				}
-				prioritize = { 736 160 } #TRIESTE / VENETO
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_midget_submarines
-		icon = GFX_focus_generic_midget_submarines
-		prerequisite = { focus = ITA_incrociatori_leggeri }
-		mutually_exclusive = { focus = ITA_cruiser_submarines }
-		x = -2
-		y = 1
-		relative_position_id = ITA_incrociatori_leggeri
-		cost = 10
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			navy_experience = 15
-			add_doctrine_cost_reduction = {
-				name = ITA_midget_submarines
-				cost_reduction = 0.5
-				uses = 1
-				category = trade_interdiction_tree
-			}
-
-			add_tech_bonus = {
-				name = ITA_midget_submarines
-				bonus = 1.0
-				uses = 1
-				category = ss_tech
-			}
-
-			if = {
-				limit = {
-					NOT = { is_special_project_completed = sp:sp_naval_midget_submarine }
-				}
-				complete_special_project = {
-					project = sp:sp_naval_midget_submarine
-					scientist = ITA_curio_bernardis
-				}
-			}
-
-			random_owned_controlled_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					is_coastal = yes
-				}
-				prioritize = { 158 } #PIEDMONT (Built by Caproni, potentially in Milano, so Genova due to proximity)
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-
-			if = {
-				limit = {
-					has_completed_focus = ITA_cooperation_programs
-				}
-				unlock_decision_tooltip = ITA_export_midget_submarines
-			}
-			else = {
-				custom_effect_tooltip = ITA_midget_submarines_decision_tt
-			}
-		}
-	}
+	
+	
 
 	focus = {
 		id = ITA_cacciatorpediniere_di_scorta
@@ -7030,7 +6863,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_incrociatori_leggeri
-		cost = 5
+		cost = 10
 		available = {
 			if = {
 				limit = {
@@ -7058,6 +6891,34 @@ focus_tree = {
 				category = convoy_defense_tree
 			}
 
+		
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+			
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+
 			add_tech_bonus = {
 				name = ITA_cacciatorpediniere_di_scorta
 				bonus = 1.0
@@ -7065,275 +6926,11 @@ focus_tree = {
 				category = dd_tech
 			}
 
-			###########
-			### MTG ###
-			###########
-			if = { #MTG 
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				#Equipment Variant
-				if = {
-					limit = {
-						has_tech = basic_dp_light_battery
-					}
-					create_equipment_variant = {
-						name = "Comandanti Medaglie d'Oro Class"
-						type = ship_hull_light_3
-						name_group = ITA_DD_HISTORICAL
-						parent_version = 0
-						allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-						modules = {
-							fixed_ship_battery_slot = dp_light_battery_2
-							fixed_ship_anti_air_slot = ship_anti_air_2
-							fixed_ship_fire_control_system_slot = ship_sonar_1
-							fixed_ship_radar_slot = ship_radar_1
-							fixed_ship_engine_slot = light_ship_engine_2
-							fixed_ship_torpedo_slot = ship_torpedo_2
-							mid_1_custom_slot = ship_mine_layer_1
-							rear_1_custom_slot = ship_depth_charge_2
-							front_1_custom_slot = dp_light_battery_2
-						}
-					}
-				}
-				else = {
-					create_equipment_variant = {
-						name = "Comandanti Medaglie d'Oro Class"
-						type = ship_hull_light_3
-						name_group = ITA_DD_HISTORICAL
-						parent_version = 0
-						allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-						modules = {
-							fixed_ship_battery_slot = ship_light_battery_2
-							fixed_ship_anti_air_slot = ship_anti_air_2
-							fixed_ship_fire_control_system_slot = ship_sonar_1
-							fixed_ship_radar_slot = ship_radar_1
-							fixed_ship_engine_slot = light_ship_engine_2
-							fixed_ship_torpedo_slot = ship_torpedo_2
-							mid_1_custom_slot = ship_mine_layer_1
-							rear_1_custom_slot = ship_depth_charge_2
-							front_1_custom_slot = ship_light_battery_2
-						}
-					}
-				}
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_light_3
-						creator = "ITA"
-						version_name = "Comandanti Medaglie d'Oro Class"
-					}
-					name = "Comandante Margottini"
-					requested_factories = 2
-					progress = 0.35
-					amount = 3
-				}
-			}
-
-			##############
-			### NO MTG ###
-			##############
-			else = {
-				create_equipment_variant = {
-					name = "Comandanti Medaglie d'Oro Class"
-					type = destroyer_3
-					allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-					upgrades = {
-						ship_torpedo_upgrade = 2
-						destroyer_engine_upgrade = 2
-						ship_ASW_upgrade = 2
-						ship_anti_air_upgrade = 2
-					}
-				}
-				add_equipment_production = {
-					equipment = {
-						type = destroyer_3
-						creator = "ITA"
-						version_name = "Comandanti Medaglie d'Oro Class"
-					}
-					requested_factories = 2
-					progress = 0.35
-					amount = 3
-				}
-			}
-
-			random_owned_controlled_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					is_coastal = yes
-				}
-				prioritize = { 162 158 } ##TUSCANY (Livorno) / PIEDMONT (Genova) (First ones built in Genova, others in Livorno, but Genova already receives a bunch of buildings)
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
+		
 		}
 	}
 
-	focus = {
-		id = ITA_ispettorato_dei_mezzi_antisommergibili
-		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = ITA_incrociatori_leggeri focus = ITA_incrociatori_pesanti }
-
-		x = 2
-		y = 1
-		relative_position_id = ITA_incrociatori_leggeri
-		cost = 5
-		available = {
-			IF = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				has_tech = improved_depth_charges
-				has_tech = sonar
-			}
-			ELSE = {
-				has_tech = basic_destroyer
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			add_to_variable = { ITA_rm_naval_detection = 0.1 }
-			custom_effect_tooltip = ITA_ispettorato_dei_mezzi_antisommergibili_rm_tt
-
-			navy_experience = 15
-
-			add_tech_bonus = {
-				name = ITA_ispettorato_dei_mezzi_antisommergibili
-				ahead_reduction = 2
-				uses = 1
-				category = asw_tech
-			}
-
-			###########
-			### MTG ###
-			###########
-			if = { #MTG 
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				#Equipment Variant
-				if = {
-					limit = {
-						has_tech = improved_sonar
-					}
-					create_equipment_variant = {
-						name = "Gabbiano Class"
-						type = ship_hull_light_1
-						name_group = ITA_DD_HISTORICAL
-						parent_version = 0
-						allow_without_tech = yes #Makes no difference since ITA already has tech, but in order to keep it consistent
-						modules = {
-							fixed_ship_battery_slot = ship_light_battery_1
-							fixed_ship_anti_air_slot = ship_anti_air_2
-							fixed_ship_fire_control_system_slot = ship_sonar_2
-							fixed_ship_radar_slot = empty
-							fixed_ship_engine_slot = light_ship_engine_1
-							fixed_ship_torpedo_slot = ship_torpedo_1
-							mid_1_custom_slot = ship_depth_charge_2
-							rear_1_custom_slot = ship_depth_charge_2
-							#front_1_custom_slot = ship_light_battery_2
-						}
-					}
-				}
-				else = {
-					create_equipment_variant = {
-						name = "Gabbiano Class"
-						type = ship_hull_light_1
-						name_group = ITA_DD_HISTORICAL
-						parent_version = 0
-						allow_without_tech = yes #Makes no difference since ITA already has tech, but in order to keep it consistent
-						modules = {
-							fixed_ship_battery_slot = ship_light_battery_1
-							fixed_ship_anti_air_slot = ship_anti_air_2
-							fixed_ship_fire_control_system_slot = ship_sonar_1
-							fixed_ship_radar_slot = empty
-							fixed_ship_engine_slot = light_ship_engine_1
-							fixed_ship_torpedo_slot = ship_torpedo_1
-							mid_1_custom_slot = ship_depth_charge_2
-							rear_1_custom_slot = ship_depth_charge_2
-							#front_1_custom_slot = ship_light_battery_2
-						}
-					}
-				}
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_light_1
-						creator = "ITA"
-						version_name = "Gabbiano Class"
-					}
-					name = "Antilope"
-					requested_factories = 1
-					progress = 0.35
-					amount = 3
-				}
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_light_1
-						creator = "ITA"
-						version_name = "Gabbiano Class"
-					}
-					name = "Camoscio"
-					requested_factories = 1
-					progress = 0.35
-					amount = 3
-				}
-			}
-
-			##############
-			### NO MTG ###
-			##############
-			else = {
-				if = {
-					limit = {
-						NOT = { has_tech = improved_destroyer }
-					}
-					set_technology = { improved_destroyer = 1 }
-				}
-				create_equipment_variant = {
-					name = "Gabbiano Class"
-					type = destroyer_1
-					upgrades = {
-						ship_torpedo_upgrade = 1
-						destroyer_engine_upgrade = 1
-						ship_ASW_upgrade = 3
-						ship_anti_air_upgrade = 2
-					}
-				}
-				add_equipment_production = {
-					equipment = {
-						type = destroyer_1
-						creator = "ITA"
-						version_name = "Gabbiano Class"
-					}
-					requested_factories = 2
-					progress = 0.35
-					amount = 3
-				}
-			}
-
-			random_owned_controlled_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					is_coastal = yes
-				}
-				prioritize = { 162 117 } ##TUSCANY (La Spezia) / CAMPANIA (Napoli) (Napoli just to split it up a little bit)
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
+	
 
 	focus = {
 		id = ITA_navi_da_battaglia
@@ -7343,7 +6940,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_incrociatori_pesanti
-		cost = 5
+		cost = 10
 		available = {
 		}
 
@@ -7362,201 +6959,28 @@ focus_tree = {
 				name = ITA_navi_da_battaglia
 				bonus = 1
 				uses = 1
-				category = bb_tech
-			}
-
-			###########
-			### MTG ###
-			###########
-			if = { #MTG 
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_heavy_2
-						creator = "ITA"
-						version_name = "Littorio Class"
-					}
-					name = "Roma"
-					requested_factories = 1
-					progress = 0.45
-					amount = 1
-				}
-
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_heavy_2
-						creator = "ITA"
-						version_name = "Littorio Class"
-					}
-					name = "Impero"
-					requested_factories = 1
-					progress = 0.45
-					amount = 1
-				}
-			}
-
-			##############
-			### NO MTG ###
-			##############
-			else = {
-				add_equipment_production = {
-					equipment = {
-						type = battleship_2
-						creator = "ITA"
-						version_name = "Littorio Class"
-					}
-					requested_factories = 1
-					progress = 0.45
-					amount = 1
-				}
-				add_equipment_production = {
-					equipment = {
-						type = battleship_2
-						creator = "ITA"
-						version_name = "Littorio Class"
-					}
-					requested_factories = 1
-					progress = 0.45
-					amount = 1
-				}
-			}
-
-			random_owned_controlled_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					is_coastal = yes
-				}
-				prioritize = { 736 158 } ##LITORALE (Trieste) / PIEDMONT (Genova)
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_proper_carriers
-		icon = GFX_goal_generic_navy_carrier
-		prerequisite = { focus = ITA_incrociatori_pesanti }
-		mutually_exclusive = { focus = ITA_refit_civilian_ships }
-		x = 2
-		y = 1
-		relative_position_id = ITA_incrociatori_pesanti
-		cost = 10
-		available = {
-			if = { # MTG tech
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				has_tech = early_ship_hull_carrier
-			}
-			else = { #Non-MTG tech
-				has_tech = early_carrier
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			navy_experience = 15
-			add_tech_bonus = {
-				name = ITA_proper_carriers
-				bonus = 1.0
-				uses = 1
 				category = cv_tech
 			}
 
-			###########
-			### MTG ###
-			###########
-			if = { #MTG 
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				if = {
-					limit = {
-						NOT = { has_tech = basic_ship_hull_carrier }
-					}
-					set_technology = { basic_ship_hull_carrier = 1 }
-				}
+		
 
-				#Equipment Variant
-				create_equipment_variant = {
-					name = "Aquila Class"
-					type = ship_hull_carrier_1
-					name_group = ITA_CV_HISTORICAL
-					parent_version = 0
-					allow_without_tech = yes #Makes no difference since focus grants appropriate tech (above), but it improves tooltip
-					modules = {
-						fixed_ship_deck_slot_1 = ship_deck_space
-						fixed_ship_deck_slot_2 = ship_deck_space
-						fixed_ship_anti_air_slot = ship_anti_air_2
-						fixed_ship_radar_slot = empty
-						fixed_ship_engine_slot = carrier_ship_engine_2
-						fixed_ship_secondaries_slot = ship_secondaries_2
-						front_1_custom_slot = ship_deck_space
-					}
-				}
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_1
-						creator = "ITA"
-						version_name = "Aquila Class"
-					}
-					name = "Aquila"
-					requested_factories = 2
-					progress = 0.45
-					amount = 1
-				}
-			}
-
-			##############
-			### NO MTG ###
-			##############
-			else = {
-				if = {
-					limit = {
-						NOT = { has_tech = basic_carrier }
-					}
-					set_technology = { basic_carrier = 1 }
-				}
-				create_equipment_variant = {
-					name = "Aquila Class"
-					type = carrier_2
-					allow_without_tech = yes #Makes no difference since focus grants appropriate tech (above), but it improves tooltip
-					upgrades = {
-						ship_deckspace_upgrade = 3
-						carrier_armor_upgrade = 2
-						ship_engine_upgrade = 2
-						ship_reliability_upgrade = 2
-					}
-				}
-				add_equipment_production = {
-					equipment = {
-						type = carrier_2
-						creator = "ITA"
-						version_name = "Aquila Class"
-					}
-					requested_factories = 2
-					progress = 0.45
-					amount = 1
-				}
-			}
-			
 			random_owned_controlled_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
 					is_coastal = yes
 				}
-				prioritize = { 158 } #PIEDMONT (Genoa)
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -7567,150 +6991,17 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = ITA_refit_civilian_ships
-		icon = GFX_focus_generic_refit_civilian_ships
-		prerequisite = { focus = ITA_incrociatori_pesanti }
-		mutually_exclusive = { focus = ITA_proper_carriers }
-		x = 4
-		y = 1
-		relative_position_id = ITA_incrociatori_pesanti
-		cost = 10
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			custom_effect_tooltip = ITA_refit_civilian_ships_rm_tt
-			hidden_effect = {
-				add_ideas = ITA_hidden_deck_conversion_production_ns
-			}
-
-			navy_experience = 15
-
-			###########
-			### MTG ###
-			###########
-			if = { #MTG
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				if = {
-					limit = {
-						NOT = { has_tech = early_ship_hull_carrier }
-					}
-					set_technology = { early_ship_hull_carrier = 1 }
-				}
-				#Equipment Variant
-				create_equipment_variant = {
-					name = "Conte di Savoia Class - Converted Liner"
-					type = ship_hull_carrier_conversion_ca
-					name_group = ITA_CV_HISTORICAL
-					parent_version = 0
-					allow_without_tech = yes #Makes no difference since focus grants appropriate tech (above), but it improves tooltip
-					modules = {
-						fixed_ship_deck_slot_1 = ship_deck_space
-						fixed_ship_deck_slot_2 = ship_deck_space
-						fixed_ship_anti_air_slot = ship_anti_air_2
-						fixed_ship_radar_slot = empty
-						fixed_ship_engine_slot = carrier_ship_engine_1
-						fixed_ship_secondaries_slot = ship_secondaries_1
-					}
-				}
-
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_conversion_ca
-						creator = "ITA"
-						version_name = "Conte di Savoia Class - Converted Liner"
-					}
-					name = "Conte di Savoia"
-					requested_factories = 1
-					progress = 0.65
-					amount = 1
-				}
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_conversion_ca
-						creator = "ITA"
-						version_name = "Conte di Savoia Class - Converted Liner"
-					}
-					name = "Rex"
-					requested_factories = 1
-					progress = 0.65
-					amount = 1
-				}
-			}
-			##############
-			### NO MTG ###
-			##############
-			else = {
-				if = {
-					limit = {
-						NOT = { has_tech = early_carrier }
-					}
-					set_technology = { early_carrier = 1 }
-				}
-				create_equipment_variant = {
-					name = "Conte di Savoia Class - Converted Liner"
-					type = carrier_1
-					allow_without_tech = yes #Makes no difference since focus grants appropriate tech (above), but it improves tooltip
-					upgrades = {
-						ship_deckspace_upgrade = 2
-						carrier_armor_upgrade = 1
-						ship_engine_upgrade = 2
-						ship_reliability_upgrade = 2
-					}
-				}
-				add_equipment_production = {
-					equipment = {
-						type = carrier_1
-						creator = "ITA"
-						version_name = "Conte di Savoia Class - Converted Liner"
-					}
-					requested_factories = 1
-					progress = 0.65
-					amount = 1
-				}
-				add_equipment_production = {
-					equipment = {
-						type = carrier_1
-						creator = "ITA"
-						version_name = "Conte di Savoia Class - Converted Liner"
-					}
-					requested_factories = 1
-					progress = 0.65
-					amount = 1
-				}
-			}
-			
-			random_owned_controlled_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					is_coastal = yes
-				}
-				prioritize = { 158 } #PIEDMONT (Genoa)
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
+	
+	
 
 	focus = {
 		id = ITA_flotta_d_evasione
 		icon = GFX_focus_ITA_new_horizons
-		prerequisite = { focus = ITA_ispettorato_dei_mezzi_antisommergibili focus = ITA_cacciatorpediniere_di_scorta focus = ITA_navi_da_battaglia }
+		prerequisite = { focus = ITA_cacciatorpediniere_di_scorta focus = ITA_navi_da_battaglia }
 
-		x = 0
+		x = -2
 		y = 1
-		relative_position_id = ITA_ispettorato_dei_mezzi_antisommergibili
+		relative_position_id = ITA_navi_da_battaglia
 		cost = 10
 		available = {
 			if = {
@@ -8056,10 +7347,10 @@ focus_tree = {
 					has_full_control_of_state = 2
 				}
 				2 = {
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -8070,10 +7361,10 @@ focus_tree = {
 					has_full_control_of_state = 849
 				}
 				849 = {
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -8084,10 +7375,10 @@ focus_tree = {
 					has_full_control_of_state = 115
 				}
 				115 = {
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -8114,10 +7405,10 @@ focus_tree = {
 					has_full_control_of_state = 550
 				}
 				550 = {
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -8128,10 +7419,10 @@ focus_tree = {
 					has_full_control_of_state = 559
 				}
 				559 = {
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -8445,7 +7736,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_solid_progress
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -8712,7 +8003,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = ITA_strengthen_the_regime
-		cost = 5
+		cost = 10
 		available = {
 			has_country_leader = {
 				character = ITA_benito_mussolini
@@ -8963,7 +8254,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_la_battaglia_del_grano
-		cost = 5
+		cost = 10
 		available = {
 			has_country_leader = {
 				character = ITA_benito_mussolini
@@ -11360,8 +10651,7 @@ focus_tree = {
     y = 0
     cost = 5
     completion_reward = {
-        add_ideas = ITA_nation_in_arms_idea
-        add_army_experience = 25
+        army_experience = 25
         add_war_support = 0.05
 		swap_ideas = {
 					remove_idea = ITA_devotion_idea
@@ -11382,7 +10672,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ITA_the_italian_legions
-		cost = 5
+		cost = 10
 		available = {
 			has_full_control_of_state = 2
 			if = {
@@ -11422,7 +10712,6 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = ITA_the_king_of_the_skies
-				ahead_reduction = 1
 				bonus = 1.0
 				uses = 1
 				category = air_equipment
@@ -11475,7 +10764,7 @@ focus = {
     x = 4
     y = 1
 	relative_position_id = ITA_the_italian_legions
-    cost = 5
+    cost = 10
 
     completion_reward = {
         add_research_slot = 1
@@ -11491,7 +10780,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_the_italian_legions
-		cost = 5
+		cost = 10
 		available = {
 			
 		}
@@ -11568,7 +10857,7 @@ focus = {
 		x = 2
 		y = 1
 		relative_position_id = ITA_the_italian_legions
-		cost = 5
+		cost = 10
 		available = {
 			
 		}
@@ -11585,10 +10874,10 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
-					level = 4
+					level = 3
 					instant_build = yes
 				}
 			}
