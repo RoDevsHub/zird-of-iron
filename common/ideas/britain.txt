@@ -117,6 +117,51 @@ ideas = {
 				}
 			}
 		}
+			ENG_D_Day_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_naval_invasion
+			targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.15
+			defense_bonus_against = 0.10
+	    }
+	}
+			ENG_Invasion_Logistics_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_supply_line
+			targeted_modifier = {
+			tag = GER
+			out_of_supply_factor = -0.1
+			supply_factor = 0.1
+	    }
+	}
+				ENG_Race_for_Berlin_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = GFX_focus_attack_italy
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.10
+			army_speed_factor = 0.10
+	    }
+	}
 		operation_husky = {
 
 			allowed = {

@@ -348,7 +348,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = limited_rearmament_focus
 
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = no
 
@@ -3733,7 +3733,7 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_focus_RAJ_the_dominion_of_india
-		x = -3
+		x = -4
 		y = 1
 		relative_position_id = uk_commonwealth_focus
 		cost = 5
@@ -4241,6 +4241,7 @@ focus_tree = {
 		prerequisite = {focus = uk_south_africa_focus}
 		available = {
 			has_completed_focus = ENG_indian_autonomy
+			has_political_power = 300
 		}
 
 		icon = GFX_focus_eng_imperial_federation
@@ -5356,13 +5357,8 @@ focus_tree = {
 	focus = {
 		id = ENG_embargo_axis
 		available = {
-			GER = {
-				ENG_focus_available_embargo_sanction = yes
-			}
 		}
-		bypass = {
-			has_war_with = GER
-		}
+
 
 		available_if_capitulated = yes
 
@@ -5371,7 +5367,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ENG_military_training_act
-		cost = 1
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}	
@@ -5388,21 +5384,17 @@ focus_tree = {
 			custom_effect_tooltip = embargo_relation_tt
 		}
 	}
-
 	focus = {
-		id = ENG_war_with_germany
+		id = ENG_D_Day
 		available = {
-			has_war = no
-			GER = {
-				ENG_focus_available_war = yes
-			}
+			FRA = {has_capitulated = yes}
+			has_completed_focus = ENG_One_Sovereign_France
+			USA = {has_war_with = GER}
 		}
 		bypass = {
-			has_war_with = GER
 		}
-		will_lead_to_war_with = GER
 		prerequisite = { focus = ENG_embargo_axis }
-		icon = GFX_focus_attack_germany
+		icon = GFX_focus_SWE_coastal_support
 		x = 0
 		y = 1
 		relative_position_id = ENG_embargo_axis
@@ -5411,15 +5403,87 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = GER
-				expire = 0
-			} 
+			add_timed_idea = {idea = ENG_D_Day_idea days = 180}
 		}
 	}
-
-	### END ROAD TO WAR WITH GERMANY ###
+	focus = {
+		id = ENG_Bomb_French_Traitors
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = ENG_D_Day }
+		icon = GFX_focus_SWE_marauder_bombers
+		x = -1
+		y = 1
+		relative_position_id = ENG_D_Day
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			damage_building = {
+ 			type = infrastructure
+ 			state = 16
+  			damage = 1
+			}
+			damage_building = {
+ 			type = infrastructure
+ 			state = 30
+  			damage = 1
+			}
+			damage_building = {
+ 			type = arms_factory
+ 			state = 16
+  			damage = 1
+			}
+			damage_building = {
+ 			type = arms_factory
+ 			state = 30
+  			damage = 1
+			}
+		}
+	}
+		
+		focus = {
+		id = ENG_Invasion_Logistics
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = ENG_D_Day }
+		icon = GFX_focus_generic_supply_line
+		x = 1
+		y = 1
+		relative_position_id = ENG_D_Day
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+		add_timed_idea = {idea = ENG_Invasion_Logistics_idea days = 180}
+		}
+	}
+		focus = {
+		id = ENG_Race_for_Berlin
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = ENG_Bomb_French_Traitors }
+		prerequisite = { focus = ENG_Invasion_Logistics }
+		icon = GFX_focus_PER_march_on_saadabad
+		x = 1
+		y = 1
+		relative_position_id = ENG_Bomb_French_Traitors
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_timed_idea = {idea = ENG_Race_for_Berlin_idea days = 180}
+		}
+	}
 
 
 
