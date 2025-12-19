@@ -1,0 +1,22 @@
+state = {
+	id = 1050
+	name = "STATE_1050" #Southern Palestine
+	manpower = 67098
+	
+	state_category = rural
+
+	history = {
+
+		owner = ENG
+
+		buildings = {
+			infrastructure = 1 #was: 5
+		}	
+	}
+
+	provinces = {
+		1015 7176 11970 13459
+	}
+
+	local_supplies = 0.0 
+}
