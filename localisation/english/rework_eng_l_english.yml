@@ -37,7 +37,16 @@
  ENG_Assist_French_Colonial_Development_desc:0 "The French colonial empire holds vast resources and strategic positions that are essential to the Allied war effort. By providing support and assistance in developing these colonies, we can strengthen our alliance with France and enhance our collective ability to resist Axis aggression."
   ENG_One_Sovereign_France:0 "One Sovereign France"
  ENG_One_Sovereign_France_desc:0 "In the face of external threats, it is imperative that we present a united front with France. By fostering closer ties and cooperation, we can ensure that both our nations stand strong against the forces of tyranny and oppression."
-  
+  uk_exploit_india:0 "Exploit India"
+  uk_exploit_india_desc:0 "Exploit India"
+  uk_crown_jewel:0 "The Crown Jewel"
+  uk_crown_jewel_desc:0 "The Crown Jewel"
+
+
+
+
+
+
 
 
 
@@ -55,3 +64,14 @@ AST_develop_new_zealand_desc:0 "New Zealand's potential as a strategic asset in 
  battle_of_singapore_desc:0 "Nothing matters more than our supply of rubber"
  ENG_One_Sovereign_France_idea:0 "One Sovereign France"
  ENG_One_Sovereign_France_idea_desc:0 "In the face of external threats, it is imperative that we present a united front with France. By fostering closer ties and cooperation, we can ensure that both our nations stand strong against the forces of tyranny and oppression."
+ ENG_India_being_exploited_idea:0 "Exploited by our Overlords"
+ ENG_India_being_exploited_idea_desc:0 "Exploited by our Overlords"
+ ENG_Profits_from_India_idea:0 "Profits from Indian Exploitation"
+ ENG_Profits_from_India_idea_desc:0 "Profits from Indian Exploitation"
+ ENG_Crown_Jewel_idea:0 "Crown Jewel"
+ ENG_Crown_Jewel_idea_desc:0 "Crown Jewel"
+
+
+
+
+

@@ -3669,6 +3669,61 @@ focus_tree = {
 	}
 
 	focus = {
+		id = uk_exploit_india
+		prerequisite = { focus = ENG_indian_autonomy}
+		mutually_exclusive = {focus = uk_crown_jewel}
+		available = {
+			any_country = {
+				original_tag = RAJ
+				is_in_faction_with = ROOT
+			}
+		} 
+		icon = GFX_focus_RAJ_british_investors
+		x = 0
+		y = 1
+		relative_position_id = ENG_indian_autonomy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+
+
+		completion_reward = {
+			RAJ = {add_ideas = ENG_India_being_exploited_idea}
+			add_ideas = ENG_Profits_from_India_idea
+		}
+	}
+		focus = {
+		id = uk_crown_jewel
+		prerequisite = { focus = uk_india_focus_2}
+		mutually_exclusive = {focus = uk_exploit_india}
+		available = {
+			any_country = {
+				original_tag = RAJ
+				is_in_faction_with = ROOT
+			}
+		} 
+		icon = GFX_focus_RAJ_the_crown_and_the_world
+		x = 0
+		y = 1
+		relative_position_id = uk_india_focus_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+
+
+		completion_reward = {
+			RAJ = {
+				add_ideas = ENG_Crown_Jewel_idea
+				}
+
+		}
+	}
+
+	focus = {
 		id = uk_india_focus 
 		prerequisite = { focus = uk_commonwealth_focus }
 		available = {
@@ -4155,7 +4210,7 @@ focus_tree = {
 
 		continue_if_invalid = no
 
-		icon = GFX_focus_RAJ_british_investors
+		icon = GFX_focus_RAJ_provincial_autonomy
 
 		x = -1
 		y = 1
@@ -5126,7 +5181,7 @@ focus_tree = {
 			119 = {
 				transfer_state_to = IRE
 			}
-			add_offsite_building = {type = industrial_complex level = 2}
+			add_offsite_building = {type = industrial_complex level = 4}
 			add_to_faction = IRE
 		}
 	}
@@ -5202,8 +5257,8 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			add_political_power = -50
-			add_to_faction = NOR
+			puppet = NOR
+			add_political_power = -100
 		}
 	}
 	focus = {
@@ -5233,8 +5288,8 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			add_political_power = -50
-			add_to_faction = DEN
+			add_political_power = -100
+			puppet = DEN
 		}
 	}
 		focus = {

@@ -24,6 +24,75 @@ ideas = {
 			attack_bonus_against = 0.075
 			defense_bonus_against = 0.10
 	    }
+		
+		}
+			ENG_India_being_exploited_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			picture = EST_exploit_the_banks
+			
+			modifier = {
+				production_speed_buildings_factor = -0.20
+				consumer_goods_factor = 0.1
+				production_factory_efficiency_gain_factor = -0.1
+			}
+		}
+		ENG_Crown_Jewel_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			picture = EST_exploit_the_banks
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+			ENG_Profits_from_India_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			picture = EST_exploit_the_banks
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.05
+			}
 		}
 			british_tank_discount = {
 			
