@@ -8076,7 +8076,7 @@ focus_tree = {
 			}
 		}
 
-		x = 37
+		x = 32
 		y = 0
 		relative_position_id = GER_prioritize_economic_growth
 
@@ -8576,7 +8576,7 @@ focus_tree = {
 		icon = GFX_goal_generic_dangerous_deal
 		prerequisite = { focus = GER_remilitarize_the_rhineland }
 
-		x = 9
+		x = 15
 		y = 1
 		relative_position_id = GER_remilitarize_the_rhineland
 		cost = 5
@@ -8973,7 +8973,7 @@ focus_tree = {
 		alternate_icon = GFX_focus_ger_reichskommisariats_historical
 		prerequisite = { focus = GER_anschluss }
 
-		x = 5
+		x = 10
 		y = 1
 		relative_position_id = GER_anschluss
 		cost = 5
@@ -9681,7 +9681,7 @@ focus_tree = {
 		icon = GFX_focus_GER_demonstration_of_military_achievements
 		prerequisite = { focus = GER_anschluss }
 
-		x = -4
+		x = 12
 		y = 1
 		relative_position_id = GER_anschluss
 		cost = 5
@@ -9923,7 +9923,7 @@ focus_tree = {
 		icon = GFX_focus_generic_liechtenstein_coa
 		prerequisite = { focus = GER_anschluss }
 
-		x = 3
+		x = 8
 		y = 1
 		relative_position_id = GER_anschluss
 		cost = 5
@@ -10665,7 +10665,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = GER_around_maginot
-		cost = 10
+		cost = 5
 
 		bypass = {
 			OR = {
@@ -10918,8 +10918,8 @@ focus_tree = {
 		prerequisite = { focus = GER_war_with_france }
 
 		x = -4
-		y = 0
-		relative_position_id = GER_operation_sea_lion
+		y = 2
+		relative_position_id = GER_war_with_france
 		cost = 5
 		available = {
 			ITA = {
@@ -11663,6 +11663,162 @@ focus_tree = {
 		}
 	}
 
+	
+
+
+	
+	focus = {
+		id = GER_anti_comintern_pact
+
+		icon = GFX_goal_anti_comintern_pact
+		alternate_icon = GFX_focus_GER_anti_comintern_pact
+
+		prerequisite = { focus = GER_anschluss }
+
+		x = 5
+		y = 1
+		relative_position_id = GER_anschluss
+		cost = 5
+		
+		bypass = {
+			SOU = {
+				OR = {
+					NOT = {
+						has_government = communism
+					}
+					exists = no
+				}
+			}
+		}
+
+		available = {
+			is_subject = no
+			NOT = { has_government = communism }
+			NOT = { is_in_faction_with = SOU }
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+
+		completion_reward = {
+			SOU = { add_opinion_modifier = { target = ROOT modifier = pact_against_us } }
+			add_named_threat = { threat = 2 name = GER_anti_comintern_pact }
+			every_other_country = {
+				limit = {
+					NOT = { tag = GER }
+					NOT = { has_war_with = GER }
+					NOT = { is_in_faction_with = SOU }
+					is_subject = no
+					OR = {
+						capital_scope = {
+							is_on_continent = europe
+						}
+						capital_scope = {
+							is_on_continent = asia
+						}
+						num_of_factories > 30
+					}
+					OR = {
+						has_government = fascism 
+						AND = {
+							is_neighbor_of = SOU
+							NOT = { has_government = communism }
+						}
+					}
+				}
+				country_event = germany.5
+			}
+		}
+	}
+
+	
+	focus = {
+		id = GER_form_rome_berlin_axis
+
+		icon = GFX_focus_befriend_italy
+		alternate_icon = GFX_focus_GER_befriend_italy
+		
+		prerequisite = { focus = GER_molotov_ribbentrop_pact }
+		prerequisite = { focus = GER_anti_comintern_pact }
+
+		x = 5
+		y = 4
+		relative_position_id = GER_molotov_ribbentrop_pact
+		cost = 5
+
+		bypass = {
+			OR = {
+				is_in_faction_with = ITA
+				has_war_with = ITA
+				NOT = { country_exists = ITA }
+				ITA = {
+					OR = {
+						NOT = { has_government = fascism }
+						is_subject = yes
+					}
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+		
+		available = {
+			is_faction_leader = yes
+			is_subject = no
+			NOT = { has_war_with = ITA }
+			ITA = {
+				has_government = fascism
+				is_subject = no
+			}
+			NOT = { has_country_flag = ENG_ditched_the_italians_flag }
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			ITA = {
+				add_opinion_modifier = { target = GER modifier = ger_ita_alliance_focus }
+				hidden_effect = {
+					add_ai_strategy = {
+						type = befriend
+						id = ROOT
+						value = 50
+					}
+					ROOT = {
+						add_ai_strategy = {
+							type = befriend
+							id = PREV
+							value = 50
+						}
+					}
+					country_event = { id = generic.5 hours = 4 random_hours = 4 }
+				}
+				custom_effect_tooltip = generic_invite_to_faction_tt
+			}
+		}
+	}
+
 	focus = {
 		id = GER_demand_slovenia
 		icon = GFX_goal_generic_political_pressure
@@ -11854,647 +12010,9 @@ focus_tree = {
 	}
 
 	focus = {
-		id = GER_war_with_the_ussr
-
-		icon = GFX_focus_attack_soviet
-		alternate_icon = GFX_focus_GER_war_with_the_ussr
-
-		prerequisite = { focus = GER_anti_comintern_pact }
-		prerequisite = { focus = GER_war_with_france }
-		x = 4
-		y = 0
-		relative_position_id = GER_operation_sea_lion
-		cost = 5
-
-		will_lead_to_war_with = SOV
-
-		bypass = {
-			OR = {
-				has_war_with = SOV
-				SOV = {
-					exists = no
-				}
-			}
-		}
-
-		available_if_capitulated = no
-
-		available = {
-			date > 1941.1.1
-			is_subject = no
-		}
-
-		cancel = {
-			is_subject = yes
-			NOT = { country_exists = SOV }
-		}
-
-		historical_ai = {
-			# Only if we have defeated our enemies
-			NOT = {
-				any_home_area_neighbor_country = {
-					has_war_with = ROOT
-					has_capitulated = no
-					# Honestly, let's not care about the scandinavian countries
-					NOT = {
-						OR = {
-							tag = NOR
-							tag = DEN 
-							tag = LUX # Or Luxenburg for that matter. 
-						}
-					}
-				}
-			}
-		}
-		
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					has_army_manpower = { size < 1199999 }
-					any_home_area_neighbor_country = {
-						has_war_with = ROOT
-					}
-				}
-			}
-			modifier = {
-				factor = 0 #AI should not pick this focus if it does not share a border with the Soviets
-				NOT = { 
-					any_home_area_neighbor_country = {
-						tag = SOV
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				date < 1939.1.1
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = democratic
-					has_government = communism
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ANNEXATION }
-
-		completion_reward = {
-
-			add_timed_idea = {
-				idea = GER_operation_barbarossa_ns
-				days = 180
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			IF = {
-				limit = { SOV = { has_civil_war = no } }
-				create_wargoal = {
-					type = annex_everything
-					target = SOV
-					expire = 0
-				}
-			}
-			ELSE = {
-				every_country = {
-					limit = { original_tag = SOV }
-					GER = {
-						create_wargoal = {
-							type = annex_everything
-							target = PREV
-							expire = 0
-						}
-					}
-				}
-			}
-
-			
-		}
-	}
-
-	focus = {
-		id = GER_establish_the_skijager
-		icon = GFX_focus_GER_gebirgsjager
-		prerequisite = { focus = GER_war_with_the_ussr }
-
-		x = 0
-		y = 2
-		relative_position_id = GER_war_with_the_ussr
-		cost = 5
-		available = {
-		}
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {
-			GER_modify_army_modifier = yes
-			add_to_variable = { 
-				GER_military_special_forces_cap = 0.05
-				tooltip = special_forces_cap_tt
-			}
-			add_to_variable = { 
-				GER_military_acclimatization_cold_climate_gain_factor = 0.1
-				tooltip = acclimatization_cold_climate_gain_factor_tt
-			}
-
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_doctrine_cost_reduction = {
-					name = GER_establish_the_skijager
-					cost_reduction = 0.25
-					uses = 2
-					category = cat_mountaineers_doctrine
-				}
-			}
-			add_tech_bonus = {
-				name = GER_establish_the_skijager
-				bonus = 0.5
-				uses = 1
-				category = mountaineers_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = GER_secure_finland
-
-		icon = GFX_focus_FIN_keepers_of_the_north
-
-		prerequisite = { focus = GER_war_with_the_ussr }
-
-		x = 1
-		y = 1
-		relative_position_id = GER_war_with_the_ussr
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = democratic
-					has_government = communism
-				}
-			}
-		}
-
-		available = {
-			is_subject = no
-			NOT = { has_war_with = FIN }
-			NOT = { is_ally_with = FIN }
-			NOT = { has_guaranteed = FIN }
-			NOT = { has_non_aggression_pact_with = FIN }
-			country_exists = FIN 
-			FIN = {
-				NOT = { is_ally_with = SOV }
-				NOT = { is_guaranteed_by = SOV }
-				NOT = { has_non_aggression_pact_with = SOV }
-				OR = {
-					NOT = { has_completed_focus = FIN_the_lone_wolf }
-					NOT = { has_government = neutrality }
-				}
-			}
-		}
-
-		will_lead_to_war_with = FIN
-
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-
-		completion_reward = {
-			if = {
-				limit = {
-					FIN = {
-						is_subject = no
-						is_in_faction = no
-					}
-				}
-				FIN = {
-					country_event = { id = wuw_GER_realpolitik.1 days = 1 }
-				}
-				custom_effect_tooltip = if_they_accept_tt
-				effect_tooltip = {
-					GER = {
-						add_to_faction = FIN
-					}
-				}
-
-				custom_effect_tooltip = if_they_refuse_tt
-				effect_tooltip = {
-					GER = {
-						create_wargoal = {
-							type = annex_everything
-							target = FIN
-						}
-					}
-				}
-			}
-			else = {
-				create_wargoal = {
-					type = annex_everything
-					target = FIN
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = GER_an_offer_from_disgruntled_cossacks
-		icon = GFX_focus_POL_cossack_king
-		prerequisite = { focus = GER_war_with_the_ussr }
-
-		x = -1
-		y = 1
-		relative_position_id = GER_war_with_the_ussr
-		cost = 3
-		available = {
-			
-			OR = {
-				has_war_with = SOV
-				SOV = {
-					exists = yes
-				}
-			}
-
-		}
-
-		search_filters = {  }
-
-		completion_reward = {
-
-			IF = {
-				limit = {
-					KUB = {
-						exists = no
-					}
-					DON = {
-						exists = no
-					}
-					SOV = {
-						NOT = {
-							has_completed_focus = SOV_beaten_but_not_defeated
-						}
-					}
-				}
-				country_event = {
-					id = wuw_GER_legions.8
-				}	
-			}
-		}
-	}
-
-	focus = {
-		id = GER_molotov_ribbentrop_pact
-
-		icon = GFX_goal_molotov_ribbentrop_pact
-		alternate_icon = GFX_focus_GER_molotov_ribbentrop_pact
-
-		prerequisite = { focus = GER_demand_sudetenland }
-		x = 1
-		y = 1
-		relative_position_id = GER_demand_sudetenland
-		cost = 5
-		
-		available = {
-			is_subject = no
-			has_government = fascism
-			has_army_manpower = { size > 849999 } #ca 90 div
-			SOV = {
-				NOT = { has_war_with = GER }
-				country_exists = SOV
-				has_civil_war = no
-			}
-			NOT = { has_global_flag = beck_ribbentrop_signed }
-		}
-
-		cancel = {
-			OR = {
-				has_war_with = SOV
-				NOT = { country_exists = SOV }
-				has_global_flag = beck_ribbentrop_signed
-			}
-		}
-
-		continue_if_invalid = yes
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
-	
-		completion_reward = {
-			SOV = {
-				country_event = { id = germany.11 days = 1 }
-				custom_effect_tooltip = GER_mol_rib_pact_tt
-				custom_effect_tooltip = needs_approval
-			}
-		}
-	}
-
-	focus = {
-		id = GER_treaty_with_the_ussr
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = GER_molotov_ribbentrop_pact }
-
-		x = 2
-		y = 1
-		relative_position_id = GER_molotov_ribbentrop_pact
-		cost = 10
-		
-		bypass = { 
-			OR = {
-				has_war_with = SOV
-				NOT = { country_exists = SOV }
-				has_completed_focus = GER_bulwark_against_bolshevism
-				has_completed_focus = GER_the_great_red_menace
-			}
-		}
-
-		available = {
-			NOT = { has_completed_focus = GER_anti_soviet_pact }
-			OR = {
-				NOT = { has_completed_focus = GER_bulwark_against_bolshevism }
-				NOT = { has_completed_focus = GER_the_great_red_menace }
-			}
-		}
-
-		cancel = { 
-			OR = {
-				has_war_with = SOV
-				NOT = { country_exists = SOV }
-			} 
-		}
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {
-			SOV = {
-				country_event = { id = germany.75 days = 1 }
-				custom_effect_tooltip = needs_approval
-				# Actual reward effects added in event if Soviets approve
-				effect_tooltip = {
-					# Trade influence with the USSR? Or simply let the opinion mod do the work
-					give_SOV_armor_research_bonuses = yes
-				}
-			}
-
-			if = {
-				limit = { 
-					has_dlc = "No Step Back"
-				}
-				#custom_effect_tooltip = GER_soviet_treaty_research_nsb_tt #Obsolete now
-				effect_tooltip = {
-					create_equipment_variant = {
-						name = "Panzer VII Löwe"
-						type = heavy_tank_chassis_2
-						design_team = mio:GER_daimler_benz_organization #We feed on your tears
-						parent_version = 0
-						modules = {
-							main_armament_slot = tank_heavy_cannon_2
-							turret_type_slot = tank_heavy_two_man_tank_turret
-							suspension_type_slot = tank_torsion_bar_suspension
-							armor_type_slot = tank_welded_armor
-							engine_type_slot = tank_gasoline_engine
-							special_type_slot_1 = tank_radio_1
-							special_type_slot_2 = additional_machine_guns
-							special_type_slot_3 = sloped_armor
-						}
-						upgrades = {
-							tank_nsb_engine_upgrade = 6
-							tank_nsb_armor_upgrade = 6
-						}
-						icon = "GFX_GER_improved_heavy_tank_medium"
-					}
-					create_equipment_variant = {
-						name = "Panzerjäger Elefant"
-						type = heavy_tank_destroyer_chassis_2
-						design_team = mio:GER_porsche_organization #We feed on your tears
-						parent_version = 0
-						modules = {
-							main_armament_slot = tank_heavy_cannon_2
-							turret_type_slot = tank_heavy_fixed_superstructure_turret
-							suspension_type_slot = tank_torsion_bar_suspension
-							armor_type_slot = tank_welded_armor
-							engine_type_slot = tank_gasoline_engine
-							special_type_slot_1 = tank_radio_1
-							special_type_slot_2 = additional_machine_guns
-							special_type_slot_3 = squeezebore_adaptor
-							special_type_slot_4 = sloped_armor
-						}
-						upgrades = {
-							tank_nsb_engine_upgrade = 6
-							tank_nsb_armor_upgrade = 6
-						}
-						icon = "GFX_GER_improved_heavy_tank_medium"
-					}	
-					add_tech_bonus = {
-						name = armor_bonus
-						bonus = 2.0
-						uses = 1
-						category = armor
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-			else = {
-				effect_tooltip = {
-					add_tech_bonus = {
-						name = med_armor_bonus
-						ahead_reduction = 1
-						category = cat_medium_armor
-					}
-					add_tech_bonus = {
-						name = armor_bonus
-						bonus = 1.0
-						uses = 2
-						category = armor
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-
-			add_breakthrough_progress = {
-				specialization = specialization_land
-				value = 1
-			}
-
-			SOV = {
-				add_breakthrough_progress = {
-					specialization = specialization_land
-					value = 1
-				}
-			}
-		}
-	}
-
-	
-	focus = {
-		id = GER_anti_comintern_pact
-
-		icon = GFX_goal_anti_comintern_pact
-		alternate_icon = GFX_focus_GER_anti_comintern_pact
-
-		prerequisite = { focus = GER_molotov_ribbentrop_pact }
-
-		x = 5
-		y = 4
-		relative_position_id = GER_molotov_ribbentrop_pact
-		cost = 5
-		
-		bypass = {
-			SOU = {
-				OR = {
-					NOT = {
-						has_government = communism
-					}
-					exists = no
-				}
-			}
-		}
-
-		available = {
-			is_subject = no
-			NOT = { has_government = communism }
-			NOT = { is_in_faction_with = SOU }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = democratic
-					has_government = communism
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_HISTORICAL }
-
-		completion_reward = {
-			SOU = { add_opinion_modifier = { target = ROOT modifier = pact_against_us } }
-			add_named_threat = { threat = 2 name = GER_anti_comintern_pact }
-			every_other_country = {
-				limit = {
-					NOT = { tag = GER }
-					NOT = { has_war_with = GER }
-					NOT = { is_in_faction_with = SOU }
-					is_subject = no
-					OR = {
-						capital_scope = {
-							is_on_continent = europe
-						}
-						capital_scope = {
-							is_on_continent = asia
-						}
-						num_of_factories > 30
-					}
-					OR = {
-						has_government = fascism 
-						AND = {
-							is_neighbor_of = SOU
-							NOT = { has_government = communism }
-						}
-					}
-				}
-				country_event = germany.5
-			}
-		}
-	}
-
-	
-	focus = {
-		id = GER_form_rome_berlin_axis
-
-		icon = GFX_focus_befriend_italy
-		alternate_icon = GFX_focus_GER_befriend_italy
-		
-		prerequisite = { focus = GER_anti_comintern_pact }
-		x = 2
-		y = 1
-		relative_position_id = GER_anti_comintern_pact
-		cost = 5
-
-		bypass = {
-			OR = {
-				is_in_faction_with = ITA
-				has_war_with = ITA
-				NOT = { country_exists = ITA }
-				ITA = {
-					OR = {
-						NOT = { has_government = fascism }
-						is_subject = yes
-					}
-				}
-			}
-		}
-
-		available_if_capitulated = yes
-		
-		available = {
-			is_faction_leader = yes
-			is_subject = no
-			NOT = { has_war_with = ITA }
-			ITA = {
-				has_government = fascism
-				is_subject = no
-			}
-			NOT = { has_country_flag = ENG_ditched_the_italians_flag }
-		}
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = democratic
-					has_government = communism
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
-
-		completion_reward = {
-			ITA = {
-				add_opinion_modifier = { target = GER modifier = ger_ita_alliance_focus }
-				hidden_effect = {
-					add_ai_strategy = {
-						type = befriend
-						id = ROOT
-						value = 50
-					}
-					ROOT = {
-						add_ai_strategy = {
-							type = befriend
-							id = PREV
-							value = 50
-						}
-					}
-					country_event = { id = generic.5 hours = 4 random_hours = 4 }
-				}
-				custom_effect_tooltip = generic_invite_to_faction_tt
-			}
-		}
-	}
-
-	focus = {
 		id = GER_alliance_with_spain
 		icon = GFX_focus_intervention_spain_nationalists
 		prerequisite = { focus = GER_form_rome_berlin_axis}
-		prerequisite = {focus = GER_legion_condor}
 		x = 1
 		y = 1
 		relative_position_id = GER_form_rome_berlin_axis
@@ -12678,7 +12196,7 @@ focus_tree = {
 		id = GER_legion_condor
 		icon = GFX_focus_intervention_spain_nationalists
 		prerequisite = { focus = GER_anti_comintern_pact }
-		x = 4
+		x = -1
 		y = 1
 		relative_position_id = GER_anti_comintern_pact
 
@@ -12753,10 +12271,10 @@ focus_tree = {
 		icon = GFX_focus_chi_collaboration_with_the_japanese
 		alternate_icon = GFX_focus_GER_befriend_japan
 
-		prerequisite = { focus = GER_anti_comintern_pact }
-		x = 7
+		prerequisite = { focus = GER_form_rome_berlin_axis }
+		x = 3
 		y = 1
-		relative_position_id = GER_anti_comintern_pact
+		relative_position_id = GER_form_rome_berlin_axis
 		cost = 5
 		
 		available_if_capitulated = yes
@@ -13352,6 +12870,493 @@ focus_tree = {
 		}
 	}
 
+	
+	focus = {
+		id = GER_war_with_the_ussr
+
+		icon = GFX_focus_attack_soviet
+		alternate_icon = GFX_focus_GER_war_with_the_ussr
+
+		prerequisite = { focus = GER_form_rome_berlin_axis }
+		prerequisite = { focus = GER_war_with_france }
+		x = 4
+		y = 2
+		relative_position_id = GER_war_with_france
+		cost = 5
+
+		will_lead_to_war_with = SOV
+
+		bypass = {
+			OR = {
+				has_war_with = SOV
+				SOV = {
+					exists = no
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		available = {
+			date > 1941.1.1
+			is_subject = no
+		}
+
+		cancel = {
+			is_subject = yes
+			NOT = { country_exists = SOV }
+		}
+
+		historical_ai = {
+			# Only if we have defeated our enemies
+			NOT = {
+				any_home_area_neighbor_country = {
+					has_war_with = ROOT
+					has_capitulated = no
+					# Honestly, let's not care about the scandinavian countries
+					NOT = {
+						OR = {
+							tag = NOR
+							tag = DEN 
+							tag = LUX # Or Luxenburg for that matter. 
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_army_manpower = { size < 1199999 }
+					any_home_area_neighbor_country = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0 #AI should not pick this focus if it does not share a border with the Soviets
+				NOT = { 
+					any_home_area_neighbor_country = {
+						tag = SOV
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1939.1.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+
+			add_timed_idea = {
+				idea = GER_operation_barbarossa_ns
+				days = 180
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = { SOV = { has_civil_war = no } }
+				create_wargoal = {
+					type = annex_everything
+					target = SOV
+					expire = 0
+				}
+			}
+			ELSE = {
+				every_country = {
+					limit = { original_tag = SOV }
+					GER = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+							expire = 0
+						}
+					}
+				}
+			}
+
+			
+		}
+	}
+
+	focus = {
+		id = GER_establish_the_skijager
+		icon = GFX_focus_GER_gebirgsjager
+		prerequisite = { focus = GER_war_with_the_ussr }
+
+		x = 0
+		y = 2
+		relative_position_id = GER_war_with_the_ussr
+		cost = 5
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			GER_modify_army_modifier = yes
+			add_to_variable = { 
+				GER_military_special_forces_cap = 0.05
+				tooltip = special_forces_cap_tt
+			}
+			add_to_variable = { 
+				GER_military_acclimatization_cold_climate_gain_factor = 0.1
+				tooltip = acclimatization_cold_climate_gain_factor_tt
+			}
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_doctrine_cost_reduction = {
+					name = GER_establish_the_skijager
+					cost_reduction = 0.25
+					uses = 2
+					category = cat_mountaineers_doctrine
+				}
+			}
+			add_tech_bonus = {
+				name = GER_establish_the_skijager
+				bonus = 0.5
+				uses = 1
+				category = mountaineers_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = GER_secure_finland
+
+		icon = GFX_focus_FIN_keepers_of_the_north
+
+		prerequisite = { focus = GER_war_with_the_ussr }
+
+		x = 1
+		y = 1
+		relative_position_id = GER_war_with_the_ussr
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+		}
+
+		available = {
+			is_subject = no
+			NOT = { has_war_with = FIN }
+			NOT = { is_ally_with = FIN }
+			NOT = { has_guaranteed = FIN }
+			NOT = { has_non_aggression_pact_with = FIN }
+			country_exists = FIN 
+			FIN = {
+				NOT = { is_ally_with = SOV }
+				NOT = { is_guaranteed_by = SOV }
+				NOT = { has_non_aggression_pact_with = SOV }
+				OR = {
+					NOT = { has_completed_focus = FIN_the_lone_wolf }
+					NOT = { has_government = neutrality }
+				}
+			}
+		}
+
+		will_lead_to_war_with = FIN
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			if = {
+				limit = {
+					FIN = {
+						is_subject = no
+						is_in_faction = no
+					}
+				}
+				FIN = {
+					country_event = { id = wuw_GER_realpolitik.1 days = 1 }
+				}
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					GER = {
+						add_to_faction = FIN
+					}
+				}
+
+				custom_effect_tooltip = if_they_refuse_tt
+				effect_tooltip = {
+					GER = {
+						create_wargoal = {
+							type = annex_everything
+							target = FIN
+						}
+					}
+				}
+			}
+			else = {
+				create_wargoal = {
+					type = annex_everything
+					target = FIN
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_an_offer_from_disgruntled_cossacks
+		icon = GFX_focus_POL_cossack_king
+		prerequisite = { focus = GER_war_with_the_ussr }
+
+		x = -1
+		y = 1
+		relative_position_id = GER_war_with_the_ussr
+		cost = 3
+		available = {
+			
+			OR = {
+				has_war_with = SOV
+				SOV = {
+					exists = yes
+				}
+			}
+
+		}
+
+		search_filters = {  }
+
+		completion_reward = {
+
+			IF = {
+				limit = {
+					KUB = {
+						exists = no
+					}
+					DON = {
+						exists = no
+					}
+					SOV = {
+						NOT = {
+							has_completed_focus = SOV_beaten_but_not_defeated
+						}
+					}
+				}
+				country_event = {
+					id = wuw_GER_legions.8
+				}	
+			}
+		}
+	}
+
+	focus = {
+		id = GER_molotov_ribbentrop_pact
+
+		icon = GFX_goal_molotov_ribbentrop_pact
+		alternate_icon = GFX_focus_GER_molotov_ribbentrop_pact
+
+		prerequisite = { focus = GER_demand_sudetenland }
+		x = 1
+		y = 1
+		relative_position_id = GER_demand_sudetenland
+		cost = 5
+		
+		available = {
+			is_subject = no
+			has_government = fascism
+			has_army_manpower = { size > 849999 } #ca 90 div
+			SOV = {
+				NOT = { has_war_with = GER }
+				country_exists = SOV
+				has_civil_war = no
+			}
+			NOT = { has_global_flag = beck_ribbentrop_signed }
+		}
+
+		cancel = {
+			OR = {
+				has_war_with = SOV
+				NOT = { country_exists = SOV }
+				has_global_flag = beck_ribbentrop_signed
+			}
+		}
+
+		continue_if_invalid = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+	
+		completion_reward = {
+			SOV = {
+				country_event = { id = germany.11 days = 1 }
+				custom_effect_tooltip = GER_mol_rib_pact_tt
+				custom_effect_tooltip = needs_approval
+			}
+		}
+	}
+
+	focus = {
+		id = GER_treaty_with_the_ussr
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = GER_molotov_ribbentrop_pact }
+
+		x = 2
+		y = 1
+		relative_position_id = GER_molotov_ribbentrop_pact
+		cost = 10
+		
+		bypass = { 
+			OR = {
+				has_war_with = SOV
+				NOT = { country_exists = SOV }
+				has_completed_focus = GER_bulwark_against_bolshevism
+				has_completed_focus = GER_the_great_red_menace
+			}
+		}
+
+		available = {
+			NOT = { has_completed_focus = GER_anti_soviet_pact }
+			OR = {
+				NOT = { has_completed_focus = GER_bulwark_against_bolshevism }
+				NOT = { has_completed_focus = GER_the_great_red_menace }
+			}
+		}
+
+		cancel = { 
+			OR = {
+				has_war_with = SOV
+				NOT = { country_exists = SOV }
+			} 
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			SOV = {
+				country_event = { id = germany.75 days = 1 }
+				custom_effect_tooltip = needs_approval
+				# Actual reward effects added in event if Soviets approve
+				effect_tooltip = {
+					# Trade influence with the USSR? Or simply let the opinion mod do the work
+					give_SOV_armor_research_bonuses = yes
+				}
+			}
+
+			if = {
+				limit = { 
+					has_dlc = "No Step Back"
+				}
+				#custom_effect_tooltip = GER_soviet_treaty_research_nsb_tt #Obsolete now
+				effect_tooltip = {
+					create_equipment_variant = {
+						name = "Panzer VII Löwe"
+						type = heavy_tank_chassis_2
+						design_team = mio:GER_daimler_benz_organization #We feed on your tears
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_heavy_cannon_2
+							turret_type_slot = tank_heavy_two_man_tank_turret
+							suspension_type_slot = tank_torsion_bar_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = tank_radio_1
+							special_type_slot_2 = additional_machine_guns
+							special_type_slot_3 = sloped_armor
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 6
+							tank_nsb_armor_upgrade = 6
+						}
+						icon = "GFX_GER_improved_heavy_tank_medium"
+					}
+					create_equipment_variant = {
+						name = "Panzerjäger Elefant"
+						type = heavy_tank_destroyer_chassis_2
+						design_team = mio:GER_porsche_organization #We feed on your tears
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_heavy_cannon_2
+							turret_type_slot = tank_heavy_fixed_superstructure_turret
+							suspension_type_slot = tank_torsion_bar_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = tank_radio_1
+							special_type_slot_2 = additional_machine_guns
+							special_type_slot_3 = squeezebore_adaptor
+							special_type_slot_4 = sloped_armor
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 6
+							tank_nsb_armor_upgrade = 6
+						}
+						icon = "GFX_GER_improved_heavy_tank_medium"
+					}	
+					add_tech_bonus = {
+						name = armor_bonus
+						bonus = 2.0
+						uses = 1
+						category = armor
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			else = {
+				effect_tooltip = {
+					add_tech_bonus = {
+						name = med_armor_bonus
+						ahead_reduction = 1
+						category = cat_medium_armor
+					}
+					add_tech_bonus = {
+						name = armor_bonus
+						bonus = 1.0
+						uses = 2
+						category = armor
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 1
+			}
+
+			SOV = {
+				add_breakthrough_progress = {
+					specialization = specialization_land
+					value = 1
+				}
+			}
+		}
+	}
+
 
 
 #### ##    ## ##    ## ######## ########      ######  #### ########   ######  ##       ######## 
@@ -13446,7 +13451,7 @@ focus_tree = {
 		icon = GFX_focus_GER_support_the_fuhrer
 
 		prerequisite = { focus = GER_remilitarize_the_rhineland }
-		x = -15
+		x = -10
 		y = 1
 		relative_position_id = GER_remilitarize_the_rhineland
 		cost = 5
