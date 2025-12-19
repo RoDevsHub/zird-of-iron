@@ -11,7 +11,8 @@
  ITA_nation_in_arms_idea_desc:0 "The Italian state mobilizes its people in service of empire, transforming society itself into an instrument of war."
  ITA_devotion:0 "Devotion"
  ITA_devotion_desc:0 "Through discipline, sacrifice, and unwavering commitment, the Italian people dedicate themselves fully to the nation’s cause. In the barracks, the shipyards, and the airfields, devotion to duty forges endurance, coordination, and resolve that no enemy can easily break."
-
+ ITA_shatter_the_gate:0 "Shatter the Gate"
+ ITA_shatter_the_gate_desc:0 "The Rock of Gibraltar stands as the gatekeeper to the Mediterranean. Through careful planning, bombardment, and swift amphibious operations, our forces aim to breach its defenses and open the passage for the Regia Marina. This operation will give us the advantage in naval invasions against the United Kingdom, if only temporarily."
  # ideas
 
  ITA_focus_on_mobilization_idea:0 "Focus on Mobilization"
@@ -24,6 +25,8 @@
  ITA_devotion_idea_desc:0 "A spirit of unwavering commitment permeates the Italian armed forces. Through relentless preparation, steadfast resolve, and loyalty to the nation, soldiers, sailors, and airmen alike are driven to endure longer, respond faster, and carry out their duties with greater efficiency."
  ITA_heroes_of_the_nation_idea:0 "Heroes of the Nation"
  ITA_heroes_of_the_nation_idea_desc:0 "The bravery and sacrifices of our finest soldiers inspire the entire nation. Our troops gain experience faster, and the people remain steadfast even in the face of heavy losses."
+ ITA_devotion_buffed_idea:0 "Nation In Arms"
+ ITA_devotion_buffed_idea_desc:0 "A spirit of unwavering commitment permeates the Italian armed forces. Through relentless preparation, steadfast resolve, and loyalty to the nation, soldiers, sailors, and airmen alike are driven to endure longer, respond faster, and carry out their duties with greater efficiency."
 
 #custom tooltips 
 

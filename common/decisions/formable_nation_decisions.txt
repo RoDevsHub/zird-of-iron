@@ -14874,6 +14874,51 @@ greater_italy_category = {
 					transfer_state = 164
 				}
 				164 = { add_core_of = ROOT }
+				
+				#Montenegro
+				ITA = {
+					transfer_state = 105
+				}
+				105 = { add_core_of = ROOT }
+
+				#Northern Albania
+				ITA = {
+					transfer_state = 934
+				}
+				934 = { add_core_of = ROOT }
+
+				#Central Albania
+				ITA = {
+					transfer_state = 44
+				}
+				44 = { add_core_of = ROOT }
+
+				#Northern Epirus
+				ITA = {
+					transfer_state = 805
+				}
+				805 = { add_core_of = ROOT }
+
+				#Epirus
+				ITA = {
+					transfer_state = 185
+				}
+				185 = { add_core_of = ROOT }
+
+				#Peloponnese
+				ITA = {
+					transfer_state = 186
+				}
+				186 = { add_core_of = ROOT }
+
+				#Thessaly
+				ITA = {
+					transfer_state = 47
+				}
+				47 = { add_core_of = ROOT }
+
+				
+
 
 				news_event = { id = bba_italian_formables_news.1 hours = 8 }	
 
