@@ -1052,7 +1052,36 @@ focus_tree = {
 			}
 	}
 }
+	
 		focus = {
+		id = ROM_Operation_Barbarossa
+		prerequisite = {focus = ROM_Fortify_Danube}
+		prerequisite = {focus = ROM_Constanta_Naval_Line}
+		relative_position_id = ROM_Fortify_Danube
+		available = {
+		has_war_with = SOV
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_focus_attack_soviet
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+			
+		completion_reward = {
+			add_timed_idea = {idea = ROM_Operation_Barbarbarossa_idea days = 365}
+			reduce_focus_completion_cost = {
+			  focus = { ROM_Armed_Forces}
+			  cost = 140
+			}
+		}
+	}
+
+	focus = {
 		id = ROM_Ukraine_Claim
 		prerequisite = {focus = ROM_Operation_Barbarossa}
 		relative_position_id = ROM_Operation_Barbarossa
@@ -1121,33 +1150,6 @@ focus_tree = {
 			}
 			228 = {
 				add_claim_by = ROM
-			}
-		}
-	}
-		focus = {
-		id = ROM_Operation_Barbarossa
-		prerequisite = {focus = ROM_Fortify_Danube}
-		prerequisite = {focus = ROM_Constanta_Naval_Line}
-		relative_position_id = ROM_Fortify_Danube
-		available = {
-		has_war_with = SOV
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_attack_soviet
-		x = 1
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-			
-		completion_reward = {
-			add_timed_idea = {idea = ROM_Operation_Barbarbarossa_idea days = 365}
-			reduce_focus_completion_cost = {
-			  focus = { ROM_Armed_Forces}
-			  cost = 140
 			}
 		}
 	}
@@ -2576,7 +2578,64 @@ focus_tree = {
 			}
 		}
 	}
-			focus = {
+
+	focus = {
+		id = ROM_Fleet_of_Raiders
+		prerequisite = {focus = ROM_Naval_Forces}
+		mutually_exclusive = {focus = ROM_Black_Sea_Fleet}
+		relative_position_id = ROM_Naval_Forces
+		available = {
+		
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+				add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+				add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_trade_interdiction
+			}
+			add_ideas = ROM_Fleet_of_Raiders_idea
+		}
+	}
+	focus = {
+		id = ROM_The_Silent_Hunters
+		prerequisite = {focus = ROM_Fleet_of_Raiders}
+		relative_position_id = ROM_Fleet_of_Raiders
+		available = {
+		
+		}
+
+		continue_if_invalid = yes
+
+		icon = GFX_focus_generic_cruiser_submarines
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ROM_Fleet_of_Raiders_idea
+				add_idea = ROM_Fleet_of_Raiders_idea_1
+			}
+		}
+	}
+	focus = {
 		id = ROM_Help_Out_Our_Mediterranean_Allies
 		prerequisite = {focus = ROM_State_Shipyard_Expansion}
 		prerequisite = {focus = ROM_Towards_Blue_Water_Navy focus = ROM_The_Silent_Hunters}
@@ -2614,7 +2673,7 @@ focus_tree = {
 			}
 		}
 	}
-		focus = {
+	focus = {
 		id = ROM_Black_Sea_Fleet
 		prerequisite = {focus = ROM_Naval_Forces}
 		mutually_exclusive = {focus = ROM_Fleet_of_Raiders}
@@ -2648,7 +2707,7 @@ focus_tree = {
 		}
 	}
 		
-		focus = {
+	focus = {
 		id = ROM_Towards_Blue_Water_Navy
 		prerequisite = {focus = ROM_Black_Sea_Fleet}
 		relative_position_id = ROM_Black_Sea_Fleet
@@ -2672,60 +2731,6 @@ focus_tree = {
 			}
 		}
 	}
-		focus = {
-		id = ROM_The_Silent_Hunters
-		prerequisite = {focus = ROM_Fleet_of_Raiders}
-		relative_position_id = ROM_Fleet_of_Raiders
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_generic_cruiser_submarines
-		x = 0
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ROM_Fleet_of_Raiders_idea
-				add_idea = ROM_Fleet_of_Raiders_idea_1
-			}
-		}
-	}
-		focus = {
-		id = ROM_Fleet_of_Raiders
-		prerequisite = {focus = ROM_Naval_Forces}
-		mutually_exclusive = {focus = ROM_Black_Sea_Fleet}
-		relative_position_id = ROM_Naval_Forces
-		available = {
-		
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_goal_generic_navy_anti_submarine
-		x = 2
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-				add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = ss_tech
-			}
-				add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_trade_interdiction
-			}
-			add_ideas = ROM_Fleet_of_Raiders_idea
-		}
-	}
+	
+	
 }

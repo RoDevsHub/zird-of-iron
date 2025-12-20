@@ -537,7 +537,7 @@ focus_tree = {
 				#grand_doctrine = mobile_warfare
 				#sub_doctrine = mobile_infantry
 				track = operations
-				index = 1
+				 
 			}
 
 
@@ -629,7 +629,7 @@ focus_tree = {
 				#grand_doctrine = mobile_warfare
 				#sub_doctrine = mobile_infantry
 				track = armor
-				index = 1
+				 
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -672,7 +672,7 @@ focus_tree = {
 				#grand_doctrine = mobile_warfare
 				#sub_doctrine = mobile_infantry
 				track = infantry
-				index = 1
+				 
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -723,7 +723,7 @@ focus_tree = {
 				#grand_doctrine = mobile_warfare
 				#sub_doctrine = mobile_infantry
 				track = combat_support
-				index = 1
+				 
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1030,7 +1030,7 @@ focus_tree = {
 				#grand_doctrine = mobile_warfare
 				#sub_doctrine = mobile_infantry
 				track = fighter_aircraft
-				index = 1
+				 
 			}
 		}
 	}
@@ -1092,7 +1092,7 @@ focus_tree = {
 				#grand_doctrine = mobile_warfare
 				#sub_doctrine = mobile_infantry
 				track = medium_aircraft
-				index = 1
+				 
 			}
 		}
 	}
@@ -1146,7 +1146,7 @@ focus_tree = {
 				#grand_doctrine = mobile_warfare
 				#sub_doctrine = mobile_infantry
 				track = heavy_aircraft
-				index = 1
+				 
 			}
 
 		}
