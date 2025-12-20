@@ -10893,13 +10893,13 @@ focus = {
 					category = ca_tech
 					category = bc_tech
 				}
-				
+			}
 			
 			add_breakthrough_progress = {
 				specialization = specialization_naval
 				value = 0.5
 			}
-
+			
 			if = {
 				limit = {
 					has_dlc = "Gotterdammerung"
@@ -12834,7 +12834,6 @@ focus = {
 			tag = RSI
 		}
 
-		search_filters = {}
 
 		completion_reward = {
 			effect_tooltip = { 
@@ -13695,5 +13694,5 @@ focus = {
 		}
 	}
 
-	}
 }
+
