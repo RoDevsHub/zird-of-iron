@@ -1,0 +1,577 @@
+ideas = {
+    country = {
+        MON_the_army = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.15
+				army_speed_factor = -0.05
+				army_org_factor = -0.1
+			}
+        }
+
+		MON_the_army_2 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.15
+				army_speed_factor = -0.05
+				army_org_factor = -0.1
+				experience_gain_factor = 0.1
+				experience_gain_army_factor = 0.1
+			}
+        }
+		MON_the_standing_army_1 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.05
+				army_speed_factor = -0.05
+				army_org_factor = -0.1
+				experience_gain_factor = 0.1
+				experience_gain_army_factor = 0.1
+				conscription = 0.01
+				weekly_manpower = 250
+			}
+        }
+		MON_the_standing_army_2 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.05
+				army_speed_factor = -0.05
+				army_org_factor = -0.1
+				experience_gain_factor = 0.1
+				experience_gain_army_factor = 0.1
+				conscription = 0.03
+				weekly_manpower = 350
+			}
+        }
+		MON_the_standing_army_3 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.05
+				army_speed_factor = 0.05
+				army_org_factor = -0.1
+				experience_gain_factor = 0.1
+				experience_gain_army_factor = 0.1
+				conscription = 0.03
+				weekly_manpower = 350
+				planning_speed = 0.05
+				cavalry_attack_factor = 0.33
+				cavalry_defence_factor = 0.33
+			}
+        }
+		MON_the_standing_army_4 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.1
+				army_speed_factor = 0.15
+				army_org_factor = -0.05
+				experience_gain_factor = 0.1
+				experience_gain_army_factor = 0.1
+				conscription = 0.03
+				weekly_manpower = 350
+				planning_speed = 0.05
+				cavalry_attack_factor = 0.33
+				cavalry_defence_factor = 0.33
+			}
+        }
+		MON_the_standing_army_5 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.1
+				army_speed_factor = 0.15
+				army_org_factor = 0.05
+				experience_gain_factor = 0.1
+				experience_gain_army_factor = 0.1
+				conscription = 0.03
+				weekly_manpower = 350
+				planning_speed = 0.10
+				cavalry_attack_factor = 0.4
+				cavalry_defence_factor = 0.4
+			}
+        }
+		MON_the_pro_army_1 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.20
+				army_speed_factor = -0.05
+				army_org_factor = -0.1
+				experience_gain_factor = 0.1
+				experience_gain_army_factor = 0.1
+				conscription_factor = 0.25
+				weekly_manpower = 100
+			}
+        }
+		MON_the_pro_army_2 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.20
+				army_speed_factor = -0.05
+				army_org_factor = -0.05
+				experience_gain_factor = 0.15
+				experience_gain_army_factor = 0.15
+				conscription_factor = 0.25
+				weekly_manpower = 100
+				offence = 0.025
+				defence = 0.025
+			}
+        }
+		MON_the_pro_army_3 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.25
+				army_speed_factor = -0.05
+				army_org_factor = -0.05
+				experience_gain_factor = 0.15
+				experience_gain_army_factor = 0.15
+				conscription_factor = 0.25
+				weekly_manpower = 100
+				offence = 0.025
+				defence = 0.025
+				motorized_attack_factor = 0.15
+				motorized_defence_factor = 0.15
+				mechanized_attack_factor = 0.15
+				mechanized_defence_factor = 0.15
+			}
+        }
+		MON_the_pro_army_4 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.25
+				army_speed_factor = -0.05
+				army_org_factor = -0.05
+				experience_gain_factor = 0.15
+				experience_gain_army_factor = 0.15
+				conscription_factor = 0.25
+				weekly_manpower = 100
+				offence = 0.05
+				defence = 0.025
+				motorized_attack_factor = 0.2
+				motorized_defence_factor = 0.15
+				mechanized_attack_factor = 0.2
+				mechanized_defence_factor = 0.15
+				breakthrough_factor = 0.05
+			}
+        }
+		MON_the_pro_army_5 = {
+			name = MON_the_army_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+
+			modifier = {
+				supply_consumption_factor = -0.25
+				experience_gain_factor = 0.15
+				experience_gain_army_factor = 0.15
+				conscription_factor = 0.25
+				weekly_manpower = 100
+				offence = 0.05
+				defence = 0.05
+				motorized_attack_factor = 0.225
+				motorized_defence_factor = 0.15
+				mechanized_attack_factor = 0.225
+				mechanized_defence_factor = 0.15
+				breakthrough_factor = 0.05
+			}
+        }
+
+		MON_western_war_1 = {
+			name = MON_western_war_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = FIN_german_threat
+
+			modifier = {
+				offence = 0.025
+			}
+		}
+		MON_western_war_2 = {
+			name = MON_western_war_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = FIN_german_threat
+
+			modifier = {
+				offence = 0.05
+			}
+			equipment_bonus = {
+				anti_tank = {
+					instant = yes
+					max_strength = 0.1
+					max_organisation = 0.1
+					build_cost_ic = -0.25
+				}
+			}
+		}
+
+		MON_eastern_war_1 = {
+			name = MON_eastern_war_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_japanese_conflict
+
+			modifier = {
+				defence = 0.025
+			}
+		}
+		MON_eastern_war_2 = {
+			name = MON_eastern_war_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_japanese_conflict
+
+			modifier = {
+				defence = 0.075
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+		MON_the_economy = {
+			name = MON_the_economy_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = ARG_economic_reactivation
+
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_speed_buildings_factor = -0.05
+				industrial_capacity_factory = -0.1
+			}
+        }
+		MON_the_economy_2 = {
+			name = MON_the_economy_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = ARG_economic_reactivation
+
+			modifier = {
+				consumer_goods_factor = 0.10
+				production_speed_buildings_factor = -0.05
+				industrial_capacity_factory = -0.1
+			}
+        }
+		MON_the_economy_3 = {
+			name = MON_the_economy_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = ARG_economic_reactivation
+
+			modifier = {
+				consumer_goods_factor = 0.00
+				production_speed_buildings_factor = -0.025
+				industrial_capacity_factory = -0.1
+			}
+        }
+		MON_the_economy_4 = {
+			name = MON_the_economy_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = ARG_economic_reactivation
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = -0.025
+				industrial_capacity_factory = -0.1
+			}
+        }
+		MON_the_economy_5 = {
+			name = MON_the_economy_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = ARG_economic_reactivation
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.00
+				industrial_capacity_factory = -0.05
+				economy_cost_factor = -0.33
+			}
+        }
+		MON_the_economy_6 = {
+			name = MON_the_economy_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = ARG_economic_reactivation
+
+			modifier = {
+				consumer_goods_factor = -0.075
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.125
+				economy_cost_factor = -0.33
+			}
+        }
+
+		MON_trade_with_sov = {
+			name = MON_trade_with_sov_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = can_wartime_prices_and_trade_board
+
+			modifier = {
+				
+			}
+			targeted_modifier = {
+				tag = SOV
+				trade_cost_for_target_factor = -0.2
+			}
+        }
+
+		MON_education = {
+			name = MON_education_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_research_bonus
+
+			modifier = {
+				research_speed_factor = -0.05
+			}
+        }
+		MON_the_airforce = {
+			name = MON_the_air_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_fighter
+
+			modifier = {
+				experience_gain_air_factor = 0.1
+				air_ace_generation_chance_factor = 0.1
+			}
+        }
+
+		MON_the_airforce_dom = {
+			name = MON_the_air_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_fighter
+
+			modifier = {
+				experience_gain_air_factor = 0.1
+				air_ace_generation_chance_factor = 0.1
+			}
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.05
+				}
+			}
+        }
+		MON_the_airforce_dom_2 = {
+			name = MON_the_air_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_fighter
+
+			modifier = {
+				experience_gain_air_factor = 0.1
+				air_ace_generation_chance_factor = 0.1
+				production_speed_air_base_factor = -0.1
+				production_speed_anti_air_building_factor = -0.1
+			}
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.05
+				}
+			}
+        }
+
+		MON_the_airforce_sub = {
+			name = MON_the_air_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_fighter
+
+			modifier = {
+				experience_gain_air_factor = 0.1
+				air_ace_generation_chance_factor = 0.1
+				license_production_speed = 0.1
+				license_purchase_cost = -0.25
+				license_tech_difference_speed = 0.1
+			}
+        }
+		MON_the_airforce_sub_2 = {
+			name = MON_the_air_idea
+			allowed = {
+				original_tag = MON
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_fighter
+
+			modifier = {
+				experience_gain_air_factor = 0.1
+				air_ace_generation_chance_factor = 0.1
+				license_production_speed = -0.1
+				license_purchase_cost = -0.25
+				license_tech_difference_speed = -0.1
+				production_speed_air_base_factor = -0.1
+				production_speed_anti_air_building_factor = -0.1
+			}
+        }
+
+
+    }
+}
+
+

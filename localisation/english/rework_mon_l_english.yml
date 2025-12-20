@@ -54,6 +54,8 @@
  MON_foreign_designs_desc:0 "Foreign Designs"
  MON_new_aerodromes:0 "New Aerodromes"
  MON_new_aerodromes_desc:0 "New Aerodromes"
+ MON_air_research_facilities:0 "Air Research Facilities"
+ MON_air_research_facilities_desc:0 "Air Research Facilities"
  MON_fighter_planes:0 "Fighter Planes"
  MON_fighter_planes_desc:0 "Fighter Planes"
  MON_multi_role_planes:0 "Multi-role Planes"
@@ -95,13 +97,24 @@
  MON_the_five_year_plan:0 "The Five Year Plan"
  MON_the_five_year_plan_desc:0 "The Five Year Plan"
  
- # focus / politics 
- MON_state_of_affairs:0 "State of Affairs"
- MON_state_of_affairs_desc:0 "State of Affairs"
-
-
  # tooltips 
  MON_cavalry_research_tt: "§YInstantly research§! technologies: §GEarly Trucks§! and §GTruck§!."
+
+
+ # ideas
+ MON_the_army_idea:0 "The Mongolian People's Army"
+ MON_the_army_idea_desc:0 "The Mongolian People's Army"
+ MON_western_war_idea:0 "A Western War"
+ MON_western_war_idea_desc:0 "A Western War"
+ MON_eastern_war_idea:0 "A Eastern War"
+ MON_eastern_war_idea_desc:0 "A Eastern War"
+ MON_the_economy_idea:0 "The Economy"
+ MON_the_economy_idea_desc:0 "The Economy"
+ MON_trade_with_sov_idea:0 "Trade with Soviets"
+ MON_trade_with_sov_idea_desc:0 "Trade with Soviets"
+ MON_the_air_idea:0 "The Mongolian People's Republlic Airforce"
+ MON_the_air_idea_desc:0 "The Mongolian People's Republlic Airforce"
+
 
  # MIO
  MON_miat_airlines:0 "MIAT airlines"
