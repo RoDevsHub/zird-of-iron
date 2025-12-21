@@ -3723,7 +3723,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_revisit_the_thirteen_demands }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -10565,7 +10565,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = JAP_rethink_armor_doctrine
-				bonus = 0.25
+				bonus = 0.5
 				uses = 1
 				category = cat_mechanized_equipment
 			}
@@ -10837,7 +10837,7 @@ focus_tree = {
 				name = JAP_the_ultimate_tank
 				bonus = 0.75
 				uses = 2
-				category = cat_heavy_armor	
+				category = amphibious_mechanized_equipment
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
