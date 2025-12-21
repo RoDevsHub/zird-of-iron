@@ -8301,14 +8301,7 @@ focus_tree = {
 			is_subject = no
 			IF = {
 				limit = { has_dlc = "Gotterdammerung" }
-
-				custom_trigger_tooltip = {
-					tooltip = GER_anschluss_army_trigger_tt
-					fighting_army_strength_ratio = {
-						tag = AUS
-						ratio > global.deployed_manpower_ratio_needed_for_anschluss
-					}
-				}
+				date > 1937.01.01
 			}
 
 			ELSE = {
@@ -9207,9 +9200,9 @@ focus_tree = {
 			}
 		}
 
-		available = {
-			is_subject = no
-			has_army_manpower = { size > 724999 } #80 div
+		available = 
+		{
+			date > 1938.01.01
 		}
 		
 		cancel = {
@@ -9542,8 +9535,7 @@ focus_tree = {
 		}
 		
 		available = { 
-			is_subject = no
-			has_army_manpower = { size > 749999 }
+
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_HISTORICAL }
@@ -10155,8 +10147,7 @@ focus_tree = {
 		available = {
 			date > 1939.1.1
 			is_subject = no
-			has_army_manpower = { size > 949999 } #100 div			
-			#Make custom trigger tooltip here
+						#Make custom trigger tooltip here
 			85 = {
 				owner = {
 					original_tag = POL
@@ -11759,7 +11750,6 @@ focus_tree = {
 		available = {
 			is_subject = no
 			has_government = fascism
-			has_army_manpower = { size > 849999 } #ca 90 div
 			SOV = {
 				NOT = { has_war_with = GER }
 				country_exists = SOV
@@ -12386,9 +12376,9 @@ focus_tree = {
 	focus = {
 		id = GER_legion_condor
 		icon = GFX_focus_intervention_spain_nationalists
-		prerequisite = { focus = GER_anti_comintern_pact }
-		x = -1
-		y = 1
+		prerequisite = { focus = GER_anschluss }
+		x = -2
+		y = 0
 		relative_position_id = GER_anti_comintern_pact
 
 		cost = 5
