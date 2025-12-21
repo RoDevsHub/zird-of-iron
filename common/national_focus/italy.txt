@@ -3206,7 +3206,7 @@ focus_tree = {
 				ITA_replace_designers_by_improved_version_south = yes
 			}
 			else = {
-				custom_effect_tooltip = ITA_new_industrialization_designers_overwrite
+				custom_effect_tooltip =  ITA_new_industrialization_designers_overwrite
 			}
 		}
 	}
@@ -8158,7 +8158,7 @@ focus_tree = {
 
 			add_political_power = 50
 
-			add_ideas = ITA_to_live_as_a_lion
+			add_ideas = ITA_idea_to_live_as_a_lion
 
 			swap_ruler_traits = {
 				remove = lion_tamer
