@@ -242,7 +242,7 @@ focus_tree = {
 			has_government = democratic
 		}
 
-		cost = 7
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -270,7 +270,7 @@ focus_tree = {
 			has_government = democratic
 		}
 
-		cost = 7
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -326,7 +326,7 @@ focus_tree = {
 		y = 1
 
 
-		cost = 7
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -445,7 +445,7 @@ focus_tree = {
 			has_government = democratic
 		}
 
-		cost = 7
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -469,7 +469,8 @@ focus_tree = {
 	focus = {
 		id = USA_highway_1
 		icon = GFX_focus_generic_road_investment
-		prerequisite = { focus = USA_rural_electrification focus = USA_laguardia_airport }
+		prerequisite = { focus = USA_rural_electrification } 
+		prerequisite = {focus = USA_laguardia_airport }
 		relative_position_id = USA_rural_electrification
 		x = 1
 		y = 1
@@ -515,7 +516,7 @@ focus_tree = {
 		x = -3
 		y = 5
 		relative_position_id = USA_highway_1
-		cost = 5
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -540,7 +541,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_highway_1 }
 		relative_position_id = USA_highway_1
-		cost = 7
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -578,7 +579,7 @@ focus_tree = {
 			has_government = democratic
 		}
 
-		cost = 7
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -608,7 +609,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_national_youth_administration }
 		relative_position_id = USA_national_youth_administration
-		cost = 7
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -661,7 +662,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_national_youth_administration }
 		relative_position_id = USA_national_youth_administration
-		cost = 7
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -694,7 +695,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_national_labor_relations_act }
 		relative_position_id = USA_national_labor_relations_act
-		cost = 7
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -929,7 +930,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_the_giant_wakes }
 		relative_position_id = USA_the_giant_wakes
-		cost = 7
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -959,7 +960,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_the_giant_wakes }
 		relative_position_id = USA_the_giant_wakes
-		cost = 7
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -1049,7 +1050,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = USA_continue_the_new_deal
 		
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -1079,7 +1080,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_continue_the_new_deal
-		cost = 7
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -1119,7 +1120,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_the_us_army }
 		relative_position_id = USA_the_us_army
-		cost = 6
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -1223,8 +1224,7 @@ focus_tree = {
 		prerequisite = { focus = USA_louisiana_maneuvers }
 		mutually_exclusive = { focus = USA_overwhelming_firepower focus = USA_grand_battleplan }
 		relative_position_id = USA_selective_training_act
-		cost = 6
-
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -1270,7 +1270,7 @@ focus_tree = {
 		prerequisite = { focus = USA_louisiana_maneuvers }
 		mutually_exclusive = { focus = USA_armored_warfare focus = USA_grand_battleplan }
 		relative_position_id = USA_selective_training_act
-		cost = 6
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -1314,7 +1314,7 @@ focus_tree = {
 		prerequisite = { focus = USA_louisiana_maneuvers }
 		mutually_exclusive = { focus = USA_armored_warfare focus = USA_overwhelming_firepower }
 		relative_position_id = USA_selective_training_act
-		cost = 6
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -1535,7 +1535,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_combined_arms_warfare }
 		relative_position_id = USA_combined_arms_warfare
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -1649,7 +1649,7 @@ focus_tree = {
 		prerequisite = { focus = USA_cavalry_of_the_future }
 		prerequisite = { focus = USA_heavier_armor }
 		relative_position_id = USA_cavalry_of_the_future
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1689,7 +1689,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_overwhelming_firepower }
 		relative_position_id = USA_overwhelming_firepower
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -1812,7 +1812,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_false_thunder }
 		relative_position_id = USA_false_thunder
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -1900,7 +1900,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = USA_grand_battleplan
-		cost = 7
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -2040,7 +2040,7 @@ focus_tree = {
 		prerequisite = { focus = USA_support_for_all }
 		prerequisite = { focus = USA_airborne_divisions }
 		relative_position_id = USA_support_for_all
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -2079,7 +2079,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_cavalry_of_the_future focus = USA_larger_mortars }
 		relative_position_id = USA_larger_mortars
-		cost = 6
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -2120,7 +2120,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_support_for_all focus = USA_concentrated_fire_plans }
 		relative_position_id = USA_support_for_all
-		cost = 7
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -2509,7 +2509,7 @@ focus_tree = {
 		relative_position_id = USA_wealth_tax_act
 
 
-		cost = 7
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -2582,7 +2582,7 @@ focus_tree = {
 		prerequisite = { focus = USA_continue_the_new_deal }
 		relative_position_id = USA_continue_the_new_deal
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -2800,7 +2800,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = USA_the_us_army
 
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -2966,7 +2966,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = USA_arsenal_of_democracy
-		cost = 5
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -3250,7 +3250,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = USA_military_construction
-		cost = 5
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -3756,7 +3756,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_airforce
 		x = 10
 		y = 0
-		cost = 7
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -3779,7 +3779,7 @@ focus_tree = {
 		mutually_exclusive = { focus = USA_tactics }
 		x = 3
 		y = 1
-		cost = 6
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -3807,7 +3807,7 @@ focus_tree = {
 		icon = GFX_goal_generic_air_fighter2
 		x = 1
 		y = 2
-		cost = 6
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -3830,7 +3830,7 @@ focus_tree = {
 		mutually_exclusive = { focus = USA_agility }
 		x = -3
 		y = 1
-		cost = 6
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -3858,7 +3858,7 @@ focus_tree = {
 		icon = GFX_SOV_long_range_aircraft_ccp_2d_sov_compatibility
 		x = -1
 		y = 2
-		cost = 6
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -3881,7 +3881,7 @@ focus_tree = {
 		icon = GFX_focus_generic_air_research_boost
 		x = 2
 		y = 2
-		cost = 6
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -3937,7 +3937,7 @@ focus_tree = {
 		icon = GFX_goal_generic_air_doctrine
 		x = -1
 		y = 1
-		cost = 5
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -4003,7 +4003,7 @@ focus_tree = {
 		icon = GFX_focus_chi_british_cooperation
 		x = 0
 		y = 2
-		cost = 5
+		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -4022,6 +4022,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 	
 		completion_reward = {
+			air_experience = 25
 			# event chain
 		}
 	}
@@ -4052,7 +4053,7 @@ focus_tree = {
 		icon = GFX_focus_generic_long_range_aircraft
 		x = -2
 		y = 2
-		cost = 6
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -4081,7 +4082,7 @@ focus_tree = {
 		icon = GFX_focus_generic_multi_role_aircraft
 		x = 1
 		y = 1
-		cost = 5
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}

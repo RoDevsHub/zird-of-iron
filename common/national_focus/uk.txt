@@ -5473,6 +5473,7 @@ focus_tree = {
 		focus = {
 		id = ENG_Race_for_Berlin
 		available = {
+			NOT = {has_idea = ENG_D_Day_idea}
 		}
 		bypass = {
 		}
