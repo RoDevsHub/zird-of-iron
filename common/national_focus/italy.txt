@@ -42,44 +42,6 @@ focus_tree = {
 	}
 
 
-	focus = {
-		id = ITA_annex_bulgaria
-		icon = GFX_SOV_great_commander_ccp_2d_sov_compatibility
-		x = -3
-		y = 0
-		cost = 0
-
-		ai_will_do = {
-			factor = -10
-		}
-
-		available = {
-			
-			BUL = {
-				is_ai = yes
-			}
-			
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			every_state = { 
-				limit = {
-					is_core_of = BUL
-				}
-				add_core_of = ITA
-			}
-			annex_country = { target = BUL transfer_troops = yes }
-		}
-	}
-
 ########  ##    ##    ########  ##        #######   #######  ########        ###    ##        #######  ##    ## ######## 
 ##     ##  ##  ##     ##     ## ##       ##     ## ##     ## ##     ##      ## ##   ##       ##     ## ###   ## ##       
 ##     ##   ####      ##     ## ##       ##     ## ##     ## ##     ##     ##   ##  ##       ##     ## ####  ## ##       
@@ -9117,9 +9079,7 @@ focus_tree = {
 	focus = {
 		id = ITA_by_blood_alone
 		icon = GFX_focus_ITA_by_blood_alone
-		prerequisite = { focus = ITA_a_colonial_empire }
-		prerequisite = { focus = ITA_shatter_the_gate }
-		prerequisite = { focus = ITA_masters_of_the_mediterranean }
+		prerequisite = { focus = ITA_a_colonial_empire  focus = ITA_masters_of_the_mediterranean  focus = ITA_shatter_the_gate }
 
 		x = 0
 		y = 1
@@ -10680,7 +10640,7 @@ focus_tree = {
 				limit = {
 					has_dlc = "By Blood Alone"
 				}
-				has_tech = improved_large_airframe
+				has_tech = improved_small_airframe
 				has_tech = engines_3
 			}
 		}
@@ -10688,24 +10648,19 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+
+			add_ideas = ITA_idea_the_king_of_the_skies
+		
 			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				
@@ -10789,6 +10744,9 @@ focus = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
+
+			add_ideas = ITA_idea_modern_musculus
+
 			random_core_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
@@ -10798,26 +10756,15 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 5
 					instant_build = yes
 				}
 			}
 
-			#equipment_bonus = { 
-			#	infantry_equipment = {
-			#		instant = yes
-			#		build_cost_ic = -0.1
-			#		reliability = 0.2
-			#	}
-			#}
-			### IF you want to add the above, you must make it an idea to add this.
-			
-				
-				
-			
+
 				add_tech_bonus = {
 					name = ITA_modern_musculus
 					ahead_reduction = 1
@@ -10867,6 +10814,9 @@ focus = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+
+			add_ideas = ITA_idea_caligulas_pride
+
 			random_core_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
@@ -10876,17 +10826,13 @@ focus = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = dockyard
-					level = 3
+					level = 5
 					instant_build = yes
 				}
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
 				add_tech_bonus = {
 					name = ITA_caligulas_pride
 					ahead_reduction = 2
@@ -10895,8 +10841,8 @@ focus = {
 					category = ca_tech
 					category = bc_tech
 				}
-			}
 			
+	
 			add_breakthrough_progress = {
 				specialization = specialization_naval
 				value = 0.5
