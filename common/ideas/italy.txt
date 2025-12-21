@@ -998,7 +998,7 @@ ideas = {
 		ITA_grand_council_boosted = {
 			removal_cost = -1
 
-			picture = generic_fascism
+			picture = shield 
 				
 			allowed = {
 				original_tag = ITA
@@ -1023,7 +1023,7 @@ ideas = {
 		ITA_idea_the_king_of_the_skies = {
 			removal_cost = -1
 
-			picture = generic_fascism
+			picture = shield 
 				
 			allowed = {
 				original_tag = ITA
@@ -1058,7 +1058,7 @@ ideas = {
 		ITA_idea_modern_musculus = {
 			removal_cost = -1
 
-			picture = generic_fascism
+			picture = shield 
 				
 			allowed = {
 				original_tag = ITA
@@ -1092,7 +1092,7 @@ ideas = {
 		ITA_idea_caligulas_pride = {
 			removal_cost = -1
 
-			picture = generic_fascism
+			picture = shield 
 				
 			allowed = {
 				original_tag = ITA
