@@ -1094,7 +1094,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			reduce_focus_completion_cost = {
-				focus = { JAP_approach_mitsui JAP_approach_mitsubishi JAP_approach_sumitomo JAP_approach_yasuda }
+				focus = { JAP_new_industrial_city_development_policy JAP_establish_housing_corporation JAP_central_agricultural_association JAP_the_five_great_cities }
 				cost = 35
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
