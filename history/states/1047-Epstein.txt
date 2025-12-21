@@ -1,0 +1,30 @@
+state={
+	id=1047
+	name="STATE_1047"
+	manpower = 1
+	
+	state_category = rural
+
+	history={
+		add_core_of = EPE
+		owner = EPE
+		victory_points = {
+			4155 10 
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 4
+			4155 = {
+				naval_base = 7
+
+			}
+		}
+	}
+
+	provinces={
+		4155 
+	}
+
+	local_supplies=0.0 
+}

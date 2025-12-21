@@ -248,6 +248,40 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 4135;10094;impassable;-1;-1;-1;-1;-1;;Gibratlar
 13228;10094;impassable;-1;-1;-1;-1;-1;;Gibratlar
 13228;1048;impassable;-1;-1;-1;-1;-1;;Gibratlar
+10875;7992;impassable;-1;-1;-1;-1;-1;;Spanish Africa
+13076;198;impassable;-1;-1;-1;-1;-1;;Urals
+13076;6040;impassable;-1;-1;-1;-1;-1;;Urals
+13076;12502;impassable;-1;-1;-1;-1;-1;;Urals
+12502;4669;impassable;-1;-1;-1;-1;-1;;Urals
+12502;3169;impassable;-1;-1;-1;-1;-1;;Urals
+10677;3169;impassable;-1;-1;-1;-1;-1;;Urals
+10677;4774;impassable;-1;-1;-1;-1;-1;;Urals
+10677;1744;impassable;-1;-1;-1;-1;-1;;Urals
+10551;1744;impassable;-1;-1;-1;-1;-1;;Urals
+7824;1744;impassable;-1;-1;-1;-1;-1;;Urals
+7824;1771;impassable;-1;-1;-1;-1;-1;;Urals
+12659;1771;impassable;-1;-1;-1;-1;-1;;Urals
+12659;10648;impassable;-1;-1;-1;-1;-1;;Urals
+12659;10716;impassable;-1;-1;-1;-1;-1;;Urals
+10216;10716;impassable;-1;-1;-1;-1;-1;;Urals
+11307;10716;impassable;-1;-1;-1;-1;-1;;Urals
+11307;7228;impassable;-1;-1;-1;-1;-1;;Urals
+4758;7228;impassable;-1;-1;-1;-1;-1;;Urals
+4758;12567;impassable;-1;-1;-1;-1;-1;;Urals
+7320;12567;impassable;-1;-1;-1;-1;-1;;Urals
+7320;12287;impassable;-1;-1;-1;-1;-1;;Urals
+11223;12287;impassable;-1;-1;-1;-1;-1;;Urals 
+10185;10142;impassable;-1;-1;-1;-1;-1;;Urals
+4265;10142;impassable;-1;-1;-1;-1;-1;;Urals
+4265;12117;impassable;-1;-1;-1;-1;-1;;Urals
+4265;1258;impassable;-1;-1;-1;-1;-1;;Urals
+4265;7300;impassable;-1;-1;-1;-1;-1;;Urals
+4311;7300;impassable;-1;-1;-1;-1;-1;;Urals
+7373;7300;impassable;-1;-1;-1;-1;-1;;Urals
+1378;7373;impassable;-1;-1;-1;-1;-1;;Urals
+1406;7373;impassable;-1;-1;-1;-1;-1;;Urals
+1406;4383;impassable;-1;-1;-1;-1;-1;;Urals
+
 
 -1;-1;-1
 #Start province ID;End province ID;Adjacency type;Through province ID;Starting X position;Starting Y position;Ending X position;Ending Y position;Adjacency rule;Comment
