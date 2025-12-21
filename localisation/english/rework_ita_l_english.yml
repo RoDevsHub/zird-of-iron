@@ -23,12 +23,16 @@
  ITA_the_soft_underbelly_of_europe_desc:0 "Italy’s position in Europe leaves the mainland exposed to attack from multiple directions. By fortifying key coastal provinces and inland strongpoints, we turn potential weakness into a prepared defense, ready to repel any invader."
  ITA_nation_in_arms:0 
  ITA_nation_in_arms_desc:0 "The Italian state mobilizes its people in service of empire, transforming society itself into an instrument of war."
+ ITA_to_live_as_a_lion:0 "To Live As a Lion"
+ ITA_to_live_as_a_lion_desc:0 "Italy embraces bold action, pouring resources into its industries to strengthen the nation’s might. The ambitious effort brings both growth and strain to its infrastructure."
+ ITA_boost_the_grand_council_of_fascism:0 "Boost The Grand Council Of Fascism"
+ ITA_boost_the_grand_council_of_fascism_desc:0 "The Grand Council takes decisive control, streamlining Italy’s efforts and boosting efficiency across the nation’s projects."
  # ideas
 
  ITA_focus_on_mobilization_idea:0 "Focus on Mobilization"
  ITA_focus_on_mobilization_idea_desc:0 "Focus on Mobilization"
- ITA_to_live_as_a_lion:0 "The Lion"
- ITA_to_live_as_a_lion_desc:0 "Italy embraces bold action, pouring resources into its industries to strengthen the nation’s might. The ambitious effort brings both growth and strain to its infrastructure."
+ ITA_the_lion:0 "The Lion"
+ ITA_the_lion:0 "Italy embraces bold action, pouring resources into its industries to strengthen the nation’s might. The ambitious effort brings both growth and strain to its infrastructure."
  ITA_grand_council_boosted:0 "Grand Council Boosted"
  ITA_grand_council_boosted:0 "The Grand Council takes decisive control, streamlining Italy’s efforts and boosting efficiency across the nation’s projects."
  ITA_devotion_idea:0 "Devotion"
@@ -37,7 +41,9 @@
  ITA_heroes_of_the_nation_idea_desc:0 "The bravery and sacrifices of our finest soldiers inspire the entire nation. Our troops gain experience faster, and the people remain steadfast even in the face of heavy losses."
  ITA_devotion_buffed_idea:0 "Nation In Arms"
  ITA_devotion_buffed_idea_desc:0 "A spirit of unwavering commitment permeates the Italian armed forces. Through relentless preparation, steadfast resolve, and loyalty to the nation, soldiers, sailors, and airmen alike are driven to endure longer, respond faster, and carry out their duties with greater efficiency."
-
+ ITA_idea_the_king_of_the_skies:0 "The King of the Skies"
+ ITA_idea_modern_musculus:0 "Modern Musculus"
+ ITA_idea_caligulas_pride "Caligulas Pride"
 #custom tooltips 
 
  ITA_new_industrialization_designers_overwrite:0 "If focus §Y'Strength Northern Industry'§! has been completed first, Northern National Designers will be improved.\n\nIf focus §Y'Modernize the Mezzogiorno'§! has been completed first, Southern National Designers will be improved."
