@@ -34,3 +34,33 @@ create_country_leader = {
 		#
 	}
 }
+
+create_country_leader = {
+	name = "Kash Patel"
+	desc = ""
+	picture = "gfx/leaders/EPE/Portrait_Kash_Patel.dds"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Charlie Kirk"
+	desc = ""
+	picture = "gfx/leaders/EPE/Portrait_Charlie_Kirk.dds"
+	ideology = rexism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Sean 'Diddy' Combs"
+	desc = ""
+	picture = "gfx/leaders/EPE/Portrait_Diddy.dds"
+	ideology = leninism
+	traits = {
+		#
+	}
+}
