@@ -80,7 +80,7 @@ focus_tree = {
 
 		available = {
 			
-			BUL = {
+			MAN = {
 				is_ai = yes
 			}
 			
