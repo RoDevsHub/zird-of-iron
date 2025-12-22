@@ -3608,71 +3608,16 @@ focus_tree = {
 
 	##### SHARED FOREIGN POLICY BRANCH #####
 
-	focus = {
-		id = JAP_revisit_the_thirteen_demands
-		icon = GFX_focus_generic_treaty
-		#mutually_exclusive = { focus = JAP_the_harakiri_debate }
-		x = -7
-		y = 1
-		relative_position_id = JAP_sea_purge_the_kodoha_faction
-
-
-		prerequisite = { focus = JAP_sea_purge_the_kodoha_faction  }
-
-		cost = 3
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			JAP_army_faction_is_not_subdued = yes
-		}
-
-		bypass = {
-			OR = {
-				has_war_with = CHI
-				has_subject = CHI
-			}
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
-
-		completion_reward = {
-				
-			add_war_support = 0.05
-			add_political_power = 25
-
-			IF = {
-				limit = {
-					CHI = {
-						exists = yes
-					}
-				}
-				CHI = {
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = JAP_revisited_21_demands_neg_op_mod
-					}	
-				}
-			}
-			
-		}
-	}
-
+	
 	focus = {
 		id = JAP_invest_in_senbu
 		icon = GFX_focus_generic_concessions
 		#mutually_exclusive = { focus = JAP_the_harakiri_debate }
-		x = -1
-		y = 1
-		relative_position_id = JAP_revisit_the_thirteen_demands
+		x = -5
+		y = 0
+		relative_position_id = JAP_imperial_headquarters_liasion_conference
 
-		prerequisite = { focus = JAP_revisit_the_thirteen_demands }
+		prerequisite = { focus = JAP_sea_purge_the_kodoha_faction }
 
 		cost = 5
 
@@ -3717,11 +3662,11 @@ focus_tree = {
 		id = JAP_reinforce_the_beijing_garrison
 		icon = GFX_focus_JAP_reinforce_the_east_hebei_garrisons
 		#mutually_exclusive = { focus = JAP_the_harakiri_debate }
-		x = 1
-		y = 1
-		relative_position_id = JAP_revisit_the_thirteen_demands
+		x = -3
+		y = 0
+		relative_position_id = JAP_imperial_headquarters_liasion_conference
 
-		prerequisite = { focus = JAP_revisit_the_thirteen_demands }
+		prerequisite = { focus = JAP_sea_purge_the_kodoha_faction }
 
 		cost = 5
 
@@ -8060,7 +8005,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_tech = rubber_processing
+			
 		}
 
 		bypass = {
@@ -8139,7 +8084,9 @@ focus_tree = {
 					uses = 2
 					category = cat_synth_oil
 				}
-
+				set_technology = {
+   				synth_oil_experiments = 1
+				}	
 				if = {
 					limit = {  #Don't display this tooltip if the focus has been completed
 						NOT = { has_completed_focus = JAP_establish_synthetic_fuel_joint_venture }
@@ -10837,7 +10784,7 @@ focus_tree = {
 				name = JAP_the_ultimate_tank
 				bonus = 0.75
 				uses = 2
-				category = amphibious_mechanized_equipment
+				category = EQUIPMENT_ARMOR
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
