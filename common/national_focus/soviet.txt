@@ -360,7 +360,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_infrastructure_effort_nsb
-		cost = 10
+		cost = 5
 
 		available = {
 			custom_trigger_tooltip = {
@@ -433,7 +433,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_finish_the_five_year_plan
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -500,7 +500,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_finish_the_five_year_plan
-		cost = 10
+		cost = 5
 
 		available = {
 			SOV_third_five_year_plan_available = yes
@@ -626,7 +626,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = SOV_reorganize_the_pc_of_heavy_industry
-		cost = 10
+		cost = 5
 
 		available = {
 			SOV_third_five_year_plan_available = yes
@@ -815,7 +815,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = SOV_shift_to_armaments_production
-		cost = 10
+		cost = 5
 
 		available = {
 			SOV_third_five_year_plan_available = yes
@@ -1142,7 +1142,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_restoration_and_development
-		cost = 10
+		cost = 5
 
 		available = {
 			custom_trigger_tooltip = {
@@ -1835,7 +1835,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_eastern_development
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -7079,7 +7079,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_the_centre
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -7769,7 +7769,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_inheritor_of_the_mantle_of_lenin
-		cost = 10
+		cost = 5
 		
 		available = {
 			custom_trigger_tooltip = {
@@ -8061,7 +8061,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SOV_freedom_of_debate_unity_of_action
-		cost = 10
+		cost = 5
 
 		available = {
 			num_subjects > 0
@@ -8281,7 +8281,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_positive_heroism
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -8301,7 +8301,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_revive_the_stakhanovite_movement
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -8418,7 +8418,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_collectivist_propaganda
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -8438,7 +8438,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_socialist_emulation
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -9036,7 +9036,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_claims_in_baltic
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 1
@@ -9097,7 +9097,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_claims_in_baltic
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -9202,7 +9202,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = SOV_claims_on_poland
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -9303,7 +9303,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_claims_on_poland
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2.5
