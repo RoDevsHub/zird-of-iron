@@ -53,7 +53,7 @@ focus_tree = {
 	focus = {
 		id = ROM_annex_bulgaria
 		icon = GFX_SOV_great_commander_ccp_2d_sov_compatibility
-		x = 10
+		x = 15
 		y = 0
 		cost = 0
 
@@ -772,7 +772,7 @@ focus_tree = {
 		completion_reward = {
 			reduce_focus_completion_cost = {
 			  focus = { ROM_Armed_Forces}
-			  cost = 280
+			  cost = 140
 			}
 			remove_ideas = ROM_king_carol_ii_hedonist
 			create_country_leader = {
@@ -1112,7 +1112,7 @@ focus_tree = {
 			add_timed_idea = {idea = ROM_Operation_Barbarbarossa_idea days = 365}
 			reduce_focus_completion_cost = {
 			  focus = { ROM_Armed_Forces}
-			  cost = 140
+			  cost = 70
 			}
 		}
 	}
@@ -1213,7 +1213,7 @@ focus_tree = {
 			add_ideas = ROM_Capital_of_Balkans_idea
 			reduce_focus_completion_cost = {
 			  focus = { ROM_Armed_Forces}
-			  cost = 70
+			  cost = 35
 			}
 		}
 	}
@@ -1231,7 +1231,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_generic_road_investment
-		x = 35
+		x = 33
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -1819,15 +1819,15 @@ focus_tree = {
 		icon = GFX_focus_SWE_revoke_militia_law
 		x = 55
 		y = 0
-		cost = 80
+		cost = 40
 		ai_will_do = {
 			factor = 1
 		}	
 		completion_reward = {
-			add_command_power = 15
-			army_experience = 5
-			air_experience = 5
-			navy_experience = 5
+			add_command_power = 30
+			army_experience = 100
+			air_experience = 50
+			navy_experience = 50
 
 		}
 	}
