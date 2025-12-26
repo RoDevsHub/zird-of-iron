@@ -1781,7 +1781,6 @@
 						include_locked = yes
 					}	
 				}
-				prioritize = { 16 24 15 20 31 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
