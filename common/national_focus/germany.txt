@@ -600,7 +600,7 @@ focus_tree = {
 		icon = GFX_focus_GER_the_four_year_plan
 		alternate_icon = GFX_focus_GER_the_four_year_plan_historical
 
-		x = -28
+		x = -32
 		y = 0
 		relative_position_id = GER_remilitarize_the_rhineland
 		cost = 5
@@ -6972,7 +6972,7 @@ focus_tree = {
 			}
 		}
 
-		x = 40
+		x = 48
 		y = -1
 		relative_position_id = GER_strengthen_the_kriegsmarine
 		cost = 5
@@ -7192,11 +7192,13 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		available = {
+			
 			has_war = no
 			is_subject = no
 			IF = {
 				limit = { has_dlc = "Gotterdammerung" }
 				date > 1937.01.01
+				has_army_manpower = { size > 365000 }
 			}
 
 			ELSE = {
@@ -8097,7 +8099,7 @@ focus_tree = {
 
 		available = 
 		{
-			date > 1938.01.01
+			date > 1938.09.30
 		}
 		
 		cancel = {
@@ -8335,6 +8337,8 @@ focus_tree = {
 		}
 
 		available = {
+				date > 1938.11.02
+			
 			is_subject = no
 			HUN = { 
 				is_friend_or_potential_friend_of_GER = yes
@@ -8430,7 +8434,7 @@ focus_tree = {
 		}
 		
 		available = { 
-
+				date > 1939.03.15
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_HISTORICAL }
@@ -9016,7 +9020,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GER_reassert_eastern_claims
-		cost = 5
+		cost = 10
 
 		will_lead_to_war_with = POL
 
@@ -9040,7 +9044,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		available = {
-			date > 1939.1.1
+			date > 1939.09.01
 			is_subject = no
 						#Make custom trigger tooltip here
 			85 = {
