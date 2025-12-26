@@ -584,7 +584,11 @@ focus_tree = {
 		icon = GFX_focus_GER_the_four_year_plan
 		alternate_icon = GFX_focus_GER_the_four_year_plan_historical
 
+<<<<<<< HEAD
 		x = -35
+=======
+		x = -32
+>>>>>>> f31b2a29a941ea50a0a30afa56ddbec0284df6de
 		y = 0
 		relative_position_id = GER_remilitarize_the_rhineland
 		cost = 5
@@ -6938,8 +6942,13 @@ focus_tree = {
 			}
 		}
 
+<<<<<<< HEAD
 		x = 50
 		y = 0
+=======
+		x = 48
+		y = -1
+>>>>>>> f31b2a29a941ea50a0a30afa56ddbec0284df6de
 		relative_position_id = GER_strengthen_the_kriegsmarine
 		cost = 5
 
@@ -7158,11 +7167,13 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		available = {
+			
 			has_war = no
 			is_subject = no
 			IF = {
 				limit = { has_dlc = "Gotterdammerung" }
 				date > 1937.01.01
+				has_army_manpower = { size > 365000 }
 			}
 
 			ELSE = {

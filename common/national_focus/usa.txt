@@ -242,7 +242,7 @@ focus_tree = {
 			has_government = democratic
 		}
 
-		cost = 8
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -326,7 +326,7 @@ focus_tree = {
 		y = 1
 
 
-		cost = 8
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -445,7 +445,7 @@ focus_tree = {
 			has_government = democratic
 		}
 
-		cost = 8
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -579,7 +579,7 @@ focus_tree = {
 			has_government = democratic
 		}
 
-		cost = 8
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -609,7 +609,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_national_youth_administration }
 		relative_position_id = USA_national_youth_administration
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -695,7 +695,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_national_labor_relations_act }
 		relative_position_id = USA_national_labor_relations_act
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -960,7 +960,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_the_giant_wakes }
 		relative_position_id = USA_the_giant_wakes
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1050,7 +1050,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = USA_continue_the_new_deal
 		
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1080,7 +1080,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_continue_the_new_deal
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2473,7 +2473,7 @@ focus_tree = {
 
 
 
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}
@@ -2582,7 +2582,7 @@ focus_tree = {
 		prerequisite = { focus = USA_continue_the_new_deal }
 		relative_position_id = USA_continue_the_new_deal
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -3756,7 +3756,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_airforce
 		x = 10
 		y = 0
-		cost = 8
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -3937,7 +3937,7 @@ focus_tree = {
 		icon = GFX_goal_generic_air_doctrine
 		x = -1
 		y = 1
-		cost = 8
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -4003,7 +4003,7 @@ focus_tree = {
 		icon = GFX_focus_chi_british_cooperation
 		x = 0
 		y = 2
-		cost = 10
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -4082,7 +4082,7 @@ focus_tree = {
 		icon = GFX_focus_generic_multi_role_aircraft
 		x = 1
 		y = 1
-		cost = 8
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
