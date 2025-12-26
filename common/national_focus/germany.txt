@@ -118,7 +118,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_the_four_year_plan
-		cost = 5
+		cost = 8
 		available = {
 			OR = {
 				has_full_control_of_state = 64 #Brandenburg
@@ -584,11 +584,7 @@ focus_tree = {
 		icon = GFX_focus_GER_the_four_year_plan
 		alternate_icon = GFX_focus_GER_the_four_year_plan_historical
 
-<<<<<<< HEAD
 		x = -35
-=======
-		x = -32
->>>>>>> f31b2a29a941ea50a0a30afa56ddbec0284df6de
 		y = 0
 		relative_position_id = GER_remilitarize_the_rhineland
 		cost = 5
@@ -746,7 +742,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_autarky_efforts
-		cost = 5
+		cost = 7
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GER_industrial_consumer_goods_factor_limit_tt
@@ -6942,13 +6938,8 @@ focus_tree = {
 			}
 		}
 
-<<<<<<< HEAD
 		x = 50
 		y = 0
-=======
-		x = 48
-		y = -1
->>>>>>> f31b2a29a941ea50a0a30afa56ddbec0284df6de
 		relative_position_id = GER_strengthen_the_kriegsmarine
 		cost = 5
 
