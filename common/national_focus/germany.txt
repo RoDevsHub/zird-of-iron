@@ -115,7 +115,7 @@ focus_tree = {
 		icon = GFX_focus_generic_road_investment
 		prerequisite = { focus = GER_the_four_year_plan }
 
-		x = 2
+		x = 0
 		y = 1
 		relative_position_id = GER_the_four_year_plan
 		cost = 10
@@ -512,11 +512,61 @@ focus_tree = {
 	focus = {
 		id = GER_increase_defence_budget
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = GER_construct_the_reichsautobahn}
+		prerequisite = { focus = GER_construct_the_reichsautobahn }
 
 		x = 0
 		y = 1
 		relative_position_id = GER_construct_the_reichsautobahn
+		cost = 10
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+	focus = {
+		id = GER_concentrated_armament_program
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = { focus = GER_accelerate_the_rearmament_program}
+
+		x = 0
+		y = 1
+		relative_position_id = GER_accelerate_the_rearmament_program
 		cost = 5
 		available = {
 		}
@@ -540,23 +590,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			every_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				random_select_amount = 2
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
 
 		}
 	}
@@ -567,7 +600,6 @@ focus_tree = {
 		icon = GFX_focus_GER_the_four_year_plan
 		alternate_icon = GFX_focus_GER_the_four_year_plan_historical
 
-		mutually_exclusive = { focus = GER_prioritize_economic_growth }
 		x = -28
 		y = 0
 		relative_position_id = GER_remilitarize_the_rhineland
@@ -613,7 +645,7 @@ focus_tree = {
 		icon = GFX_focus_GER_autarky_ambitions
 		prerequisite = { focus = GER_the_four_year_plan  }
 
-		x = 6
+		x = 4
 		y = 1
 		relative_position_id = GER_the_four_year_plan
 		cost = 5
@@ -1447,7 +1479,7 @@ focus_tree = {
 		icon = GFX_focus_generic_combined_arms
 		prerequisite = { focus = GER_the_four_year_plan }
 
-		x = -2
+		x = -4
 		y = 1
 		relative_position_id = GER_the_four_year_plan
 		cost = 5
@@ -1494,11 +1526,11 @@ focus_tree = {
 	focus = {
 		id = GER_establish_production_targets
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = GER_accelerate_the_rearmament_program }
+		prerequisite = { focus = GER_concentrated_armament_program }
 
 		x = 0
-		y = 1.33
-		relative_position_id = GER_accelerate_the_rearmament_program
+		y = 1
+		relative_position_id = GER_concentrated_armament_program
 		cost = 5
 		available = {
 		}
@@ -1506,39 +1538,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			every_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				random_select_amount = 2
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
+			
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1643,7 +1643,7 @@ focus_tree = {
 		prerequisite = { focus = GER_concentrated_armament_program focus = GER_establish_production_targets}
 
 		x = 0
-		y = 2.67
+		y = 2
 		relative_position_id = GER_establish_production_targets
 		cost = 10
 		available = {
@@ -1710,7 +1710,7 @@ focus_tree = {
 		prerequisite = { focus = GER_establish_production_targets }
 
 		x = 0
-		y = 1.33
+		y = 1
 		relative_position_id = GER_establish_production_targets
 		cost = 10
 		available = {
@@ -1719,6 +1719,39 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
+
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
 				GER_industrial_industrial_capacity_factory = 0.05
@@ -1728,22 +1761,7 @@ focus_tree = {
 				GER_industrial_industrial_capacity_dockyard = 0.05
 				tooltip = industrial_capacity_dockyard_tt
 			}
-			add_to_variable = { 
-				GER_industrial_production_factory_max_efficiency_factor = 0.05
-				tooltip = production_factory_max_efficiency_factor_tt
-			}
-			add_to_variable = { 
-				GER_industrial_production_factory_efficiency_gain_factor = 0.05
-				tooltip = production_factory_efficiency_gain_factor_tt
-			}
-			add_to_variable = { 
-				GER_industrial_production_factory_start_efficiency_factor = 0.05
-				tooltip = production_factory_start_efficiency_factor_tt
-			}
-			add_to_variable = { 
-				GER_industrial_line_change_production_efficiency_factor = 0.05
-				tooltip = line_change_production_efficiency_factor_tt
-			}
+			
 		}
 	}
 	
@@ -6954,10 +6972,9 @@ focus_tree = {
 			}
 		}
 
-		x = 0
+		x = 40
 		y = -1
-		relative_position_id = GER_reorganize_the_wehrmacht
-
+		relative_position_id = GER_strengthen_the_kriegsmarine
 		cost = 5
 
 		bypass = {

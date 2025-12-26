@@ -16,6 +16,8 @@
  GER_increase_iran_oil_production_desc:0 "Increase Persian Oil"
  GER_the_desert_fox:0 "The Desert Fox"
  GER_the_desert_fox_desc:0 "The Desert Fox"
+ GER_increase_defence_budget:0 "Increase Defense Budget"
+ GER_increase_defence_budget_desc:0 "With the international situation growing increasingly unstable, Germany must ensure that sufficient resources are allocated to national defense. By increasing the military budget, we can expand our industrial capacity and better prepare for the challenges ahead."
 
  # idea
  GER_operation_barbarossa:0 "Operation Barbarossa"
