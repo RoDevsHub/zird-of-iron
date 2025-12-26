@@ -118,7 +118,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_the_four_year_plan
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				has_full_control_of_state = 64 #Brandenburg
@@ -138,22 +138,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			59 = { #Hannover
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}
-					}
-			random_owned_state = {
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = industrial_complex
-							level = 2
-							instant_build = yes
-						}
-					}
 			
 				64 = {
 					if = {
@@ -181,7 +165,7 @@ focus_tree = {
 						limit = { is_controlled_by = ROOT }
 						add_building_construction = {
 							type = infrastructure
-							level = 2
+							level = 1
 							instant_build = yes
 						}
 					}
@@ -517,7 +501,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_construct_the_reichsautobahn
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -600,7 +584,7 @@ focus_tree = {
 		icon = GFX_focus_GER_the_four_year_plan
 		alternate_icon = GFX_focus_GER_the_four_year_plan_historical
 
-		x = -28
+		x = -35
 		y = 0
 		relative_position_id = GER_remilitarize_the_rhineland
 		cost = 5
@@ -621,10 +605,10 @@ focus_tree = {
 					}
 				}
 				random_select_amount = 2
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -633,8 +617,8 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_the_four_year_plan
-				bonus = 1
-				uses = 1
+				bonus = 0.75
+				uses = 2
 				category = industry
 			}
 		}
@@ -655,28 +639,17 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
 			every_core_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
 				}
 				random_select_amount = 4
 				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -783,22 +756,14 @@ focus_tree = {
 
 		completion_reward = {
 			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-				}
-				prioritize = { 59 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
-				prioritize = { 60 }
+			}
+			random_core_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -810,6 +775,7 @@ focus_tree = {
 					amount = 6
 				}
 			}
+		
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -6972,8 +6938,8 @@ focus_tree = {
 			}
 		}
 
-		x = 40
-		y = -1
+		x = 50
+		y = 0
 		relative_position_id = GER_strengthen_the_kriegsmarine
 		cost = 5
 
@@ -12338,7 +12304,7 @@ focus_tree = {
 		icon = GFX_focus_GER_support_the_fuhrer
 
 		prerequisite = { focus = GER_remilitarize_the_rhineland }
-		x = -10
+		x = -13
 		y = 1
 		relative_position_id = GER_remilitarize_the_rhineland
 		cost = 5
