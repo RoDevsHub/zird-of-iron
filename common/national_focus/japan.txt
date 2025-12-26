@@ -108,7 +108,7 @@ focus_tree = {
 		id = JAP_sea_purge_the_kodoha_faction
 		icon = GFX_focus_JAP_purge_the_kodoha_faction
 
-		x = 25
+		x = 22
 		y = 0
 		
 
@@ -1431,7 +1431,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_tripartite_pact }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2161,7 +2161,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_expand_japan_manchukuo_economic_bloc }
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -2282,7 +2282,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_the_flying_geese }
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -7450,7 +7450,6 @@ focus_tree = {
 	focus = {
 		id = JAP_approach_mitsui
 		icon = GFX_focus_JAP_approach_mitsui
-		overlay = GFX_focus_fast_overlay_generic_clock
 		
 		enable_automatic_bypass = no
 
@@ -7528,8 +7527,7 @@ focus_tree = {
 			show_ideas_tooltip = mitsui_bank
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_reduce_zaibatsu_focus_cost_tt
-
+			
 		}
 
 	}
@@ -7537,7 +7535,6 @@ focus_tree = {
 	focus = {
 		id = JAP_approach_mitsubishi
 		icon = GFX_focus_JAP_approach_mitsubishi
-		overlay = GFX_focus_fast_overlay_generic_clock
 		
 		enable_automatic_bypass = no
 
@@ -7635,8 +7632,7 @@ focus_tree = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = JAP_koyata_iwasaki
 
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_reduce_zaibatsu_focus_cost_tt
+
 			
 		}
 
@@ -7645,7 +7641,6 @@ focus_tree = {
 	focus = {
 		id = JAP_approach_sumitomo
 		icon = GFX_focus_JAP_approach_sumitomo
-		overlay = GFX_focus_fast_overlay_generic_clock
 		
 		enable_automatic_bypass = no
 
@@ -7728,9 +7723,7 @@ focus_tree = {
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = sumitomo
 
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_reduce_zaibatsu_focus_cost_tt
-			
+
 		}
 
 	}
@@ -7738,7 +7731,7 @@ focus_tree = {
 	focus = {
 		id = JAP_approach_yasuda
 		icon = GFX_focus_JAP_approach_yasuda
-		overlay = GFX_focus_fast_overlay_generic_clock
+
 		
 		enable_automatic_bypass = no
 
@@ -7815,9 +7808,7 @@ focus_tree = {
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = yasuda_zaibatsu
 
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_reduce_zaibatsu_focus_cost_tt
-			
+
 		}
 
 	}
@@ -8228,7 +8219,8 @@ focus_tree = {
 	focus = {
 		id = JAP_new_industrial_city_development_policy
 		icon = GFX_focus_generic_modernize_industry
-		
+		overlay = GFX_focus_fast_overlay_generic_clock
+
 		#mutually_exclusive = {
 		#	focus = 
 		#}
@@ -8281,7 +8273,9 @@ focus_tree = {
 
 			JAP_add_or_modify_early_industrialization = yes
 			add_to_variable = { JAP_industry_industry_air_damage_factor = -0.05 tooltip = industry_air_damage_factor_tt }
-
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = JAP_reduce_zaibatsu_focus_cost_tt
+			
 		}
 
 	}
@@ -8336,7 +8330,8 @@ focus_tree = {
 	focus = {
 		id = JAP_establish_housing_corporation
 		icon = GFX_focus_generic_low_cost_housing
-		
+		overlay = GFX_focus_fast_overlay_generic_clock
+
 		#mutually_exclusive = {
 		#	focus = 
 		#}
@@ -8400,7 +8395,9 @@ focus_tree = {
 
 			add_to_variable = { JAP_industry_production_speed_buildings_factor = 0.05 tooltip = production_speed_buildings_factor_tt }
 			add_to_variable = { JAP_industry_industry_air_damage_factor = -0.05 tooltip = industry_air_damage_factor_tt }
-
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = JAP_reduce_zaibatsu_focus_cost_tt
+			
 		}
 
 	}
@@ -8464,7 +8461,8 @@ focus_tree = {
 	focus = {
 		id = JAP_central_agricultural_association
 		icon = GFX_focus_JAP_central_agricultural_association
-		
+		overlay = GFX_focus_fast_overlay_generic_clock
+
 		#mutually_exclusive = {
 		#	focus = 
 		#}
@@ -8517,14 +8515,16 @@ focus_tree = {
 
 			JAP_add_or_modify_early_industrialization = yes
 			add_to_variable = { JAP_industry_industry_air_damage_factor = -0.05 tooltip = industry_air_damage_factor_tt }
-
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = JAP_reduce_zaibatsu_focus_cost_tt
+			
 		}
 	}
 
 	focus = {
 		id = JAP_the_five_great_cities
 		icon = GFX_focus_JAP_the_five_great_cities
-		
+		overlay = GFX_focus_fast_overlay_generic_clock
 		#mutually_exclusive = {
 		#	focus = 
 		#}
@@ -8645,6 +8645,8 @@ focus_tree = {
 
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = JAP_uzo_nishiyama
+						custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = JAP_reduce_zaibatsu_focus_cost_tt
 			
 		}
 
@@ -12085,7 +12087,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = JAP_develop_new_fighters
 				bonus = 1
-				ahead_reduction = 0.75 
+				ahead_reduction = 1.0
 				category = light_air
 			}
 
