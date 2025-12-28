@@ -1173,7 +1173,7 @@ focus_tree = {
 				air_experience = 25
 				add_tech_bonus = {
 					name = fighter_command_focus
-					bonus = 1.0
+					bonus = 2.0
 					uses = 1
 					category = light_fighter
 					category = cat_heavy_fighter
@@ -1222,7 +1222,7 @@ focus_tree = {
 				air_experience = 25
 				add_tech_bonus = {
 					name = bomber_command_focus
-					bonus = 1.0
+					bonus = 2.0
 					uses = 1
 					category = cat_strategic_bomber
 					category = tactical_bomber
@@ -1271,7 +1271,7 @@ focus_tree = {
 				air_experience = 25
 				add_tech_bonus = {
 					name = coastal_command_focus
-					bonus = 1.0
+					bonus = 2.0
 					uses = 1
 					category = naval_bomber
 					category = cas_bomber
@@ -1909,9 +1909,9 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			army_experience = 5
-			navy_experience = 25
-			air_experience = 25
+			army_experience = 35
+			navy_experience = 50
+			air_experience = 35
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = ENG_service_overseas_idea
 		}
@@ -4281,7 +4281,8 @@ focus_tree = {
 		}
 
 		icon = GFX_focus_eng_imperial_federation
-
+		
+		continue_if_invalid = yes
 		x = 1
 		y = 1
 		relative_position_id = uk_canada_focus
