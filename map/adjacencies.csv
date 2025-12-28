@@ -281,9 +281,20 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 1378;7373;impassable;-1;-1;-1;-1;-1;;Urals
 1406;7373;impassable;-1;-1;-1;-1;-1;;Urals
 1406;4383;impassable;-1;-1;-1;-1;-1;;Urals
+10062;7108;impassable;-1;-1;-1;-1;-1;;HongKong
+7329;1279;impassable;-1;-1;-1;-1;-1;;Malaysia
+4310;1279;impassable;-1;-1;-1;-1;-1;;Malaysia
+4310;4297;impassable;-1;-1;-1;-1;-1;;Malaysia
+4310;4297;impassable;-1;-1;-1;-1;-1;;Malaysia
+7342;4297;impassable;-1;-1;-1;-1;-1;;Malaysia
+1291;4297;impassable;-1;-1;-1;-1;-1;;Malaysia
+1291;12131;impassable;-1;-1;-1;-1;-1;;Malaysia
+12144;12131;impassable;-1;-1;-1;-1;-1;;Malaysia
+12144;7236;impassable;-1;-1;-1;-1;-1;;Malaysia
+12144;10156;impassable;-1;-1;-1;-1;-1;;Malaysia
 
 
--1;-1;-1
+
 #Start province ID;End province ID;Adjacency type;Through province ID;Starting X position;Starting Y position;Ending X position;Ending Y position;Adjacency rule;Comment
 
 
