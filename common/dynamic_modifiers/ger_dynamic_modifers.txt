@@ -1,0 +1,9 @@
+FRA_vichy_modifier = {
+	enable = {
+		always = yes
+	}
+	icon = GFX_modifiers_SOV_factory_worker_militias
+	recruitable_population_factor = 0.5
+	resistance_target = -0.25
+	local_factories = 0.25 
+}

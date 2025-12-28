@@ -21,7 +21,7 @@
  ITA_fortress_sicily_desc:0 "Sicily is the gateway to the Italian mainland. By strengthening coastal fortifications and inland positions, we ensure that any enemy landing will face stiff resistance, making the island a bastion of our defense."
  ITA_the_soft_underbelly_of_europe:0 "The Soft Underbelly of Europe"
  ITA_the_soft_underbelly_of_europe_desc:0 "Italy’s position in Europe leaves the mainland exposed to attack from multiple directions. By fortifying key coastal provinces and inland strongpoints, we turn potential weakness into a prepared defense, ready to repel any invader."
- ITA_nation_in_arms:0 
+ ITA_nation_in_arms:0 "Nation In Arms"
  ITA_nation_in_arms_desc:0 "The Italian state mobilizes its people in service of empire, transforming society itself into an instrument of war."
  ITA_to_live_as_a_lion:0 "To Live As a Lion"
  ITA_to_live_as_a_lion_desc:0 "Italy embraces bold action, pouring resources into its industries to strengthen the nation’s might. The ambitious effort brings both growth and strain to its infrastructure."
@@ -43,7 +43,9 @@
  ITA_devotion_buffed_idea_desc:0 "A spirit of unwavering commitment permeates the Italian armed forces. Through relentless preparation, steadfast resolve, and loyalty to the nation, soldiers, sailors, and airmen alike are driven to endure longer, respond faster, and carry out their duties with greater efficiency."
  ITA_idea_the_king_of_the_skies:0 "The King of the Skies"
  ITA_idea_modern_musculus:0 "Modern Musculus"
- ITA_idea_caligulas_pride "Caligulas Pride"
+ ITA_idea_modern_musculus_desc:0 "Modern Musculus"
+ ITA_idea_caligulas_pride:0 "Caligulas Pride"
+ ITA_idea_caligulas_pride_desc:0 "Caligulas Pride"
 #custom tooltips 
 
  ITA_new_industrialization_designers_overwrite:0 "If focus §Y'Strength Northern Industry'§! has been completed first, Northern National Designers will be improved.\n\nIf focus §Y'Modernize the Mezzogiorno'§! has been completed first, Southern National Designers will be improved."

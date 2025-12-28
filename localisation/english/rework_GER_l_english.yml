@@ -18,9 +18,27 @@
  GER_the_desert_fox_desc:0 "The Desert Fox"
  GER_increase_defence_budget:0 "Increase Defense Budget"
  GER_increase_defence_budget_desc:0 "With the international situation growing increasingly unstable, Germany must ensure that sufficient resources are allocated to national defense. By increasing the military budget, we can expand our industrial capacity and better prepare for the challenges ahead."
-
+ GER_endsieg_focus:0 "Endsieg"
+ GER_endsieg_focus_desc:0 "Endsieg"
+ GER_vichy_france:0 "Establish Vishy France"
+ GER_vichy_france_desc:0 "Establish Vishy France"
+ GER_war_with_the_ussr:0 "Operation Barbarossa"
+ GER_war_with_the_ussr_desc:0 "Operation Barbarossa"
+ GER_hitler_youth:0 "The Hitler Youth"
+ GER_hitler_youth:0 "The Hitler Youth"
+ GER_westwall:0 "Westwall"
+ GER_westwall_desc:0 "Westwall"
  # idea
  GER_operation_barbarossa:0 "Operation Barbarossa"
  GER_operation_barbarossa_desc:0 "Operation Barbarossa"
  GER_operation_na:0 "The North Africa Campaign"
  GER_operation_na_desc:0 "The North Africa Campaign"
+ GER_the_hitler_youth_idea:0 "The Hitler Youth"
+ GER_the_hitler_youth_idea_desc:0 "The Hitler Youth"
+ GER_endsieg_idea:0 "Endsieg"
+ GER_endsieg_idea_desc:0 "Endsieg"
+ # modifiers
+ FRA_vichy_modifier:0 "Vichy France"
+ #tooltip
+ GER_rhine_fortified_tt:0 "Completes the §YWestwall§!, a line of land fortifications along the Rhine, strengthening Germany's defensive frontier."
+ GER_an_invincible_army_trigger:0 "More then §Y30§! occupied territories in §YEurope§!"
