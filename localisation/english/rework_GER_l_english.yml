@@ -28,6 +28,12 @@
  GER_hitler_youth:0 "The Hitler Youth"
  GER_westwall:0 "Westwall"
  GER_westwall_desc:0 "Westwall"
+ GER_the_northern_advance:0 "The Northern Advance"
+ GER_the_northern_advance_desc:0 "The Northern Advance"
+ GER_operation_typhoon:0 "Operation Typhoon"
+ GER_operation_typhoon_desc:0 "Operation Typhoon"
+ GER_operation_case_blue:0 "Operation Case Blue"
+ GER_operation_case_blue_desc:0 "Operation Case Blue"
  # idea
  GER_operation_barbarossa:0 "Operation Barbarossa"
  GER_operation_barbarossa_desc:0 "Operation Barbarossa"
@@ -37,8 +43,15 @@
  GER_the_hitler_youth_idea_desc:0 "The Hitler Youth"
  GER_endsieg_idea:0 "Endsieg"
  GER_endsieg_idea_desc:0 "Endsieg"
+ GER_northern_advance:0 "The Northern Advance"
+ FIN_northern_advance:0 "The Northern Advance"
+ GER_operation_typhoon_idea:0 "Operation Typhoon"
+ HUN_operation_typhoon_idea:0 "Operation Typhoon"
+ GER_operation_case_blue_idea:0 "Operation Case Blue"
+ ROM_operation_case_blue_idea:0 "Operation Case Blue"
+ GER_ostwall_idea "Ostwall Construction"
  # modifiers
  FRA_vichy_modifier:0 "Vichy France"
+ GER_supression_of_communists:0 "Suppression of Communists"
  #tooltip
- GER_rhine_fortified_tt:0 "Completes the §YWestwall§!, a line of land fortifications along the Rhine, strengthening Germany's defensive frontier."
- 
+ GER_rhine_fortified_overwrite_tt:0 "Completes the §YWestwall§!, a line of land fortifications along the Rhine, strengthening Germany's defensive frontier."

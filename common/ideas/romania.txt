@@ -711,6 +711,15 @@ ideas = {
 
 			}
 		}
+	ROM_operation_case_blue_idea = {
+   			allowed = { }
+			modifier = {
+    		army_attack_factor = 0.1
+    		army_speed_factor = 0.10
+    		supply_consumption_factor = -0.15
+}			
+}
+	
 		ROM_Rain_Fire_idea = {
 		picture = generic_anti_air
 
@@ -2081,5 +2090,7 @@ ideas = {
 				factor = 1
 			}
 		}
+		
+		
 	}
 }

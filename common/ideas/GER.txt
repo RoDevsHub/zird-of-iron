@@ -117,9 +117,52 @@ ideas = {
 			modifier = {
 				production_speed_rocket_site_factor = 0.15
 			}
-	
+		GER_ostwall_idea = { 
+		
+			allowed = {
+				original_tag = GER
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_wall_line
+
+			modifier = {
+				production_speed_bunker_factor = 0.2
+			}
 		}
 
+
+		}
+		GER_northern_advance = {
+   			allowed = { }
+			modifier = {
+    			army_attack_factor = 0.05
+    			army_speed_factor = 0.10
+    			supply_consumption_factor = -0.15
+}	
+		}
+		GER_operation_typhoon_idea = {
+   			allowed = { }
+			modifier = {
+    			army_attack_factor = 0.05
+    			army_speed_factor = 0.10
+    			supply_consumption_factor = -0.15
+}			
+}
+		GER_operation_case_blue_idea = {
+   			allowed = { }
+			modifier = {
+    			army_attack_factor = 0.05
+    			army_speed_factor = 0.10
+    			supply_consumption_factor = -0.15
+			}
+}
 		rhineland_challenge_met = {
 			
 			allowed = {

@@ -7,3 +7,12 @@ FRA_vichy_modifier = {
 	resistance_target = -0.25
 	local_factories = 0.25 
 }
+GER_supression_of_communists = { 
+	enable = {
+		always = yes
+	}
+	icon = GFX_idea_chi_army_corruption3
+	resistance_activity = -0.5
+	resistance_target = -0.25
+	resistance_decay = 0.25
+}
