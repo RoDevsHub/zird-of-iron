@@ -7155,7 +7155,6 @@ focus_tree = {
 			is_subject = no
 			IF = {
 				limit = { has_dlc = "Gotterdammerung" }
-				date > 1937.01.01
 				has_army_manpower = { size > 365000 }
 			}
 
