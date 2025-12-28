@@ -11234,7 +11234,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = GER_anti_comintern_pact
 
-		cost = 5
+		cost = 2
 
 		available = {
 			if = {
