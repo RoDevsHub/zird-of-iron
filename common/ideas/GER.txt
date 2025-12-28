@@ -98,9 +98,8 @@ ideas = {
 
 		  picture = citizen_militia_2
 			modifier = {
-				army_core_defence_factor = 0.3
-				army_core_attack_factor = 0.3
-				#stability_weekly = -0.002
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.1
 			}
 		}
 		GER_rocketry_idea = {
@@ -2128,7 +2127,7 @@ ideas = {
 				
 				training_time_factor = 0.1
 				conscription_factor = 0.1
-				conscription = 0.05
+				conscription = 0.025
 				non_core_manpower = 0.1
 				
 			}

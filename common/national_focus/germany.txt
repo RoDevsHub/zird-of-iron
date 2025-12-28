@@ -9645,7 +9645,7 @@ focus_tree = {
 		}
 	focus = {
 		id = GER_westwall
-		icon = GFX_goal_generic_construct_military
+		icon = GFX_focus_SWE_hedgehog_defense
 		prerequisite = { focus = GER_vichy_france}
 	
 
@@ -11766,7 +11766,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = GER_anti_comintern_pact
-		cost = 5
+		cost = 10
 
 		will_lead_to_war_with = SOV
 
@@ -11887,7 +11887,7 @@ focus_tree = {
 		relative_position_id = GER_war_with_the_ussr
 		x = 0
 		y = 2
-		cost = 5
+		cost = 8
 		available{
 		}
 		completion_reward = {
@@ -11896,10 +11896,10 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_endsieg_focus
-		icon = GFX_focus_generic_combined_arms
+		icon = GFX_focus_SWI_fortify_border_with_germany
 		text = "Endsieg"
 		available = {
-			surrender_progress > 0.1
+			surrender_progress > 0.2
 			 
 		}
 		prerequisite = {
@@ -11910,7 +11910,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		relative_position_id = GER_hitler_youth
 		ai_will_do = {
 			factor = 1
