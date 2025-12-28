@@ -1,18 +1,16 @@
 spriteTypes = {
 	spriteType = {
+		name = "GFX_whitepeace_new"
+		textureFile = "gfx/host tool/horsttool/whitepeace_new.dds"
+	}
+	spriteType = {
 		name = "GFX_st_background"
-		texturefile = "gfx/hosttool/st_background.dds"
+		texturefile = "gfx/host tool/horsttool/st_background.dds"
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
 	spriteType = {
-		name = "GFX_mil_give"
-		texturefile = "gfx/hosttool/host_mil_plus.dds"
+		name = "GFX_cp_icon"
+		texturefile = "gfx/host tool/horsttool/cp_icon.dds"
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
-	spriteType = {
-		name = "GFX_civ_give"
-		texturefile = "gfx/hosttool/host_civ_plus.dds"
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
-	
 }

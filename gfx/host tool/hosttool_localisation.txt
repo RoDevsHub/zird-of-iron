@@ -3,12 +3,12 @@ defined_text = { # state
 
 	text = {
 		trigger = {
-			has_state_flag = host_marked_for_transfer
+			has_state_flag = marked_for_transfer
 		}
-		localization_key = host_mark_state_no
+		localization_key = mark_state_no
 	}
 	text = {
-		localization_key = host_mark_state_yes
+		localization_key = mark_state_yes
 	}
 }
 
@@ -17,7 +17,7 @@ defined_text = { # global
 
 	text = {
 		trigger = {
-			has_country_flag = host_transfer_enabled
+			has_country_flag = hosttool_enabled
 		}
 		localization_key = host_transfer_states_off
 	}
@@ -31,12 +31,12 @@ defined_text = { # global
 
 	text = {
 		trigger = {
-			has_country_flag = host_transfer_enabled
+			has_country_flag = hosttool_enabled
 		}
-		localization_key = host_ST_TOOLTIP_off
+		localization_key = ST_TOOLTIP_off
 	}
 	text = {
-		localization_key = host_ST_TOOLTIP_on
+		localization_key = ST_TOOLTIP_on
 	}
 }
 
@@ -45,12 +45,12 @@ defined_text = { # global
 
 	text = {
 		trigger = {
-			has_state_flag = host_marked_for_transfer
+			has_state_flag = marked_for_transfer
 		}
-		localization_key = host_mark_status_marked
+		localization_key = mark_status_marked
 	}
 	text = {
-		localization_key = host_mark_status_unmarked
+		localization_key = mark_status_unmarked
 	}
 }
 defined_text = { # global
