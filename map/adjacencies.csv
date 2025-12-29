@@ -281,7 +281,7 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 1378;7373;impassable;-1;-1;-1;-1;-1;;Urals
 1406;7373;impassable;-1;-1;-1;-1;-1;;Urals
 1406;4383;impassable;-1;-1;-1;-1;-1;;Urals
-
+10062;7108;impassable;-1;-1;-1;-1;-1;;HongKong
 
 
 #Start province ID;End province ID;Adjacency type;Through province ID;Starting X position;Starting Y position;Ending X position;Ending Y position;Adjacency rule;Comment
