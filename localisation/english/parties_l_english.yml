@@ -1690,6 +1690,13 @@
  EPE_neutrality_party: "Epstein"
  EPE_neutrality_party_long: "Epstein's Clients"
 
-
+ ROD_fascism_party: "NZM"
+ ROD_fascism_party_long: "New Zionist Movement"
+ ROD_communism_party: "WPNE"
+ ROD_communism_party_long: "Worker's Party of New England"
+ ROD_democratic_party: "Rodevs"
+ ROD_democratic_party_long: "Rodev's Government"
+ ROD_neutrality_party: "Mods"
+ ROD_neutrality_party_long: "Moderator Council"
 
 

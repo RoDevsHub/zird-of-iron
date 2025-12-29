@@ -1,0 +1,66 @@
+﻿capital = 1055
+
+#oob = ""
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_trucks = 1
+}
+
+set_convoys = 0
+
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 45
+	fascism = 5
+	communism = 20
+	neutrality = 30
+}
+
+
+create_country_leader = {
+	name = "Rodevs"
+	desc = ""
+	picture = "gfx/leaders/ROD/Portrait_Rodev.dds"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Tucker Carlson"
+	desc = ""
+	picture = "gfx/leaders/ROD/Portrait_Tucker_Carlson.dds"
+	ideology = stalinism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Benjamin Netanyahu"
+	desc = ""
+	picture = "gfx/leaders/ROD/Portrait_Benjamin_Netanyahu.dds"
+	ideology = nazism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "The Moderators"
+	desc = ""
+	picture = "gfx/leaders/ROD/Portrait_Mods.dds"
+	ideology = oligarchism
+	traits = {
+		#
+	}
+}

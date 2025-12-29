@@ -1,0 +1,23 @@
+state={
+	id=1051
+	name="STATE_1051"
+	manpower = 481000
+	
+	state_category = town
+
+	history={
+		add_core_of = USA
+		owner = USA
+		add_claim_by = ROD
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+
+	provinces={
+		3712 3715 733 10481 
+	}
+
+	local_supplies=0.0 
+}

@@ -148,3 +148,9 @@
 13461;92;119;84;land;false;desert;5
 #Cairo
 13462;70;114;91;land;false;desert;5
+#New England
+13463;221;207;227;land;false;forest;2
+13464;4;199;189;land;false;urban;2
+13465;84;199;237;land;true;forest;2
+#Channel Islands
+13466;70;43;31;land;true;plains;1

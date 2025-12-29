@@ -200,6 +200,10 @@ set_autonomy = {
 	target = PHI
 	autonomous_state =  autonomy_colony
 }
+set_autonomy = {
+	target = ROD
+	autonomous_state =  autonomy_colony
+}
 
 1939.1.1 = {
 	set_politics = {
