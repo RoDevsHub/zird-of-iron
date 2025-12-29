@@ -104,6 +104,43 @@ focus_tree = {
 			annex_country = { target = MAN transfer_troops = yes }
 		}
 	}
+		focus = {
+		id = JAP_annex_Siam
+		icon = GFX_SOV_great_commander_ccp_2d_sov_compatibility
+		x = -3
+		y = 1
+		cost = 0
+
+		ai_will_do = {
+			factor = -10
+		}
+
+		available = {
+			
+			SIA = {
+				is_ai = yes
+			}
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_state = { 
+				limit = {
+					is_core_of = SIA
+				}
+				add_core_of = JAP
+			}
+			annex_country = { target = SIA transfer_troops = yes }
+		}
+	}
 	focus = {
 		id = JAP_sea_purge_the_kodoha_faction
 		icon = GFX_focus_JAP_purge_the_kodoha_faction
@@ -5709,7 +5746,7 @@ focus_tree = {
 
 		bypass = {
 			SIA = {
-				has_war_with = ROOT
+				exists = no
 			}
 		}
 
