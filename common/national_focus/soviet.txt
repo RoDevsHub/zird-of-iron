@@ -384,6 +384,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
+				add_timed_idea = {
+				idea = SOV_Public_Works_idea
+				days = 70
+				}
 			random_owned_controlled_state = {
 				limit = {
 					industrial_complex > 0
@@ -776,6 +780,10 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+			add_timed_idea = {
+				idea = SOV_MILL_Works_idea
+				days = 70
+			} 
 			hidden_effect = {
 				set_variable = { SOV_fyp_production_speed_industrial_complex_factor = 0 } #Remove Civ constr speed
 			}
@@ -4911,6 +4919,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_MANPOWER}
 
 		completion_reward = {
+			army_experience = 120
 			add_to_variable = { SOV_the_red_army_mobilization_speed = 0.05 }
 			add_to_variable = { SOV_the_red_army_conscription_factor = 0.03 }
 			custom_effect_tooltip = SOV_strengthen_the_mobilization_plan_ns_tt
@@ -6247,8 +6256,8 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
-			add_to_variable = { SOV_the_red_army_modifier_army_sub_unit_cavalry_speed_factor = 0.05 }
-			add_to_variable = { SOV_the_red_army_cavalry_attack_factor = 0.05 }
+			add_to_variable = { SOV_the_red_army_modifier_army_sub_unit_calvary_speed_factor = 0.05 }
+			add_to_variable = { SOV_the_red_army_calvary_attack_factor = 0.05 }
 			custom_effect_tooltip = SOV_restore_cossack_units_ns_tt
 
 			show_unit_leaders_tooltip = SOV_lev_dovator
@@ -6317,7 +6326,7 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
-			add_to_variable = { SOV_the_red_army_army_org_factor = 0.05 }
+			add_to_variable = { SOV_the_red_army_army_org_factor = 0.1 }
 			add_to_variable = { SOV_the_red_army_training_time_factor = 0.1 }
 			custom_effect_tooltip = SOV_cohesion_first_ns_tt
 		}
@@ -8767,6 +8776,7 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
+			add_war_support = 0.05
 			add_timed_idea = { idea = SOV_military_advisors_in_spain days = 1095 }
 			
 			if = {
