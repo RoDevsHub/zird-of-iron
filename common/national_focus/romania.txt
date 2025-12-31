@@ -559,6 +559,46 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = ROM_German_Trade_Agreement_idea
 			GER = {add_ideas = ROM_German_Trade_Agreement_idea}
+							if = {
+				limit = {
+					CZE= { is_guaranteed_by = ROOT }
+				}
+				ROOT = {
+					diplomatic_relation = {
+   						country = CZE
+   						relation = guarantee
+   						active = no
+  					}
+  					add_ai_strategy = {
+						type = ignore
+						id = "CZE"
+						value = 100
+					}
+				}
+				CZE = {
+					add_opinion_modifier = { target = ROOT modifier = western_betrayal }
+				}
+			}
+				if = {
+				limit = {
+					YUG= { is_guaranteed_by = ROOT }
+				}
+				ROOT = {
+					diplomatic_relation = {
+   						country = YUG
+   						relation = guarantee
+   						active = no
+  					}
+  					add_ai_strategy = {
+						type = ignore
+						id = "YUG"
+						value = 100
+					}
+				}
+				YUG = {
+					add_opinion_modifier = { target = ROOT modifier = western_betrayal }
+				}
+			}
 		}
 	}
 		focus = {
@@ -657,7 +697,7 @@ focus_tree = {
 			}
 			reduce_focus_completion_cost = {
 			  focus = { ROM_Iron_Calvary ROM_Iron_Beast_Assembly ROM_Army_of_the_Machine ROM_German_Tank_Doctrine ROM_Armored_Fury ROM_Armor_Warfare }
-			  cost = 14
+			  cost = 21
 			}
 			add_ideas = ROM_German_Military_Reforms_idea
 			add_doctrine_cost_reduction = {
@@ -693,7 +733,7 @@ focus_tree = {
 			}
 			reduce_focus_completion_cost = {
 			  focus = { ROM_Mass_Mobilization ROM_Human_Wave_Tactics ROM_Guns_of_Steel ROM_Will_of_Million ROM_Workshops_of_Greater_Romania ROM_Army_of_the_People }
-			  cost = 14
+			  cost = 21
 			}
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
