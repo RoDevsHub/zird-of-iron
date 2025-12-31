@@ -86,3 +86,10 @@ AST_develop_new_zealand_desc:0 "New Zealand's potential as a strategic asset in 
  ENG_D_Day_idea_desc:0 "D-Day"
 
 
+
+
+ SOV_Public_Works_idea:0 "Public Works"
+ SOV_Public_Works_idea_desc:0 "Public Works"
+ SOV_MILL_Works_idea:0 "Millitary Works"
+ SOV_MILL_Works_idea_desc:0 "Military Works"
+
