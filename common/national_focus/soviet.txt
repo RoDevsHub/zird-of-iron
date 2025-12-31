@@ -4229,7 +4229,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = SOV_found_the_pcdi
-		cost = 10
+		cost = 5
 
 		available = {
 			has_full_control_of_state = 219 #MOSCOW
@@ -4292,18 +4292,10 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_pc_of_mechanical_engineering
-		cost = 10
+		cost = 8
 
 		available = {
-			if = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
-				has_tech = improved_medium_tank_chassis
-			}
-			else = {
-				has_tech = improved_medium_tank
-			}
+
 		}
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -4430,7 +4422,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_pc_of_mechanical_engineering
-		cost = 10
+		cost = 8
 
 		available = {
 
@@ -4711,7 +4703,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SOV_pc_of_mechanical_engineering
-		cost = 10
+		cost = 8
 
 		available = {
 			has_full_control_of_state = 219 #MOSCOW
@@ -5077,7 +5069,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 10
+		cost = 5
 
 		available = {
 			has_full_control_of_state = 219 #MOSCOW
@@ -5346,7 +5338,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 10
+		cost = 3
 
 		mutually_exclusive = { focus = SOV_improve_the_stalin_line }
 
@@ -5587,7 +5579,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 10
+		cost = 3
 
 		mutually_exclusive = { focus = SOV_the_molotov_line }
 
@@ -5864,7 +5856,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_improve_the_stalin_line
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -6084,7 +6076,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 10
+		cost = 3
 
 		available = {
 			OR = {
