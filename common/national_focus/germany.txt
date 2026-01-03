@@ -8055,7 +8055,6 @@ focus_tree = {
 
 		available = 
 		{
-			date > 1938.01.01
 		}
 		
 		cancel = {
@@ -9510,7 +9509,7 @@ focus_tree = {
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = GER_war_with_france }
 
-		x = 4
+		x = 0
 		y = 1
 		relative_position_id = GER_war_with_france
 		cost = 5
@@ -9801,7 +9800,7 @@ focus_tree = {
 		icon = GFX_focus_PER_desert_training
 		prerequisite = { focus = GER_war_with_france }
 
-		x = -4
+		x = -3
 		y = 2
 		relative_position_id = GER_war_with_france
 		cost = 5
@@ -10064,7 +10063,7 @@ focus_tree = {
 		icon = GFX_focus_generic_naval_invasion
 		prerequisite = { focus = GER_war_with_france }
 
-		x = 0
+		x = 3
 		y = 2
 		relative_position_id = GER_war_with_france
 		cost = 5
@@ -12285,11 +12284,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = GER_joseph_goebbels
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			custom_effect_tooltip = GER_gain_totaler_krieg_remove_total_mob_tt
 			add_ideas = totaler_krieg_economy
 
@@ -12327,16 +12321,15 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
-
-			add_timed_idea = {
-				idea = GER_northern_advance
-				days = 70
-			}
 			FIN = {
 				add_timed_idea = {
 					idea = FIN_northern_advance
 					days = 70
 				}
+			}
+			add_timed_idea = {
+				idea = GER_northern_advance
+				days = 70
 			}
 		}
 	}
@@ -12355,18 +12348,18 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
-			#BUFFS FOR GIBRALTAR NAVAL INVASION
 
-			add_timed_idea = {
-				idea = GER_operation_typhoon_idea
-				days = 70
-			}
 			HUN = {
 				add_timed_idea = {
 					idea = HUN_operation_typhoon_idea
 					days = 70
 				}
 			}
+			add_timed_idea = {
+				idea = GER_operation_typhoon_idea
+				days = 70
+			}
+
 	
 		}
 	}
@@ -12386,16 +12379,16 @@ focus_tree = {
 
 		completion_reward = {
 			#BUFFS FOR ROMANIA AND GERMANY
-
-			add_timed_idea = {
-				idea = GER_operation_case_blue_idea
-				days = 70
-			}
-			ROM = {
+				ROM = {
 				add_timed_idea = {
 					idea = ROM_operation_case_blue_idea
 					days = 70
 			}
+			add_timed_idea = {
+				idea = GER_operation_case_blue_idea
+				days = 70
+			}
+
 		}
 	}
 }
