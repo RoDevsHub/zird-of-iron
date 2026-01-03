@@ -611,7 +611,6 @@ add_to_faction = ENG
 #add_to_faction = FRA
 add_to_faction = CAN
 add_to_faction = AST
-add_to_faction = BRA
 add_to_faction = SAF
 
 give_military_access = RAJ

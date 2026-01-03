@@ -48,6 +48,8 @@ IF = {
 	}
 	create_faction_from_template = faction_template_usa_commonwealth
 }
+add_to_faction = BRA
+add_to_faction = MEX 
 
 set_research_slots = 4
 set_stability = 0.75
