@@ -1858,53 +1858,15 @@ focus_tree = {
 
 
 	focus = {
-		id = BRA_reach_out_to_our_neighbors
-		icon = GFX_focus_BRA_north_and_south_america
+		id = BRA_south_american_defense_cooperation
+		icon = GFX_focus_generic_little_entente
 		prerequisite = { 
-			focus = BRA_cooperation_in_the_americas 
+			focus = BRA_cooperation_in_the_americas
 			#focus = BRA_the_international_crisis
 		}
 		x = 2
 		y = 1
 		relative_position_id = BRA_cooperation_in_the_americas
-		cost = 5
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				is_in_faction = yes
-			}
-		}
-		available = {
-			is_subject = no
-			is_in_faction = no
-		}
-
-		search_filters = { }
-
-		completion_reward = {
-
-			set_rule = {
-				can_create_factions = yes
-			}
-			create_faction_from_template = {
-				template = faction_template_pan_american
-				name = BRA_org_american_states_faction
-			}
-
-		}
-	}
-
-	focus = {
-		id = BRA_south_american_defense_cooperation
-		icon = GFX_focus_generic_little_entente
-		prerequisite = { 
-			focus = BRA_reach_out_to_our_neighbors 
-			#focus = BRA_the_international_crisis
-		}
-		x = 0
-		y = 1
-		relative_position_id = BRA_reach_out_to_our_neighbors
 		cost = 5
 		bypass = {
 		}
@@ -1985,12 +1947,12 @@ focus_tree = {
 		id = BRA_foreign_legion
 		icon = GFX_focus_generic_manpower
 		prerequisite = { 
-			focus = BRA_reach_out_to_our_neighbors 
+			focus = BRA_cooperation_in_the_americas 
 			#focus = BRA_the_international_crisis
 		}
-		x = 2
+		x = 4
 		y = 1
-		relative_position_id = BRA_reach_out_to_our_neighbors
+		relative_position_id = BRA_cooperation_in_the_americas
 		cost = 5
 		bypass = {
 		}
@@ -2048,7 +2010,7 @@ focus_tree = {
 		}
 		mutually_exclusive = { focus = BRA_us_brazil_technology_exchange }
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = BRA_south_american_defense_cooperation
 		cost = 5
 		bypass = {
@@ -2098,17 +2060,7 @@ focus_tree = {
 			factor = 20
 		}
 		available = {	
-			any_other_country = {
-				original_tag = USA
-				has_war_with_major = yes
-				has_government = democratic
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-			NOT = {
-				is_in_faction = yes
-			}
+
 		}
 
 		bypass = {
@@ -2428,74 +2380,6 @@ focus_tree = {
 
 
 	focus = {
-		id = BRA_no_fascism_in_south_america
-		icon = GFX_focus_generic_anti_fascist_diplomacy
-		prerequisite = { 
-			focus = BRA_cooperation_in_the_americas 
-			#focus = BRA_the_international_crisis
-		}
-		x = -4
-		y = 1
-		relative_position_id = BRA_cooperation_in_the_americas
-		cost = 10
-		ai_will_do = {
-			factor = 0
-		}
-		available = {
-			NOT = {
-				USA = {
-					has_government = fascism
-				}
-			}
-			any_country = {
-				capital_scope = {
-					is_on_continent = south_america
-				}
-				has_government = fascism
-				NOT = {
-					OR = {
-						original_tag = ELS
-						original_tag = MEX
-						original_tag = DOM
-						original_tag = PAN
-					}
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-
-		completion_reward = {
-			hidden_effect = {
-				every_other_country = {
-					limit = {
-						capital_scope = {
-							is_on_continent = south_america
-						}
-						has_government = fascism
-						NOT = {
-							OR = {
-								original_tag = ELS
-								original_tag = MEX
-								original_tag = DOM
-								original_tag = PAN
-							}
-						}
-					}
-					ROOT = {
-						create_wargoal = {
-							type = puppet_wargoal_focus
-							target = PREV
-							expire = 0
-						}
-					}
-				}
-			}
-			custom_effect_tooltip = BRA_no_fascism_in_south_america_tt
-		} 
-	}
-
-	focus = {
 		id = BRA_senta_a_pua
 		icon = GFX_focus_BRA_senta_a_pua
 		prerequisite = { 
@@ -2548,56 +2432,6 @@ focus_tree = {
 					cic = 500
 					equipment_type = medium_plane_airframe
 					seller_tags = { USA } 
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = BRA_no_communism_in_south_america
-		icon = GFX_goal_generic_war_with_comintern
-		prerequisite = { 
-			focus = BRA_cooperation_in_the_americas 
-			#focus = BRA_the_international_crisis
-		}
-		x = 4
-		y = 1
-		relative_position_id = BRA_cooperation_in_the_americas
-		cost = 10
-		ai_will_do = {
-			factor = 0
-		}
-		available = {
-			NOT = {
-				USA = {
-					has_government = communism
-				}
-			}
-			any_country = {
-				capital_scope = {
-					is_on_continent = south_america
-				}
-				has_government = communism
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-
-		completion_reward = {
-			custom_effect_tooltip = BRA_no_communism_in_south_america_tt
-			every_country = {
-				limit = {
-					capital_scope = {
-						is_on_continent = south_america
-					}
-					has_government = communism
-				}
-				BRA = {
-					create_wargoal = {
-						type = puppet_wargoal_focus
-						target = PREV
-						expire = 0
-					} 
 				}
 			}
 		}
