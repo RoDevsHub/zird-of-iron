@@ -4834,6 +4834,7 @@ focus_tree = {
 	focus = {
 		id = uk_iraq_focus
 		available = {
+			date > 1939.01.01
 			IRQ = {
 				OR = { 
 					communism > 0.2
@@ -4852,7 +4853,7 @@ focus_tree = {
 		x = -12
 		y = 1
 		relative_position_id = ENG_steady_as_she_goes
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}	
