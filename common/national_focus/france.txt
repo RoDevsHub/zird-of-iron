@@ -37,7 +37,7 @@
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = no
+		available_if_capitulated = yes
 
 		completion_reward = {
 			add_timed_idea = {
@@ -950,7 +950,7 @@
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = no
+		available_if_capitulated = yes
 
 		completion_reward = {
 			add_ideas = { FRA_firepower }
@@ -980,7 +980,7 @@
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = no
+		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_doctrine_cost_reduction = {
@@ -1014,7 +1014,7 @@
 		y = 1
 		relative_position_id = FRA_fortification_focus
 		cost = 3
-
+		available_if_capitulated = no
 		available = {
 			735 = { is_controlled_by = ROOT }
 		}
@@ -1037,7 +1037,7 @@
 		y = 1
 		relative_position_id = FRA_alpine_forts
 		cost = 3
-
+available_if_capitulated = no
 		available = {
 			18 = { is_controlled_by = ROOT }
 			29 = { is_controlled_by = ROOT }
@@ -1368,7 +1368,7 @@
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = no
+		available_if_capitulated = yes
 
 		completion_reward = {
 			custom_effect_tooltip = available_theorist
@@ -1398,6 +1398,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_motorized_focus
+		available_if_capitulated = yes
 		cost = 5
 		completion_reward = {
 			army_experience = 5
@@ -1457,7 +1458,7 @@
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = no
+		available_if_capitulated = yes
 
 		completion_reward = {
 			add_ideas = { FRA_air_dominance }
@@ -1510,7 +1511,7 @@
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = no
+		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_doctrine_cost_reduction = {
@@ -1546,7 +1547,7 @@
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = no
+		available_if_capitulated = yes
 
 		completion_reward = {
 			add_ideas = { FRA_flying_artillery }
