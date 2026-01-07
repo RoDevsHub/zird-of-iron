@@ -483,14 +483,23 @@ focus_tree = {
 		completion_reward = {
 
 			random_core_state = {
-				add_extra_state_shared_building_slots = 8
+				prioritize = { 132 130 122 }
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 			}
-
+			random_core_state = {
+				prioritize = { 130 132 122 }
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 1.0
@@ -628,16 +637,26 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
 			add_ideas = british_austerity_idea
-						random_core_state = {
-				add_extra_state_shared_building_slots = 8
+				random_core_state = {
+				prioritize = { 128 127 132 }
+				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = industrial_complex
 					level = 4
 					instant_build = yes
 				}
 			}
+				random_core_state = {
+				prioritize = { 128 127 132 }
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
 		}
 	}
+}
 
 	focus = {
 		id = ENG_special_air_service
@@ -2326,7 +2345,14 @@ focus_tree = {
 		id = uk_develop_egypt_focus
 		prerequisite = {focus = uk_mediterranean_focus}
 		available = {
-			183 = { is_owned_and_controlled_by = ENG}
+				447 = {
+				CONTROLLER = {
+					OR = {
+						tag = ENG
+						is_subject_of = ENG
+					}
+				}
+			}
 		}
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 0
@@ -2701,7 +2727,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = uk_asia_focus
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 1
 		}
@@ -3296,7 +3322,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = uk_burma_focus
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -5260,7 +5286,7 @@ focus_tree = {
 		x = -15
 		y = 1
 		relative_position_id = ENG_steady_as_she_goes
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}	

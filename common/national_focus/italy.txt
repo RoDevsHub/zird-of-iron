@@ -9377,16 +9377,7 @@ focus = {
 			add_state_claim = 853 #LJUBLJANA
 			add_state_claim = 103 #DALMATIA
 			add_state_claim = 105 #MONTENEGRO
-			create_wargoal = {
-				type = annex_everything
-				target = YUG
-			}
-			every_state = { 
-				limit = {
-					is_core_of = YUG
-				}
-				add_core_of = ITA
-			}
+		
 			if = {
 				limit = {
 					country_exists = CRO
@@ -9429,7 +9420,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_italian_irredentism
-		cost = 10
+		cost = 5
 		available = {
 			GER = {has_completed_focus = GER_demand_sudetenland}
 		}
@@ -9442,19 +9433,42 @@ focus = {
 				type = annex_everything
 				target = YUG
 			}
-			every_state = { 
-				limit = {
-					is_core_of = YUG
-				}
-				add_core_of = ITA
-			}
-		ENG = {add_war_support = 0.05}
-		FRA = {add_war_support = 0.05}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		ENG = {add_war_support = 0.075}
+		FRA = {add_war_support = 0.075}
 		CAN = {add_war_support = 0.05}
 		AST = {add_war_support = 0.05}
 		RAJ = {add_war_support = 0.05}
 		SAF = {add_war_support = 0.05}
-		USA = {add_war_support = 0.025}
+		USA = {add_war_support = 0.05}
+		}
+	}
+		focus = {
+		id = ITA_Integrate_the_Slavs
+		icon = GFX_focus_SOV_panslavic_nationalism
+		prerequisite = { focus = ITA_Attack_Yugoslavia}
+		mutually_exclusive = {}
+
+		x = 0
+		y = 1
+		relative_position_id = ITA_Attack_Yugoslavia
+		cost = 5
+		available = {
+			107 = {
+				is_owned_and_controlled_by = ITA
+			}
+		}
+
+		search_filters = {}
+
+		completion_reward = {
+
+			every_state = { 
+				limit = {
+					is_core_of = YUG
+				}
+				add_compliance = 70
+			}
 		}
 	}
 	focus = {
@@ -10283,8 +10297,8 @@ focus = {
 		icon = GFX_focus_generic_attack_greece
 		prerequisite = { focus = ITA_italian_irredentism }
 		mutually_exclusive = { focus = ITA_befriend_greece }
-		x = 0
-		y = 2
+		x = 3
+		y = 1
 		relative_position_id = ITA_italian_irredentism
 		cost = 5
 

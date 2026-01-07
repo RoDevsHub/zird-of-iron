@@ -3366,10 +3366,7 @@ ideas = {
 				original_tag = ITA
 			}
 
-			allowed_civil_war = {
-				has_completed_focus = ITA_blackshirt_loyalty
-			}
-	
+
 			modifier = {
 				conscription_factor = 0.1
 				command_power_gain_mult = 0.05
