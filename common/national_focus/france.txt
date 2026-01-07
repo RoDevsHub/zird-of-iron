@@ -46,37 +46,37 @@
 			}
 		}
 	}
-		focus = {
+		#focus = {
 		id = FRA_
-		icon = GFX_focus_fra_milice
-		x = -5
-		y = 1
-		
-		prerequisite = {focus = FRA_Government_in_Exile}
-		relative_position_id = FRA_Government_in_Exile
-		mutually_exclusive = { }
-		cost = 5
-			ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_capitulated = yes
-		}
-		
-		bypass = {
+		#icon = GFX_focus_fra_milice
+		#x = -5
+		#y = 1
+		#
+		#prerequisite = {focus = FRA_Government_in_Exile}
+		#relative_position_id = FRA_Government_in_Exile
+		#mutually_exclusive = { }
+		#cost = 5
+			#ai_will_do = {
+			#factor = 1
+		#}
+		#available = {
+			#has_capitulated = yes
+		#}
+		#
+		#bypass = {
+#
+		#}
+		##cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = yes
 
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_timed_idea = {
-			idea = FRA_Reorganize_our_Military_Industries
-			days = 60
-			}
-		}
-	}
+		#completion_reward = {
+			#add_timed_idea = {
+			#idea = FRA_Reorganize_our_Military_Industries
+			#days = 60
+			#}
+		#}
+	#}
 	focus = {
 		id = FRA_devalue_the_franc
 		icon = GFX_focus_fra_devalue_the_franc

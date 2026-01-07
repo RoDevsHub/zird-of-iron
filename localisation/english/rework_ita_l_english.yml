@@ -1,6 +1,7 @@
 ﻿l_english:
  # focus
-
+ ITA_Attack_Yugoslavia:0 "Conquer Yugoslavia"
+ ITA_Attack_Yugoslavia_desc:0 "Conquer Yugoslavia"
  ITA_focus_on_mobilization:0 "Focus on Mobilization"
  ITA_focus_on_mobilization_desc:0 "Focus on Mobilization"
  ITA_convene_the_grand_council:0 "The Mussolini Question"

@@ -9333,7 +9333,7 @@ focus = {
 		x = 12
 		y = 1
 		relative_position_id = ITA_triumph_in_africa_bba
-		cost = 5
+		cost = 1
 		available = {
 			NOT = {
 				has_completed_focus = ITA_unite_the_opposition
@@ -9366,7 +9366,7 @@ focus = {
 		x = -1
 		y = 1
 		relative_position_id = ITA_foreign_affairs
-		cost = 5
+		cost = 2
 		available = {
 		}
 
@@ -9420,6 +9420,43 @@ focus = {
 		}
 	}
 
+	focus = {
+		id = ITA_Attack_Yugoslavia
+		icon = GFX_focus_generic_attack_yugoslavia
+		prerequisite = { focus = ITA_italian_irredentism }
+		mutually_exclusive = {}
+
+		x = 1
+		y = 1
+		relative_position_id = ITA_italian_irredentism
+		cost = 10
+		available = {
+			GER = {has_completed_focus = GER_demand_sudetenland}
+		}
+
+		search_filters = {}
+
+		completion_reward = {
+			
+			create_wargoal = {
+				type = annex_everything
+				target = YUG
+			}
+			every_state = { 
+				limit = {
+					is_core_of = YUG
+				}
+				add_core_of = ITA
+			}
+		ENG = {add_war_support = 0.05}
+		FRA = {add_war_support = 0.05}
+		CAN = {add_war_support = 0.05}
+		AST = {add_war_support = 0.05}
+		RAJ = {add_war_support = 0.05}
+		SAF = {add_war_support = 0.05}
+		USA = {add_war_support = 0.025}
+		}
+	}
 	focus = {
 		id = ITA_potential_allies_in_the_balkans
 		icon = GFX_focus_generic_balkan_diplomacy
