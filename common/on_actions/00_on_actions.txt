@@ -1121,6 +1121,7 @@ on_actions = {
 					is_puppet = no
 				}
 				drop_cosmetic_tag = yes
+
 			}
 		}
 	}
@@ -1223,10 +1224,14 @@ on_actions = {
 
 					635 = { is_fully_controlled_by = ROOT }
 				}
-
+				
 				635 = { set_state_flag = prevent_auto_flip_after_capitulation }
 			}
-		}
+			    if = {
+                limit = { tag = FRA } # or other trigger to target this country
+				transfer_navy = { target = GER }
+            }
+        }
 	}
 
 	on_government_change = {
