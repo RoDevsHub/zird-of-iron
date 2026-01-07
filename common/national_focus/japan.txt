@@ -9912,20 +9912,14 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
 		}
 
 		available = {
-			OR = {
-				has_subject = KOR
-				any_controlled_state = {
-					is_core_of = KOR
-					is_fully_controlled_by = ROOT
-				}
-			}
+
 		}
 
 		bypass = {
@@ -9940,30 +9934,17 @@ focus_tree = {
 
 		completion_reward = {
 
-			IF = {
-				limit = {
-					has_subject = KOR
-				}
-				KOR = {
-					every_core_state = {
-						limit = {
-							is_fully_controlled_by = KOR
-						}
-						random_select_amount = 2
-						add_extra_state_shared_building_slots = 1
-					}
-				}
-			}
-			ELSE = {
-				every_controlled_state = {
-					limit = {
-						is_core_of = KOR
-						is_fully_controlled_by = ROOT
-					}
-					random_select_amount = 2
-					add_extra_state_shared_building_slots = 1
-				}
-			}
+1031= {
+			add_extra_state_shared_building_slots = 1
+}
+		1029= {
+			add_extra_state_shared_building_slots = 1
+}
+1028= {
+			add_extra_state_shared_building_slots = 1
+}		
+			
+
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
