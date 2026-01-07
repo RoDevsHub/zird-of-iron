@@ -436,7 +436,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = limited_rearmament_focus
 
-		cost = 10
+		cost = 8
 
 		ai_will_do = {
 			factor = 1
@@ -483,10 +483,10 @@ focus_tree = {
 		completion_reward = {
 
 			random_core_state = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 8
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -621,13 +621,21 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = limited_rearmament_focus
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
 			add_ideas = british_austerity_idea
+						random_core_state = {
+				add_extra_state_shared_building_slots = 8
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -771,7 +779,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -788,7 +796,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -805,7 +813,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -822,7 +830,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -839,7 +847,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -1145,7 +1153,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = air_rearmament_focus
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}
@@ -1194,7 +1202,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = air_rearmament_focus
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1243,7 +1251,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = air_rearmament_focus
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}

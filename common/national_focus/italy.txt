@@ -2965,7 +2965,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -3608,7 +3608,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 				}
@@ -9091,7 +9091,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 				
@@ -9190,7 +9190,7 @@ focus = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -9260,7 +9260,7 @@ focus = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = dockyard
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -9377,7 +9377,16 @@ focus = {
 			add_state_claim = 853 #LJUBLJANA
 			add_state_claim = 103 #DALMATIA
 			add_state_claim = 105 #MONTENEGRO
-
+			create_wargoal = {
+				type = annex_everything
+				target = YUG
+			}
+			every_state = { 
+				limit = {
+					is_core_of = YUG
+				}
+				add_core_of = ITA
+			}
 			if = {
 				limit = {
 					country_exists = CRO

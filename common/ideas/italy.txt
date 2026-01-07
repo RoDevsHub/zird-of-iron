@@ -1039,7 +1039,7 @@ ideas = {
 
 			equipment_bonus = {
    				fighter = {
-					build_cost_ic = -0.10
+					build_cost_ic = -0.1
 					instant = yes
 				}
 				cas = {
@@ -1050,7 +1050,7 @@ ideas = {
 			modifier = {
 				
 				production_factory_max_efficiency_factor = 0.05
-				line_change_production_efficiency_factor = 0.15
+				line_change_production_efficiency_factor = 0.10
 				
 			}
 		}
