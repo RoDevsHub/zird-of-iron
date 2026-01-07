@@ -4237,7 +4237,7 @@ focus_tree = {
 					}
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
-				USA = { add_war_support = 0.05 }
+				USA = { add_war_support = 0.025 }
 			}
 
 			hidden_effect = {
@@ -4412,7 +4412,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_reinforce_the_beijing_garrison }
 
-		cost = 10
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -4458,7 +4458,7 @@ focus_tree = {
 								has_war_with = JAP
 							}
 						}
-						add_war_support = -0.05
+						add_war_support = -0.1
 					}
 					ELSE = {
 						add_timed_idea = {
