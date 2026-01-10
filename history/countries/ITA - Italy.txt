@@ -1,5 +1,4 @@
 ﻿capital = 2 # Rome
-
 ETH_set_up_lon_arms_resolution_effect = yes 
 
 if = {
@@ -37,6 +36,7 @@ add_ideas = {
 	limited_exports
 	limited_conscription
 	war_economy
+	peace_training
 }
 
 # RESISTANCE / COMPLIANCE
