@@ -297,5 +297,11 @@
  STRATEGICREGION_296:0 "Gujarat"
  STRATEGICREGION_297:0 "Eastern-Iranian Range"
  STRATEGICREGION_298:0 "Eastern Zagros"
- STRATEGICREGION_299:0 "Ionian Sea"
- STRATEGICREGION_300:0 "Strait of Sicily"
+ STRATEGICREGION_299:0 "Northern Japan" # or Tōsandō
+ STRATEGICREGION_300:0 "Southern Japan"
+ STRATEGICREGION_301:0 "South Island" 
+ STRATEGICREGION_302:0 "South-Eastern Australia"
+ STRATEGICREGION_303:0 "Western Australia"
+ STRATEGICREGION_304:0 "North-Western Australia"
+ STRATEGICREGION_304:0 "Strait of Sicily"
+ STRATEGICREGION_305:0 "Ionian Sea"
