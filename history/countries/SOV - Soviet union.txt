@@ -833,6 +833,7 @@ add_ideas = {
 	home_of_revolution
 	trotskyite_plot_nsb
 	SOV_politicized_military
+	peace_training
 }
 
 1939.1.1 = {

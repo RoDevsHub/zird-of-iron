@@ -1,6 +1,6 @@
 ﻿
 capital = 64 # Berlin/Brandeburg
-
+add_ideas = peace_training
 if = {
 	limit = {
 		NOT = {

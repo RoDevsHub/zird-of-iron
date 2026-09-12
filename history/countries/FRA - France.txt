@@ -1,5 +1,5 @@
 ﻿capital = 16 # Paris/Ile de France
-
+add_ideas = peace_training
 if = {
 	limit = {
 		NOT = {

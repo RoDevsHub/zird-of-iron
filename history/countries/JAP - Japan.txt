@@ -305,6 +305,7 @@ add_ideas = {
 	# National Spirits
 	#JAP_zaibatsus
 	JAP_militarism
+	peace_training
 
 	#Imperial Influence Ideas
 	JAP_army_faction_tier_2_equal_navy

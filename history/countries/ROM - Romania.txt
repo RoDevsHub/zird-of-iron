@@ -162,6 +162,7 @@ if = {
 	}
 }
 add_ideas = free_trade
+add_ideas = peace_training
 if = {
 	limit = {
 		#has_dlc = Battle for the Bosporus

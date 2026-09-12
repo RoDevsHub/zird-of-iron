@@ -416,6 +416,7 @@ if = {
 add_ideas = {
 	limited_conscription
 	partial_economic_mobilisation
+	peace_training
 }
 
 set_technology = {

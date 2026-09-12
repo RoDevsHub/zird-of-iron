@@ -12,6 +12,7 @@ add_ideas = {
 	limited_conscription
 	MON_the_army
 	MON_the_economy
+	peace_training
 	#MON_education
 }
 

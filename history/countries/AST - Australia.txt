@@ -122,7 +122,7 @@ recruit_character = AST_alexander_hore_ruthven
 recruit_character = AST_jack_beasley
 recruit_character = AST_herbert_v_evatt
 recruit_character = AST_arthur_calwell
-
+add_ideas = peace_training
 if = {
 	limit = {
 		has_dlc = "Together for Victory"

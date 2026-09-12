@@ -1,5 +1,5 @@
 ﻿capital = 328
-
+add_ideas = peace_training
 oob = "MAN_1936"
 
 set_technology = {
